@@ -1,0 +1,207 @@
+#+TITLE: RSS Feeds
+
+* Blogs                                                        :blogs:elfeed:
+** Linux                                                              :linux:
+*** [[https://hund0b1.gitlab.io/feed.xml]]                       :linux:keyboard:
+*** http://www.lukesmith.xyz/rss.xml
+ Luke Smith
+*** https://medium.com/feed/@lizrice                             :containers:
+*** https://blog.jessfraz.com/index.xml                          :containers:
+*** https://www.baty.net/index.xml                                 :computer:
+** emacs                                                  :programming:tools:
+*** https://pinecast.com/feed/emacscast
+ EmacsCast
+*** https://sachachua.com/blog/feed/
+ Sasha Chua
+*** https://endlessparentheses.com/atom.xml
+Endless parentheses
+* Vlogs                                                        :vlogs:elfeed:
+** electro                                                          :electro:
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCT7B-cFBqjYPl5OrPhJYnww 
+Yet Another Tech Channel
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UC8uT9cgJorJPWu7ITLGo9Ww 
+8 bit guy
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCiqd3GLTluk2s_IBt7p_LjA 
+w2aew
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCw0U6DtO0PHb3l37eKEAdSg 
+TCS
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCF2KlrD2XPmgjnJqn_85wBw 
+TechBuilder
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCR1ARVDHnmTC3sUOkS4mUsg 
+Tanner Tech
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCDqryeq1kMDSEQwltWqASrA 
+Scullcom Hobby Electronics
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UC4_ft4-oTdCMlWlL4XXHScg 
+Pete Juliano
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCeF7JKNXOy0jpMOxpgbZcpg 
+OpenTechLab
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCU9SoQxJewrWb_3GxeteQPA 
+Mr Carlson's Lab
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCcs0ZkP_as4PpHDhFcmCHyA 
+mikeselectricstuff
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCOuow_HIYmeaIqi42zVs3qg
+Kirby Meets Audio
+*** https://kmakits.com/blogs/speaker-building-how-to.atom
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCWOdxDJ8IFR2fRh1j52rVtg 
+electron hacks
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCjiVhIvGmRZixSzupD0sS9Q 
+electronoobs
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCRDQEDxAVuxcsyeEoOpSoRA 
+Mark Furneaux
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCA-p1wZ5Tuz9J1_AI_A2NqA 
+Evan Kale     
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UC7bnhgT__dvzL9H6hlvOukA 
+Sparky Channel
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCSRTiJhBE5GsP-1fCbpFRWg 
+Learnelectronics
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCNSfV3L4jv7Kx22lxo0Sv-g 
+Cameron Gray
+
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UChturLXwYxwTOf_5krs0qvA 
+Benk Heck
+
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UC2DjFE7Xf11URZqWBigcVOQ 
+EEVBlog
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCr-cm90DwFJC0W3f9jBs5jA
+EEVBlog2
+
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCu7_D0o48KbfhpEohoP7YSQ 
+Andreas Spiess
+
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UC6mIxFTvXkWQVEHPsEdflzQ 
+GreatScott!
+
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCKpVMjRE0m60lKCBWhIlo0A 
+HAM 2.0
+
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCZf3BREOheX6Yof_0X-tPAg 
+TE
+** Games                                                              :games:
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCWIVwLPIs11s9mYQ2POJO8g
+Penguin Recordins
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCBu5HY4---D2BE2Au8BNz3Q
+Penguin Recordins
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCiVdTQCbjvcdxDJoTcrfwnA
+Hex DSL          
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCRE3NFNtdjR96-H4QG4U1Fg
+Kallestofeles
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCv1Kcz-CuGM6mxzL3B1_Eiw
+The Linux Gamer  
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UC0GHeUcPxfNEZqbFyxy2frQ
+TheFantasio974   
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCcpArg0eZs6FlhlCALfXFxA
+Inside Sim Racing
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCvEdeev3sZoxi5hMksZI4KA
+JAKEJW93 Linux gaming
+
+** computer                                                        :computer:
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UChJpPIRfNNqlB0dwlQQVLVQ
+The obsolete geek
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCPOUHszVXaGNSlK3AdI7kLQ
+Mystic Guy
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCOWcZ6Wicl-1N34H0zZe38w
+Level1Linux
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCWJUSpXVHTaHErtGWC5qPlQ
+Destination Linux
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCmyGZ0689ODyReHw3rsKLtQ
+TuxDigital
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCIme1suHyN7cAGrTy8RBdhQ
+DASGeek                  
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCPOUHszVXaGNSlK3AdI7kLQ
+Mystic Guy               
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCymYq4Piq0BrhnM18aQzTlg
+Lon.TV                   
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCAPR27YUyxmgwm3Wc2WSHLw
+Chris Were's Tech Channel
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UC0A3ldncnGQ1M_RU2Wb4L2A
+quidsup                  
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCTfabOKD7Yty6sDF4POBVqA
+Joe Collins              
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCtZRKfyvx7GUEi-Lr7f4Nxg
+Big Daddy                
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCXuqSBlHAE6Xw-yeJA0Tunw 
+Linus tech tips
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UC4w1YQAJMWOz4qtxinq55LQ
+L1 Techs
+
+** programming                                                  :programming:
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCoT3jV5skJaRQZwwE6_1-Zw
+tornado twins
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCUR1pFG_3XoZn3JNKjulqZg
+thoughtbot
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCFzGyNKXPAglNq28qWYTDFA
+Kai Hendry
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCBu5HY4---D2BE2Au8BNz3Q
+Penguin Recordings
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCcQsDUZiK1GWDcP7BpVO_kw
+Code Cast
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCUR1pFG_3XoZn3JNKjulqZg
+thoughtbot        
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCaRS1T__1twZp_Ea8nOPkIg
+AgileMontreal     
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCf93fPKwotph47H3_KDcRyg
+Kris Occhipinti   
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCBsuOBu-dxj5bx1KMgmar5g
+TheHappieCat      
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCoT3jV5skJaRQZwwE6_1-Zw
+TornadoTwins      
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCkf4VIqu3Acnfzuk3kRIFwA
+gotbletu          
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCcQsDUZiK1GWDcP7BpVO_kw
+Code Cast         
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCVHICXXtKG7rZgtC5xonNdQ
+Howard Abrams     
+
+
+** house stuff                                                         :home:
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCaWR_UvszqJ0xIJYXcep3_w
+The unplugged woodshop
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UC8oVoLGDj2spRfZfxgf54tw
+Ana White                                   
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCtDJnIWe9mNEjMp5WCgjhqw
+inthewoodshop                               
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCP2vaEZS8MvZrFklwBtW1GA
+Home Repair Tutor                           
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCUtWNBWbFL9We-cdXkiAuJA
+This Old House                              
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCKp44bWWZIiOPShPN_ytShw
+The Wood Whisperer                          
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCt1ySOwzjjaepu7VWMtxlgw
+Jordan Crawford - JordsWoodShop             
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCyj433KMI3kneEqalW-xrZg
+FIX IT Home Improvement Channel             
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCpJ1vJPFqImom-NN2fkBS0A
+HouseImprovements                           
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCcpWQjpQJ465FYJEx2DuDFA
+Suburban homestead
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCUnFheTbVpASikm0YPb8pSw
+Learn Organic Gardening at GrowingYourGreens
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCc3EpWncNq5QL0QhwUNQb7w
+Paul Sellers                                
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCstwpLSByklww1YojZN-KiQ
+Stumpy Nubs                                 
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCBB7sYb14uBtk8UqSQYc9-w
+Steve Ramsey                                
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCaWR_UvszqJ0xIJYXcep3_w
+Tom Fidgen                                  
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCuURBvPUoh_ghXT86FXtIRQ
+Adam Collins                                
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCVGVbOl6F5rGF4wSYS6Y5yQ
+MIgardener
+
+** motor stuff                                                        :motor:
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCbfMaqMIzcQrmXqIs6H_nbA
+generalOne
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UCes1EvRjcKU4sY_UEavndBw
+ChrisFix 
+*** https://www.youtube.com/feeds/videos.xml?channel_id=UC6MEb54vwjicHs7L39sS4hA
+donyboy73
+
+** finance                                                          :finance:
+*** http://canadiancouchpotato.com/feed/
+canadian couch potato
+
+* Pods
+
+* TODOS
+
