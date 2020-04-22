@@ -1,0 +1,10 @@
+#+TITLE: design patterns
+
+Various kind of design patterns:
+
+1. GOF
+   1. creational
+   2. behavioral
+   3. ???
+2. Integration design patterns
+3. Application design patterns
