@@ -1,1 +1,3 @@
 #+TITLE: information technology
+
+tags: [[file:areas.org][R:Areas]]

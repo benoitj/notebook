@@ -1,5 +1,3 @@
 #+TITLE: Areas
 
-* [[file:20200224073451_family.org][R:family]]
-* [[file:20200228101727_programming.org][R:programming]]
-* [[file:20200418155222_information_technology.org][R:information technology]]
+Areas are subject I need to constantly work on. They may generate projects.
