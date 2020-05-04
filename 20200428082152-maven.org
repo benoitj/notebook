@@ -1,0 +1,50 @@
+#+TITLE: maven
+
+[[file:20200228101727_programming.org][R:programming]]
+
+* Description
+
+* How to
+** TODO basic setup
+** TODO release my code
+** TODO publish artifacts
+** TODO split my work in classifiers
+** TODO use profiles to turn on/off parts of the build during CI
+** TODO pitest
+** TODO aggregate jacoco reports
+** TODO javadoc handling
+** update versions of all dependencies
+Use the plugin [[https://www.mojohaus.org/versions-maven-plugin/][Versions Maven Plugin]] to update automatically your versions.
+
+*** Configuration
+
+important configuration is to apply ignore rules to skip versions beta, RC, and the like.
+
+This is done using [[https://www.mojohaus.org/versions-maven-plugin/version-rules.html][Version number rules]] files.
+
+Here is an example of such rule file:
+#+BEGIN_SRC xml
+<ruleset comparisonMethod="maven"
+         xmlns="http://mojo.codehaus.org/versions-maven-plugin/rule/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://mojo.codehaus.org/versions-maven-plugin/rule/2.0.0 http://mojo.codehaus.org/versions-maven-plugin/xsd/rule-2.0.0.xsd">
+  <rules>
+    <rule groupId="*" comparisonMethod="maven">
+      <ignoreVersions>
+        <ignoreVersion type="regex">.*-beta</ignoreVersion>
+        <ignoreVersion type="regex">.*RC\d*</ignoreVersion>
+        <ignoreVersion type="regex">.*rc\d*</ignoreVersion>
+        <ignoreVersion type="regex">.*M\d*</ignoreVersion>
+      </ignoreVersions>
+    </rule>
+  </rules>
+</ruleset>
+#+END_SRC
+
+Its a good practice to ignore certain updates.
+
+
+*** How to run
+then run the command:
+#+BEGIN_SRC bash
+mvn org.codehaus.mojo:versions-maven-plugin:use-latest-versions
+#+END_SRC

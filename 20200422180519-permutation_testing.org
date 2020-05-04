@@ -1,7 +1,5 @@
 #+TITLE: permutation testing
 
-tags: [[file:20200228101727_programming.org][R:programming]]
-
 * Test automation
 
 Automated tests are used to prove certain scenarios are working as expected.
