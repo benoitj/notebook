@@ -1,0 +1,7 @@
+#+TITLE: chess
+
+[[file:20200603204252-games.org][R:games]]
+
+* Play chess online
+
+[[https://lichess.org/][lichess.org • Free Online Chess]]

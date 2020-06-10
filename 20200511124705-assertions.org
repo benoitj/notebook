@@ -1,0 +1,30 @@
+#+TITLE: assertions
+
+[[file:20200511092514-java.org][R:java]] [[file:20200228101727_programming.org][R:programming]]
+
+* TODO assertj
+Fluent assertion library
+
+assertion uses equals / hashcode methods to assert, but uses toString to render assertion errors.
+
+This offers nice diff in IDEs
+
+* TODO enhancements
+
+** better string representations
+
+its possible to override the string representation of objects.
+
+
+
+* alternatives - hamcrest
+
+really popular alternative is hamcrest (larger userbase)
+
+quite similar to assertj with extensive list of assertions, at the same time different as it follows junit assertions instead of being fluent.
+
+#+BEGIN_SRC java
+assertThat(something, isEquals(anotherThing));
+#+END_SRC
+
+does not provide fluent assertions

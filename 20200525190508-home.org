@@ -1,0 +1,3 @@
+#+TITLE: home
+
+[[file:areas.org][R:Areas]]

@@ -1,6 +1,6 @@
 #+TITLE: peer review vs code review
 
-[[file:20200228101727_programming.org][R:programming]]
+[[file:20200228101727_programming.org][R:programming]] [[file:20200504114445-dev_practices.org][R:dev practices]]
 
 * Code review
 

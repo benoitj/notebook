@@ -6,19 +6,202 @@
 
 * How to
 ** TODO basic setup
-** TODO release my code
-** TODO publish artifacts
+here we put config files, structure, properties
+** TODO static code analysis
 ** TODO split my work in classifiers
+*** prepare pom for publishing
+the default pom has both too many things, at the same time, is not the effective pom.
+**** start by generating effective pom
+The plugin maven-help-plugin to generate the effective pom.
+
+Example config:
+#+BEGIN_SRC xml
+<?xml version="1.0" encoding="utf-8"?>
+
+<project>
+<build>
+  <plugins>
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-help-plugin</artifactId>
+      <version>3.2.0</version>
+      <configuration>
+        <minimal>true</minimal>
+      </configuration>
+      <executions>
+        <execution>
+          <id>generate-effective-pom</id>
+          <goals>
+            <goal>effective-pom</goal>
+          </goals>
+          <phase>generate-resources</phase>
+          <configuration>
+            <output>${project.build.directory}/effective-pom/${project.artifactId}-${project.version}</output>
+          </configuration>
+        </execution>
+      </executions>
+    </plugin>
+  </plugins>
+</build>
+</project>
+#+END_SRC
+**** filter junk out of the effective pom
+
+all you need then is to use xslt to remove unwanted stuff from the pom.
+
+codehaus has the xml-maven-plugin to apply xsl transformation.
+
+#+BEGIN_SRC xml
+<?xml version="1.0" encoding="utf-8"?>
+
+<project>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>xml-maven-plugin</artifactId>
+        <version>1.0.2</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>transform</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <transformationSets>
+            <transformationSet>
+              <dir>${project.build.directory}/effective-pom</dir>
+              <stylesheet>${project.basedir}/clean-pom.xml</stylesheet>
+              <outputDir>${project.build.directory}/pom</outputDir>
+            </transformationSet>
+          </transformationSets>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+#+END_SRC
+
+the transformation file:
+
+#+BEGIN_SRC xml :file clean-pom.xml
+<?xml version="1.0" encoding="utf-8"?>
+
+<xsl:transform
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:xsi="http://www.w3.org/20001/XMLSchema-instance"
+    version="1.0">
+
+  <xsl:output omit-xml-declaration="no" indent="yes"/>
+  <xsl:strip-space elements="*"/>
+  <xsl:param name="renameElementsNamed"
+          select="'|project/parent|project/build|project/licenses|project/properties|project/dependencyManagement|project/url|project/distributionManagement|project/repositories|project/pluginRepositories|project/reporting|'"/>
+
+  <xsl:template match="node()|@*" name="identity">
+    <xsl:copy>
+      <xsl:apply-templates select="node()|@*"/>
+    </xsl:copy>
+  </xsl:template>
+
+  <xsl:template match="*">
+    <xsl:if test="not(contains($removeElementsNamed, concat('|', name(parent::*), '/', name(), '|')))">
+      <xsl:call-template name="identity"/>
+    </xsl:if>
+  </xsl:template>
+</xsl:transform>
+#+END_SRC
+*** TODO javadoc handling
+*** TODO source handling
+The plugin maven-source-plugin can generate source jars
+
+#+BEGIN_SRC xml
+<?xml version="1.0" encoding="utf-8"?>
+
+<project>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>3.2.0</version>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+#+END_SRC
+*** TODO setup classifiers
+
+You need to configure the maven-jar-plugin for new classifiers
+
+#+BEGIN_SRC xml
+<?xml version="1.0" encoding="utf-8"?>
+
+<project>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.1.0</version>
+        <executions>
+          <execution>
+            <id>pom</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+            <phase>package</phase>
+            <configuration>
+              <classifier>pom</classifier>
+              <classesDirectory>${project.build.directory}/pom</classesDirectory>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+
+#+END_SRC
+
+** TODO publish artifacts
+** TODO release my code
 ** TODO use profiles to turn on/off parts of the build during CI
 ** TODO pitest
 ** TODO aggregate jacoco reports
-** TODO javadoc handling
 ** update versions of all dependencies
 Use the plugin [[https://www.mojohaus.org/versions-maven-plugin/][Versions Maven Plugin]] to update automatically your versions.
 
 *** Configuration
 
 important configuration is to apply ignore rules to skip versions beta, RC, and the like.
+
+#+BEGIN_SRC xml
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>versions-maven-plugin</artifactId>
+        <version>2.7</version>
+        <configuration>
+          <allowMajorUpdates>true</allowMajorUpdates>
+          <rulesUri>file://${project.basedir}/maven-version-rules.xml</rulesUri>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+#+END_SRC
 
 This is done using [[https://www.mojohaus.org/versions-maven-plugin/version-rules.html][Version number rules]] files.
 

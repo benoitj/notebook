@@ -1,0 +1,98 @@
+#+TITLE: dell r410 configuration
+
+[[file:20200507124745-homelab.org][R:homelab]]
+
+* control fan speed
+
+by default, the lowest speed at idle is 60% on dell rack servers.
+
+This is controlled by the bios automatic fan control.
+
+there are ways to turn off automatic fan control and set a lower default speed.
+
+** get all sensors speed
+
+#+BEGIN_SRC shell
+ipmitool -I open -U root sdr type  full
+#+END_SRC
+
+#+RESULTS:
+| Temp           | disabled     | ns |
+| Temp           | disabled     | ns |
+| Temp           | disabled     | ns |
+| Temp           | disabled     | ns |
+| Ambient Temp   | disabled     | ns |
+| Ambient Temp   | disabled     | ns |
+| Temp           | disabled     | ns |
+| Temp           | disabled     | ns |
+| Temp           | disabled     | ns |
+| Ambient Temp   | 23 degrees C | ok |
+| Planar Temp    | disabled     | ns |
+| FAN MOD 1A RPM | 3600 RPM     | ok |
+| FAN MOD 1B RPM | 2520 RPM     | ok |
+| FAN MOD 2A RPM | 3480 RPM     | ok |
+| FAN MOD 2B RPM | 2520 RPM     | ok |
+| FAN MOD 3A RPM | 3600 RPM     | ok |
+| FAN MOD 3B RPM | 2520 RPM     | ok |
+| FAN MOD 4A RPM | 3480 RPM     | ok |
+| FAN MOD 4B RPM | 2520 RPM     | ok |
+| FAN MOD 5A RPM | 3600 RPM     | ok |
+| FAN MOD 5B RPM | 2520 RPM     | ok |
+| FAN MOD 6A RPM | 3600 RPM     | ok |
+| FAN MOD 6B RPM | 2520 RPM     | ok |
+| Current        | 0.48 Amps    | ok |
+| Current        | no reading   | ns |
+| Voltage        | 122 Volts    | ok |
+| Voltage        | no reading   | ns |
+| System Level   | 70 Watts     | ok |
+
+The most interesting data elements here are /FAN MOD [1-6][A-B] RPM/ and /Ambient Temp/.
+
+** turn on/off auto fan control
+
+Set the last part of the following command to 0x00 to turn off auto fan control, and 0x01 to turn it back on.
+
+#+BEGIN_SRC shell
+ipmitool -I open -U root raw 0x30 0x30 0x01 0x00
+#+END_SRC
+
+#+RESULTS:
+
+** turn fans speed to x%
+
+When auto fan control is turned off, you can set a specific fan speed.
+
+the command is /ipmitool -H open -U root raw 0x30 0x30 0x02 0xff <percent in hex>/
+
+The /percent in hex/ represent the fanspeed percentage in hexadecimal. 0x14 is 20%. 0x20 is 32%.
+
+#+BEGIN_SRC shell
+# set speed to %20
+ipmitool -I open -U root raw 0x30 0x30 0x02 0xff 0x14
+#+END_SRC
+
+#+RESULTS:
+
+
+** TODO turn on/off based on temperature
+An idea would be to monitor ambiant temperature and turn on auto fan control if temp is above a treashold
+
+** IPMI interfaces
+
+*** local interface
+
+On the server directly, it's possible to run without a remote interface.
+
+Use the /-I open/ to connect using the local server interface. You may need to load a driver if it does not work.
+
+*** remote interface
+
+go to the idrac console and enable the remote ipmi control.
+
+After that, use the options /-I lanplus -H <ip or domain>/
+
+** use a remote interface for IPMI
+
+go to the idrac console and enable the remote ipmi control.
+
+After that, use the options /-I lanplus -H <ip or domain>/

@@ -1,0 +1,37 @@
+#+TITLE: blogging
+
+[[file:20200418155222_information_technology.org][R:information technology]] [[file:20200521230917-learning.org][R:learning]]
+
+* ideas
+** blogging?
+** confinement a blessing?
+** C4diagrams
+** architecture document arch47??
+** home IT
+*** network / server setup upgrade
+*** de-googling
+*** freenas and backup strategy
+** integration
+** tooling
+*** keyboards
+*** ADS
+**** ADS for java projects?
+**** access ADS with curl
+**** syncing delay for proxy
+*** emacs
+**** doom
+**** lsp java
+**** note taking with org-roam
+** coding
+*** foss contribution
+*** effective testing
+*** approval testing
+*** assertj vs traditional assertion libraries
+* blogging sites
+
+- [[https://100daystooffload.com/][100 Days To Offload]] : idea to blog 100 times a year (twice a week).
+* using hugo
+
+** useful links
+
+- [[https://zwbetz.com/make-a-hugo-blog-from-scratch/][Make a Hugo blog from scratch | zwbetz]]
