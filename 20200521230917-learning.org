@@ -1,3 +1,7 @@
-#+TITLE: learning
+#+TITLE: @learning
 
 [[file:areas.org][R:Areas]]
+
+
+* learning sites
+** https://learnawesome.org/

@@ -1,6 +1,6 @@
 #+TITLE: approval assertions
 
-[[file:20200511092514-java.org][R:java]] [[file:20200228101727_programming.org][R:programming]]
+[[file:20200511092514-java.org][R:java]] [[file:20200228101727_programming.org][R:programming]] [[file:20200511124705-assertions.org][R:assertions]]
 
 * Concept
 

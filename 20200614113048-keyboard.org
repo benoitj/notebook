@@ -1,0 +1,9 @@
+#+title: keyboard
+
+[[file:20200610195512-electronics.org][R:electronics]] [[file:20200603205936-software.org][R:software]]
+
+
+
+* Software keyboards or related input devices
+
+- software keyboard based on blow and dictionary: [[http://www.inference.org.uk/dasher/][Inference Group: Dasher Project: Home]]

@@ -22,7 +22,34 @@
 
 ** CLI
 
+*** password manager
+**** pass
+https://honza.ca/2019/12/password-management-for-a-more-civilized-age/
+
+
 ** GUI
+
+*** audio
+- audacity: audio editing
+- Guitarix: virtual guitar amplifier. adds effects
+- Smart mix player: auto DJ player. mix like a real DJ, not just at the end of tracks
+- cecilia: signal processing. sound designer tool
+- Rosegarden: music composing/editing
+- Musescore: Music sheet create, print, play on midi
+- LMMS: Lets make music, create music on your pc
+- Ardour: Midi mixing
+- Qtractor: Audio/midi track sequencing
+- Aria Maestosa: midi sequencer and editor
+- MusE: Midi and audio sequencer
+- Mixxx: DJ mixing app
+- Hydrogen drum machine: drum sampler
+
+
+
+
+
+
+
 
 ** web apps
 

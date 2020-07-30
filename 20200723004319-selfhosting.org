@@ -1,0 +1,29 @@
+#+title: selfhosting software
+
+[[file:20200507124745-homelab.org][R:@homelab]]
+
+* Chat, video conference, collaboration
+
+AlternativesTo :: zoom, webex, slack, ms teams, skype
+
+** jitsi meet
+** nextcloud talk
+** Jami
+** matrix / riot
+** xmpp
+** irc
+
+* Web servers, proxies
+** Traefik
+** Caddie
+https://p1ngouin.com/posts/why-i-migrated-from-traefik-to-caddy
+
+* Monitoring
+** Influx, CollectD, Graphana
+see this acticle: https://serhack.me/articles/monitoring-infrastructure-grafana-influxdb-connectd/
+
+* Name servers / registrar
+** dns
+https://www.youtube.com/watch?v=2oe0_v5M8cE
+** namecheap
+** cloudflare

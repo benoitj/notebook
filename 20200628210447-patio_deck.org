@@ -1,0 +1,6 @@
+#+title: patio-deck
+
+[[file:20200525190508-home.org][R:home]]
+
+* rails
+https://www.centuryrailings.com
