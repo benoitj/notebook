@@ -1,0 +1,12 @@
+#+title: email client
+
+* indexer
+** Notmuch
+:PROPERTIES:
+:ID:       bf947c17-93b0-4d2e-941b-6da57f75bcf0
+:END:
+** mu
+
+* articles
+https://lukespear.co.uk/mutt-multiple-accounts-mbsync-notmuch-gpg-and-sub-minute-updates/
+https://copyninja.info/blog/email_setup.html

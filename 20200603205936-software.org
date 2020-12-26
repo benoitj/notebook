@@ -1,6 +1,6 @@
 #+TITLE: software
 
-[[file:20200418155222_information_technology.org][R:information technology]]
+[[file:20200418155222_homeit.org][R:information technology]]
 
 * switching software
 
@@ -12,20 +12,53 @@
 ** TUI
 
 *** system
-- disk usage: ncdu
-- task manager: htop or htop-vim
-- task manager: gtop
-- task manager: vtop
-- system overview: glances
-- network monitor: bmon
-
+**** disk usage: ncdu
+**** task manager: htop or htop-vim
+**** task manager: gtop
+**** task manager: vtop
+**** system overview: glances
+**** network monitor: bmon
+*** internet
+**** buku: bookmark manager
 
 ** CLI
-
 *** password manager
 **** pass
 https://honza.ca/2019/12/password-management-for-a-more-civilized-age/
 
+*** audio
+**** voice synth
+espeak
+*** video
+**** ffmpeg: video/audio converter
+*** Image
+**** imagemagik: image manipulation
+**** chafa: convert images to ansi image
+*** text manipulation
+**** awk: line pattern / action program
+https://ferd.ca/awk-in-20-minutes.html
+**** column: create text in columns from list
+***** example:
+#+BEGIN_SRC shell
+sed 's/#.*//' /etc/fstab | column --table --table-columns SOURCE,TARGET,TYPE,OPTIONS,PASS,FREQ --table-right PASS,FREQ
+#+END_SRC
+**** cut: delete columns/fields from text
+**** jq: json parser
+**** paste: merge 2 text files by placing content side by side
+**** sed: cli editor
+    -i: edit the input file in place
+    -e <expression>: regex expression
+**** sort: sort text
+    -u: also add unique
+    -n: sort numbers
+    -V: sort semantic versions
+    -r: reverse sort
+    -b: ignore leading blanks
+    -f: ignore case
+    -m: merge sorted files
+    -z: 0 based delimiter
+**** tail: returns tails of a file
+    -n <number>: returns n number of lines
 
 ** GUI
 
@@ -43,13 +76,13 @@ https://honza.ca/2019/12/password-management-for-a-more-civilized-age/
 - MusE: Midi and audio sequencer
 - Mixxx: DJ mixing app
 - Hydrogen drum machine: drum sampler
-
-
-
-
-
-
-
+*** Documents
+**** Zathura: vim like pdf viewer
+*** Image
+**** sxiv: vim like image viewer
+**** feh: simple image viewer
+*** system
+**** unclutter-xfixes: hide mouse when not used
 
 ** web apps
 

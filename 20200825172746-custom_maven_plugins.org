@@ -1,0 +1,25 @@
+#+title: custom maven plugins
+
+[[file:20200729223631-maven_plugins.org][R:maven plugins]]
+
+* Why
+In your work you may need to tweak the build. This can be easily done with a custom plugin.
+
+many people try to avoid it, but it's fairly trivial.
+
+* how
+
+couple of key items:
+
+ 1. set packaging to maven-plugin in your pom.xml
+ 2. create a Mojo class with the @Mojo annotation. this is your entrypoint. look at the documentation for details
+    1. this gives you access to parameters, and the project pom model
+
+* best practices / pitfals
+
+
+1. implement everything in pojos / services to enable unit testing
+2. use JimFS to implement unit tests using in memory file systems
+3. use java.nio file operations to allow JimFS usage
+4. Mojo file should have barely no code, except one call to the service
+* TODO useful libraries for file manipulation and classpath lookup

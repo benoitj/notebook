@@ -27,14 +27,11 @@ assertThat(something, isEquals(anotherThing));
 
 does not provide fluent assertions
 
-
 * Equals and Hashcode assertions
-
 Assert any equals method meet requirements using:
 https://jqno.nl/equalsverifier/
 
 * JSONAssert
-
 Assert required information within a JSON payload.
 
 http://jsonassert.skyscreamer.org/
@@ -45,3 +42,17 @@ JSONObject data = getRESTData("/friends/367.json");
 String expected = "{friends:[{id:123,name:\"Corby Page\"},{id:456,name:\"Carter Page\"}]}";
 JSONAssert.assertEquals(expected, data, false);
 #+END_SRC
+
+* JSONSchema validation
+
+* test architecture
+:PROPERTIES:
+:ID:       f6109c15-c60d-4d1f-967b-06f886b7305e
+:END:
+
+https://archunit.org
+
+cool tool to test various architecture elements like:
+1. dependencies
+2. model
+3. use of lumbok

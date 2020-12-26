@@ -1,0 +1,17 @@
+#+title: git
+
+* Config
+** IntelliJ, cli, and Azure DevOps
+for all features to work, you need to clone the https repo, but flip to ssh on CLI
+
+snippet of doing this in .gitconfig
+
+#+BEGIN_SRC ini :file .gitconfig :noeval
+[url "git@ssh.dev.azure.com:v3/<ORG>/<PROJ>"]
+    insteadOf = https://some-ads-url/<ORG>/<PROJ>/_git
+#+END_SRC
+
+* Analytics
+
+** [[https://github.com/adamtornhill/code-maat][code-maat]]: perform analytics measurements using git
+** [[https://github.com/ag91/code-compass][code-compass]]: emacs plugin to view code-maat output

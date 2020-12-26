@@ -1,3 +1,3 @@
-#+TITLE: productivity
+#+TITLE: #productivity
 
 - related :: [[file:areas.org][R:Areas]]

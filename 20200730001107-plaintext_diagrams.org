@@ -1,0 +1,61 @@
+#+title: plaintext diagrams
+
+[[file:20200228101727_programming.org][R:@programming]] [[file:20200801114556-plaintext.org][R:plaintext]]
+
+* Sequence diagrams
+
+** Plantuml
+
+#+BEGIN_SRC plantuml :file plantuml-seq.png
+actor John
+participant webpage
+participant server
+database database
+John -> webpage: get profile page
+webpage -> server: fetch profile info
+server -> database: find profile info
+server <-- database: profile record
+webpage <-- server: profile info
+John <-- webpage: profile page
+#+END_SRC
+
+#+RESULTS:
+[[file:plantuml-seq.png]]
+
+
+** Mermaid
+
+#+BEGIN_SRC mermaid :file mermaid-seq.png
+
+sequenceDiagram
+  John ->> webpage: get profile page
+  webpage ->> server: fetch profile info
+  server ->> database: find profile info
+  database -->> server: profile record
+  server -->> webpage: profile info
+  webpage -->> John: profile page
+#+END_SRC
+
+#+RESULTS:
+[[file:mermaid-seq.png]]
+
+** seqdiag
+
+#+BEGIN_SRC bash
+seqdiag -o seqdiag-seq.png - <<EOT
+seqdiag {
+  browser  -> webserver [label = "GET /index.html"];
+  browser <-- webserver;
+  browser  -> webserver [label = "POST /blog/comment"];
+              webserver  -> database [label = "INSERT comment"];
+              webserver <-- database;
+  browser <-- webserver;
+}
+EOT
+#+END_SRC
+
+#+RESULTS:
+
+[[file:seqdiag-seq.png]]
+
+#+RESULTS:

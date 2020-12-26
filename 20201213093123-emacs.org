@@ -1,0 +1,33 @@
+#+title: emacs
+
+[[file:20200603205936-software.org][R:software]]
+
+* Interesting plugins not yet used
+** subed: major mode to edit subtitles
+** mpv.el: control mpv for easy note taking
+Allows to pause, kill, seek forward/back, slow/speed up, seek at specific position
+
+* configuration examples / blogs
+** https://pizza.eli.li/wiki/emacs-config/
+** david wilson's emacs from scratch: https://github.com/daviwil/emacs-from-scratch
+** faster emacs: http://www.nextpoint.se/?p=830
+** emacs dotfile to setup evil: https://github.com/toyboot4e/evil-emacs-2020
+** posframe + whichkey: https://cloudnine.github.io/science/2020-02-17-emacs-posframe-which-key/
+** popup buffers: https://github.com/karthink/popup-buffers
+* org-mode
+** org-roam
+*** hydra
+https://takeonrules.com/2020/12/06/adding-hydra-menu-for-org-roam-lookup-in-emacs/
+** org-transclusion
+include fragments of other files by reference
+https://www.youtube.com/watch?v=nXQXLz-rsDk&feature=share
+** org-links
+*** human readible ids
+https://zzamboni.org/post/how-to-easily-create-and-use-human-readable-ids-in-org-mode-and-doom-emacs/
+https://writequit.org/articles/emacs-org-mode-generate-ids.html
+** CV
+*** org-cv: https://titan-c.gitlab.io/org-cv/
+*** org-mode-resume: https://www.aidanscannell.com/post/org-mode-resume/
+** org-publish
+*** website: https://www.huxiaoxing.com/building-a-website-with-org-mode-files
+** org with icons: https://www.reddit.com/r/emacs/comments/hnf3cw/my_orgmode_agenda_much_better_now_with_category/

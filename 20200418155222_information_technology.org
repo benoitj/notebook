@@ -1,3 +1,0 @@
-#+TITLE: @information technology
-
-[[file:areas.org][R:Areas]]

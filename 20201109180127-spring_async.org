@@ -1,0 +1,115 @@
+#+title: spring async
+
+* @Async annotation. what is it?
+
+you can turn methods in a thread pool using the @Async spring annotation
+
+* how to configure
+
+#+BEGIN_SRC java :file MyAsyncConfiguration.java :noeval
+@EnableAsync
+public class MyAsyncConfiguration {
+
+    public Executor createExecutor() {
+        ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
+        executor.setCorePollSize(2);
+        executor.setMaxPoolSize(2);
+        executor.setQueueCapacity(500);
+        executor.setThreadNamePrefix("some-thread-prefix");
+        executor.initialize();
+
+        return executor;
+    }
+
+#+END_SRC
+
+* Threading and Logging
+
+when using slf4j, MDC values are lost in the thread since these values are thread local. Here is a strategy to propagate MDC values.
+
+
+** create a custom thread pool executor
+
+#+BEGIN_SRC java :file LoggingAwareThreadPoolTaskExecutor.java :noeval
+// Adapter class over ThreadPoolTaskExecutor that wraps Runnable and Callable with versions that propagates MDC
+public class LoggingAwareThreadPoolTaskExecutor extends ThreadPoolTaskExecutor {
+
+    @Override
+    public void execute(final Runnable task) {
+        super.execute(new RunnableWrapper(task));
+    }
+
+    // ...
+
+    @Override
+    public <T> ListenableFuture<T> submitListenable(final Callable<T> task) {
+        return super.submitListenable(new CallableWrapper<>(task));
+    }
+
+    // ...
+
+}
+#+END_SRC
+
+** implement wrappers
+:PROPERTIES:
+:ID:       bf52561c-bb96-4865-8507-e0f1bf03a8a4
+:END:
+
+#+BEGIN_SRC java :file RunnableWrapper.java :noeval
+class RunnableWrapper implements Runnable {
+    private final Runnable runnable;
+    private final Map<String, String> mdcContextMap;
+    private final Logger logger;
+
+
+    RunnableWrapper(final Runnable runnable) {
+        this.runnable = runnable;
+        this.mdcContextMap = MDC.getCopyOfContextMap();
+        this.logger = LoggerFactory.getLogger(callable.getClass());
+    }
+
+    @Override
+    public void run() {
+        MDC.setContextMap(mdcContextMap);
+        try {
+            runnable.run();
+        } catch (Throable throwable) {
+            // logg
+            throw throwable;
+        } finaly {
+            // remove stuff in this thread that are no longer valid
+            MDC.clear();
+        }
+    }
+}
+#+END_SRC
+
+#+BEGIN_SRC java :file CallableWrapper.java :noeval
+class CallableWrapper<ReturnedT> implements Callable<ReturnedT> {
+    private final Callable<ReturnedT> callable;
+    private final Map<String, String> mdcContextMap;
+    private final Logger logger;
+
+
+    CallableWrapper(final Callable<ReturnedT> callable) {
+        this.callable = callable;
+        this.mdcContextMap = MDC.getCopyOfContextMap();
+        this.logger = LoggerFactory.getLogger(callable.getClass());
+    }
+
+    @Override
+    public ReturnedT call() throws Exception {
+        MDC.setContextMap(mdcContextMap);
+        try {
+            return callable.call();
+        } catch (Throable throwable) {
+            // logg
+            throw throwable;
+        } finaly {
+            // remove stuff in this thread that are no longer valid
+            MDC.clear();
+        }
+    }
+}
+#+END_SRC

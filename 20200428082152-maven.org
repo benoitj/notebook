@@ -2,8 +2,6 @@
 
 [[file:20200228101727_programming.org][R:programming]]
 
-* Description
-
 * How to
 ** basic setup
 here we put config files, structure, properties
@@ -49,6 +47,7 @@ Example config:
 </build>
 </project>
 #+END_SRC
+
 **** filter junk out of the effective pom
 
 all you need then is to use xslt to remove unwanted stuff from the pom.
@@ -146,7 +145,7 @@ The plugin maven-source-plugin can generate source jars
   </build>
 </project>
 #+END_SRC
-*** generate custom jars with classifiers
+** generate custom jars with classifiers
 
 Can be useful to generate pom jars, javadoc jars, documentation jars
 
@@ -182,62 +181,106 @@ You need to configure the maven-jar-plugin for new classifiers
 
 #+END_SRC
 
-** TODO releasing/publishing artifacts
+** releasing/publishing artifacts
+Using the release [[file:20200729223631-maven_plugins.org][R:maven plugins]]
+*** setup
+
+in your pom.xml. setup the plugin
+#+BEGIN_SRC xml
+<?xml version="1.0" encoding="utf-8"?>
+
+<project>
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-release-plugin</artifactId>
+          <version>2.5.3</version>
+          <configuration>
+            <tagNameFormat>@{project.version}</tagNameFormat>
+            <autoVersionSubmodules>true</autoVersionSubmodules>
+            <dryRun>false</dryRun>
+            <pushChanges>false</pushChanges>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
+  <scm>
+    <connection>scm:git:git@something/some/path/to/repo</connection>
+    <developerConnection>scm:git:git@something/some/path/to/repo</developerConnection>
+    <url>site-url</url>
+    <tag>HEAD</tag>
+  </scm>
+</project>
+#+END_SRC
+
+*** when done on master
+
+A typical release on master involve these steps:
+
+ 1. update master with the next development version to MINOR+1
+ 2. create a release branch with MAJOR.MINOR in its name
+ 3. push changes on master to remote
+ 4. checkout the release branch
+ 5. change pom version to release version
+ 6. tag with the release version
+ 7. change pom to next release version (FIX+1)
+ 8. push changes made to the release branch
+ 9. push the tag
+
+**** Current version in pom
+#+BEGIN_SRC bash
+VERSION=$(mvn -q -f pom.xml help:evaluate -Dexpression=project.version -DforceStdout)
+#+END_SRC
+
+**** release version by removing -SNAPSHOT to the version
+#+BEGIN_SRC bash
+RELEASE_VERSION=${VERSION%"-SNAPSHOT"}
+#+END_SRC
+
+**** get major minor version (many ways to get this)
+#+BEGIN_SRC bash
+IFS='.' read -ra PART <<< "$VERSION"
+MAJOR_MINOR_VERSION="${PART[0]}.${PART[1]}"
+#+END_SRC
+
+**** find current branch
+#+BEGIN_SRC bash
+CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+#+END_SRC
+
+**** Steps 1-4 can be achieved with the maven command:
+build-settings.xml has the /release/ maven profile
+
+#+BEGIN_SRC bash
+mvn -Prelease release:branch -DbranchName="$RELEASE_BRANCH" -DdevelopmentVersion="$NEXT_DEVELOPMENT_VERSION" --settings $(pwd)/build-settings.xml && \
+    git pull -r && git push origin master:master && git checkout "$RELEASE_BRANCH"
+#+END_SRC
+
+**** Steps 5-7 can be achieved with the maven command:
+#+BEGIN_SRC bash
+mvn -Prelease release:prepare --settings $(pwd)/build-settings.xml
+#+END_SRC
+
+*** when done on release branch
+
+Same as the last steps of releasing on master:
+
+ 1. change pom version to release version
+ 2. tag with the release version
+ 3. change pom to next release version (FIX+1)
+ 4. push changes made to the release branch
+ 5. push the tag
+
 ** use profiles to turn on/off parts of the build during CI
 one strategy is to set "skipX" properties and enable/disable them based on the profile
 ** aggregate jacoco reports
-Make sure you have a coverage jar for each modules. then on the "coverage" module, fetch/unzip in target and run coverage report. Also requires sources.
+Make sure you have a coverage jar for each modules. then on the "coverage" project, fetch/unzip in target and run coverage report. Also requires sources.
+** generate model code from schema
+use jolt library to transform a json-schema and prep it for jsonschema to pojo plugin. Jolt does not have a maven plugin though.
 ** aggregated javadoc
 1. get all modules/sub-modules to generate source jar
 2. in a project, download all source jars, unpack in a folder, than trigger the javadoc plugin to generate.
-** TODO generate model code from schema
-** TODO Unzip files from jars
-
-* Useful plugins
-
-|-----------------------+---------------------------------+-------------------------------------------------------------------------------------------|
-| Plugin                | Description                     | implementation details                                                                    |
-|-----------------------+---------------------------------+-------------------------------------------------------------------------------------------|
-| [[https://www.mojohaus.org/versions-maven-plugin/][versions-maven-plugin]] | update version of dependencies. | good to setup ignore on beta, RC, rc, M version. Just need to setup ignoreVersion regex   |
-|                       | codehaus.mojo project           | Note: you need to use real versions and not properties for the plugin to work.            |
-|-----------------------+---------------------------------+-------------------------------------------------------------------------------------------|
-| maven-help-plugin     | maven pom related tasks         | use the effective-pom to get the effective pom from the project                           |
-|-----------------------+---------------------------------+-------------------------------------------------------------------------------------------|
-| xmlm-maven-plugin     | run xsl transformation          |                                                                                           |
-|                       | codehaus.org project            |                                                                                           |
-|-----------------------+---------------------------------+-------------------------------------------------------------------------------------------|
-| maven-source-plugin   | generate source jars            | attach to jar goal                                                                        |
-|-----------------------+---------------------------------+-------------------------------------------------------------------------------------------|
-| maven-javadoc-plugin  | generate javadoc html           |                                                                                           |
-|-----------------------+---------------------------------+-------------------------------------------------------------------------------------------|
-| maven-jar-plugin      | create jars                     | you can create custom classifiers (like pom or coverage-reports)                          |
-|                       |                                 | you can also create new manifest entries like build number                                |
-|-----------------------+---------------------------------+-------------------------------------------------------------------------------------------|
-| maven-surefire-plugin | run unit tests                  |                                                                                           |
-|-----------------------+---------------------------------+-------------------------------------------------------------------------------------------|
-| maven-failsafe-plugin | run integration tests           | good practice to match IntegrationTest instead of IT                                      |
-|-----------------------+---------------------------------+-------------------------------------------------------------------------------------------|
-| jacoco-maven-plugin   | generate coverage reports       | prepare-agent:                                                                            |
-|                       |                                 | create different execution configuration for failsafe/surefiregood practice               |
-|                       |                                 | to set a different destination exec file so it does not overlap                           |
-|                       |                                 | merge:                                                                                    |
-|                       |                                 | then a 3rd execution to merge these exec files to generate a "final" exec                 |
-|                       |                                 | do the same in the aggregated project, merge all jacoco reports jar exec files.           |
-|                       |                                 | report: run to verify output                                                              |
-|                       |                                 | check-coverage: run to fail if lower than X%                                              |
-|-----------------------+---------------------------------+-------------------------------------------------------------------------------------------|
-| maven-git-code-format | install hooks to implement      |                                                                                           |
-| com.cosium.codehaus   | google code formatting          |                                                                                           |
-|-----------------------+---------------------------------+-------------------------------------------------------------------------------------------|
-|-----------------------+---------------------------------+-------------------------------------------------------------------------------------------|
-| pmd                   | Static code analysis            | check and check-cpd goals are to be used to get both pmd checks and copy paste detection  |
-|-----------------------+---------------------------------+-------------------------------------------------------------------------------------------|
-| Spotbugs              | Static code analysys + security | enable plugin findsecbugs-plugin to get security checks                                   |
-|-----------------------+---------------------------------+-------------------------------------------------------------------------------------------|
-| Pitest                | permutation test                | Validates ineffective test suite. needs high coverage. unclear how to make work w/ java11 |
-|-----------------------+---------------------------------+-------------------------------------------------------------------------------------------|
-| Jacoco                | Code coverage reports           |                                                                                           |
-|-----------------------+---------------------------------+-------------------------------------------------------------------------------------------|
-| jolt                  | Transform json to json          | can be used to transform schemas for code generation                                      |
-|-----------------------+---------------------------------+-------------------------------------------------------------------------------------------|
-|                       |                                 |                                                                                           |

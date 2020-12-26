@@ -1,0 +1,3 @@
+#+title: linux
+
+[[file:20200603205936-software.org][R:software]]

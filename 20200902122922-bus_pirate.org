@@ -1,0 +1,75 @@
+#+title: bus pirate
+
+[[file:20200610195512-electronics.org][R:electronics]]
+
+* What is it
+
+* how to read / write a rom chip
+
+** Hardware pinouts
+
+Typical windbound and similar soc8 chips
+
+Pin one is left of the dot, counter clockwize
+
+| Description          | Bus Pirate | Dir. | Flash chip | Flash chip | Flash chip  | Flash chip | Dir. | Bus Pirate | Description                 |
+| (not) Chip Select    | CS         | →    |          1 | /CS        | VCC         |          8 | ←    | +3.3v      | Supply                      |
+| Master In, Slave Out | MISO       | ←    |          2 | DO (IO1)   | /HOLD (IO3) |          7 | ←    | +3.3v      | (not) hold (see datasheets) |
+| (not) Write Protect  | +3.3v      | →    |          3 | /WP (IO2)  | CLK         |          6 | ←    | CLK        | The SPI clock               |
+| Ground               | GND        | →    |          4 | GND        | DI (IO0)    |          5 | ←    | MOSI       | Master Out, Slave In        |
+
+The red wire on the bus pirate clip is pin 1
+
+** Connect to the tty menu
+
+
+
+** firmware version
+
+use the i command in the menu
+
+
+** firmware update
+
+Enter the tty menu, and launch the BOOTLOADER mode by using the $ command.
+
+Use the pirate-loader-lnx to flash the firmware
+
+#+BEGIN_SRC bash
+pirate-loader_lnx --dev=/dev/ttyUSB0 --hex=<firmware.hex>
+#+END_SRC
+
+my current firmware is 7.0 and bootloader 4.4
+
+
+Find firmware here:
+1. [[https://github.com/BusPirate/Bus_Pirate][firmware project]]
+2. [[https://github.com/mikebdp2/Bus_Pirate/tree/master/package_latest/BPv3][firmware hex files]]
+
+** flashrom
+
+*** device id
+
+just use dmesg to find which device id the bus pirate is connected to. usually is /dev/ttyUSB0
+
+*** detect rom model
+#+BEGIN_SRC bash
+flashrom -p buspirate_spi:dev=/dev/ttyUSB0
+#+END_SRC
+
+this should return the model. In the case of the Thinkpad yoga 260, I got a W25Q128.V chip.
+
+*** read rom
+#+BEGIN_SRC bash
+flashrom -p buspirate_spi:dev=/dev/ttyUSB0,spispeed=1M -c <chip model> -r <filename.bin>
+#+END_SRC
+
+To ensure quality of read, always read slow and multiple times comparing each files.
+
+*** write rom
+
+#+BEGIN_SRC bash
+flashrom -p buspirate_spi:dev=/dev/ttyUSB0,spispeed=1M -c <chip model> -w <filename.bin>
+#+END_SRC
+
+make sure you at least read twice with the clip on before writing. Ensures the connections are good.

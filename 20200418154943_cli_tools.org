@@ -1,11 +1,9 @@
 #+TITLE: cli tools
 
-[[file:20200418155222_information_technology.org][R:information technology]]
+[[file:20200418155222_homeit.org][R:information technology]]
 
 * File Metadata
-
-** mediainfo
-**
+** TODO mediainfo
 
 * Music
 ** beets

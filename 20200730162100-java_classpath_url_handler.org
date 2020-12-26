@@ -1,0 +1,7 @@
+#+title: java classpath url handler
+
+[[file:20200511092514-java.org][R:java]]
+
+* URLStreamHandler
+
+you can overide the URLStreamHandler to implement custom url handler.

@@ -1,0 +1,39 @@
+#+title: hibernate
+
+[[file:20200511092514-java.org][R:java]]
+
+* Logging long running queries
+
+Hibernate can log queries that takes more than X ms to execute.
+
+** setup
+
+*** Spring boot
+#+BEGIN_SRC properties :file application.properties
+spring.jpa.properties.hibernate.session.events.log.LOG_QUERIES_SLOWER_THAN_MS=25
+#+END_SRC
+*** Jpa configuration
+
+Instead of Spring boot, could be also done in JPA configuration
+
+#+BEGIN_SRC xml :file persistence.xml
+<?xml version="1.0" encoding="utf-8"?>
+<property
+name="hibernate.session.events.log.LOG_QUERIES_SLOWER_THAN_MS"
+value="25"
+/>
+#+END_SRC
+
+
+*** Logger
+
+the logger name is /org.hibernate.SQL_SLOW/:
+#+BEGIN_SRC xml
+<?xml version="1.0" encoding="utf-8"?>
+<logger name="org.hibernate.SQL_SLOW" level="info"/>
+
+#+END_SRC
+
+
+** see
+https://vladmihalcea.com/hibernate-slow-query-log/

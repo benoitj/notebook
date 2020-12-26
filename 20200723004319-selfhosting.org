@@ -27,3 +27,8 @@ see this acticle: https://serhack.me/articles/monitoring-infrastructure-grafana-
 https://www.youtube.com/watch?v=2oe0_v5M8cE
 ** namecheap
 ** cloudflare
+* Dropbox replacement
+** syncthing
+** nextcloud
+** [[https://www.cis.upenn.edu/~bcpierce/unison/][unison]]
+** rsync

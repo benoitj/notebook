@@ -1,0 +1,8 @@
+#+title: learning antipattern
+
+[[file:20200521230917-learning.org][R:@learning]]
+
+* Too busy to learn
+said by a coder from a client
+
+[[file:20200521230917-learning.org][R:@learning]] is one of the most important aspect of being proficient in a scientific field. It both impact how you will solve a problem, it's quality attributes, and impact time to implement. There are times where you dont need to code something, but for that you need to know (ie: learned something important)

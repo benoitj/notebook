@@ -1,0 +1,3 @@
+#+title: console
+
+[[file:20200610195512-electronics.org][R:electronics]]
