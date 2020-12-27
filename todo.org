@@ -73,8 +73,6 @@ https://lobste.rs/
 ** TODO demander une toile de piet
 http://www.retas.de/thomas/computer/programs/useless/piet/Piet/index.html
 * Inbox
-** TODO write a forge plugin for gitea
-https://codeberg.org/api/swagger
 ** TODO uptimebot vs other infra monitoring
 ** TODO intrusion detection
 fail2ban?
@@ -88,8 +86,3 @@ Ethan Brown
 
 *** head first go
 Jay McGavren
-** TODO create a url finder.
-see https://metacpan.org/source/MSCHWERN/URI-Find-20160806/t%2FFind.t
-for url example.
-
-should also support urls split on multiple lines, where a prefix is added.

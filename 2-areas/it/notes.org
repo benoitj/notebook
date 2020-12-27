@@ -1,0 +1,4 @@
+#+TITLE: Notes
+
+* examples of using org-mode to take notes
+** [[http://doc.norang.ca/org-mode.html#CaptureTemplates][Organize life with org-mode]]

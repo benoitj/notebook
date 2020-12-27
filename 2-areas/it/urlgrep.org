@@ -1,0 +1,6 @@
+#+TITLE: urlgrep
+
+* find urls in a view
+** urlview
+** urlscan
+** https://metacpan.org/source/MSCHWERN/URI-Find-20160806/t%2FFind.t
