@@ -1,7 +1,5 @@
 #+TITLE: safe
 
-- related: [[file:methodologies/20200224074654_productivity.org][R:productivity]]
-
 * What is it
 The Scaled Agile Framework (abbreviated as SAFe) is a set of organization and
 workflow patterns intended to guide enterprises
