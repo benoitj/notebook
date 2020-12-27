@@ -1,0 +1,204 @@
+#+TITLE: whammy
+
+*org-notebook* :: [[~/src/notebook/1-projects/whammy-headphone-amp.org]]
+*references*   :: [[~/src/references/1-projects/whammy-headphone-amp]]
+
+[[/home/benoit/src/references/1-projects/whammy-headphone-amp/IMG_1653_large.jpeg]]
+
+[[/home/benoit/src/references/1-projects/whammy-headphone-amp/IMG_1636_large.jpg]]
+
+[[/home/benoit/src/references/1-projects/whammy-headphone-amp/IMG_1648_large.jpeg]]
+
+[[/home/benoit/src/references/1-projects/whammy-headphone-amp/whammy_pcb_large.jpg]]
+
+* Description
+
+*THE WHAMMY CLASS-A HEADPHONE AMPLIFIER*
+
+Wayne Colburn, the genius at Pass Labs who for the last 25 years has designed essentially all the things that aren't speaker amplifiers, wanted to make a fun, high-performance, fantastic-sounding, Class-A, DIY headphone amp for this community. We call it:
+
+Wayne's Headphone Amp Must Make Yourself
+
+Yes, it's a silly name. But it's cute. And it explains a lot about it. So it stuck.
+
+Given the explosion in the popularity of headphones, as well as the unbelievable amount of choice and variety in the market, it seemed that a simple and great-sounding headphone amp would be a great addition to the DIY community.
+
+Because there are so many choices of headphones, from Planars to IEM's, high impedance or low, this amp will drive any headphone you want to throw at it (Well, not electrostatic headphones directly, no amp like this will, but it will happily drive a step-up transformer like Stax).
+
+Wayne wanted a universal headphone amp for his desk. This is the fruit of that idea. *It's made to be made in an afternoon or an evening and it has no builder adjustments, so it’s going to have a high likelihood of success and completion for beginners and experienced DIYers. :-)*
+
+It's an all in one PCB, just wire the AC & fuse, input and output jacks. Add a selector switch if you like.
+
+Class-A output stage with enough current to drive anything. It also makes a wonderful line stage with about 14db of gain.
+
+* YOUR CHOICE - PCB OR PCB PLUS PARTS KIT
+
+We are now selling both the a WHAMMY PCB by itself, as well as a parts kit that includes the PCB, and everything else you need to build the WHAMMY other than a chassis.
+
+- We are working on a chassis for the future and will definitely release one, but we aren't going to rush it
+- 6L6 has done a great WHAMMY build guide and the supplied parts will match the build guide, more or less
+- We have now seen multiple successful builds of this new kit, and are now opening pre-orders for the kit, shipping January 11th 2019
+
+** PCB DETAILS
+
+- 218mm x 160mm (8 5/8" x 6 5/16")
+- Black with gold immersion traces
+- 70oz Copper
+
+** KIT DETAILS
+The kit includes everything to make the amp except the PCB and chassis. All components are of the highest quality.
+
+- Dale RN55 milspec resistors
+- Panasonic FC & FR series capacitors
+- Elna SILMIC II capacitors
+- Solid aluminum anodized volume knob
+- Alps "Blue Velvet" potentiometer
+- Neutrik RCA connectors
+- Schurter filtered power entry module with spare fuse
+- TRS Headphone Jack
+- IRF610/9610 Power MOSFETs
+- Texas Instruments RC4580 op amp
+- Teflon insulated silver plated copper milspec wire for I/O connections
+- Silver bearing eutectic Kester 44 solder for I/O connections
+- All nuts, bolts and standoffs to attach external connectors and the PCB to a chassis
+
+* ILLUSTRATED BUILD GUIDE
+Most of the info you need to complete this project can be found in the first 6 posts this thread, a well-illustrated guide showing how everything goes together.
+
+- [[https://guides.diyaudio.com/Guide/WHAMMY+headphone+amplifier/3?lang=en][Step by step WHAMMY build guide on guides.diyaudio.com]]
+
+[[/home/benoit/src/references/1-projects/whammy-headphone-amp/guide_3_en.pdf][local copy]]
+
+- [[http://www.diyaudio.com/forums/pass-labs/317803-whammy-pass-diy-headphone-amp-guide.html][WHAMMY build guide and general discussion thread]]
+
+* BOM
+- Rough [[https://www.diyaudio.com/forums/pass-labs/317803-whammy-pass-diy-headphone-amp-guide-post5317273.html][Bill of Materials]] (this is not the BOM used for the kit)
+
+Here's a rough (but useful) list with some important annotations.
+
+Most part numbers are from Mouser.com (unless they end with "-ND", and then it's Digikey.com)
+
+(2) .1UF C13, C23 .1uF 505-MKP2D031001FKA00
+
+
+(1) .22/250V C20 .22/250V Snubber KEMET R46KN322000M1M 22.5mm leads, radial, 26mmx6mmx15mm, X2 rated polypropylene
+
+(6) 1N4004 D1,D2, D3, D4, D7, D8 1N4004 583-1N4004-T
+
+
+
+(2) 1UF_PP C1 C5 1UF_PP Input coupling capacitor 594-2222-416-71005
+
+
+(2) P Mosfet Q2 Q4 2SJ313 May also use IRF9610, FQP3P20 Fairchild - 512-FQP3P20 Vishay - 844-IRF9610PBF
+
+
+
+(2) N Mosfet Q1 Q3 2SK2013 May also use IRF610, FQP3N30 Fairchild - 512-FQP3N30 Vishay - 844-IRF610PBF
+
+
+No matching required for Mosfets
+
+(2) 4N35 OPTO 1 2 4N35 78-4N35
+
+
+(6) 22UF/25V C12 C17 C22 C25 C26 C27 22UF/25V Nichicon UES 647-UES1E220MEM Silmic - 555-RFS25V220MF3#5 Panasonic FC - 667-EEA-FC1E220H
+
+
+
+(1) U3 7815 7815 positive regulator 863-MC7815CTG Digikey - NJM7815FA-ND
+
+
+(1) U2 7915 7915 negative regulator 863-MC7915CTG Digikey - NJM7915FA-ND
+
+
+
+(2) 100PF C2 C7 100PF Feedback compenstion cap, leave empty unless needed
+
+
+(6)220UF/50V C3 C4 C8 C9 C10 C28 220UF/50V 647-UKZ1E221MHM 50v parts were specified as there are a million of them at Pass Labs. You can use 25v capacitors with no disadvantages. A lower-voltage capacitor might also be physically smaller, and that would be good, as there's not much room around the opamp socket. Also using a smaller value capacitor (around 10-100uF) in these positions will be fine as the PSU is so incredibly clean by the time it makes it to these caps...
+
+
+(6) 3300UF/35V C6 C11 C14 C15 C18 C19 3300UF/35V 7.5mm lead spacing 18mm max diameter 35.5mm max length 647-UPW1V332MHD
+
+
+
+(1) ALPS_POT P1 RK27 688-RK27112A0A16
+
+
+(1) AMVECO_25VA TR1 Amveco 70053 Amgis L01-6365 Talema 70065K Digi-Key - 1295-1079-ND Digi-Key - TE2261-ND
+
+
+(2) LED D5 D6 {RED} These are not lights, but voltage references use red 604-WP710A10LID
+
+
+
+(1) Socket 8 pin U1 Not needed, unless you want to swap opamps. 575-199308
+
+(1) Opamp 863-LM833NG 595-RC4580IP 584-AD823ANZ
+
+(6) Heatsinks 532-531102B25G
+
+1/4W (or bigger) resistors
+
+Note - The part numbers shown are for the Vishay/Dale RN55D series, a mil-spec resistor with non-magnetic leads, non-RoHS, and 100% thermal derating. Which is to say it's a 1/4W resistor that says 1/8W on the box. And has tinned copper leads. Because they are non-RoHS (I.E., not lead-free) they are cheaper. (And honestly better. Look up "tin whiskers")
+They are of fantastic precision, sound great, and the value is written clearly on the body of the resistor. They are far and wide my favorite resistor.
+
+(6) RESQ R1 R2 R7 R10 R12 R14 1K 71-RN55D-F-1.0K
+
+
+
+(2) RESQ R39 R40 2.21K 71-RN55D-F-2.21K
+
+
+
+(2) RESQ R4 R8 4.75K 71-RN55D-F-4.75K
+
+
+
+(4) RESQ R16 R22 R29 R32 10ohm 71-RN55D-F-10
+
+
+
+(8) RESQ R6 R15 R23 R24 R25 R28 R33 R34 10K 71-RN55D-F-10k
+
+
+
+(4) RESQ R17 R27 R35 R26 47.5 ohm 71-RN55D-F-47.5
+
+
+(2) RESQ R18 R30 100 ohm 71-RN55D-F-100
+
+
+
+(2) RESQ R3 R5 100K 71-RN55D-F-100k
+
+
+(2) RESQ R9 R13 330 ohm 71-RN55D3300FTR
+
+
+
+(4) RESQ R11 R19 R26 R31 499 ohm 71-RN55D-F-499
+
+
+
+1/2w (or bigger) resistors
+
+(4) RES_HALF R20 R21 R37 R38 5.1ohm 1.0ohm - 5.1ohm is fine 71-CCF02-J-5.1
+
+
+1/4" Headphone jack ("D" style mounting, similar to an XLR jack) 568-NJ3FP6C-B / or Panel mount, as shown in above photos 568-NYS212
+
+
+** Chassis options
+
+- [[https://www.landfallsystems.com/index.php][Landfall Systems]]
+- Chassis – [[https://diyaudiostore.com/collections/chassis][diyAudio Store]]
+- Hammond - 1455T2201
+
+* VIDEO
+Here's a video of Wayne talking about the Whammy at Burning Amplifier Festival 2017 -- [[https://www.youtube.com/watch?v=Mn9jZQwsHmU][Wayne Colburn at BAF '17]]
+
+[[/home/benoit/src/references/1-projects/whammy-headphone-amp/Burning Amp 2017 - Wayne Colburn.mp4][local copy]]
+
+* BOM

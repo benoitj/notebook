@@ -1,6 +1,58 @@
 #+TITLE: My todos
 
 * Projects
+** whammy headphone amp :personal:
+DEADLINE: <2021-03-21 Sun>
+:PROPERTIES:
+:STARTDATE: [2020-12-27 Sun]
+:OUTCOME:  get a preamp and headphone amp for my desk
+:AREA:     entertainment
+:END:
+  #+name: headline
+  #+BEGIN_SRC emacs-lisp
+  (nth 4 (org-heading-components))
+  #+END_SRC
+
+  #+RESULTS: headline
+  : whammy headphone amp
+
+  #+name: simple-name
+  #+BEGIN_SRC emacs-lisp :var project=headline
+  (replace-regexp-in-string " " "-" project)
+  #+END_SRC
+
+  #+RESULTS: simple-name
+  : whammy-headphone-amp
+
+  #+name: org-notebook
+  #+BEGIN_SRC emacs-lisp :var project=simple-name
+  (concat org-directory "/1-projects/" project ".org")
+  #+END_SRC
+
+  #+RESULTS: org-notebook
+  : ~/src/notebook/1-projects/whammy-headphone-amp.org
+
+  #+name: org-references-path
+  #+BEGIN_SRC emacs-lisp :var project=simple-name
+  (concat "~/src/references/1-projects/" project)
+  #+END_SRC
+
+  #+RESULTS: org-references-path
+  : ~/src/references/1-projects/whammy-headphone-amp
+
+  #+BEGIN_SRC emacs-lisp :var project=headline org-notebook=org-notebook :var org-references-path=org-references-path
+  (find-file org-notebook)
+  (insert (concat project "\n"))
+  (insert (concat "\n*org-notebook* :: [[" org-notebook "]]"))
+  (insert (concat "\n*references*   :: [[" org-references-path "]]\n\n"))
+  #+END_SRC
+
+- [ ] List specific tasks
+- [ ] Schedule next actions from generated tasks
+*** TODO save all references found
+*** TODO build BOM
+*** TODO order BOM
+
 ** TODO book
 https://pragprog.com/titles/atcrime/your-code-as-a-crime-scene/
 
@@ -86,3 +138,10 @@ Ethan Brown
 
 *** head first go
 Jay McGavren
+
+#+BEGIN_SRC emacs-lisp
+(bj/org-capture-templates-find-newproject)
+#+END_SRC
+
+#+RESULTS:
+: ~/src/notebook/templates/newprojecttemplate.org
