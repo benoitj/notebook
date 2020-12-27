@@ -1,0 +1,1757 @@
+#+TITLE: Architechture and design
+
+* bring Value (aka dont over engineer)
+** approach
+- take the data approach
+  - green field: implement agile.
+    - Get the stuff out in production
+    - the team decide of features and priorities
+    - get users to use the features (they must use the features)
+    - users submit bugs for anything that does not work or missing features
+    - users can only prioritize bugs
+    - the team will work on bugs and deploy really fast
+  - brown field. use analysis down below
+- what is the story that is the best happy path
+  - how do I know that I'm still on the happy path (white list instead of all the edge cases)
+- from the remaining, what are things that are common
+- it is ok for human to handle the 1-2 % of edge cases
+  - this is the really complicated stoff
+** cost / benefit analysis
+- what is the cost of implementing something vs what it brings. 
+- make sure we implement features that brings value
+- formula
+(freq fail * cost per fail) / investment per period
+** BACKLOG brown field analysis
+*** take data based decisions
+- what is used
+- what are the pain points
+*** analysis
+**** analysing git history
+**** static code analysis
+***** dependency / coupling analysis
+***** code smells
+***** test coverage
+** references
+- Greg Young - stop over engineering
+- Greg Young - getting productive in 24 hours
+* architecture articles
+- [[http://www.infoq.com/articles/pragmatic-architect][Pragmatic architect]]
+- [[http://martinfowler.com/articles/designDead.html][is design dead?]]
+
+* Design & Architecture
+
+** Design patterns
+*** Web design patterns
+**** MVC
+ui -> controller: send update
+controller -> model: update model
+controller -> controller: execute ui logic
+controller -> ui: send rendering page
+
+**** MVP
+similar to mvc, but with:
+- listening / event driven
+- no controller, the presenter gets ui events and changes the model, and ui gets updates through changes to the model + presenter
+
+***** pros/cons
+unit testing possible due to interfaces between view and presenter
+- event driven = harder to troubleshoot
+- logic in the ui: better SRP
+- ui logic is testable
+*** design patterns repository
+
+**** Here is a list of references of design patterns
+
+this is the list of basic design patterns:
+
+- Patterns of Enterprise application architecture: the bible of patterns after the GOF
+  - [The Book|https://read.amazon.ca/?asin=B008OHVDFM]
+  - [Quick web reference|http://martinfowler.com/eaaCatalog/]
+- [Read patterns updates|http://martinfowler.com/eaaDev/](Fowler)
+  - extension of the book "patterns of enterprise application architecture"
+
+*** xUnit test patterns
+
+ interesting article: mock vs stubs: [http://martinfowler.com/articles/mocksArentStubs.html]
+ complete list of patterns: [http://xunitpatterns.com/]
+ understanding test doubles with mockito: [http://www.javaworld.com/article/2074508/core-java/mocks-and-stubs---understanding-test-doubles-with-mockito.html]
+
+**** goals of test automation
+
+ Test should:
+
+***** help us improve quality
+
+ 1. Goal: Tests as Specification
+     - Also known as Executable Specification
+ 2. Goal: Bug Repellent
+ 3. Goal: Defect Localization
+     - We need to be able to point out where the problem is quickly based on which test fails
+     - For Customer tests: identify which behaviour is not working
+     - If a customer test fail but no unit test, we are missing a unit test
+
+
+***** help us understand the SUT
+
+ 1. Goal: Tests as Documentation
+     - Why: reduce maintenance
+     - Why: speedup development
+
+***** reduce risk
+
+ 1. Goal: Tests as Safety net
+     - Why: improve quality
+     - Why: speed up maintenance and release
+     - Why: reduce TTM
+     - Why: helps refactoring
+ 2. Goal: Do No Harm
+     - Why: no added risks
+     - How: out of production
+     - How: should not give false belief that code is reliable when it is not properly tested
+
+***** be easy to run
+
+ 1. Goal: fully automated
+     - Why: need to be cheap to run
+     - Why: cheap to run, devs don't defer their execution
+ 2. Goal: self checking tests
+     - Why: Avoid "Obscure Tests"
+     - Why: get feedback early
+     - Why: cheap to run, devs don't defer their execution
+     - How: they should detect and report errors without manual inspection
+     - How: don't call us, we'll call you: test runner calls us only when a test did not pass
+     - How: not output, no manual work unless issues are found
+ 3. Goal: repeatable test
+     - Why: power of the red line goes down if we see it regularly without good reason
+     - Why: confidence in the tests
+     - Why: avoid the "broken window" symptoms
+ 4. Goal: independent
+
+***** be easy to write and maintain
+
+ 1. Goal: Simple tests
+     - Why: Avoid "Obscure Tests"
+     - Why: improve readability
+     - Why: reduce maintenance
+     - How: each test method should drive SUT through a single code path
+     - How: Single responsibility principle (SRP)
+     - How: verify one condition per test
+ 2. Goal: Expressive tests
+     - Why: Avoid "Obscure Tests"
+     - How: utility methods
+     - How: creation methods
+     - How: custom assertion
+     - Why: Don't repeat yourself (DRY)
+     - Why: improve readability
+     - Why: reduce maintenance
+ 3. Separation of concerns
+     - Why: Avoid "Obscure Tests"
+     - How: Test code vs Production code
+     - How: Test concerns separately
+
+***** require minimal maintenance as the system evolves around them
+
+ 1. Goal: Robust Test
+     - Why: Identifies real issues (ie: no waste of time)
+     - Why: Keep confidence in the test suite
+     - How: Minimize overlap between tests so that only limited number of tests are failing on one change
+     - How: isolate SUT dependencies
+
+
+
+**** Strategies
+
+***** kind of tests
+
+
+ **Customer
+ Tests**
+ _Business intent_
+ 
+ **Component
+ Tests**
+ _Architect Intent_
+ 
+ **Unit Tests**
+ _Developer Intent_
+
+****** Unit test
+
+ a test is **not** a unit test if:
+ - It talks to the database
+ - it communicates across the network
+ - it touches the file system
+ - it can't run correctly at the same time as any of your other unit tests
+ - you have to do special things to your environment to run it
+
+**** Test automation difficulty
+
+ 1. Simple entity objects
+ 2. Stateless service objects
+ 3. Stateful service objects
+ 4. Hard-to-Test code (DB, UI, concurrency)
+ 5. OO legacy software
+ 6. Non OO legacy software
+
+**** Roadmap to Highly Maintainable Automated Tests
+
+ 1. Exercise the happy path code
+ 2. verify direct outputs of the happy path
+ 3. verify alternative paths
+ 4. verify indirect output behavior
+ 5. optimize test execution and maintainability
+     - slow tests
+     - obscure tests
+     - buggy tests
+
+
+**** Code Smells
+
+ - Obscure test
+ - Conditional Test logic
+ - Hard-to-Test code
+ - Test code Duplication
+ - Test Logic in Production
+
+
+***** Obscure test
+
+ Long Test, Complex test, Verbose Test
+ It is difficult to understand the test at a glance
+
+****** Symptoms
+
+ We are having trouble understanding what behavior a test is verifying
+
+
+****** Impact
+
+ - Harder to maintain
+   - Preclude to "Tests as Documentation"
+     - can lead to High Test Maintenance Cost
+ - Allows bugs to slip through
+   - test coding errors can result in Buggy Tests
+   - failure in Eager test hide many more errors
+
+****** Causes
+
+ - too little information
+   - Eager test: verifies too much functionality
+     - preclude to defect localization
+   - Mystery guest (part is done outside the test method)
+ - too much information
+   - general fixture
+     - move to minimal fixture
+   - irrelevant information
+     - lots of information that distract
+   - Hard-Coded test data
+     - use named constants
+     - don't should values that don't matter
+   - indirect testing
+     - we test code through another layer
+     - code for testability
+     - refactor
+ - lack of attention to keep things clean and simple
+   - test code is as important as production code (ie: need refactor, design, reviews)
+
+***** Conditional test logic
+
+ aka: indented test code
+
+******  Symptoms
+
+ reader wonder which path is executed
+
+****** Impact
+
+ - hard to know what the test is exactly doing
+ - difficult to maintain and debug
+ - can introduce errors
+
+****** Causes
+
+ - if conditions
+ - loop to verify content of collections
+ - verify complex objects (ex: foreign method implementation of equals method)
+ - initialize test fixture of expected object
+ - condition to avoid tearing down non-existent fixture objects
+
+***** Hard to test code
+
+****** solutions
+
+ - design for testability
+ - split hard to test code to increase testability
+
+***** Test logic in production
+
+****** Causes
+
+ - test hook
+ - for tests only code
+ - test dependency in production
+ - equality pollution ("test" equals method in production)
+
+**** Behavior smells
+     
+ - assertion roulette
+ - erratic test
+ - fragile test
+ - frequent debugging
+ - manual intervention
+ - slow tests
+
+***** assertion roulette
+
+ a test fails and we cannot determine which assertion failed from the runner output
+
+****** impact
+
+ problems may be hard to reproduce and missing important information make it:
+ - time consuming
+ - difficult to troubleshoot
+
+****** Causes
+
+ - eager test
+ - missing assertion message
+
+***** Erratic test
+
+ one or more tests behave erratically; sometimes they pass and sometimes they fail
+
+****** impact
+
+ - temptation to disable the test (Lost test)
+ - obscure other problems
+
+****** Causes
+
+ - interacting tests (test depends on another test in some way)
+ - interacting test suites
+ - Lonely test
+ - resource leakage
+   - set all resource pools to 1 to fail early
+ - Resource optimism
+   - fix with fresh fixture
+ - unrepeatable test (interacts with itself across)
+ - test run war (failure when several devs run the suite)
+ - non-deterministic test (totally random failure)
+
+***** fragile test
+
+ A test fails to compile or run when the SUT is changed in ways that do not affect the part of the test is exercising
+
+****** causes
+
+ - interface sensitivity
+ - behavior sensitivity
+ - data sensitivity
+ - context sensitivity
+ - overspecified software
+ - sensitive equality
+ - fragile fixture
+
+
+***** frequent debugging
+
+ manual debugging is required to determine the cause of most test failures
+
+****** Causes
+
+ - Lack of defect localization
+ - missing tests (component tests / integration tests)
+ - infrequently run tests
+
+****** impact
+
+ - slow and tedious
+ - reduce productivity and predictability
+
+****** solution
+
+ - ask yourself where this should have been detected and fix it
+
+
+***** Manual intervention
+
+ the person running the test must do something manually before or during the test, otherwise it fails.
+
+****** impact
+
+ - cost of getting feedback high
+ - don't run the test often enough and miss issues
+ - lead to frequent debugging and high test maintenance cost
+
+****** Causes
+
+ - manual fixture setup
+ - manual result verification (lack of trust with the test system)
+ - manual event injection
+ 
+***** slow tests
+
+  tests take too long to run
+
+****** impact
+
+ - direct cost in productivity while running the tests
+ - 
+
+**** Test Strategy Patterns
+
+ 1. Test automation Strategy
+     - Recorded test
+         - WHAT: record and playback
+         - WHEN:
+             - existing application that needs refactoring and dont have scripted tests
+             - Regression testing
+         - HOW: use a tool to monitor and record (proxy pattern) input and output. Then use the monitoring log to inject input and assert output
+         - HOW: external recording tool (3pp)
+             - Mercury QuickTest Professional (QTP) tool
+         - HOW: internal recording tool. Refactor the SUT to include recording capabilities. (build an interaction log)
+             - 
+         - CONS: tests may be fragile (interface sensitivity). plan to re-record
+         - REF: "Agile Regression Testing Using Record and Playback" [http://agileregressiontestpaper.gerardmeszaros.com/]
+     - scripted test
+         - WHAT: 
+             - Hand written tests
+             - can be customer or unit tests
+         - WHEN:
+             - Automate Customer Tests with higher level language
+             - Not for legacy application
+             - Data driven tests
+         - HOW: 
+             - higher level language
+             - Unit testing / junit
+         - TOOLS: Fit, Canoo WebTest, jBehave, Cucumber, jUnit, TestNG
+     - Data-driven test
+         - WHAT: We store all the information needed for each test in a data file and write an interpreter that reads the file and executes the tests
+         - WHY: gives us the best coverage with the least amount of code
+         - WHEN: 
+             - Alternative to recorded test and scripted test
+             - born from a sequence of refactors: scripted test -> parameterized test -> data driven test
+         - HOW: 
+             - test interpreter has all the common logics and read a datafile to execute tests
+             - test continues to run after a failure
+         - TOOLS: Fit, jBehave?, Cucumber?
+     - Test automation framework
+         - WHAT: framework that gives mechanism needed to run test logic
+         - TOOLS: jUnit, CppUnit, NUnit, PyUnit, TestNG, jBehave, Cucumber, Mercury QuickTest Professional, Canoo WebTest, Watir. QTP, BPT, eCATT
+
+ 2. Test Fixture Strategy
+     - Minimal fixture +++
+         - WHAT: Use the smallest and simplest fixture possible for each test
+         - WHY: 
+             - easier to understand
+             - Achieve Tests as Documentation
+             - avoid: slow tests, obscure test
+         - HOW:
+             - Fresh (easier) or shared fixture. 
+             - remove anything not necessary
+             - Creation method, test method, dummy objects, test stub
+     - Standard Fixture
+         - WHAT: We reuse the design of test fixture across the many testso
+         - HOW:  
+             - design approach
+             - a fresh or shared fixture
+             - test utility method
+             - delegated setup
+         - WHEN:
+             - manual test execution
+             - not often seen in agile methodology where each test pull their required fixture
+         - CONS:
+             - obscure test
+             - fragile test
+             - implicit setup
+             - slow test
+     - Fresh Fixture **+++**
+         - WHAT: Each test constructs its own brand-new test fixture for his own private use
+         - WHY:
+         - HOW:
+             - Construct fixture in each test.
+             - a compromise is an immutable shared fixture if cannot have a fresh fixture (too slow)
+             - in-line setup, delegated setup (testcase class per class/feature), implicit setup (testcase class per fixture)
+             - variation: transient fresh fixture (use local or instance variables and garbage collect)
+             - variation: persistent fresh fixture (need teardown: inline, implicit, automated)
+                 - avoid collision by using random unique keys
+                 - can result is slow test or erratic test
+         - WHEN:
+             - we want to avoid interdependencies
+             - avoid erratic tests
+         - TOOLS: jfixture
+     - Shared Fixture
+         - WHAT: We reuse the same instance of the test fixture across many tests (a kind of standard fixture)
+         - WHY:
+         - HOW:
+             - pre build fixture and reuse in multiple tests
+         - WHEN:
+             - when fixture creation is too slow
+                 - better: use fake database or in memory database (HSQL)
+                 - better: use test double like mocking
+         - CONS:
+             - fragile test
+             - slow test
+             - erratic tests
+             - obscure test
+ 3. SUT Integration Strategy
+     - Back Door Manipulation **+++**
+         - WHAT: we setup the test fixture or verify the outcome by going through a backdoor
+         - WHY:
+         - HOW:
+             - we connect directly on the database, file system 
+         - WHEN:
+             - using backdoor to setup the SUT
+             - tear down truncation in persistent fresh fixture
+             - verification
+             - database population script
+             - data loader in SUT
+             - data extraction script
+             - data retriever
+             - test double as backdoor
+         - CONS:
+             - tests more tightly coupled with behaviour of the code
+             - can lead to obscure test
+             - fragile test
+         - TOOLS: jmock, mockito
+     - Layer test **+++**
+         - WHAT: write separate tests for each layer of the layered architecture
+         - WHY:
+             - easier to test each layer independently than all together
+         - HOW:
+             - the test takes place of the layer above the one being tested
+             - we use test double to test each layer independently
+                 - we control indirect input
+                 - we verify indirect output
+         - WHEN:
+             - presentation layer test
+             - service layer test
+             - subcutaneous test
+             - component test
+
+         - TOOLS:
+
+**** xUnit basic patterns
+
+ - Test Method  **+++**
+ - Four-Phase Test  **+++**
+ - Assertion Method  **+++**
+ - Assertion Message  **+++**
+ - Testcase Class 
+ - Test Runner 
+ - Testcase Object 
+ - Test Suite Object 
+ - Test Discovery  **+++**
+ - Test Enumeration 
+ - Test Selection  **+++**
+
+**** Fixture Setup Patterns 
+
+ - In-line Setup +++
+ - Delegated Setup +++
+ - creation Method +++
+     - anonymized / parametrized methods +++
+ - Implicit Setup -
+ - Pre built Fixture -
+ - Lazy Setup -
+ - Suite Fixture Setup 
+ - Setup Decorator 
+ - Chained Tests ---
+
+**** Result Verification Patterns 
+
+ - State Verification +++
+ - Behavior Verification +++
+ - Custom Assertion +++
+     - equality: foreign equals method
+     - domain: assert method name that has business context
+     - diagnostic: generate a more specific error message to avoid debugging
+ - Delta Assertion 
+     - delta: capture before and after state and compare. Isolate from the dataset changes
+ - Guard Assertion +++
+     - guard condition: replace if statements with an assert that fails
+ - Unfinished Test Assertion +++
+     - useful for TDD
+
+**** Fixture Teardown Patterns 
+
+ - Garbage-Collected Teardown +++
+ - Automated Teardown +++
+ - In-line Teardown +
+ - Implicit Teardown +
+
+**** Test Double Patterns 
+
+ use when:
+     - untested requirement: monitory indirect output from SUT when DOC does not allow inspection
+     - untested code: DOC does not provide control point to provide indirect input needed to cover the code of the SUT
+     - we have slow tests
+     - layered architecture testing
+
+ - Test Stub +
+     - inject indirect input
+ - Test Spy +++
+     - recording test stub
+     - capture indirect output calls
+ - Mock Object +++
+     - constant validation of indirect input
+     - fail on the first deviation
+     - return indirect output
+ - Fake Object ++
+ - Configurable Test Double +++
+ - Hard-Coded Test Double -
+ - Test-Specific Subclass -
+
+**** Test Organization Patterns 
+
+ - Named Test Suite 
+ - Test Utility Method 
+ - Parameterized Test 
+ - Testcase Class per Class 
+ - Testcase Class per Feature 
+ - Testcase Class per Fixture 
+ - Testcase Superclass 
+ - Test Helper 
+
+
+
+ - Dependency Injection 
+ - Dependency Lookup 
+ - Humble Object 
+ - Test Hook 
+ 
+**** Value Patterns 
+
+ - Literal Value 
+ - Derived Value 
+ - Generated Value 
+ - Dummy Object 
+
+
+**** Fragile test problem
+  - Behavior sensitivity
+  - interface sensitivity
+  - data sensitivity
+  - context sensitivity
+
+*** Data and content
+**** BACKLOG https://speckyboy.com/deep-look-data-content-design-patterns/
+**** BACKLOG [[http://ontologydesignpatterns.org/wiki/images/9/94/WOP_paper_11.pdf][template instance pattern]]
+**** BACKLOG [[http://stackoverflow.com/questions/145689/relational-database-design-patterns]]
+
+** Design decisions
+*** Best practices
+**** Drools
+***** Best practices
+	
+- Keep deployable separate unit
+- stateless
+- limit number of facts in statefull sessions
+- limit object size by using DTOs
+- Use batched mode of execution
+	- instead of adding object one at a time
+- use drools for decisions, not for actual actions
+- avoid using eval
+- work on aggregates where possible
+- use event logging for debugging
+- keep individual rules small, simple and atomic
+	- avoid cyclic triggering of rules when updating facts
+	- use agenda groups and activation groups when possible
+- use static java methods in your project to simplify rule action logic
+	- why?
+
+***** EAG best practices
+
+- minimize the number of rules within a drl source file
+	- for ease of maintainability, only one rule should be specified per file
+- Group DRL files within a package to replesent a specific business rule matching context
+- facts added to the knowledge session should be immutable
+	- rule matching should not depend on the outcome of another rule's actions (create layers to reduce knowledge base size. Modularity)
+	- it is preferred to execute the rule's actions by updating a responseholder object response to the rule's engine caller
+	- at that point, the rule engine caller, can create a new session to re-evaluate the matching rules
+- rules must be unit tested
+
+infered facts = facts created by a then clause of a rule
+
+
+
+
+***** questions
+
+**feedback**: no clear rationale for the points above. unclear for lead and devs
+- read about triggering on sub objects, using modify or update
+- immutable input facts
+- inferred facts vs derived facts
+
+*** Security
+**** auth protocols
+
+good overview of SAML, oauth2, and OpenID and OpenID connect
+
+***** protocols
+SAML: XML based open startard for authentication and authorization exchange between parties (SSO + authorization sharing between services)
+  - works with an identity provider
+Oauth: authorization delegation
+openid: built on top of oauth2
+kerboros: supports impersonation
+xacml: extensive data driven authorization flow (can x see data #123)
+
+***** default
+
+SAML: in many cases people uses oauth where they should have used SAML
+
+***** oauth
+
+Main scenario:
+  allow users to delegate rights from one app to anothe app
+
+User -> A: Uses
+User -> B: Uses
+
+User -> A: connect to B
+A -> B: ask to be granted permissions for User to B
+B -> User: ask to confirm
+B <- User: ok
+A <- B: ok: token ID
+
+
+***** impersonation
+
+transfer credentials or token propagated 
+
+***** trust
+
+transfer identify in data only accepted by trusted systems
+
+
+***** example:
+
+@startuml
+
+component user
+component webserver
+component svc1
+component svc2
+component svc3
+
+
+user -> webserver
+webserver -> svc1
+webserver -> svc2
+webserver -> svc3
+
+
+***** example 2
+
+using oauth flows
+
+component human
+component game
+component facebook
+
+
+resource owner
+resource server
+client
+ - Active Directory
+ - SAML
+ - XACML
+ - ACL
+ - Delegation: OAuth
+ - OpenID
+
+***** Active Directory Lightweight Directory Services:
+	 - https://msdn.microsoft.com/en-us/library/aa705886(v=vs.85).aspx 
+	 - https://technet.microsoft.com/en-us/library/cc754361(v=ws.10).aspx
+***** Some alternatives:
+ - https://www.axiomatics.com/
+ - http://www.viewds.com/
+ - http://incubator.apache.org/projects/openaz.html
+ - (and others, mostly XACML-based
+ 
+ AzMan and company:
+ - https://msdn.microsoft.com/en-us/library/bb897401.aspx?f=255&MSPPError=-2147217396
+ - https://netsqlazman.codeplex.com/
+
+*** Data management
+**** ORM vs no ORM: http://martinfowler.com/bliki/OrmHate.html
+**** ORM annotations: http://www.yegor256.com/2014/12/01/orm-offensive-anti-pattern.html
+     
+** Documentation 
+- architecture sketches C4: https://www.voxxed.com/blog/2014/10/simple-sketches-for-diagramming-your-software-architecture/
+** Practices
+- [[http://www.dtelepathy.com/blog/business/ship-faster-stop-everything-design][Design spikes]]
+
+* Architecture Katas
+** Architect role
+*** [[/cygdrive/c/Users/bjoly/repos/notebook/files/softwaredev/whoNeedsArchitect.pdf][Martin Fowler - Who needs an architect?]]
+** consulting aspect
+- important to involve everyone so that we are not the bridge between technical and business
+- let everyone know that it will feel that 1/2 is irrelevant
+- when: 3rd day morning
+- start to present the top categories
+- go down one by one in details
+- capture the relative importance of the NFRs 
+- how do we test this?
+- sometimes only input, but not a requirement
+- capture follow-up points in the mindmap
+- if UX on the inception, do NFRs after so that usability is not endless
+** Recruiting App Assignment
+*** Requirements / Context
+**** Roles:
+	- Recruiter
+	- Candidate
+	- Evaluator
+	- Assigner (assign manually exercise to be corrected to evaluator)
+	- template authors 
+	- template approvers
+
+**** Expected functionalities:
+	- Evaluation must be stored with all relevant information.
+		○ Evaluation summary is visible to the recruiter.
+		○ Detailed evaluation must not be visible to the recruiter, only to the evaluator and assigner.
+	- Find an exercise from candidate name.
+	- Exercise must be accessible to an URL. 
+		○ Ideally two URLs: one which point to the exercise activity, another one which point to the exercise content. 
+	- Candidate must directly interact with the tool to:
+		○ Receive the email sent by the tool on the behalf of the recruiter.
+		○ Submit their coding exercise.
+	- The system must sent e-mail to each role at different step.
+
+**** The tool will integrate with:
+	- An email system (Exchange).
+	- SaleForce, used by the sale team.
+		○ Provide the original requirement (aka the "Req").
+	- A SharePoint site used by the recruitment team.
+
+
+**** Out of scope:
+	- Reporting
+	- Mobility
+
+** Architecture Handbook
+*** Introduction	
+**** Document Purpose and Scope	
+**** Target Audience	
+**** Glossary	
+*** Architecture Context	
+**** Vision	
+**** Architecture Objectives	
+**** Assumptions	
+**** Key Scenarios	
+**** Existing Architecture	
+*** System Overview	
+**** High Level Architecture	
+**** Principal Components	
+**** Tiers and Layers	
+**** Technology Stack	
+**** Physical Architecture	
+*** Integration Points	
+**** <For each integration point>	
+***** Description	
+***** Technologies	
+***** Usage Constraints	
+***** Testing Approach	
+***** Evolution Roadmap and Dependency Management	
+*** Software Design	
+**** Key Patterns	
+     * key design patterns
+     * one paragraph for everything with links to wikipedia
+     * exclusions or specific cases
+     * application specific patterns
+**** Domain Model	
+     DEADLINE: <2016-11-11 Fri> SCHEDULED: <2016-11-09 Wed>
+     * high level business domain model (BOM)
+     * This is not a database model
+     * color coding entities that changes, but not listing all the changes
+     * try to defer coding standards to construction using an example project
+***** BACKLOG produce a domain model for the recruiting problem
+  component JobTemplate as jt {
+    - position
+    - level
+    - clientorg
+    - job description
+    - is active
+    - coding exercises
+  }
+
+  component JobRequisition as jr
+  component CandidateApplication as ca
+  component Candidate as c
+  component CodeExercise as ce
+  component CodeingExerciseTemplate as cet
+
+  jr -> jt: 0..* to 0..1
+  ca -> jr: 0..* to 1
+  ca -> c: 1..* to 1
+  ca -> ce: 0..* to 0..1
+  c -> ce: 1 to 0..*
+  ce -> cet: 0..* to 1
+  jt -> cet: 0..* to 0..*
+
+***** BACKLOG find a name for a base class sharing attributes between a template and the instance
+  RequisitionDefinition -> ReqInstance
+  RequisitionDefinition -> ReqTemplate
+  RequisitionSpecifications
+
+**** Dynamic Models	
+     * behavior diagrams of key processes
+     * sequence, workflows, activity
+     * subsections for each process
+**** Cross-Cutting Concerns	
+***** Exception Handling	
+  - top level exception handler
+  - unchecked vs checked
+  - human translation of exception 
+  - short
+
+***** Logging	
+  - what is logged
+  - where it is logged
+  - business log, system log, development log
+  - how it is going to be logged (AOP, context data, libraries)
+  - keep architecture. ex: log level, if they care, ok, otherwise dont
+  - configurable or not
+  - log rotation or not
+  - if important, what happens when you cant log
+  - archiving
+  - web analytics
+
+***** Input Validation	
+  - how to apply input validation
+  - jsr303
+  - frameworks
+  - how it is propagated to the UI
+  - how it is translated
+  - what happens when it fail
+  - pre-validate on ui
+  - input file validation
+
+***** State Management	
+  - Session state
+  - statefull vs stateless
+  - system transaction
+  - persistent cookies
+  - state on UI vs on server
+
+***** Caching	
+  - how is caching done
+  - external cache (redis, memcached)
+  - what we store (high level strategy)
+  - in memory caching
+  - reference data
+  - HTTP caching cache-control
+  - ORM L1/L2 cache (high level if this is a concern)
+
+***** Configuration	
+  - how is it configurable
+  - dynamic or static?
+  - how to change it
+    - configuration UI
+  - configuration service
+  - framework
+  - central vs local
+  - transformation (prod, dev, etc..)
+  - default properties with overide files?
+  - jndi?
+
+**** Special Scenarios	
+  - anything else??
+  - service discovery
+  - licensing
+  - transaction things
+  - data mapper (including ORM)
+
+*** Security	
+    answers security related RFRs
+**** Authentication	
+- authentication protocols
+- method of auth
+- SSO / AD
+- where will the data be stored
+**** Authorization	
+- general approach: RBAC, operation based, etc..
+- technical implementation, where is it stored
+**** Data Protection	
+- data encryption / sign, in movement and at rest
+- log filtering
+- network
+**** Non-repudiation	
+- safe logging
+*** Construction Concerns	
+**** Code Quality	
+**** Source Control Strategy	
+***** what sw tool we use
+***** where it is
+***** if tek hosted, what does the client get at the end: the repo or only the end result
+****** if tfs: need to be on its own collection
+****** remote branching with reconstitution on the client side
+***** if the customer does not want source control
+****** convince the customer
+****** try to get local git or mercurial
+***** if system is slow
+****** if remote server is svn
+******* could use git-svn: complexity is higher, and 
+******* filtered dump / restored
+******* probably 3pp to do multi-master sync if needed
+****** if has an impact to velocity
+******* highlight
+******* no unpaid overtime to hide the issue
+***** if customer contribution 
+****** define who's responsible to fix when HEAD breaks
+****** isolate tek with a branch
+******* how often we merge, highlight overhead
+***** branching strategy
+****** branch for release with feature branch overlay
+******* trunk -> new development
+******* branch for each release when you are code complete
+******* feature branch overlay (topic branch)
+******** enable us to avoid delaying release
+******** could be used for fix branch
+****** parallel work
+******* trunk is the one that gets released first
+******* the other team works on a separate team branch
+****** when can you merge feature branch to trunk
+******* code complete
+******** compile
+******** tests run
+******** sonar
+******* deskchecked
+******** if deskcheck does not pass, we dont want to revert code
+******* code reviewed
+******** at least peer review before merge
+******** formal review by architect or lead after
+******* When to merge
+******** close to end of sprint
+******** make sure it will work and QA will have time to tests
+******** if you less than x days, evaluate with the team, we may decide to push later
+****** release branch
+******* created by the architect or lead (but one assigned)
+******* final branch
+***** how is git flow different than our default strategy 
+****** fix branch happens from master
+****** labelling happens on master
+****** the integration branch is develop, not master
+****** feature branch is off develop
+****** release branch out of develop
+****** cons
+******* tagging is applied on master
+******* merge to stable is a potential new releases since the release promotion is about the artifact, not the source and this patterm makes the source differ from what build was promoted
+******* 1 release in production at the same time (limitation)
+**** Data Store Construction	
+***** Seed
+****** types of seeds
+******* Production anonymized (prefered)
+******* Production subset anon (second prefered)
+******** random selection of rows
+******* Generated (increase risks to deploy to production)
+******* Empty (riskiest)
+****** generate seeds
+******* different seeds per environment
+******* generate often, as often as every sprint
+******* we should receive the anonymized data idealy and not the real production data
+******** we can create the script to anonymize
+****** deployment
+******* each dev
+******* Integration
+******* QA
+**** Build Strategy	
+***** frequency
+****** pre/post commit
+******* git fetch/pull
+******* rebuild
+******* package and deploy on artifactory
+****** nightly
+******* fresh clone / workspace build
+***** build flow
+|------------------------+---------------------------------------|
+| commit build           | nightly                               |
+|------------------------+---------------------------------------|
+| build, verify Quality, | publish, run integration tests,       |
+| create package         | run performance tests, security tests |
+|------------------------+---------------------------------------|
+***** different ways
+****** post commit (or gated commit)
+******* keep the team efficient
+******* should not take more than 5 minutes
+******* could we revert failures automaticaly
+****** gated commit
+******* could use tagging instead of gated commit
+******* done on the integration branch
+******* not executed on dev private branch
+******* done on the server
+******* tools
+******** this is exactly like gerrit /for/master where you run sonar and others
+******** monitor PR from stash
+******* why?
+******** development skills junior. we anticipate problems
+******** observed frequency of problems
+********* no impact to the team
+******** devs cannot check everything on their own (but they should)
+******** size of the team
+******* cons
+******** pilling up
+******** server workload
+******** merge delayed = more conflicts
+******** de-responsibilize team members
+***** Better approach
+****** Do post commit validation
+****** with automatic revert on failure to validate
+******* maybe can let the user to fix within 5 minutes
+******* give build agent tagging and commit permission
+****** more visibility from everyone
+****** one pipeline for all environments
+**** Deployment Approach	
+***** control
+****** in control: dev (integration), qa, and uat
+****** out of control: staging and production
+***** frequency
+****** dev: 
+******* this is where the longer build (int tests). automated
+******* usually daily
+******* must be automated
+****** qa: 
+******* qa decides
+******* could be automated
+******* could be same as longer build
+******* must be automated
+****** uat:
+******* end of every sprint
+****** staging
+******* starting at mid point
+******* more frequent as you get closer to the end: frequency cut in half after every deployment.
+****** production
+******* out of control
+******* once for each release
+***** other concerns
+****** to be discussed at inception
+****** what needs automation
+******* we need to use the exact same tool during the development
+****** what needs documentation
+****** pipeline
+******* in restore seed in all environments except staging and prod
+******* backup db in staging and prod
+****** deployment configuration
+******* could be in source control for in control env
+******** may be an issue since staging and prod are left out
+****** tools
+******* if not ideal tools. ask if they are happy with it
+******* if no tools, come up with a proposal
+******** immature team: ui, easy adoption
+********* chef and puppet not right
+********* TODO better fit: octopus
+******* TODO find a deployment tool that is easy / great for introduction in java
+**** Test Strategy	
+***** overall test strategy owned by QA (not our responsibility)
+****** test plan
+****** test strategy
+***** we are responsible for unit testing
+****** frameworks
+****** coverage framework
+****** unit test db (not frequent)
+******* stored procedures
+******* constraints
+******* 
+***** integration test at our discretion if they did not purchase automated QA
+****** useful for db integration test if you have stored procedures or similar or you want to test queries
+***** refer to the QA plan (if not created, refer to an upcoming document to be created early in creation phase)
+***** effect of engagement models
+****** team model, staffing: they have the choice to not do unit tests
+******* we should highlight the risk and cost to quality
+******* this needs to be stored in the projectlog (PM) in smp sharepoint site
+****** project model: TEK is in control of the process: we decide how we work
+***** simulators
+****** why
+******* if you cannot get the environment for cost, practicality, licensing
+******* the service is not ready
+******* faster execution
+****** cons
+******* not fully accurate
+******* cannot test everything
+****** how to write your own
+******* always return the same thing
+******* some sort of storage
+******* inject behavior just before calling the simulator
+****** mocking
+******* in process simulation
+******* inject mock
+******* danger of leaking into the production code base
+****** out of  qq1process sim
+******* wiremock
+******* mountebank
+******* soapUI
+**** Environment Descriptions	
+***** Development	
+****** development machine
+****** should have all the pieces deployed. mention if it is different
+***** Integration	
+****** server addresses
+****** how it differs from standard
+***** QA	
+***** UAT	
+***** Production	
+*** Architecture Fitness for Purpose	
+**** Coverage of Non-Functional Requirements	
+***** only a recap of 2-3 most critical nfrs and how they get satisfied
+**** Functional Considerations	
+**** Business Considerations	
+**** Technical Risks	
+***** how it impacts the team
+***** how it impacts the product
+***** potential risks
+****** efficiency of environments (VM, networks, jenkins)
+****** tooling
+****** integration points
+****** performance from depends not as expected
+****** api changes needed
+*** Transition Concerns	
+**** Production Transition Strategy	
+***** customer must put in production (need to be documented)
+****** if customer wants us to put in production, need insurance, need contract. need practice involvment
+***** approach
+****** offline -> upgrade -> online
+****** database migration
+**** Solution Ownership Transition	
+*** Bibliography	
+
+** NFRs
+*** TEK Quality Management
+**** functional suitability
+  - start with this one
+  - confirm the functional is common understanding
+  - do you feel comfortable with the process so far
+  - are you thinking you will get what you need?
+
+**** performance
+
+***** resource utilization
+
+ - impact on user / resource 
+ - hardware resource
+
+***** capacity
+
+ - user base
+
+**** compatibility
+
+***** co-existence
+
+ - os
+ - browsers
+ - platforms
+ - validate if we need to tests everything?
+   - ex: chrome on windows or chrome on MacOS
+
+***** interoperability
+
+ - capture integration points and all the info as required in the handbook
+ - browser
+
+**** usability
+
+***** appropriateness recognizability
+
+ - if they have conventions
+
+***** learnability
+
+ - online help
+ - user guide
+ - training
+ - ops / troubleshooting guide
+
+***** operability
+
+ - undo?
+ - logging
+
+***** user error protection
+
+ - soft delete
+ - undo
+ - validation
+ - confirmation
+ - deferred actions
+ - how much work they can do before work
+ - sudo vs root 
+
+***** user interface aesthetics
+
+ - guidelines
+
+***** accessibility
+
+ - disability
+ - color blind
+ - screen reader
+ - different requirements per devices
+ - globalization
+   - how to treat this
+   - do we force US or assume?
+   - timezone how to deal with this
+
+***** localization
+
+**** reliability
+
+***** maturity
+
+ - libraries we bring. how does this affect maturity
+
+**** security
+
+
+ PGP intro
+ PubKey crypto from redhat
+ HMAC drdobbs
+ DH: The paint video
+ DH: Wikipedia
+ DH: Wolfram: mathy, but not too badly
+ DH: A nice, simple explanation on StackExchange
+ DH: The Crypto 101 presentation deck
+ OWASP publications
+
+**** regulatory compliance
+
+ after all of this is done,
+ is there any regulations we have not talked about and we need to comply?
+
+*** Quality management ISO-25010
+
+**** Performance efficiency
+
+Define the targets for the following metrics under specified workload with proper geographical and user distribution in terms of #users, #requests for the different services, think time, data volume.
+
+- response time: microservice, end-to-end
+- resource usage: CPU, Memory, Disk, Network, I/O
+- capacity: The maximum supported workload that system can afford while meeting the specified response time and resource usage.
+
+
+**** security
+
+The degree to which a product or system protects information and data so that persons or other products or systems have the degree of data access appropriate to their types and levels of authorization. The processes and methodologies involved with keeping information confidential, available, while assuring its integrity.
+
+- confidentiality: Measures undertaken to ensure confidentiality are designed to prevent sensitive or private information from reaching inappropriate persons or systems, while ensuring that the authorized persons and system do have the appropriate degree of access to the same data.
+- data availability: The system may have critical information required for business continuity. System implementations and efforts are required to make this information available at all time as part of the security measures. Business continuity planning and disaster recovery planning are other facets of information systems security.  Plans are required mitigate major business disruptions.
+- integrity: Integrity relates to maintaining the consistency, accuracy, and trustworthiness of data over its entire life cycle. Data must not be changed in transit, and steps must be taken to ensure that data cannot be altered by unauthorized people (eg. From a breach of confidentiality). 
+- non-repudiation & accountability: Non-repudiation is the degree to which actions or events can be proven to have taken place, so that the events or actions cannot be repudiated later. Accountability is the degree to which the actions of an entity can be traced uniquely to the entity.
+- authenticity: Degree to which the identity of a subject or resource can be proved to be the one claimed.
+
+**** Usability
+
+**** mainainability
+
+- modularity
+- reusability
+- analysability
+- modifiability
+- testability
+
+
+**** reliability
+
+- availability
+- frequency of failure
+- fault tolerance
+- maturity
+- Recoverability
+
+**** functional
+
+- functional completeness
+- functional correctness
+- functional appropiateness
+
+*** Thinking of Non-Functional Requirements as Taxes on the team
+Hi Martin,
+
+Here in the U.S., we're in the midst of tax season. Our annual income taxes must be paid no later than April 18 this year. While thinking about--or gulp! actually paying taxes is not very fun, it does provide a useful example of how to think about nonfunctional requirements on agile software development projects.
+
+A nonfunctional requirement is a requirement about how the system exists in the world, rather than about something users can do with that system.
+
+Nonfunctional requirements are often about performance, capacity, maintainability, localizability, interoperability, usability, portability and so on. Because so many of these end with -ility, they are often called the -ilities of a system.
+
+As an example, a system might have a requirement to work in English, French, German and Spanish.
+
+If the development team speaks English, that version will be the one developed first. And the team will have a nonfunctional requirement to make the system work in French, German and Spanish.
+
+Whether this is thought of as one requirement for three additional languages or three requirements for one additional language each will not matter for my point in this tip.
+
+The effort to produce these translated versions of the product can be thought of as a tax on the development team’s performance. Consider whatever speed the team was going at before. They will now go a little slower due to the need to produce those translations.
+
+It doesn’t matter whether the translations happen in the sprint, a sprint behind or whenever. In the grand scheme, the team is going slower by the amount of effort it takes to produce the translations. That is, they are slower by the amount they are taxed.
+
+The amount of these taxes can become quite significant over time: Work on the three last releases of three browsers. That’s a tax. Work on the three latest Windows releases. That’s a tax. Perform at this level. That’s a tax. Future scalability to that number of users. That’s a tax.
+
+I hope that through this metaphor about the costs of nonfunctional requirements, you can use it to think through the value of including each on your project.
+
+And that will help you succeed with agile,
+
+Mike
+** Katas Sessions
+*** 2016/10/14 - exception handling #
+
+**** try/catch
+
+when:
+
+- you can do something about it
+- to map to outside domain boundary
+- top level try/catch
+	- log
+	- map
+	- notify
+	- decide to crash/restart or not
+	
+not for:
+
+- to control flow
+- for every method
+
+****  content of boundary exception
+
+- whose fault it is
+- impact on the original request
+- reason
+- what to do
+- id of the exception instance: could compromise stability of system
+
+- !! is this something the customer decides? is this something we have aligned?
+
+ 
+**** authorization errors
+
+- when accessing a not authorized resource, return not found
+
+**** authorization
+
+UI for springsecurity: http://lightadmin.org/
+
+- member of a group
+- by named permissions
+- specific context
+	- ACL
+	- Custom code
+	- Attribute based auth, policy based auth
+	
+- standards:
+	- authentication: oauth (user -> machine role delegation), openid, saml
+	- authorization: saml, xacml
+	- xacml
+		- axiomatics+++ expensive but great integration
+		- viewds (not so great)
+
+- java lightweight approach
+	- springsecurity + lightadmin
+
+**** integration points
+- Can group things
+- favor tables / condensed format
+- we never show and care about how an integration does it's work
+
+***** Description
+
+- why we need it
+- why we have selected it
+- need the API documentation with promised NFRs (no need for complete architecture)
+    - highlight any concerns about the documentation
+- who is responsible for this system. (a name, who owns the architecture key)
+
+***** Technologies
+
+- from a system perspective (key part):
+    - API type
+    - version of API
+    - https
+    - oauth
+- from a software (more technology stack, but nice to have)
+    - Facebook .net client
+
+***** usage constraints
+
+- anything that affect how you use it
+    - volume of transactions
+    - batching
+    - maintenance window
+    - delay before usage
+    - production vs development
+    - certification
+    - review credentials every x months
+
+***** testing approach
+
+- how are we going to test the integration
+- approaches:
+    1. the real thing deployed for each of our deployment (preferred)
+    2. ask the client to provide something else
+    3. 
+
+***** evolution roadmap
+
+- internal system
+    - describe who will create the API and how it is going to be reviewed / agreed
+    - need clear definition of ready
+    - need clear definition of done
+    - API documents (swagger)
+- 3pp
+    - less control
+    - how does business wants to deal with changes? postpone dev? fix when problems appends?
+
+
+???? whould we test the e2e vs integration test with the server
+
+*** 2016/10/14 - HSM / SSM
+
+Why it is not so frequent:
+
+- cost
+- nfr, not a focus
+- danger of issues
+
+*** 2016/10/12 - Security concepts
+
+main concerts of application security:
+
+- data protection
+  - on the wire:
+    - encrypt with ssl
+    - enable perfect forward encryption
+  - at rest
+    - encrypt disk
+    - encrypt ram / swap
+    - use of HSM
+    - sign some data at rest
+      - database data is signed by a key not accessible by the DBA
+      - configuration files
+- non-repudiation
+
+- access control
+- process integrity
+*** 2016/10/12 - Service architecture
+
+SOA: SOA is enterprise architecture and integrate service together
+Micro-services: is software architecture. Could implements one service in a SOA architecture
+
+pros to micro-services:
+
+- scaling part of application differently (efficiently) main reason
+- availability
+- flexibility in deployment
+- more manageable pieces
+- stateless is better followed by devs, but can be achieved in a SOA architecture 
+
+cons
+
+- deployment more complex
+- ops job harder
+- cost more up-front
+
+**** SOA
+
+Enterprise architecture pattern
+
+- interface governance
+- alignment between services
+- a service fulfill a business function
+- does not have to be all machine, could be human
+
+**** Micro-services
+
+Software architecture pattern
+
+Advantages:
+
+- flexibility scalability (cost saving)
+- language polyglot
+- risk management: critical process vs non-critical. (isolation)
+- governance
+
+**** experience notes
+
+- EAG sold me a tool, not an architecture. This is why there was so much resistance
+
+*** exception handling
+
+**** try/catch
+
+when:
+
+- you can do something about it
+- to map to outside domain boundary
+- top level try/catch
+	- log
+	- map
+	- notify
+	- decide to crash/restart or not
+	
+not for:
+
+- to control flow
+- for every method
+
+**** content of boundary exception
+
+- whose fault it is
+- impact on the original request
+- reason
+- what to do
+- id of the exception instance: could compromise stability of system
+
+- !! is this something the customer decides? is this something we have aligned?
+
+ 
+**** authorization errors
+
+- when accessing a not authorized resource, return not found
+
+
+**** authorization
+
+UI for springsecurity: http://lightadmin.org/
+
+- member of a group
+- by named permissions
+- specific context
+	- ACL
+	- Custom code
+	- Attribute based auth, policy based auth
+	
+- standards:
+	- authentication: oauth (user -> machine role delegation), openid, saml
+	- authorization: saml, xacml
+	- xacml
+		- axiomatics+++ expensive but great integration
+		- viewds (not so great)
+
+- java lightweight approach
+	- springsecurity + lightadmin
+
+*** integration points
+
+- Can group things
+- favor tables / condensed format
+- we never show and care about how an integration does it's work
+
+**** Description
+
+- why we need it
+- why we have selected it
+- need the API documentation with promised NFRs (no need for complete architecture)
+    - highlight any concerns about the documentation
+- who is responsible for this system. (a name, who owns the architecture key)
+
+**** Technologies
+
+- from a system perspective (key part):
+    - API type
+    - version of API
+    - https
+    - oauth
+- from a software (more technology stack, but nice to have)
+    - Facebook .net client
+
+**** usage constraints
+
+- anything that affect how you use it
+    - volume of transactions
+    - batching
+    - maintenance window
+    - delay before usage
+    - production vs development
+    - certification
+    - review credentials every x months
+
+**** testing approach
+
+- how are we going to test the integration
+- approaches:
+    1. the real thing deployed for each of our deployment (preferred)
+    2. ask the client to provide something else
+    3. 
+
+**** evolution roadmap
+
+- internal system
+    - describe who will create the API and how it is going to be reviewed / agreed
+    - need clear definition of ready
+    - need clear definition of done
+    - API documents (swagger)
+- 3pp
+    - less control
+    - how does business wants to deal with changes? postpone dev? fix when problems appends?
+
+
+???? whould we test the e2e vs integration test with the server
+
+** Architecture discussions
+*** Security
+**** Process integrity
+***** data injection
+- escape right before you use
+****** SQL injection
+- escaping
+- sanatization (!not a good solution)
+- use whitelisting
+****** HTML
+  - escape at rendering because rendering method / technology can change
+  - escape uri before json
+  - put uri in specific types
+***** buffer overflow
+***** number overflow
+***** replay attack
+**** configuration
+***** what could happens
+****** default passwords on infrastructure
+******* prevent with safety tests that prevent the applications
+******** smoke test suite
+******** or in the code if it is a requirement
+******** security test suite
+****** misconfigured by default
+****** mistakes
+****** dev config gets into production
+****** self signed certificates
+****** developing http instead of https
+****** back doors
+***** prevent
+****** use test tools
+****** never dev under unsecure configuration
+****** never create buggy config / unsecure configuration
+**** cross site forgery
+***** use anti-forgery tokens
+***** always use unmutation ops in GET
+**** 
+* best practices
+
+** transactions
+*** distributed transactions
+*** undo what has been done
+*** references
+**** [[https://www.atomikos.com][extreme transactions]] framework
+**** [[http://ws-rest.org/2014/sites/default/files/wsrest2014_submission_7.pdf][rest distributed transaction]]
+
+** 
+* decisions to make
+
+** systems
+
+*** message format
+- XML, JSON, Protocol Buffers, Avro, edn, Hessian, BERT
+**** All data but...
+- Extensible? to new types, new versions
+- Self-describing?
+- Schemas? explicit? in/out of band?
+- Generic processors and intermediaries?
+*** simple services
+- Communication: message queues
+- Coordination: zookeeper
+- Memory: memcache, redis
+- Storage: S3, K/V stores
+  - interface to storage: jclouds
+- flow control: AWS simple flow, storm
+*** failure
+- see erlang's "armstrong_thesis_2003.pdf"
+*** refs
+- youtube talk: The language of the system (Rick Hickey)
+** version control
+*** distributed version control (git)

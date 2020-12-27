@@ -1,0 +1,32 @@
+git management ui
+
+our requirement:
+Must:
+- easy to automate the forking / creation, and setting statusses using APIs
+- AD integration
+- generate password automatically for candidates
+- show evaluator what they have to do
+
+should:
+- prevent candidate to see code review comments in the code.
+- strong web UI to review code
+- capture code review comments directly in the tool
+- possibility to extend with CI, and static code analysis
+
+wish:
+- receive feedback from candidate on the coding exercise
+- prevent candidate to see history submitters
+
+
+# list of self-hosted git:
+
+http://www.slant.co/topics/1440/~self-hosted-web-based-git-repository-managers
+
+top list:
+- gitlab: https://about.gitlab.com/
+- Gogs
+- atlassian bitbucket: https://bitbucket.org/
+- github enterprise
+- Phabricator: 
+- gerrit: https://www.gerritcodereview.com/
+

@@ -1,0 +1,190 @@
+
+* 2020
+** 2020-02 February
+*** 2020-02-11 Tuesday
+**** Daily Review
+:PROPERTIES:
+:ID:       c9d9d54a-4d03-465d-97c5-895679a91f9a
+:END:
+- [ ] Clear Physical Desktop / Inbox / Notebook
+- [ ] Clear Downloads and Desktop Folders
+  #+BEGIN_SRC emacs-lisp
+  (dired "~/Downloads/")
+  (dired "~/Desktop/")
+  (image-dired "~/Desktop/")
+  #+END_SRC
+- [ ] Collect Calendar Open Loops (+/- 2  days)
+  #+BEGIN_SRC emacs-lisp
+  (my-org-agenda-recent-open-loops)
+  #+END_SRC
+- [ ] Clear Email Inboxes
+  #+BEGIN_SRC emacs-lisp
+  (progn
+      (browse-url "https://mail.google.com/mail/u/0/#inbox")
+      (browse-url "https://mail.google.com/mail/u/1/#inbox")
+      (browse-url "https://mail.google.com/mail/u/2/#inbox"))
+  #+END_SRC
+- [ ] Process streams (Slack, [[https://twitter.com/][Twitter]]) as inboxes - record tasks, read it later, file notes
+- [ ] Capture any remaining open loops as tasks
+- [ ] Schedule + refile tasks in [[file:~/src/notes/todo.org::*Inbox][Org Mode Inbox]], Mobile [[file:~/src/notes/refile-mobile.org][Refile Location]]
+- [ ] Schedule today's tasks (immersive -> process, deep -> shallow):
+  #+BEGIN_SRC emacs-lisp
+    (progn
+      (org-agenda nil "a")
+      (org-agenda-day-view))
+  #+END_SRC
+- [ ] Clock out.
+**** Weekly Review
+:PROPERTIES:
+:ID:       38a01cc4-9c26-4d16-ba55-1c9c4b89525c
+:END:
+***** Get Clear [0/5]
+- [ ] Collect Loose Papers and Materials
+- [ ] Get “IN” to Zero
+  - [ ] Papers
+  - [ ] Physical Notebook
+  - [ ] Physical Objects
+  - [ ] Text Messages
+  - [ ] Voice Mail
+  - [ ] Email Inboxes
+    #+BEGIN_SRC emacs-lisp
+    (progn
+      (browse-url "https://mail.google.com/mail/u/0/#inbox")
+      (browse-url "https://mail.google.com/mail/u/1/#inbox")
+      (browse-url "https://mail.google.com/mail/u/2/#inbox"))
+    #+END_SRC
+  - [ ] Evernote Inbox
+    #+BEGIN_SRC emacs-lisp
+      (open-evernote-osx)
+    #+END_SRC
+  - [ ] Browser Tabs
+  - [ ] Downloads Folder
+    #+BEGIN_SRC emacs-lisp
+    (dired "~/Downloads/")
+    #+END_SRC
+  - [ ] Desktop
+    #+BEGIN_SRC emacs-lisp
+    (dired "~/Desktop/")
+    #+END_SRC
+- [ ] Empty Your Head: New projects, tasks, waiting-fors, someday/maybes?
+***** Get Current [0/9]
+- [ ] Review Previous and Upcoming Calendar Data:
+  #+BEGIN_SRC emacs-lisp
+  (my-org-agenda-longer-open-loops)
+  #+END_SRC
+- [ ] Review Action Lists:
+  #+BEGIN_SRC emacs-lisp
+  (let ((org-agenda-files '("~/src/notes/todo.org")))
+    (org-agenda "TODO" "T")
+    (beginend-org-agenda-mode-goto-beginning))
+  #+END_SRC
+- [ ] Review Waiting For List:
+  #+BEGIN_SRC emacs-lisp
+  (org-agenda "WAITING" "T")
+  #+END_SRC
+- [ ] Review Project (and Larger Outcome) Lists:
+  #+BEGIN_SRC emacs-lisp
+  (project-overview)
+  (project-deadline-overview)
+  #+END_SRC
+- [ ] Review Stuck Projects:
+  #+BEGIN_SRC emacs-lisp
+  (my-org-agenda-list-stuck-projects)
+  #+END_SRC
+- [ ] Archive completed or inactive projects.
+- [ ] Update Budget
+- [ ] Review Any Relevant Checklists
+***** Get Creative [0/4]
+- [ ] Review [[file:~/org/somedaymaybe.org][Someday Maybe List]]
+- [ ] Use RandomNote
+  #+BEGIN_SRC emacs-lisp
+  (randomnote-osx)
+  #+END_SRC
+- [ ] Be Creative and Courageous: Are there any new, wonderful, harebrained, creative, thought-provoking, risk-taking ideas you can capture and add into your system, or “external brain”?
+- [ ] Clock out.
+**** Monthly Review
+:PROPERTIES:
+:SORT:     TYPE
+:ID:       786fa031-5f7e-4eb1-8d5e-94f47f251d46
+:END:
+***** Review [[~/src/notes/goals.org][Life Goals]]
+- [ ] Scroll through completed goals.
+- [ ] Move newly completed goals to “Completed” heading for archives.
+- [ ] Update timelines for existing goals.
+- [ ] Update wording/definition/scale of goals.
+- [ ] Add any new goals, and corresponding projects if needed.
+***** Review Project List
+#+BEGIN_SRC emacs-lisp
+(project-overview)
+#+END_SRC
+- [ ] Archive any completed or inactive projects
+- [ ] Update outcome for each project, making sure corresponding goal is listed under each project in Org-Mode
+- [ ] Order projects by general priority in Org-Mode
+- [ ] Replicate updated Project List as needed
+  - [ ] Org-Mode
+  - [ ] Evernote
+  - [ ] Dropbox
+  - [ ] Google Drive
+  - [ ] Documents Folder
+***** Review Areas of Responsibility
+#+BEGIN_SRC emacs-lisp
+(areas-overview)
+#+END_SRC
+- [ ] Evaluate areas and capture any new tasks, projects, habits, routines, or decisions needed.
+- [ ] Replicate list of areas across systems.
+  - [ ] Org-Mode
+  - [ ] Evernote
+  - [ ] Dropbox
+  - [ ] Google Drive
+  - [ ] Documents Folder
+***** Review [[evernote:///view/84441341/s516/53c11ac3-d3c1-42a6-8886-125948836f09/53c11ac3-d3c1-42a6-8886-125948836f09/][Personal Narrative Vision]]
+- [ ] Bold possible new projects or areas that need renewed focus.
+- [ ] Remove formatting of completed parts, as your dreams turn into reality
+***** Review and rearticulate [[evernote:///view/84441341/s516/46076615-463f-46d1-8557-c5889188cb5c/46076615-463f-46d1-8557-c5889188cb5c/][12 Favorite Problems]]
+***** Review Someday / Maybe list
+- [ ] Review [[file:~/org/somedaymaybe.org][Someday Maybe List]]
+- [ ] Assign next actions or new projects to any that I might want to consider doing
+***** Pick [[https://airtable.com/tblk92VIsS1lm44S1/viwIntjApUlqRbJam][someone from CRM to keep in touch with]]
+***** Update Places I've Been
+***** Re-prioritize tasks
+- [ ] Review next actions and re-apply priority tags, accounting for priority drift
+***** Extract highlights from finished ebooks
+- [ ] Import text and images into Evernote
+***** Empty trash in Evernote
+*** 2020-02-12 Wednesday
+**** Daily Review
+:PROPERTIES:
+:ID:       2a114d2c-a0c4-4e10-b691-b81c80ff388a
+:END:
+- [ ] Clear Physical Desktop / Inbox / Notebook
+- [ ] Clear Downloads and Desktop Folders
+  #+BEGIN_SRC emacs-lisp
+  (dired "~/Downloads/")
+  (dired "~/Desktop/")
+  (image-dired "~/Desktop/")
+  #+END_SRC
+- [ ] Collect Calendar Open Loops (+/- 2  days)
+  #+BEGIN_SRC emacs-lisp
+  (my-org-agenda-recent-open-loops)
+  #+END_SRC
+- [ ] Clear Email Inboxes
+  #+BEGIN_SRC emacs-lisp
+  (progn
+      (browse-url "https://mail.google.com/mail/u/0/#inbox")
+      (browse-url "https://mail.google.com/mail/u/1/#inbox")
+      (browse-url "https://mail.google.com/mail/u/2/#inbox"))
+  #+END_SRC
+- [ ] Process streams (Slack, [[https://twitter.com/][Twitter]]) as inboxes - record tasks, read it later, file notes
+- [ ] Capture any remaining open loops as tasks
+- [ ] Schedule + refile tasks in [[file:~/src/notes/todo.org::*Inbox][Org Mode Inbox]], Mobile [[file:~/src/notes/refile-mobile.org][Refile Location]]
+- [ ] Schedule today's tasks (immersive -> process, deep -> shallow):
+  #+BEGIN_SRC emacs-lisp
+    (progn
+      (org-agenda nil "a")
+      (org-agenda-day-view))
+  #+END_SRC
+
+  #+RESULTS:
+  : Switched to day view
+
+- [ ] Clock out.

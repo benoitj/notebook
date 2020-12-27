@@ -1,0 +1,215 @@
+#+TITLE: Tools
+#+OPTIONS: toc:nil num:nil
+#+REVEAL_ROOT: http://cdn.jsdelivr.net/reveal.js/3.0.0/
+#+REVEAL_THEME: dark
+
+* Test Tools
+** Customer tests
+*** DONE JBehave
+*** DONE Cucumber
+*** TODO Fit: customer test scripted framework. now part of a suite of tools. (http://fit.c2.com)
+*** TODO FitNesse: fit test authoring tool in wiki-like form
+** Web Services
+*** DONE Mountebank
+*** TODO [[http://jsonplaceholder.typicode.com/][REST Stub]]
+*** TODO FitNesse Arquillian
+*** TODO Wiremock
+*** TODO HttpUnit: junit addon to enable tests using http (http://httpunit.sf.net)
+*** TODO JFCUnit: extension to HttpUnit with many high level language utility methods. not suitable for javascript apps
+** Recorded tests
+*** TODO BPT Mercury/HP
+*** TODO eCATT: test recorderi for SAP products. (found on http://sap.com and https://wiki.scn.sap.com/wiki/display/ABAP/eCATT)
+*** TODO QTP: commercial recorded test framework
+** Data driven tests
+*** TODO DDSteps: junit data driven extension. Build data driven test cases (http://ddsteps.sourceforge.net/)
+    Data flow is: setup with DbUnit to database, invoke service with Selenium and MockWebServer, verify with spring
+** Mocking
+*** DONE mockito
+*** DONE Param/Nested runners: https://github.com/NitorCreations/CoreComponents/tree/master/junit-runners
+*** TODO EasyMock: static mock objects generation. (http://www.easymock.org)
+*** TODO JMock: dynamic mocking framework
+*** TODO junit runners: https://github.com/junit-team/junit4/wiki/Custom-runners
+** continuous testing
+- infinitest
+
+* Programming
+** DONE editorconfig: multi-editor support for whitespaces, indent, formatting.
+** DONE emacs 
+   CLOSED: [2018-01-09 Tue 17:19]
+** BACKLOG atom
+** BACKLOG eclipse EE
+** BACKLOG intellij
+* Documentation
+** Diagrams
+*** DONE Plantuml
+*** TODO UMLet
+*** TODO Graphviz (ditta, rdfdot)
+*** TODO Haskell diagrams
+*** TODO Mermaid
+*** TODO [[http://ascii-world.wikidot.com/ascii-tools][Ascii based tools]] 
+*** DONE doctoolchain
+*** DONE asciidoctor
+*** DONE markdown
+*** DONE Pandoc
+*** TODO slideshow: reveal.js
+*** BACKLOG C4 models: ArchitectureScript
+*** BACKLOG balsamiq mockups
+*** BACKLOG pencil
+*** DONE freeplane
+    CLOSED: [2018-01-09 Tue 17:21]
+* Media authoring
+*** DONE OpenBroadcastingSoftware: https://obsproject.com
+*** TODO [[https://asciinema.org][AsciiNema Session rec]]: record terminal sessions
+*** TODO screencastify
+*** DONE screenshot: greenshot: http://getgreenshot.org/
+* Database versioning
+*** TODO Liquibase
+*** TODO Flyway
+*** BACKLOG oracle goldengate: data migration
+
+youtube video: Oracle GoldenGate Fundamentals: How Oracle GoldenGate Works
+
+- supports multivendor Active / Active
+- uni
+- bi-direct
+- peer to peor (lb)
+- broadcast
+- integration (data warehouse)
+- data distribution (messaging)
+
+* Project, tasks management
+*** DONE retro web tool: http://www.retrospected.com/
+*** DONE scrum poker: https://www.planningpoker.com
+*** TODO [[https://taiga.io][Taiga]]
+*** TODO [[https://taskwarrior.org][Task Warrior]]
+*** TODO todo: TODO.txt
+*** TODO tricider collaborative decision making: http://tricider.com
+*** TODO stormboard (free for small): http://stormboard.com
+*** TODO groupmap $$: http://www.groupmap.com/
+*** TODO Padlet
+
+**** BACKLOG teamviz
+**** DONE tomighty
+     CLOSED: [2016-12-05 Mon 11:43]
+**** BACKLOG party retro
+* Version Control
+** DONE git flavors
+   CLOSED: [2016-12-01 Thu 13:21]
+** BACKLOG git-tfs: https://github.com/git-tfs/git-tfs
+** BACKLOG TFS: https://www.microsoft.com/en-us/download/details.aspx?id=47727
+
+* Build tools
+*** DONE gradle
+*** DONE maven
+*** TODO Grunt
+*** TODO Bower
+** DONE gradle
+** DONE maven
+** BACKLOG [[http://tattletale.jboss.org/][tattletale]]
+*** jar and classes dependencies analytics
+** TODO Grunt
+** TODO Bower
+** webkit
+** JRebel
+** BACKLOG [[https://github.com/spring-projects/spring-loaded][Spring Loaded]]
+ 
+* Virtualization
+*** DONE VirtualBox
+*** DONE vagrant
+*** TODO [[http://blyx.com/2015/12/01/docker-security-tools-audit-and-vulnerability-assessment/][docker security tools]]
+-
+* search tools
+*** DONE Ag: grep for programmer
+*** DONE CTAGS Program indexer: http://ctags.sourceforge.net/[ctags]
+*** BACKLOG Ack: grep for programmer http://beyondgrep.com/[ack]
+*** BACKLOG IDUtils: Text indexer: http://www.gnu.org/software/idutils/manual/idutils.html[gid]
+* difftools
+*** DONE kdiff3
+*** TODO HELIX P4MERGE: VISUAL MERGE TOOL
+*** TODO meld
+*** TODO vim diff
+
+* generators
+** http://www.json-generator.com/
+* static analysis
+*** DONE sonarqube
+*** DONE sonarscanner: http://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner
+
+* Continuous integration
+*** DONE jenkins
+*** TODO lambci: https://medium.com/@hichaelmart/lambci-4c3e29d6599b#.zcvgh469w
+*** TODO gocd
+
+* Frameworks / infra
+** BACKLOG [[http://community.pentaho.com/][pentahoe]]
+
+** SaaS
+*** intercom: https://www.intercom.io/
+** API gateway
+*** BACKLOG tyk
+*** BACKLOG netflix zuul
+*** BACKLOG 3scale
+*** BACKLOG wso2
+*** BACKLOG apiaxle
+*** BACKLOG strongloop
+* java libraries
+**** BACKLOG com.google.common.collect.ComparisonChain
+**** BACKLOG com.google.common.base.Objects.*
+**** BACKLOG Lumbok
+**** BACKLOG Data Mapper Orika
+**** BACKLOG [[https://projectlombok.org/][lombok]] - annotations for boiler data bean, builders, loggtools:  try/finally (<java8):
+*** Date/Time
+**** BACKLOG joda
+**** BACKLOG java8+: java.time
+*** Logging
+**** DONE slf4j w/ logback
+     CLOSED: [2016-12-01 Thu 13:33]
+*** Bean Validation
+**** BACKLOG (JSR303?): Hibernate validator
+*** API Gateway
+**** BACKLOG tyk
+**** BACKLOG netflix zuul
+**** BACKLOG 3scale
+**** BACKLOG wso2
+**** BACKLOG apiaxle
+**** BACKLOG strongloop
+
+*** Security
+**** Active Directory Lightweight Directory Services:
+- https://msdn.microsoft.com/en-us/library/aa705886(v=vs.85).aspx 
+- https://technet.microsoft.com/en-us/library/cc754361(v=ws.10).aspx
+**** Some alternatives:
+- https://www.axiomatics.com/
+- http://www.viewds.com/
+- http://incubator.apache.org/projects/openaz.html
+- (and others, mostly XACML-based
+AzMan and company:
+- https://msdn.microsoft.com/en-us/library/bb897401.aspx?f=255&MSPPError=-2147217396
+- https://netsqlazman.codeplex.com/
+*** rule engines
+- Drools rules
+- http://www.easyrules.org/
+- JSR303 / 349
+- http://jlisa.sourceforge.net/
+- http://sweetrules.projects.semwebcentral.org/
+- hibernate validation
+- SpringRuleEngine
+- http://www.jessrules.com/docs/71/
+* databases
+*** TODO com.google.common.collect.ComparisonChain
+*** TODO com.google.common.base.Objects.*
+*** TODO Lumbok
+*** TODO Data Mapper Orika
+
+** BACKLOG graph database
+*** BACKLOG neo4j: graph database
+** BACKLOG olap
+** BACKLOG event store
+*** BACKLOG datomic
+** BACKLOG object store
+** relational
+*** DONE postgresql
+** document
+*** DONE mongo
+** key/value
+*** DONE redis 

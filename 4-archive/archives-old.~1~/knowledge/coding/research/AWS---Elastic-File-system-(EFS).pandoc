@@ -1,0 +1,41 @@
+AWS - Elastic File system (EFS)
+
+# What is it?
+
+
+- seamsless integration: connects using NFS4.1 protocol
+- auto resize
+- Managed services
+- shared accross EC2s
+- low cost
+- performant
+- HA
+- Secure: integrates with VPC and IAM
+
+# use cases
+
+Amazon EFS Use Cases
+- Big Data and Analytics
+	- Amazon EFS provides the scale and performance required for Big Data applications that require high throughput to compute nodes coupled with read-after-write consistency and low-latency file operations. 
+- Media Processing Workflows
+	- Media workflows like video editing, studio production, broadcast processing, sound design and rendering often depend on shared storage to manipulate large files. Strong data consistency model with high throughput and shared file access can cut the time it takes to perform these jobs and consolidate multiple local file repositories into a single location for all users.
+- Content Management and Web Serving
+	- Amazon EFS can be used as a durable, high throughput file system for content management systems that store and serve information for a range of applications like web sites, online publications, and archives.
+- Home Directories
+	- Amazon EFS can provide storage for organizations that have many users that need to access and share common data sets. An administrator can use Amazon EFS to create a file system accessible to individuals across an organization and establish permissions for users and groups at the file or directory level. 
+
+# EFS vs EBS
+
+https://aws.amazon.com/efs/details/
+
+# availability and pricing
+
+- US East, US West (Oregon): $0.30/GB-month
+- EU (Ir): $0.33/GB-month
+
+- based on average space susage throughout the month.
+
+Free-tier: 5 GB-month
+
+
+

@@ -1,0 +1,227 @@
+#+TAGS: practice recruitment interview sales swag
+#+SEQ_TODO: SOMEDAY(s) BACKLOG(b) READY(r) TODO(t) WAITING(w) | DONE(d)
+* Learning Plan
+  
+** BACKLOG read https://testing.googleblog.com/2007/01/introducing-testing-on-toilet.html
+** DOING Read DDD book
+** BACKLOG Learn common antipatterns
+*** [[https://sourcemaking.com/antipatterns/software-development-antipatterns][ref]]
+
+* Learning backlog
+** Books readings
+*** Softskills
+**** Listening: The Forgotten Skill: A Self-Teaching Guide Madelyn Burley-Allen - John Wiley & Sons (1995)
+**** The Wisdom of Listening Mark Brady Wisdom Publications, - Somerville MA, (2003)
+**** Crucial Conversations: Tools for Talking When Stakes are High Kerry Patterson, Joseph Grenny, Ron McMillan, and Al Switzler McGraw-Hill; New York; 2002
+**** The Communication Catalyst - Mickey Connolly & Richard Rianoshek Ph.D. - Dearborn trade Publishing, Conversant Solutions, the communication catalyst (2002)
+** source version system
+*** mercurial
+*** PlasticSCM
+*** Perforce
+** To Filter
+*** BACKLOG Learn common antipatterns
+**** [[https://sourcemaking.com/antipatterns/software-development-antipatterns][ref]]
+
+*** SOMEDAY flatpak package manager
+*** SOMEDAY read https://github.com/MostlyAdequate/mostly-adequate-guide
+*** SOMEDAY read about boozang: https://boozang.com/?mail=1a3
+*** SOMEDAY add learning akka and drools, camel to todos
+*** SOMEDAY Agile Essentials: https://allegisgroup.csod.com/client/allegisgroup/default.aspx?ReturnUrl=https%3a%2f%2fallegisgroup.csod.com%2fLMS%2fLoDetails%2fDetailsLo.aspx%3floid%3d682f7f94-46ae-49b8-9419-2293e9775a8d%26query%3d%253Fs%253D1%2526q%253Dagile%26back%3d%252FGlobalSearch%252FSearch.aspx%253Fs%253D1%2526q%253Dagile#t=1
+*** SOMEDAY architecture diagrams / models
+*** SOMEDAY architecture script: http://codermike.com/introducing-architecture-script
+*** SOMEDAY ask Deny about Drools with eclipse
+*** SOMEDAY AWS Lambda
+*** SOMEDAY clone gitlab : tekdevops
+*** SOMEDAY cours:
+*** SOMEDAY follow-up with nicole on tekstack
+*** SOMEDAY getting started BMRS 
+*** SOMEDAY getting started drools (3)
+*** SOMEDAY getting started with jBehave
+*** SOMEDAY greenplum database warehouse
+*** SOMEDAY HTML / HTML5 classes
+*** SOMEDAY http://jackrabbit.apache.org/jcr/index.html
+*** SOMEDAY http://spockframework.github.io/spock/docs/1.0/spock_primer.html
+*** SOMEDAY http://www.archimatetool.com/
+*** SOMEDAY http://www.di.univaq.it/malavolta/al/
+*** SOMEDAY https://en.wikipedia.org/wiki/Architecture_description_language
+*** SOMEDAY https://www.swamphogg.com/2015/vim-setup/
+*** SOMEDAY https://zeroturnaround.com/rebellabs/using-spock-to-test-groovy-and-java-applications/
+*** SOMEDAY install askbot
+*** SOMEDAY java8 lambda`
+*** SOMEDAY java8 streams
+*** SOMEDAY learn about semantic UI
+*** SOMEDAY oreilly: 97 things a (programmer|software architect) should know
+*** SOMEDAY plantuml 2 C4 diagrams code AWS-Plantuml
+*** SOMEDAY plantuml 2 C4 diagrams code http://tupadr3.de/plantuml-icon-font-sprites/
+*** SOMEDAY plantuml 2 C4 diagrams code https://github.com/tupadr3/plantuml-icon-font-sprites
+*** SOMEDAY plantuml 2 C4 diagrams code
+*** SOMEDAY read 4+1 view model of architecture
+*** SOMEDAY read about HOTEAS
+*** SOMEDAY read about https://www.passwordstore.org/
+*** SOMEDAY read about note taking in plaintext / git
+*** SOMEDAY read ADL https://en.wikipedia.org/wiki/Architecture_description_language#Positive_elements_of_ADL
+*** SOMEDAY read drools best practices
+*** SOMEDAY read earl grey: https://github.com/tea-pot/earl-grey and https://github.com/tea-pot/earl-grey/wiki
+*** SOMEDAY Read http://www.disciplinedagiledelivery.com/introduction-to-disciplined-agile-delivery/
+*** SOMEDAY read recruitment samples http://172.27.146.226/lbelange/Technical-Interview-Samples/tree/master
+*** SOMEDAY read text modeling language: http://ceur-ws.org/Vol-837/paper10.pdf
+*** SOMEDAY Read the “Start Here” section of the DAD (Disciplined Agile Delivery) site: http://www.disciplinedagiledelivery.com/start-here
+*** SOMEDAY Read/Review the more in-depth version: http://www.disciplinedagiledelivery.com/dad-book/
+*** SOMEDAY release planning for vsp: is it realistic to say that this moves or the scope changes?
+*** SOMEDAY review iconic2: see bood on gumroad from joshua morony
+*** SOMEDAY Skillsoft Courses via Catalyst: https://sts.allegisgroup.net/adfs/ls/IdpInitiatedSignOn.aspx?logintorp=https://allegisgroup.csod.com
+*** SOMEDAY spock info:
+*** SOMEDAY what is crucible
+****Sle Essentials: https://allegisgroup.csod.com/client/allegisgroup/default.aspx?ReturnUrl=https%3a%2f%2fallegisgroup.csod.com%2fLMS%2fLoDetails%2fDetailsLo.aspx%3floid%3d682f7f94-46ae-49b8-9419-2293e9775a8d%26query%3d%253Fs%253D1%2526q%253Dagile%26back%3d%252FGlobalSearch%252FSearch.aspx%253Fs%253D1%2526q%253Dagile#t=1
+OMEDSOMEDAYAY
+*** SOMEDAY pure4j
+*** SOMEDAY unit test: complete autofixture in java 
+*** SOMEDAY unit test: replace Calendar by joda or java.time
+*** SOMEDAY architecture katas: populate architecture handbook with information
+*** SOMEDAY find out how to lead architecture visionm
+*** SOMEDAY read disciplined agile delivery
+*** SOMEDAY read about JBoss BRMS, Camel EIP, Drools, JBehave, Splunk, jaxrs notations, spring data, orika data mapper
+*** SOMEDAY read about stash with code reviews
+*** SOMEDAY oauth2: pink identity federate
+*** SOMEDAY vsp test harness
+*** SOMEDAY look at: https://www.amazon.com/Programming-Interviews-Exposed-Secrets-Landing-ebook/dp/B008SGNJOW/ref=pd_sim_351_1?ie=UTF8&dpID=51csf0YWimL&dpSrc=sims&preST=_OU01_AC_UL320_SR252%2C320_&psc=1&refRID=N0BA0D4ZY430P1FQ0603
+*** SOMEDAY pet project: asciidoctor customize stylesheet for TEK
+*** SOMEDAY pet project: asciidoctor complete C4 plantuml diagrams
+*** SOMEDAY create architecture handbook cheatsheet
+*** SOMEDAY get free office for home: portal.office.com
+*** SOMEDAY contact: gaming at TEK: ffiliatr@teksystems.com  
+*** SOMEDAY read disciplined agile delivery : a practitioner's guide to agile software delivery in the enterprise (scott ambler)
+*** SOMEDAY read the "scrum guide" book from Ken Schwaber
+*** SOMEDAY learn spock and groovy integration tests
+*** SOMEDAY http://lifehacker.com/lifehacker-pack-for-windows-our-list-of-the-best-windo-787533613/1484099836
+*** SOMEDAY RRSP
+*** SOMEDAY photo sur slack et sharepoint
+*** SOMEDAY review course pluralsight
+*** SOMEDAY http://www.ryanrhoten.com/brandedme/ and branded.me
+*** SOMEDAY Ask Deny about code quality project experiences
+*** SOMEDAY book a meeting with Deny
+*** SOMEDAY detailed read of TEKnique transition (1)
+*** SOMEDAY DTO MVC pattern
+*** SOMEDAY review ability to validate coding exercise and identify gap
+*** SOMEDAY c# octopus deploy, anything in java
+*** SOMEDAY technology stack overview software
+*** SOMEDAY update CV: https://www.teksystems.com/en/resources/teksavvy-blog/2016/tips-for-age-proofing-your-it-resume
+*** SOMEDAY https://www.teksystems.com/en/resources/teksavvy-blog/2015/modern-it-resumes
+*** SOMEDAY learn wadl
+*** SOMEDAY improve practice code quality 
+****Sad about macker: https://innig.net/macker/index.html
+****Seckstyle, JCSC, macker, PMD, Jlint, sonarqube, FindBugs, FitNesse,  [JPF](http://babelfish.arc.nasa.gov/trac/jpf), CPD, JDepend, Health4J
+****Schitecture / design validation: macker, aDarwin, PatternTesting(http://www.patterntesting.com/)
+****SashBurnFree
+****Sild/artifacts?
+****SsWISH WISH WISH WISH WISH WISH OMEDAYOMEDAYOMEDAYOMEDAYOMEDAYOMEDAY
+*** SOMEDAY default DoD, WoW, DoReady, RACI on projects
+*** SOMEDAY learn
+****Slunk
+****Sta for code quality (sonarqube)
+****Sn sonarqube on dev machWISH WISH WISH OMEDAYOMEDAYOMEDAY
+*** SOMEDAY architecture script: http://codermike.com/introducing-architecture-script
+*** SOMEDAY review cloud certifications: https://www.coursera.org/specializations/cloud-computing
+*** SOMEDAY code kata slush-angular-generator
+*** SOMEDAY read "code complete 2nd edition"
+*** SOMEDAY what is dcos / mesos
+*** SOMEDAY learn about majento
+* READY Blog / trends
+** Blogs
+*** http://www.colbycheeze.com/blog/
+*** http://blog.cleancoder.com/
+** Trends
+*** google trend https://www.google.com/trends/explore#q=plantuml
+*** https://www.thoughtworks.com/
+* READY Training sites
+** BACKLOG search courses and certifications	
+** https://www.mooc-list.com/
+** pluralsight
+** http://theodinproject.com/
+** http://freecodecamp.com/
+** http://www.jpassion.com/portal/
+** http://it-ebooks.info/
+** [[https://krebsonsecurity.com/][Krebs On Security]]
+** http://BANQ.QC.CA
+** best free learning sites
+*** slide rule
+*** khan academy
+*** future learn
+*** udacity
+*** coursera
+*** EdX
+*** Channel 9
+*** Coursade
+*** Accredible
+*** NovoED
+*** Edevate
+*** OpenLearning MOOC
+** mba equivalent
+   http://lifehacker.com/get-an-mba-equivalent-education-with-these-free-courses-1628424181
+* READY Soft skills
+** Situational leadership
+
+
+ # D1 (low comp - High motiv)
+ Acknowledgment 
+ • SMART 
+ Timelines and check-in points 
+ Priorities 
+ Role clarity 
+ Limits to autonomy/authority 
+ A step-by-step plan for learning 
+ Direction about what and now; training 
+ Concrete examples/templates 
+ Solutions to problems 
+ Opponunities to practice 
+ Access to resources and information 
+ Lots ot feedback on progress 
+
+ # D2 (low - med comp; low motiv)
+ Someone to listen to concerns 
+ More clarity on goals and roles 
+ Perspective 
+ Explanations of why; rationale 
+ Opponunities to be involved in problem solving and 
+ decision making 
+ Alternatives; advice 
+ More direction about how 
+ Coaching to refine skills 
+ Feedback on work 
+ Reassurance and encouragement 
+
+ # D3 (med-high comp; var motiv)
+ Opponunities to demonstrate competence 
+ Opponunities to express feelings and concerns 
+ Opponunities to test ideas, a sounding board 
+ Good questions about the work being done 
+ A vote ot confidence and encouragement 
+ Opinions about ideas, it asked; help in getting 
+ something done, it needed 
+ Reminders ot past successes 
+ Acknowledgment ot high levels ot competence and 
+ contribution 
+ Suggestions tor making the goal more interesting or 
+ challenging 
+ # D4 (high/high)
+ Trust 
+ Visibility as a contributor/an expert 
+ Opportunities to be creative and innovative 
+ Autonomy; influence 
+ Opportunities to grow 
+ Opportunities to teach and mentor others 
+ Resources to perform at D4 
+ To be valued tor contributions 
+* Learning Sources
+** search courses and certifications	
+*** https://www.mooc-list.com/
+*** pluralsight
+** Logs
+*** Logstash
+** Security
+*** Snort
+*** Tripwire
+*** Fortify
+*** [[https://krebsonsecurity.com/][Krebs On Security]]
+** online library
+http://BANQ.QC.CA

@@ -1,0 +1,28 @@
+#+TITLE: blog ideas
+
+* ideas
+** blogging?
+** confinement a blessing?
+** C4diagrams
+** architecture document arch47??
+** home IT
+*** network / server setup upgrade
+*** de-googling
+*** freenas and backup strategy
+** integration
+** tooling
+*** keyboards
+*** ADS
+**** ADS for java projects?
+**** access ADS with curl
+**** syncing delay for proxy
+*** emacs
+**** doom
+**** lsp java
+**** note taking with org-roam
+** coding
+*** foss contribution
+*** effective testing
+*** approval testing
+*** assertj vs traditional assertion libraries
+

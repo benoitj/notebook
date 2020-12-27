@@ -1,0 +1,8 @@
+= API gateway
+
+. tyk
+. netflix zuul
+. 3scale
+. wso2
+. apiaxle
+. strongloop

@@ -1,0 +1,95 @@
+#+TITLE: My todos
+
+* Projects
+** TODO book
+https://pragprog.com/titles/atcrime/your-code-as-a-crime-scene/
+
+*** Types and Programming Languages
+Benjamin C. Pierce
+** TODO update theme for blog
+https://kevq.uk/whats-in-a-font-researching-website-typography/
+https://code.tutsplus.com/tutorials/html-5-and-css-3-the-techniques-youll-soon-be-using--net-5708
+** TODO download latest kindle books
+** TODO setup PARA in emacs
+** TODO massive simplification of home services [8/27]
+   DEADLINE: <2019-10-31 Thu>
+*** WAITING setup os for docker compose
+with .env files
+*** WAITING setup nfs
+*** TODO setup plex
+*** TODO setup traefik with ssl certs
+*** TODO setup nextcloud
+*** DONE shutdown all existing services
+*** DONE backup what has to be backed up
+    SCHEDULED: <2019-09-01 Sun>
+*** DONE setup nextcloud for Isabelle
+    SCHEDULED: <2019-09-26 Thu 19:00>
+*** DONE upgrade traefik to 2.0
+*** DONE configure basic keycloak
+*** DONE use auth host
+    SCHEDULED: <2019-10-07 Mon>
+*** DONE secure api/dashboard
+    SCHEDULED: <2019-10-08 Tue 20:00>
+*** DONE setup auth proxy
+*** TODO setup monitoring
+*** TODO use ldap
+    SCHEDULED: <2019-10-09 Wed 20:00>
+*** TODO ldap on current services
+*** TODO setup mumble
+*** TODO setup heimdall start page
+*** TODO setup piwigo photo manager
+*** TODO setup gitea
+*** TODO setup docker repo
+*** TODO setup monitoring
+*** TODO review backup strategy for docker config/static
+*** TODO review backup strategy for nextcloud data
+*** TODO setup collabora
+*** TODO setup nextcloud for Lauriane
+*** TODO setup nextcloud for Anais 
+** TODO learn haskell [0/1]
+*** NEXT read real world haskell
+    SCHEDULED: <2019-09-26 Thu>
+
+** https://www.ricardocuisine.com/recettes/6159-burger-d-avoine-de-marie-joanne-boucher
+** TODO SOSgarde site pour lauriane
+** TODO scart switcher
+https://github.com/Numbski/open-source-scart-switch
+https://www.engadget.com/2007/03/13/how-to-make-a-solid-state-a-v-switcher/
+** TODO SNES toslinnk
+https://github.com/borti4938/SNES-AddOn-PCBs/tree/master/digAudio
+** TODO Genesis bypass
+https://github.com/db-electronics/triple-bypass-kicad
+** TODO setup me.benoitj.ca home page contact card https://indieweb.org/Getting_Started
+** TODO self hosting
+** TODO list of books read: https://lazybear.io/books/
+** TODO add my site to blog registry
+https://awesomeblog.club/
+https://lobste.rs/
+
+** TODO get book "the introduction to algorithms"
+
+*
+
+** TODO demander une toile de piet
+http://www.retas.de/thomas/computer/programs/useless/piet/Piet/index.html
+* Inbox
+** TODO write a forge plugin for gitea
+https://codeberg.org/api/swagger
+** TODO uptimebot vs other infra monitoring
+** TODO intrusion detection
+fail2ban?
+opensense?
+** TODO tech books
+*** learning web design, 5th ed
+jennifer niederst robbins
+*** learning javascript, 3rd ed
+Ethan Brown
+*** the linux command line, 2nd ed
+
+*** head first go
+Jay McGavren
+** TODO create a url finder.
+see https://metacpan.org/source/MSCHWERN/URI-Find-20160806/t%2FFind.t
+for url example.
+
+should also support urls split on multiple lines, where a prefix is added.

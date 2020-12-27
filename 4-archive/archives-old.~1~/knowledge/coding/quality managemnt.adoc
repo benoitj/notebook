@@ -1,0 +1,48 @@
+= Quality management
+
+== ISO-25010
+
+=== Performance efficiency
+
+Define the targets for the following metrics under specified workload with proper geographical and user distribution in terms of #users, #requests for the different services, think time, data volume.
+
+. response time: microservice, end-to-end
+. resource usage: CPU, Memory, Disk, Network, I/O
+. capacity: The maximum supported workload that system can afford while meeting the specified response time and resource usage.
+
+
+=== security
+
+The degree to which a product or system protects information and data so that persons or other products or systems have the degree of data access appropriate to their types and levels of authorization. The processes and methodologies involved with keeping information confidential, available, while assuring its integrity.
+
+. confidentiality: Measures undertaken to ensure confidentiality are designed to prevent sensitive or private information from reaching inappropriate persons or systems, while ensuring that the authorized persons and system do have the appropriate degree of access to the same data.
+. data availability: The system may have critical information required for business continuity. System implementations and efforts are required to make this information available at all time as part of the security measures. Business continuity planning and disaster recovery planning are other facets of information systems security.  Plans are required mitigate major business disruptions.
+. integrity: Integrity relates to maintaining the consistency, accuracy, and trustworthiness of data over its entire life cycle. Data must not be changed in transit, and steps must be taken to ensure that data cannot be altered by unauthorized people (eg. From a breach of confidentiality). 
+. non-repudiation & accountability: Non-repudiation is the degree to which actions or events can be proven to have taken place, so that the events or actions cannot be repudiated later. Accountability is the degree to which the actions of an entity can be traced uniquely to the entity.
+. authenticity: Degree to which the identity of a subject or resource can be proved to be the one claimed.
+
+=== Usability
+
+=== mainainability
+
+. modularity
+. reusability
+. analysability
+. modifiability
+. testability
+
+
+=== reliability
+
+. availability
+. frequency of failure
+. fault tolerance
+. maturity
+. Recoverability
+
+=== functional
+
+. functional completeness
+. functional correctness
+. functional appropiateness
+

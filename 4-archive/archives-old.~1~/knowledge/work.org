@@ -1,0 +1,595 @@
+* worklog
+** 2017
+*** TODO 2018-06 to -: CCC casualty rules engine
+*** 2018-10: investigation work for daycare works
+- participate into coding review of daycare works application
+- give feedback on what i've seen to feed inception and aquisition made by/from daycare works
+*** TODO 2018-06: Pre-sales with CCC for Casualty Rules Engine
+*** TODO 2017-12 to 2018-06: VSP Claims validation
+*** TODO 2017-07 to 2017-12: VSP Pation history - Past Service Loading
+*** 2017-02 to 2017-05: VSP Doctor Reimbursment Calculation Service (DRCS)
+this project is to merge the drcs old soap service into priced claim service. some functions are moved to the downstream business pricing soap service.
+**** scope
+***** Architect
+after the departure of Chistian, I took over the Architect role for end of discovery and part of the construction
+**** stack
+- camel
+- REST/Hypermedia
+- spring core
+- JSR303
+- object mapping: orika
+- pingfed / oauth
+- jbehave
+- jenkins
+- chef
+- sonar
+- SOAP
+- splunkit
+**** team
+- DM: Dan
+- BPO: Khatleen Fong
+- TPO: Yuri Green
+- PM: Paul Moore
+- TA: Me
+- Lead:
+  - Eric Langlais
+- QA: Rose
+- BA: Ariella Baston
+- Dev: Donald Vaillancourt
+**** TODO result
+*** 2016-10 to 2017-07: VSP Patient history
+this project is to develop the backend service that retrieve, filter and present the patient's claims history
+composed of 3 services, the PH features are used by the eligibility calculation service
+**** scope
+***** Developer
+started as a developer to ramp up and go back to coding
+***** Lead
+after the departure of Jefferson, I took over the Lead role for the last 4 sprints
+**** stack
+- camel
+- REST/Hypermedia
+- spring core
+- JSR303
+- object mapping: orika
+- pingfed / oauth
+- jbehave
+- jenkins
+- chef
+- sonar
+- splunkit
+**** team
+- DM: lois
+- BPO: Alexa Bower
+- TPO: Dave Brown
+- PM: Ghazwa
+- TA:
+  - Deny
+  - Me since 2017-06
+- Lead:
+  - Jefferson
+  - me since 2017-01
+- QA: Vasu
+- BA: Ralf
+- Dev: Ashraf
+**** result
+     Really great team and great results, customer is happy of the result. I got great feedbacks.
+
+***** claim api
+- 480K request daily
+- performance in the 30/40ms
+***** past service API
+- in the 100k requests daily
+- performance similar to claim api and even faster
+***** Patient History API
+- 100k to 300k requests daily
+- performance in the 130ms avg. We are working to even speed this up more
+***** feedback received:
+
+****** 2017-10-24 - Brett Furie - IT Manager and key sponsor for our team
+During the sprint review call, Brett highlighted the work we have done, the results/success and
+quality of our work. He was really happy with how much good results we got from PBEC calling our services.
+
+****** 2017-10-27 - Jeff Dawson - VSP IT Director
+During our daily, Dave Brown (PO) told us that during a 1 on 1, Jeff told him that he was really impressed with the work done,
+the quality and the results achived. He also told Dave that this is the first time he sees this level of quality and result and
+it was the smoothest implementation (refering to releasing / using a service in prod) that he has seen.
+
+****** 2017-10-31 - Rita Devi - total product owner     
+She's the detailed personality type with lots of opinion and sometimes difficult to work with
+
+she sent me a jabber message with:
+Hi Benoit
+you all did an amazing job.......... grep performance results
+***** on 2017-10 PH became the main source of PH for eligibility in production
+great results with more than 200K requests per day
+performance in the 200ms 
+customer is really happy with the results
+**** 
+**** what I learned
+***** real consultancy experience
+***** how to influence the team, the customer
+***** learned back coding, leadership skills
+***** not to hide things. say it in a good way though
+***** give honest feedback to team members with a plan
+*** 2017-02 to 2017-05: VSP Doctor Reimbursment Calculation Service (DRCS)
+    this project is to merge the drcs old soap service into priced claim service. some functions are moved to the downstream business pricing soap service.
+**** scope
+***** Architect
+after the departure of Chistian, I took over the Architect role for end of discovery and part of the construction
+**** stack
+- camel
+- REST/Hypermedia
+- spring core
+- JSR303
+- object mapping: orika
+- pingfed / oauth
+- jbehave
+- jenkins
+- chef
+- sonar
+- SOAP
+- splunkit
+**** team
+- DM: Dan
+- BPO: Khatleen Fong
+- TPO: Yuri Green
+- PM: Paul Moore
+- TA: Me
+- Lead:
+  - Eric Langlais
+- QA: Rose
+- BA: Ariella Baston
+- Dev: Donald Vaillancourt
+**** TODO result
+**** 
+** 2016
+*** TODO work log CW pre-sales SA support
+    SCHEDULED: <2017-03-03 Fri>
+*** 2016-07 to 2016-08: VSP dr eligibility retail provider networks
+**** scope
+As the architect, drive the architecture discussions for the coverage of retail provider networks (costco, signa, walmart)
+I completed the discovery phase as well as sprint #1 where the team continued since no architecture elements where changed.
+**** stack
+- jboss drools rules
+- old jboss technology stack
+- REST, but no changes required
+- jbehave
+- initial kickoff of mountebank
+**** team
+- Sponsor: Kat
+- BPO: Amy
+- TPO: Rao
+- DM: mary (dan)
+- PM: Sal
+- BA: Leandro
+- QA: VSP
+- Lead: Eric
+- Dev: Leonardo
+**** result
+too short to dig into the details. could only do an impact during discovery.
+This was a good experience, but much too short to be satisfying.
+*** TODO work log Honda pre-sales estimation
+    SCHEDULED: <2017-02-28 Tue>
+** 2014-2016
+*** Lead architect - CSDP
+**** technology stack 1
+- glassfish
+- j2ee
+- hibernate
+- jsf2
+- primefaces
+- struts
+- tomcat
+- quartz
+- oracle
+- java5/6
+- log4j
+- apache servicemix
+- REST jersey
+- EH cache
+- java 7
+- shiro
+- selenium
+- mockito
+**** technology stack 2
+- nginx
+- angularjs
+- spring boot
+- jpa / hibernate
+- haproxy
+- redis
+- vault
+- postgresql
+- docker
+- kubernetes
+- ubuntu
+- rhel 
+- xdb
+- gradle / gulp
+- jenkins
+- sonarqube
+- protractor
+- citrusframework
+- karma
+- flyway
+- docker
+- artifactory
+- git / gerrit
+- auth: shiro/oauth
+- business flow: activity
+- jakarta velocity
+- etcd
+- zabbix
+- graylog
+- fluentd
+- piwik
+- angular-piwik
+- ActiveMQ
+- mongodb
+- EDB Postgresql
+- elasticsearch
+- openjdk 1.8
+- protractor, jmeter, citrusframework, karma
+- conferenceplus
+
+- vmware
+**** ESI Decription - DCG decryption of log entries
+vault + spring boot
+**** api gateway study
+- TYK
+- Netflix Zuul
+- 3scale
+- wso2
+- api axle
+- strongloop
+**** devops maturity model
+http://urbancode.com/resources
+http://developer.ibm.com/urbancode/docs/continuous-delivery-maturity-model
+**** study how to do installed based
+NIM ericsson product vs IBMS vs others 
+**** member of VAT
+virtual architecture team. team composed of sweden, india, hungary, and canada
+
+** 2002 - 2008
+*** Lead Software developer - Automatic data collection
+**** technologies and methodology
+- Perl
+- expect
+- waterfall
+**** Tasks
+- Plan projects with the product owner and project manager
+- Create design documents that specifies how features will be developed, and validated
+- Lead the development and validation of the features with teams of 3-5 developers
+- Give demos
+- Participate to meetings with our stakeholders
+*** Software developer - Automatic data collection
+**** technologies
+- Perl
+- expect
+- ssh, telnet, ftp, sftp, scp
+**** Tasks
+- Code, maintain, refactor, and test the application
+- Code new automated collection procedures to support new Ericsson products
+- Deploy the application inside the customer operators network
+- Create mocks of real equipments to enable rapid development
+*** Ericsson software deployment web applications - Lead software developer
+**** projects
+***** chap
+Applications that is handling the workflow to create, validate, and release correction packages on Ericsson switches
+***** NetSA
+- Network software auditor
+  - audit software deployment and installation
+  - create reports and corrective measures
+  - Identify when software is being deployed
+- Network Data Collection to detect software deployment on equipment
+- ETL process the data
+**** technologies
+- JSP
+- struts
+- spring
+- velocity
+- java
+- ant
+- maven
+**** Tasks and achievements
+- As a lead developer, coordinate all development activities
+- Lead teams of 3-5 members
+- Design, Implement, test features
+- Introduce new technologies. Create prototypes
+** 1999 - 2002
+*** Software developer - Ericsson
+**** CCL 
+Customer configuration library
+Web application that offers software deployment browsing and auditing
+***** technologies
+- java 1.1
+- apache jserv (servlets)
+- jdbc
+- sybase
+- clearcase
+- ant
+***** Role & achievements
+- Design, develop and test
+- introduced ant scripts to replace makefiles
+**** AXE Switch Remote deployment
+***** technologies
+- bash scripts
+***** Tasks & Achievements
+- maintain existing scripts
+- Develop and test new features
+** 1999 (may - august)
+*** Software developer intern
+**** project - ccl
+- Customer configuration library
+- Web application that offers software deployment browsing and auditing
+**** technologies
+- java 1.1
+- apache jserv (servlets)
+- jdbc
+- sybase
+- clearcase
+- makefiles
+**** Role & achievements
+- Design, develop and test
+** 1998 (August - December)
+*** Software developer intern - Ericsson TDMA ACA group
+**** projects
+- Maintain correction packager tool (precrab)
+- Develop and maintain various deployment helper tools
+- Create crystal reports
+**** technologies
+- bash / unix scripts
+- foxpro
+- Crystal reports
+** 1996 - 1997
+*** Software developer Intern - Unigiciel
+**** techno
+- Cross-platform
+- C++
+- WXWindows
+**** Tasks
+- implement application features
+- implement/extend cross platform widgets (data table, tabs)
+** volunteering
+- Club de Patinage de vitesse
+- FOSS developer - Debian
+
+* feedback
+** 2017
+*** 2017-03-29 - TEK - Ghazwa (PM)
+
+Hi Benoit
+
+Thanks for fixing the error of calling a spike a story.
+I think Ralf is still confusing when to use one or the other... but glad you didn't accept this mistake... Even if it meant losing 5 points.
+
+This practice is dangerous because it inflates the team's velocity and next sprit when we have 29 points of real stories we would have to kill ourselves to deliver them... so good job catching it and not letting it happen again :)
+
+Ghazwa Darwiche , PMP | ACP | CSPO | Project Manager II
+*** 2017-03 - TEK - Vincent Leduc
+**** Subject: RE: First cut SA interview questions
+
+Awesome job guys, I will share the prescreening questions with recruiters.
+
+Rashid,
+
+If you don’t mind I will defer to you any questions that the recruiter may have. Just keep me in the loop.
+
+Have a great week end.
+
+Vincent.
+
+Vincent Leduc | AppsDev | TEKsystems | Office: 866.376.6100 x113 | Mobile: 514.972.8087
+
+**** From: Jilani, Rashid 
+Sent: Friday, March 17, 2017 11:04 AM
+To: Mostowfi, Farhad K. <fmostowf@teksystems.com>; Joly, Benoit <bjoly@teksystems.com>; Leduc, Vincent <vleduc@teksystems.com>
+Subject: RE: First cut SA interview questions
+
+Hi: all, please see the final draft for the SA interview question attached.
+
+Besides incorporating comments and suggestion from Benoit, I also have added more Agile related questions per Farhad request. I also highlighted (in green) some of the questions that I think are the prime candidate for the prescreening questions because they can easily be asked by a recruiter without getting into too much details. 
+
+I think at this point we cover good depth and breadth of questions for a SA candidate, but Please review it and let me know if you want to expand the list further.
+
+Regards,
+Rashid.
+
+**** From: Mostowfi, Farhad K. 
+Sent: Thursday, March 16, 2017 3:27 AM
+To: Jilani, Rashid; Joly, Benoit; Leduc, Vincent
+Subject: RE: First cut SA interview questions
+
+Rashid/Benoit,
+
+Thank you so much for the work on this. The questions are very helpful and even if recruiter asks them still it is a good idea to have our technical interviewer go through them as well. Also in general, I think asking more questions about agile software delivery is very important.
+
+Thanks,
+Farhad
+
+
+**** From: Jilani, Rashid 
+Hi: Benoit all the points you made are quite valid. I guess we have to come up with two set of questions one more concrete for recruiters, and one bit more detail and situation oriented for the technical interview. At this point I think we have good amount of both, so I will add your questions in the excel too and get the final version out. We can always tweak the questions as we move forward, beside that I will also try to highlight the concrete questions for prescreening that helps recruiters to quickly evaluate a candidate.
+
+Regards,
+Rashid.
+
+**** From: Joly, Benoit 
+Sent: Thursday, March 16, 2017 8:02 AM
+To: Jilani, Rashid
+Cc: Mostowfi, Farhad K.; Leduc, Vincent
+Subject: RE: First cut SA interview questions
+
+Hi Rashid,
+
+I went through most of the questions and overall they could work for recruiters with some minor tweaking. 
+
+For technical interview questions, the questions are tool centric and not enough about the rationale / pros / cons of these technologies and patterns.
+
+Based on my understanding, we are looking for candidates that know the whys more than have concrete experience on all the tools. 
+
+Below you’ll find more specific comments based on my previous assumptions.
+
+Regards,
+
+Benoit
+
+•	Java/j2ee
+o	Tell me some of the most popular Java web development framework have you used in the past
+	with most valuable being Spring MVC, JSF
+	I would also ask to pick the one that is the best according to candidate and ask him why
+o	What versions of java you have used in the past
+	Java 1.0 was released in 1996 so someone who has only 1.0 knowledge probably don’t know anything about web frameworks, jpa / hibernate, spring, etc... Java started becoming stronger in version 5. 
+	there is a versioning change that happened after java 1.4
+	any distinction between Java SE vs Java EE?
+o	What 2 version of Java triggered the core language changes
+	java 5 introduced autoboxing, enums, for each loops, static imports, annotations
+	java 6 was mostly a performance lift except for DI in j2EE 6
+	java 7 new file io, updates to existing features
+	java 8 lambda, date / time library
+	see this for more details: https://en.wikipedia.org/wiki/Java_version_history
+o	Have you ever used Spring? If yes, what was the reason you moved to Spring?
+	DI itself is not exclusive to spring since Java EE 6 got CDI which some qualifies as superior technology by itself (the ecosystem is weak though compared to spring). 
+	Are we comparing J2EE vs Spring? If so, I agree with lightweight, flexible. I would add: more complete and dynamic ecosystem, better integration platform, many many supporting features, now like spring data, spring boot, spring cloud, spring AOP, spring integration, etc….
+	Java EE is a standard while spring is actually a vendor locked in, an open source vendor locked in though. Spring deployment is not limited to j2ee AS
+•	Design and Architecture
+o	I would add questions about integration patterns. Things like pipes and filters, publish - subscribe, message bus, message broker, aggregator, dynamic router, etc….
+	What they are doing
+	What are they best for
+o	SOA vs Microservice is always a good question to ask
+o	There are always ways to turn this into a “I have problem X, tell me the best approach to solve it”
+o	CI / CD
+	What are the objectives of CI / CD
+	What are the most important steps of a CI and CD pipeline
+	Software versioning and packaging could also be covered
+o	Quality
+	What are the main characteristics of software quality?
+•	Methodologies
+o	Agile: Scrum, Kanban, XP, etc…
+	Characteristics
+	Pros/Cons
+o	Pair programming
+o	TDD
+o	BDD
+o	DDD
+o	DevOps, not the tools, the DevOps goal and specific objectives to create a team that is both designing, developing, testing, and operating services
+
+
+*** 2017-01 - TEK - Ghazwa (PM)
+**** got applaused and got good feedback after my first spring review presentation.
+*** 2017-01 - VSP - Alexa Donovan Bower, Dave Brown (POs)
+**** after taking the Lead role, they told that it was like if there was no change of lead.
+*** 2017-01-05 - VSP - Rita Devi
+ Jose Navarro (TGS) contacted me to give me feedback he got from Rita Devi (VSP):
+ Rita contacted Jose to learn more about me and to tell him good things about me and that it was great working with me / felt supported (or something like that).
+ While working on VSP Patient History project, I offered my help to Rita to clarify and answer questions she had on the new patient history API. She is supporting PBEC integration and needed detailed information.
+** 2016
+*** TODO mary and sal on VSP eligibility web project
+*** Eric Langlais on VSP DR Eligibility
+*** CW pre-sales SA support - TEK - James Smith - SA
+**** James Smith SAs comment on slack 2016-10-06
+
+     *James Smith [10:13 AM]* 
+
+     Bonjour!
+
+     Wanted to let you know that the Carlson Wagonlit opportunity is gaining a lot of traction. The Sales folks have a meeting with CW, and we will find out shortly if we won the bid. 
+     Based on the current dialogue, things look very positive.
+
+     Your participation made us look great with the client, and far more thoughtful than the competitor :slightly_smiling_face:
+
+     *Benoit Joly [10:13 AM]* 
+     :-)
+
+     this is great news. thanks for sharing
+     and happy to see your french greetings hehe
+
+     *James Smith [10:14 AM]*
+     Sure thing. You were quick on your feet, and gave us the ability to put our best foot forward. Thanks again!
+
+     slightly_smiling_face
+
+     *Benoit Joly [10:15 AM]*
+     :slightly_smiling_face:
+
+**** James Smith SAs comment on slack 2016-09-26
+
+     *James Smith [10:35 AM]*
+     Good Morning :slightly_smiling_face:
+
+     Hope you had a great weekend! Wanted to let you know that we had our call with Carlson Wagonlit (the folks with the Spring and Hibernate stack). Things went well, they will let us know their decision to move forward soon.
+
+     Wanted to thank you for all your help in providing us insight, so we can make this a successful engagement!
+* interviews
+** [[http://www.lifehacker.co.in/work/Send-a-Pain-Letter-to-Get-Noticed-by-a-Hiring-Manager/articleshow/41391362.cms][how to get noticed by hiring managers]]
+** [[http://www.payscale.com/research/CA/Job=Solutions_Architect/Salary][Pay scale]]
+** 15 best and worst words in a resume: http://lifehacker.com/the-15-best-and-worst-words-to-use-on-resumes-according-1619980041
+* shopify call
+** questions
+*** montreal site vs other sites
+*** what is the engineering group
+- 4 in ottawa
+- 3 in mtl
+- teams
+  - performance
+  - caching
+  - ops
+  - exploration
+    - kafka
+    - other stuff
+*** technologies / dev environment
+- kube
+- memcachd
+- redis
+*** typical team?
+- junior
+- senior (crafters)
+- lead
+*** dymamics of the engineering group vs the teams
+- Francis Bogsanyi (he's located in ottawa)
+- has managers that drives teams
+*** what is a typical day of an architect 
+*** architects code?
+- unclear
+*** they are looking for
+- developer
+- experience (dev, ops, devops)
+- understand system design
+*** some Q interview
+- describe boot process (understanding of how hardware works)
+- technical deep dive (describe clearly a technical problem)
+- pair programming (live stories)
+** me
+*** 20 years of experience
+*** coding since forever
+***** linux background
+*** java, perl, C/C++. some tries on clojure, nodejs, emacs-lisp. 
+*** Mostly OO, interest in experimenting with functional programming due to pros around immutability and function composition. 
+*** Worked in a highly typed world, trying more dynamic approach.
+*** interest in public clouds: AWS / Azure
+*** specialized in backend (sql, loosly coupled services based on REST, business rules, rule engines). experience in frontend (jsp / jsf)
+*** for telecom (18 years)
+- roles: developer, lead for many years, solution architect, lead solution architect
+- data collection, web application to help the support organization
+- many technologies / evolution. struts, jsf, spring boot / angular
+- moved out for couple of reasons: most SAs dont code (enough) at Ericsson and I like to code
+  - I like to code
+*** TA at TEK
+- work with customers to architect and design solutions based on needs, constraints
+  - agile, pre-work is limited to vision and high level plans
+- work with the team to implement the solution
+  - POC
+  - design
+  - review / quality 
+  - code
+*** for insurance (2 years)
+- microservices
+- java, spring, rule engine, REST, HATEOS
+*** what I want
+- dynamic environment which focus on results and quality
+- team members that seek to improve everyday
+- safe environment which live by the fail early principle
+- fun and motivated place to work
+- learning opportunities
+- does not need to be java
+- linux based. awesome if I could run linux on my desktop

@@ -1,0 +1,228 @@
+AWS
+
+# module 1 # 
+
+Important notes:
+
+- cloud computing
+	- on demand
+	- IT resources
+	- Accessible online
+	- Pay as you go
+
+region: regional infrastructure hosting AZs
+
+AZ: availability zones. multiple ones in a region. HA + performance
+
+Edge ??: CDN caching static content close to users
+
+# module 2 #
+
+## compute product category ##
+
+### EC2: elastic compute cloud ###
+	- can scale up/down
+	- basic unit of computing
+	- types: general, compute, storage and io, GPU, memory optimized, small
+	
+AMI: amazon machine image
+	- OS
+	- templates or custom
+
+
+	
+pricing
+	- on demand: by the hour, no commitment
+	- reserved: upfront, lower rate 50%-75 from on demand
+	- spot: bid for unused EC2 capacity, super cheap. can be interupted
+	- dedicated: private hardware, isolated, steady-state
+
+### autoscaling ###
+
+- auto scale #EC2 instances up/down in an auto scaling group
+- ensure they runs x number of EC2. kill and replace unhealthy EC2
+- use with Elastic load balancer: load balance and send to healthy EC2
+- free to use
+
+### elastic load balancing (ELB) ###
+
+- distribute load
+- fault tolerant
+- detect health of EC2s
+- remove failing instances
+- re-route trafic to healty instances
+- spans multiple AZs
+
+- features: HTTP, SSL, TCP
+- ssl offloading
+
+## database ##
+
+RDS: relational
+DynamoDB: NoSQL
+ElastiCache: caching data
+
+### amazon relational database service (RDS) ###
+- features
+  - fully managed
+  - fast, predictable performance 1k to 30k IOPS
+  - seamless integration
+
+benefits:
+	- elastic
+	- flexible (sql, mysql, oracle, pgsql
+	- secure
+	- low cost
+
+## networking ##
+
+features:
+- logically isolated
+- private network connections
+- HA DNS
+- low latency
+
+types of services:
+- VPC: virtual private cloud
+- Route 53: scalable DNS
+
+### VPC ###
+- ip range
+- public/private subnets
+- network topologies
+- route table and network gw
+- controll access using NACLs and security groups
+- can use VPN
+- attach elastic IP address (internet accessible)
+- free to use + charges for hardware VPN in connection-hour
+
+connectivity:
+- internet
+- corporate data center
+- internet and corporate data center
+- other VPCs
+
+### route 53 ###
+- powerfull domain management
+- low latency
+- in/out of AWS
+- pay only for:
+	-- managed domains
+	- number of queries resolved
+- ELB integration
+- cloudfront zone apex
+- s3 zone apex
+- AWS management console
+	
+routing policies:
+- latency based routing
+- weighted round robin
+- dns failover
+- geolocation routing
+- basic routing
+
+## Storage ##
+
+- Elastic block store (EBS): persistent block store for use with amazon EC3
+- Simple storage service (S3): durable, scalable object store
+- Glacier: data storage for archiving and backup
+- network filesystem, CDN, and more
+
+### EBS ###
+- like a HD
+- 1GB to 16TB
+- partitions, format, boot your OS
+- multiple volumes on EC2
+- for apps: DB, FS, block-level storage
+
+durability and backup:
+- automatic replication within its AZ
+- snapshot back-up to S3
+
+io provisioning:
+- provision based on need
+- or select a burstable performance model
+- scale to tens of thousands IOPS per EC2
+
+volume types: 
+	standard
+		- bursty IO requirements (boot volumes)
+		- 100 IOPS, burst to hundreds
+		- strip multiple volumes
+	provisioned IOPS
+		- IO intensive workloads (DB)
+		- up to 30 IOPS per GB (4000 IOPS on 134 GB)
+		- stripe multiple volumes
+	General purpose
+		- moderate IO workloads (med size DB)
+		- steady state of 3 IOPS per GB. burstable to 3K/10K IOPS
+		- stripe multiple volumes
+
+### S3 ###
+- store things like a collection of files
+	- static website contents
+	- backups
+	- storage (hadoop cluster for analysis)
+- Higher latency than EBS
+- easy web file share vs EBS
+
+### Glacier ###
+- best for data not frequently accessed
+- take time to retrieve (several hours)
+- high durability: 11*9s
+- cheap 0.01 per GB/month
+
+### lifecycle ###
+- can setup movement between S3 -> glacier, and glacier -> delete
+- timeline based
+- event based
+
+## admin and security ##
+IAM: identity and access management
+cloudwatch: monitoring, alarms, and monitoring
+
+### IAM ###
+- users, user groups and permissions
+- can integrate with corporate access directory
+
+## analytics ##
+
+redshift: analyse data / big data
+
+- fully managed
+- petabyte-scale
+- use existing BI tools
+- columnar storage (ie: casandra)
+- uses data sources: jdbc, odbc, pgsql drivers
+- security: encryption, network isolation (fw), audit and compliance
+- others: machine learning, hadoop, streaming processing
+
+## deployment ##
+
+cloudformation: automate deployment
+
+- create templates of resources.
+
+
+## module 4 ##
+
+http://aws.amazon.com/architecture/
+http://calculator.s3.amazonaws.com/index.html
+http://aws.amazon.com/economics/
+http://aws.amazon.com/account/
+http://status.aws.amazon.com/
+http://aws.amazon.com/security/
+https://aws.amazon.com/premiumsupport/trustedadvisor/
+security compliance certifications: http://aws.amazon.com/compliance/
+
+
+###################
+# 
+
+# test drive partner: http://aws.amazon.com/partners/testdrive/
+# competency programs: https://aws.amazon.com/partners/competencies/
+# aws marketplace: fast provision of AWS customized apps
+# Ops Checklist: http://media.amazonwebservices.com/AWS_Operational_Checklists.pdf
+	
+
+

@@ -1,0 +1,194 @@
+#+TITLE: Benlabs
+
+* Overview
+
+I have a current infra that works, but has some issues:
+  - authentication / authorization implemented per apps and inconsistent
+  - backups are not fully implemented and not tested
+  - setup not fully automated
+  - it goes down and I dont know
+
+My hopes for my new infrastructure:
+  - based on docker
+  - Automated setup and backups
+  - centralized authentication and authorization. possibly central user database (LDAP)
+  - SSL termination / discovery / certbot / dns registration using Caddy
+  - monitoring in place from day one
+  - increased security with MFA
+  - docker images generated automaticaly and published to my dockerhub account
+  - use official images, linuxserver.io images, or my own images. trust no one else.
+  - services level:
+    - use a "whoami" image as a base service
+    - publish a oauth token viewer app
+    - implement a landing page app with all my running services
+    - keep my plex running
+
+* Current infrastructure :ATTACH:
+:PROPERTIES:
+:ID:       c06644e7-ffaa-41a9-9e8a-673fa68b1757
+:END:
+
+My current infrastructure looks like this:
+#+CAPTION: figure name
+#+NAME: fig:figure name
+#+ATTR_ORG: :width 50%
+[[file:benlab/current-infra.png]]
+
+Under the DELL server, I used to run:
+ - plex
+ - minecraft servers
+ - airsonic
+ - nextcloud
+ - calibre
+
+All of these with various level of authentication, backup and automation. I also have no monitoring, so I keep getting asked "plex is not working".
+
+* New infrastructure
+
+I intend to keep my network layout for now, and work on my application server.
+
+This project is about revamping / improving my infrastructure with:
+ 1. Docker server
+    1. CoreOS instead of custom debian
+    2. Using docker volumes instead of local volumes
+    3. monitoring for my services
+    4. automated backups using borgbackup for all my volumes
+    5. reduce security exposure by using my own images on dockerhub registry
+2. NAS server
+    1. with a basic git server to replicate my files
+    2. basic filesystem access using NFS, samba
+    3. WebDav to replace NextCloud
+    4. User "home" folder accessible on webdav and nfs
+
+** System Context
+
+#+BEGIN_SRC plantuml :file benlab/context.png
+!includeurl https://raw.githubusercontent.com/benoitj/plantuml-c4-macros/master/c4-macros.puml
+
+C4_SYSTEM_CONTEXT_TITLE("BenLabs")
+
+C4_PERSON(me, "Me or my family", "A customer of the bank,\nwith personal bank accounts.")
+C4_SYSTEM(benlabs, "BenLabs", "gives different services\nlike media, books, chat, files, news...")
+C4_OTHER_SYSTEM(dockerhub, "Docker Registry", "Dockerhub registry.\nStores official and custom images")
+C4_OTHER_SYSTEM(vcs, "Version control system", "source for my docker images")
+C4_OTHER_SYSTEM(smtp, "Email server", "Email server used to send notifications")
+C4_OTHER_SYSTEM(friendsNAS, "Friend's NAS", "Used for my backup remote server. Also pushes my friend's backups to my NAS")
+
+me .d.> benlabs: C4_REL("Uses")
+me .d.> benlabs: C4_REL("Uses")
+benlabs .d.> dockerhub: C4_REL("Sends emails using", "SMTP")
+benlabs .d.> smtp: C4_REL("Sends emails using", "SMTP")
+benlabs .d.> friendsNAS: C4_REL("backup my NAS")
+friendsNAS .u.> benlabs: C4_REL("send my friend's backup")
+smtp .u.> me: C4_REL("Sends emails to")
+dockerhub .d.> vcs: C4_REL("Uses")
+#+END_SRC
+
+#+RESULTS:
+[[file:benlab/context.png]]
+
+** Container
+
+#+BEGIN_SRC plantuml :file benlab/container.png
+!includeurl https://raw.githubusercontent.com/benoitj/plantuml-c4-macros/master/c4-macros.puml
+
+C4_SYSTEM_CONTEXT_TITLE("BenLabs")
+
+C4_PERSON(me, "Me or my family", "A customer of the bank,\nwith personal bank accounts.")
+C4_SYSTEM_OUTLINE(benlabs, "BenLabs") {
+  C4_CONTAINER(firewall, "Firewall", "OpnSense", "")
+  C4_CONTAINER(proxy, "Proxy", "Caddy, Docker", "")
+  C4_CONTAINER(video, "Video Server", "Plex, Docker", "")
+  C4_CONTAINER(music, "Music Server", "AirSonic, Docker", "")
+  C4_CONTAINER(photo, "Photo manager", "Lychee/Photoshow/Piwigo, Docker", "")
+  C4_CONTAINER(book, "Book manager", "calibre-web, Docker", "")
+  C4_CONTAINER(webdav, "WebDav file sharing", "???, Docker", "")
+  C4_CONTAINER(pxe, "Netboot PXE", "netboot.xyz, freebsd, docker", "")
+  C4_CONTAINER(dockerbak, "Container Backup process", "Borg backup, Docker", "Run backups of my docker volumes to my NAS")
+  C4_CONTAINER(fs, "NAS FS", "NFS Volume, FreeNAS", "")
+}
+
+together {
+  C4_OTHER_SYSTEM(dockerhub, "Docker Registry", "Dockerhub registry.\nStores official and custom images")
+  C4_OTHER_SYSTEM(smtp, "Email server", "Email server used to send notifications")
+}
+C4_OTHER_SYSTEM(vcs, "Version control system", "source for my docker images")
+C4_OTHER_SYSTEM(friendsNAS, "Friend's NAS", "Used for my backup remote server. Also pushes my friend's backups to my NAS")
+
+me .d.> firewall: C4_REL("Uses", "https")
+firewall .d.> proxy: C4_REL("Uses", "https")
+proxy .d.> video: C4_REL("Uses", "http")
+proxy .d.> music: C4_REL("Uses", "http")
+proxy .d.> photo: C4_REL("Uses", "http")
+proxy .d.> book: C4_REL("Uses", "http")
+proxy .d.> webdav: C4_REL("Uses", "http")
+video .d.> fs: C4_REL("Uses", "nfs")
+music .d.> fs: C4_REL("Uses", "nfs")
+photo .d.> fs: C4_REL("Uses", "nfs")
+book .d.> fs: C4_REL("Uses", "nfs")
+webdav .d.> fs: C4_REL("Uses", "nfs")
+dockerbak .d.> fs: C4_REL("Uses", "nfs")
+benlabs ---d---> dockerhub: C4_REL("Sends emails using", "SMTP")
+benlabs ---d---> smtp: C4_REL("Sends emails using", "SMTP")
+dockerhub ---d---> vcs: C4_REL("Uses")
+fs .d.> friendsNAS
+#+END_SRC
+
+#+RESULTS:
+[[file:benlab/container.png]]
+
+
+#+BEGIN_SRC plantuml :file benlab/network.png
+nwdiag {
+  network internet {
+      address = "x.x.x.x/24"
+
+      fiberrouter [address = "x.x.x.x"];
+  }
+  network internalint {
+      address = "196.168.1.x/24";
+
+      fiberrouter [address = "196.168.1.1"];
+      opnsensefw [address = "196.168.1.2"];
+  }
+  network local {
+      address = "10.1.x.x/24"
+
+      opnsensefw
+      wifiRouter
+      myDeskSwitch
+      nas
+      appServer
+      kidsDesktop
+  }
+  network wifi {
+      address = "10.1.x.x/24"
+
+      wifiRouter
+      laptop
+      phones
+      tv
+  }
+  network desk {
+      address = "10.1.x.x/24"
+
+      myDeskSwitch
+      desktop
+      workLaptop
+      personalLaptop
+  }
+  network docker {
+      address = "127.1.x.x/24"
+
+      appServer
+      pihole
+      miniflux
+      plex
+      pihole
+      calibreWeb
+  }
+}
+#+END_SRC
+
+#+RESULTS:
+[[file:test.png]]

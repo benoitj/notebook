@@ -1,0 +1,43 @@
+drools
+
+# Best practices
+	
+- Keep deployable separate unit
+- stateless
+- limit number of facts in statefull sessions
+- limit object size by using DTOs
+- Use batched mode of execution
+	- instead of adding object one at a time
+- use drools for decisions, not for actual actions
+- avoid using eval
+- work on aggregates where possible
+- use event logging for debugging
+- keep individual rules small, simple and atomic
+	- avoid cyclic triggering of rules when updating facts
+	- use agenda groups and activation groups when possible
+- use static java methods in your project to simplify rule action logic
+	- why?
+
+# EAG best practices
+
+- minimize the number of rules within a drl source file
+	- for ease of maintainability, only one rule should be specified per file
+- Group DRL files within a package to replesent a specific business rule matching context
+- facts added to the knowledge session should be immutable
+	- rule matching should not depend on the outcome of another rule's actions (create layers to reduce knowledge base size. Modularity)
+	- it is preferred to execute the rule's actions by updating a responseholder object response to the rule's engine caller
+	- at that point, the rule engine caller, can create a new session to re-evaluate the matching rules
+- rules must be unit tested
+
+infered facts = facts created by a then clause of a rule
+
+
+**feedback**: no clear rationale for the points above. unclear for lead and devs
+
+
+# questions
+
+- read about triggering on sub objects, using modify or update
+- immutable input facts
+- inferred facts vs derived facts
+  

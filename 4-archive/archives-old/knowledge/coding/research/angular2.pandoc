@@ -1,0 +1,288 @@
+angular2
+
+startup files: https://github.com/DeborahK/Angular2-GettingStarted
+
+
+# checklists
+
+## Component Checklist
+
+- Class -> Code
+- Decorator -> Metadata
+- Import what we need
+
+## Component Checklist: Class
+
+- Clear name
+	- Use PascalCasing
+	- Append "Component" to the name
+- export keyword
+- Data in properties
+	- Appropriate data type
+	- Appropriate default value
+	- camelCase with first letter lowercase
+- Logic in methods
+	- camelCase with first letter lowercase
+	
+## Component Checklist: Metadata
+
+- Component decorator
+	- Prefix with @; Suffix with ()
+- selector: Component name in HTML
+	- Prefix for clarity
+- template: View's HTML
+	- Correct HTML syntax
+	
+## Component Checklist: Import
+
+- Defines where to find the members that
+- this component needs
+-  import keyword
+- Member name
+	- Correct spelling/casing
+- Module path
+	- Enclose in quotes
+	- Correct spelling/casing
+	
+## Template
+
+- Inline template
+	- For short templates
+	- Specify the templateproperty
+	- Use the ES 2015 back ticks for multiple lines
+	- Watch syntax
+- Linked template
+	- For longer templates
+	- Specify the templateUrlproperty
+	- Define the path to the HTML file
+	
+## Component as Directive
+
+1. define "selector" id in component decorator
+2. use selector in user's template
+3. specify the component in the user's decorator "directives" attribute
+4. import the component
+
+## Interpolation
+
+- One way binding
+	- From component class property to an element property.
+- Defined with double curly braces
+	- Contains a template expression
+	- No quote needed
+	
+## Structural directives
+
+- *ngIf and *ngFor
+	- Prefix with an asterisk
+	- Assign to a quoted string expression
+- *ngIf
+	- Expression is evaluated as a true or false value
+- * ngFor
+	- Mark the local variable with #
+	- Specify 'of': '#product ofproducts'
+
+## Pipes
+
+- Pipe character: |
+- Pipe name
+- Piper parameters
+	- separated with colons
+
+Example
+
+```
+{{ product.price | currency:'USD':true:'1.2-2' }}
+```
+
+## Interfaces
+
+- Defines custom types
+-  Creating interfaces:
+	- interfacekeyword
+	- export it
+- Implementing interfaces:
+	- implementskeyword & interface name
+	- Write code for each property & method
+	
+## Encapsulating Styles
+
+- styles property
+	- Specify an array of style strings
+- styleUrls property
+	- Specify an array of stylesheet paths
+	
+## Using lifecycle hooks
+
+- Import the lifecycle hook interface
+- Implement the lifecycle hook interface
+- Write code for the hook method
+
+## Build custom pipe
+
+- Import Pipe and
+- PipeTransform
+- Create a class that implements
+- PipeTransform
+	- exportthe class
+- Write code for the Transform method
+- Decorate the class with the Pipe decorator
+
+## Using a custom pipe
+
+- Use the Pipe in the template
+	- Pipe character
+	- Pipe name
+	- Pipe arguments (separated with colons)
+- Import the custom pipe
+- Add the pipes property to the component's metadata
+
+## Nested Component
+
+- Input decorator
+	- Attached to a property of any type
+	- Prefix with @; Suffix with ()
+- Output decorator
+	- Attached to a property declared as an EventEmitter
+	- Use the generic argument to define the event payload type
+	- Use the new keyword to create an instance of the EventEmitter
+	- Prefix with @; Suffix with ()
+
+## Container Component
+
+- Use the directive
+	- Directive name -> nested component's selector
+- Use property binding to pass data to the nested component
+- Use event binding to respond to events from the nested component
+	- Use $event to access the event payload passed from the nested component
+
+## Checklist: Creating a Service
+
+- Service class
+	- Clear name
+	- Use PascalCasing
+	- Append "Service" to the name
+	- exportkeyword
+- Service decorator
+	- Use Injectable
+	- Prefix with @; Suffix with ()
+- Import what we need
+
+## Checklist: Registering a Service
+
+- Select the appropriate level in the hierarchy
+	- Root component if service is used throughout the application
+	- Specific component if only that component uses the service
+	- Otherwise, common ancestor
+- Component metadata
+	- Set the providers property
+	- Pass in an array
+- Import what we need
+
+## Checklist: Dependency Injection
+
+- Specify the service as a dependency
+- Use a constructor parameter
+- Service is injected when component is instantiated
+
+## Http Checklist: Setup
+
+- Include the Angular 2 Http script
+- Register HTTP_PROVIDERS
+- Import RxJS
+
+## Http Checklist: Service
+
+- Import what we need
+- Define a dependency for the http client service
+	- Use a constructor parameter
+- Create a method for each http request
+- Call the desired http method, such as get
+	- Pass in the Url
+- Map the Http response to a JSON object
+- Add error handling
+
+## Http Checklist: Subscribing
+
+- Call the subscribe method of the returned observable
+- Provide a function to handle an emitted item
+	- Normally assigns a property to the returned JSON object
+- Provide an error function to handle any returned errors
+
+## Checklist: Displaying Components 
+
+- Nest-able Components
+	- Define a selector
+	- Nest in another component
+	- No route
+- Routed Components
+	- No selector
+	- Configured route
+	- User actions to activate the route
+
+## Routing Checklist: Setup
+
+- Include the Angular 2 router script
+- Define the base element
+- Register ROUTER_PROVIDERS
+
+## Routing Checklist: Configuring Routes 
+
+- path
+	- Url path segment for route
+- name
+	- Route name
+	- PascalCase
+- component
+	- Not string name; not enclosed in quotes
+	- Each component must be imported
+- useAsDefault
+
+## Routing Checklist: Tying Routes to Actions
+ 
+- Specify ROUTER_DIRECTIVES in the directives array
+- Add the RouterLinkdirective as an attribute
+	- Clickable element
+	- Enclose in square brackets
+- Bind to a link parameters array
+	- First element is the route name
+	- All other elements are route parameters
+
+## Routing Checklist: Place the View
+
+- RouterOutlet
+- Identifies where to display the routed component's view
+- Specified in the host component's template
+
+## Routing Checklist: Passing Parameters
+
+product-list.component.html
+```
+<a[routerLink]="['ProductDetail',{id: product.productId}]">
+	{{product.productName}}
+</a>
+```
+
+app.component.ts
+```
+{ path: '/product/:id', name: 'ProductDetail', component: ProductDetailComponent}
+```
+
+product-detail.component.ts
+```
+import { RouteParams} from 'angular2/router';
+
+constructor(private_routeParams: RouteParams) {
+	console.log(this._routeParams.get('id'));
+}
+```
+
+## Routing Checklist: Activate a Route with Code
+ 
+- Use the Router service
+	- import the service
+	- Define it as a dependency
+- Create a method that calls the navigate method of the Router service
+	- Pass in the link parameters
+- Add a user interface element
+	- Use event binding to bind to the created method

@@ -1,0 +1,15 @@
+* How they do it videos
+- [[http://www.dtelepathy.com/blog/business/ship-faster-stop-everything-design][design spikes]]
+- [[http://www.martinfowler.com/articles/continuousIntegration.html][Martin Fowler on continuous integration]]
+- [[https://www.youtube.com/watch?v=7LGPeBgNFuU][microservices at spotify]]
+- http://techblog.netflix.com/2016/03/how-we-build-code-at-netflix.html
+- https://blog.docker.com/2016/03/swarmweek-docker-swarm-exceeds-kubernetes-scale/
+- [[http://www.slideshare.net/mobile/ericschmidt/how-google-works-final-1/1][how google works]]
+- Spotify culture [[http://vimeo.com/85490944][part 1]] [[http://vimeo.com/94950270][part 2]]
+- [[http://www.thoughtworks.com/insights/blog/continuous-delivery-broken-builds-and-clean-conscience][continuous delivery broken-builds and clean conscience]]
+* devops
+*** Devops
+
+- [[https://youtu.be/eRvSH5wOZSY][What is DEVOPS]] 
+- [[http://devopschecklist.com/][DevOPS checklist]]
+- Maturity model [[https://developer.ibm.com/urbancode/docs/continuous-delivery-maturity-model/][IBM]] [[http://urbancode.com/resources][urban code]] [[https://developer.ibm.com/urbancode/docs/continuous-delivery-maturity-model/][CD MM]]

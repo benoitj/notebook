@@ -1,0 +1,77 @@
+* hardware
+** DONE motherboard
+   CLOSED: [2018-01-22 lun 22:40]
+- biostar TB250-BTC PRO (6 AMD + 6 NVIDIA) ~300$ (**** j'irais avec celle la)
+  - meilleure carte. la plus stable: http://www.biostar.com.tw/app/en/news/news.php?S_ID=307
+  - amazon 300$: shipping 2 days https://www.amazon.ca/dp/B073VXS695/ref=asc_df_B073VXS6951515927600000/?tag=shopbotca-20&creative=395285&creativeASIN=B073VXS695&linkCode=df0
+  - newegg: meme prix, mais par des revendeurs
+- asrock H110 BTC+ (13 NVIDIA)
+  - 13 cartes au lieu de 12
+  - un peu moins chere 
+  - moins stable
+  - plus lente et plus fragile cote electrique
+** DONE cartes graphique
+   CLOSED: [2018-01-22 lun 22:40]
+reference: http://www.techradar.com/news/best-mining-gpu
+vu que le motherboard supported les AMD et NVIDIA, on pourrait mixer les deux
+*** nvidia gtx 1070 (presque meme perf que la 1080 ti, mais beaucoup moins cher a l'achet et plus bas TCO et on peut en trouver)
+**** ncix.en stock:
+- PNY 690$ (1 en stock): https://www.ncix.com/products/?sku=AS2222186106
+- EVGA 710$ (3 en stock):  https://www.ncix.com/products/?sku=AS2222185777
+**** newegg
+aucun stocks
+**** amazon
+aucun stocks ou bien prix trop haut, genre 2000$ :)
+*** AMD Radeon RX 580 (TCO un peu plus eleve que la 1070, mais prix d'achat 2-3 fois moins ~400-500$)
+j'ai pas vraiment trouve en stock, mais ca pourrait complementer les nvidia et diminuer le risque de penurie 
+*** nvidia gtx 1080 ti (ASUS ROG GeForce GTX 1080 Ti)
+**** newegg (autour de 1050$)
+je me suis mis des auto alert quand ca devient disponible
+- 1050$ https://www.newegg.ca/Product/Product.aspx?Item=N82E16814126186&cm_re=gtx_1080_ti-_-14-126-186-_-Product
+- 1004$ https://www.newegg.ca/Product/Product.aspx?Item=N82E16814487381&_ga=2.201437841.1473246660.1516068469-2059564792.1509892567&_gac=1.49989266.1513653539.EAIaIQobChMI36Cor4-V2AIVFrbACh2DcgH6EAAYAiAAEgL9bvD_BwE
+**** ncix
+accepte les pre-achats
+- 1149$: https://www.ncix.com/detail/asus-rog-strix-geforce-gtx-7f-140464.htm
+**** amazon
+** DONE raiser
+   CLOSED: [2018-01-22 lun 22:40]
+sert de liens entre les cartes videos et le motherboard
+- on peut probablement s'en passer au debut avec 3 cartes. devient necessare avec plus de cartes
+- ~60$ pour 6 ou 15$ chaque, shipping 1 jour chez amazon: https://www.amazon.ca/Ubit-12-PCS-Bitcoin-Litecoin-ETH-Powered-Adapter/dp/B076KLJR2Y/ref=pd_sim_147_4?_encoding=UTF8&refRID=E2X8GMSJRN99W3A1V7MJ&th=1
+** DONE CPU
+   CLOSED: [2018-01-22 lun 22:40]
+- intel celeron skylake g3930
+  - newegg 87$: https://www.newegg.ca/Product/Product.aspx?Item=9SIAA4Y6CK7883&ignorebbr=1&_ga=2.153096127.606484849.1516674598-1455229152.1504569121
+** DONE memoire
+   CLOSED: [2018-01-22 lun 22:35]
+- DDR4: 4GB Micron DDR4 2400
+** DONE Power supply
+   CLOSED: [2018-01-22 lun 22:35]
+- evga 1300 g2
+  - newegg 399: https://www.newegg.ca/Product/Product.aspx?Item=N82E16817438011&ignorebbr=1&_ga=2.132517769.606484849.1516674598-1455229152.1504569121
+** DONE SSD 
+   CLOSED: [2018-01-22 lun 22:35]
+- m.2 60 or 120 GB
+** DONE boitier
+   CLOSED: [2018-01-22 lun 22:40]
+- j'ai vu des racks
+* software
+** ethos
+** cpp/etho
+- support for GPU dropped
+** go/eth
+- default implementation
+** ethminer
+https://github.com/ethereum-mining/ethminer
+
+
+* setup
+** DONE tester le reboot
+   CLOSED: [2018-02-18 Sun 08:57]
+** TODO backup des cles
+** DONE backup du systeme
+   CLOSED: [2018-02-18 Sun 08:58]
+** TODO test de stabilite
+** TODO installer sur une powerbar surge arrest. j'ai un UPS, mais je suis pas sur qu'il va supporter cette machine + mon serveur. j'en ai un autre vieux. peut-etre qu'il marche.
+** TODO installation des autres cartes
+** TODO eval du cout d'electricite. 

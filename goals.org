@@ -1,0 +1,40 @@
+#+TITLE: Goals
+
+* Professional development
+** learn at least one language every year
+** read a technical book each quarter
+** read non-technical book too
+** take classes
+** participate in local user groups
+** experiment with diffAgenda:
+    ~/repos/notebook/todos.org - TODO Thursday 15 minutes training [[https://www.youtube.com/watch?v=YPrm_5u-9HM&index=2&list=PLbSWzg5R_6-KeOT1_yGGA-K9TE8oAr_Vj][Video]]
+    ~/repos/notebook/todos.org - TODO Tuesday 15 minutes training [[https://www.youtube.com/watch?v=YPrm_5u-9HM&index=2&list=PLbSWzg5R_6-KeOT1_yGGA-K9TE8oAr_Vj][Video]]
+    ~/repos/notebook/todos.org - TODO rebalance accounts
+    ~/repos/notebook/todos.org - TODO Buy REER isa/benoit
+    ~/repos/notebook/todos.org - ONGOING convert my encrypted files from tc to vc
+
+ToDo:
+    ~/repos/notebook/todos.org - BACKLOG investment plan for 2017
+    ~/repos/notebook/todos.org - BACKLOG shared account with isabelle http://lifehacker.com/start-the-money-conversation-with-your-partner-with-the-1697513444
+    ~/repos/notebook/cuisine.org - TODO joints passage et entree
+    ~/repos/notebook/cuisine.org - TODO connections ordi
+    ~/repos/notebook/cuisine.org - TODO installer prises ordi
+
+Projects:
+    ~/.emacs.d/
+    ~/repos/dev-setup/
+    ~/repos/katas/nodejs-katas/
+
+erent environments
+** stay current
+** get wired (blogs, reddit, etc...)
+* live 10 years longer
+  in reference to TED talk
+** exercise 3 times a week
+** loose weight
+* great family
+* love my job
+* finance control
+** Better expense planning
+** Better investments (couch potato)
+** Investing plan

@@ -1,0 +1,1468 @@
+* Howtos / technical research
+** spring
+*** how to get started
+- make use of spring dependency management: http://platform.spring.io/platform/
+- spring bootstrap generator: http://start.spring.io/
+
+** Angular2
+startup files: https://github.com/DeborahK/Angular2-GettingStarted
+
+*** architecture
+
+- [scalable angular application architecture|http://blog.mgechev.com/2016/04/10/scalable-javascript-single-page-app-angular2-application-architecture/]
+- https://angular.io/docs/ts/latest/guide/architecture.html
+
+*** start a new angular2
+
+- angular-cli
+- ng new ....
+- ng g component <component>
+
+*** TEK Training
+
+- Part1: https://agci.webex.com/agci/lsr.php?RCID=cbdddf5b3daf40dda7696e4b96af574f
+- Part2: https://agci.webex.com/agci/lsr.php?RCID=c416df9533364696b8cdd100fcb765a1
+- Part3: 
+- Part4: https://agci.webex.com/agci/lsr.php?RCID=9f3c3007eb5047558c9bc9688a7546db
+- Part5: https://agci.webex.com/agci/lsr.php?RCID=5d4130a0f8c74c1ca582b7dd10d49d17
+
+*** chcklists
+
+**** Component Checklist
+
+- Class -> Code
+- Decorator -> Metadata
+- Import what we need
+
+**** Component Checklist: Class
+
+- Clear name
+	- Use PascalCasing
+	- Append "Component" to the name
+- export keyword
+- Data in properties
+	- Appropriate data type
+	- Appropriate default value
+	- camelCase with first letter lowercase
+- Logic in methods
+	- camelCase with first letter lowercase
+	
+**** Component Checklist: Metadata
+
+- Component decorator
+	- Prefix with @; Suffix with ()
+- selector: Component name in HTML
+	- Prefix for clarity
+- template: View's HTML
+	- Correct HTML syntax
+	
+**** Component Checklist: Import
+
+- Defines where to find the members that
+- this component needs
+-  import keyword
+- Member name
+	- Correct spelling/casing
+- Module path
+	- Enclose in quotes
+	- Correct spelling/casing
+	
+**** Template
+
+- Inline template
+	- For short templates
+	- Specify the templateproperty
+	- Use the ES 2015 back ticks for multiple lines
+	- Watch syntax
+- Linked template
+	- For longer templates
+	- Specify the templateUrlproperty
+	- Define the path to the HTML file
+	
+**** Component as Directive
+
+1. define "selector" id in component decorator
+2. use selector in user's template
+3. specify the component in the user's decorator "directives" attribute
+4. import the component
+
+**** Interpolation
+
+- One way binding
+	- From component class property to an element property.
+- Defined with double curly braces
+	- Contains a template expression
+	- No quote needed
+	
+**** Structural directives
+
+- *ngIf and *ngFor
+	- Prefix with an asterisk
+	- Assign to a quoted string expression
+- *ngIf
+	- Expression is evaluated as a true or false value
+- * ngFor
+	- Mark the local variable with #
+	- Specify 'of': '#product ofproducts'
+
+**** Pipes
+
+- Pipe character: |
+- Pipe name
+- Piper parameters
+	- separated with colons
+
+Example
+
+```
+{{ product.price | currency:'USD':true:'1.2-2' }}
+```
+
+**** Interfaces
+
+- Defines custom types
+-  Creating interfaces:
+	- interfacekeyword
+	- export it
+- Implementing interfaces:
+	- implementskeyword & interface name
+	- Write code for each property & method
+	
+**** Encapsulating Styles
+
+- styles property
+	- Specify an array of style strings
+- styleUrls property
+	- Specify an array of stylesheet paths
+	
+**** Using lifecycle hooks
+
+- Import the lifecycle hook interface
+- Implement the lifecycle hook interface
+- Write code for the hook method
+
+**** Build custom pipe
+
+- Import Pipe and
+- PipeTransform
+- Create a class that implements
+- PipeTransform
+	- exportthe class
+- Write code for the Transform method
+- Decorate the class with the Pipe decorator
+
+**** Using a custom pipe
+
+- Use the Pipe in the template
+	- Pipe character
+	- Pipe name
+	- Pipe arguments (separated with colons)
+- Import the custom pipe
+- Add the pipes property to the component's metadata
+
+**** Nested Component
+
+- Input decorator
+	- Attached to a property of any type
+	- Prefix with @; Suffix with ()
+- Output decorator
+	- Attached to a property declared as an EventEmitter
+	- Use the generic argument to define the event payload type
+	- Use the new keyword to create an instance of the EventEmitter
+	- Prefix with @; Suffix with ()
+
+**** Container Component
+
+- Use the directive
+	- Directive name -> nested component's selector
+- Use property binding to pass data to the nested component
+- Use event binding to respond to events from the nested component
+	- Use $event to access the event payload passed from the nested component
+
+**** Checklist: Creating a Service
+
+- Service class
+	- Clear name
+	- Use PascalCasing
+	- Append "Service" to the name
+	- exportkeyword
+- Service decorator
+	- Use Injectable
+	- Prefix with @; Suffix with ()
+- Import what we need
+
+**** Checklist: Registering a Service
+
+- Select the appropriate level in the hierarchy
+	- Root component if service is used throughout the application
+	- Specific component if only that component uses the service
+	- Otherwise, common ancestor
+- Component metadata
+	- Set the providers property
+	- Pass in an array
+- Import what we need
+
+**** Checklist: Dependency Injection
+
+- Specify the service as a dependency
+- Use a constructor parameter
+- Service is injected when component is instantiated
+
+**** Http Checklist: Setup
+
+- Include the Angular 2 Http script
+- Register HTTP_PROVIDERS
+- Import RxJS
+
+**** Http Checklist: Service
+
+- Import what we need
+- Define a dependency for the http client service
+	- Use a constructor parameter
+- Create a method for each http request
+- Call the desired http method, such as get
+	- Pass in the Url
+- Map the Http response to a JSON object
+- Add error handling
+
+**** Http Checklist: Subscribing
+
+- Call the subscribe method of the returned observable
+- Provide a function to handle an emitted item
+	- Normally assigns a property to the returned JSON object
+- Provide an error function to handle any returned errors
+
+**** Checklist: Displaying Components 
+
+- Nest-able Components
+	- Define a selector
+	- Nest in another component
+	- No route
+- Routed Components
+	- No selector
+	- Configured route
+	- User actions to activate the route
+
+**** Routing Checklist: Setup
+
+- Include the Angular 2 router script
+- Define the base element
+- Register ROUTER_PROVIDERS
+
+**** Routing Checklist: Configuring Routes 
+
+- path
+	- Url path segment for route
+- name
+	- Route name
+	- PascalCase
+- component
+	- Not string name; not enclosed in quotes
+	- Each component must be imported
+- useAsDefault
+
+**** Routing Checklist: Tying Routes to Actions
+ 
+- Specify ROUTER_DIRECTIVES in the directives array
+- Add the RouterLinkdirective as an attribute
+	- Clickable element
+	- Enclose in square brackets
+- Bind to a link parameters array
+	- First element is the route name
+	- All other elements are route parameters
+
+**** Routing Checklist: Place the View
+
+- RouterOutlet
+- Identifies where to display the routed component's view
+- Specified in the host component's template
+
+**** Routing Checklist: Passing Parameters
+
+product-list.component.html
+```
+<a[routerLink]="['ProductDetail',{id: product.productId}]">
+	{{product.productName}}
+</a>
+```
+
+app.component.ts
+```
+{ path: '/product/:id', name: 'ProductDetail', component: ProductDetailComponent}
+```
+
+product-detail.component.ts
+```
+import { RouteParams} from 'angular2/router';
+
+constructor(private_routeParams: RouteParams) {
+	console.log(this._routeParams.get('id'));
+}
+```
+
+**** Routing Checklist: Activate a Route with Code
+ 
+- Use the Router service
+	- import the service
+	- Define it as a dependency
+- Create a method that calls the navigate method of the Router service
+	- Pass in the link parameters
+- Add a user interface element
+	- Use event binding to bind to the created method
+
+** AWS
+*** products
+**** module 1 # 
+
+Important notes:
+
+- cloud computing
+	- on demand
+	- IT resources
+	- Accessible online
+	- Pay as you go
+
+region: regional infrastructure hosting AZs
+
+AZ: availability zones. multiple ones in a region. HA + performance
+
+Edge ??: CDN caching static content close to users
+
+**** module 2 #
+
+***** compute product category ##
+
+****** EC2: elastic compute cloud ###
+	- can scale up/down
+	- basic unit of computing
+	- types: general, compute, storage and io, GPU, memory optimized, small
+	
+AMI: amazon machine image
+	- OS
+	- templates or custom
+
+
+	
+pricing
+	- on demand: by the hour, no commitment
+	- reserved: upfront, lower rate 50%-75 from on demand
+	- spot: bid for unused EC2 capacity, super cheap. can be interupted
+	- dedicated: private hardware, isolated, steady-state
+
+****** autoscaling ###
+
+- auto scale #EC2 instances up/down in an auto scaling group
+- ensure they runs x number of EC2. kill and replace unhealthy EC2
+- use with Elastic load balancer: load balance and send to healthy EC2
+- free to use
+
+****** elastic load balancing (ELB) ###
+
+- distribute load
+- fault tolerant
+- detect health of EC2s
+- remove failing instances
+- re-route trafic to healty instances
+- spans multiple AZs
+
+- features: HTTP, SSL, TCP
+- ssl offloading
+
+***** database ##
+
+RDS: relational
+DynamoDB: NoSQL
+ElastiCache: caching data
+
+****** amazon relational database service (RDS) ###
+- features
+  - fully managed
+  - fast, predictable performance 1k to 30k IOPS
+  - seamless integration
+
+benefits:
+	- elastic
+	- flexible (sql, mysql, oracle, pgsql
+	- secure
+	- low cost
+
+***** networking ##
+
+features:
+- logically isolated
+- private network connections
+- HA DNS
+- low latency
+
+types of services:
+- VPC: virtual private cloud
+- Route 53: scalable DNS
+
+****** VPC ###
+- ip range
+- public/private subnets
+- network topologies
+- route table and network gw
+- controll access using NACLs and security groups
+- can use VPN
+- attach elastic IP address (internet accessible)
+- free to use + charges for hardware VPN in connection-hour
+
+connectivity:
+- internet
+- corporate data center
+- internet and corporate data center
+- other VPCs
+
+****** route 53 ###
+- powerfull domain management
+- low latency
+- in/out of AWS
+- pay only for:
+	-- managed domains
+	- number of queries resolved
+- ELB integration
+- cloudfront zone apex
+- s3 zone apex
+- AWS management console
+	
+routing policies:
+- latency based routing
+- weighted round robin
+- dns failover
+- geolocation routing
+- basic routing
+
+***** Storage ##
+
+- Elastic block store (EBS): persistent block store for use with amazon EC3
+- Simple storage service (S3): durable, scalable object store
+- Glacier: data storage for archiving and backup
+- network filesystem, CDN, and more
+
+****** EBS ###
+- like a HD
+- 1GB to 16TB
+- partitions, format, boot your OS
+- multiple volumes on EC2
+- for apps: DB, FS, block-level storage
+
+durability and backup:
+- automatic replication within its AZ
+- snapshot back-up to S3
+
+io provisioning:
+- provision based on need
+- or select a burstable performance model
+- scale to tens of thousands IOPS per EC2
+
+volume types: 
+	standard
+		- bursty IO requirements (boot volumes)
+		- 100 IOPS, burst to hundreds
+		- strip multiple volumes
+	provisioned IOPS
+		- IO intensive workloads (DB)
+		- up to 30 IOPS per GB (4000 IOPS on 134 GB)
+		- stripe multiple volumes
+	General purpose
+		- moderate IO workloads (med size DB)
+		- steady state of 3 IOPS per GB. burstable to 3K/10K IOPS
+		- stripe multiple volumes
+
+****** S3 ###
+- store things like a collection of files
+	- static website contents
+	- backups
+	- storage (hadoop cluster for analysis)
+- Higher latency than EBS
+- easy web file share vs EBS
+
+****** Glacier ###
+- best for data not frequently accessed
+- take time to retrieve (several hours)
+- high durability: 11*9s
+- cheap 0.01 per GB/month
+
+****** lifecycle ###
+- can setup movement between S3 -> glacier, and glacier -> delete
+- timeline based
+- event based
+
+***** admin and security ##
+IAM: identity and access management
+cloudwatch: monitoring, alarms, and monitoring
+
+****** IAM ###
+- users, user groups and permissions
+- can integrate with corporate access directory
+
+***** analytics ##
+
+redshift: analyse data / big data
+
+- fully managed
+- petabyte-scale
+- use existing BI tools
+- columnar storage (ie: casandra)
+- uses data sources: jdbc, odbc, pgsql drivers
+- security: encryption, network isolation (fw), audit and compliance
+- others: machine learning, hadoop, streaming processing
+
+***** deployment ##
+
+cloudformation: automate deployment
+
+- create templates of resources.
+
+
+***** module 4 ##
+
+http://aws.amazon.com/architecture/
+http://calculator.s3.amazonaws.com/index.html
+http://aws.amazon.com/economics/
+http://aws.amazon.com/account/
+http://status.aws.amazon.com/
+http://aws.amazon.com/security/
+https://aws.amazon.com/premiumsupport/trustedadvisor/
+security compliance certifications: http://aws.amazon.com/compliance/
+
+
+******################
+**** test drive partner: http://aws.amazon.com/partners/testdrive/
+**** competency programs: https://aws.amazon.com/partners/competencies/
+**** aws marketplace: fast provision of AWS customized apps
+**** Ops Checklist: http://media.amazonwebservices.com/AWS_Operational_Checklists.pdf
+*** AWS EFS research
+**** What is it?
+
+
+- seamsless integration: connects using NFS4.1 protocol
+- auto resize
+- Managed services
+- shared accross EC2s
+- low cost
+- performant
+- HA
+- Secure: integrates with VPC and IAM
+
+**** use cases
+
+Amazon EFS Use Cases
+- Big Data and Analytics
+	- Amazon EFS provides the scale and performance required for Big Data applications that require high throughput to compute nodes coupled with read-after-write consistency and low-latency file operations. 
+- Media Processing Workflows
+	- Media workflows like video editing, studio production, broadcast processing, sound design and rendering often depend on shared storage to manipulate large files. Strong data consistency model with high throughput and shared file access can cut the time it takes to perform these jobs and consolidate multiple local file repositories into a single location for all users.
+- Content Management and Web Serving
+	- Amazon EFS can be used as a durable, high throughput file system for content management systems that store and serve information for a range of applications like web sites, online publications, and archives.
+- Home Directories
+	- Amazon EFS can provide storage for organizations that have many users that need to access and share common data sets. An administrator can use Amazon EFS to create a file system accessible to individuals across an organization and establish permissions for users and groups at the file or directory level. 
+
+**** EFS vs EBS
+
+https://aws.amazon.com/efs/details/
+
+**** availability and pricing
+
+- US East, US West (Oregon): $0.30/GB-month
+- EU (Ir): $0.33/GB-month
+
+- based on average space susage throughout the month.
+
+Free-tier: 5 GB-month
+
+
+
+	
+
+
+
+*** Scaling on AWS
+- vertical scaling is not limiting availability
+- dynamoDB = document database?
+- scripting with cloudformation?
+- why s3 connected to dynamodb
+- Pingdom, gomez = give user perception of speed, and uptime
+- oneops wallmart
+
+*** lambda
+- s3 has routing rules
+- nodejs, python or jvm based lambda server
+- cognito authorization service. what it is???
+- learn about AWS cognito and lambda: https://mobile.awsblog.com/post/Tx2UQN4KWI6GDJL/Understanding-Amazon-Cognito-Authentication
+https://mobile.awsblog.com/post/Tx2FL1QAPDE0UAH/Understanding-Amazon-Cognito-Authentication-Part-2-Developer-Authenticated-Ident
+
+# azure functions
+
+- what is webhook?
+** Azure
+*** azure functions
+
+- what is webhook?
+** Drools
+
+*** Best practices
+	
+- Keep deployable separate unit
+- stateless
+- limit number of facts in statefull sessions
+- limit object size by using DTOs
+- Use batched mode of execution
+	- instead of adding object one at a time
+- use drools for decisions, not for actual actions
+- avoid using eval
+- work on aggregates where possible
+- use event logging for debugging
+- keep individual rules small, simple and atomic
+	- avoid cyclic triggering of rules when updating facts
+	- use agenda groups and activation groups when possible
+- use static java methods in your project to simplify rule action logic
+	- why?
+
+*** EAG best practices
+
+- minimize the number of rules within a drl source file
+	- for ease of maintainability, only one rule should be specified per file
+- Group DRL files within a package to replesent a specific business rule matching context
+- facts added to the knowledge session should be immutable
+	- rule matching should not depend on the outcome of another rule's actions (create layers to reduce knowledge base size. Modularity)
+	- it is preferred to execute the rule's actions by updating a responseholder object response to the rule's engine caller
+	- at that point, the rule engine caller, can create a new session to re-evaluate the matching rules
+- rules must be unit tested
+
+infered facts = facts created by a then clause of a rule
+
+
+**feedback**: no clear rationale for the points above. unclear for lead and devs
+
+
+*** questions
+
+- read about triggering on sub objects, using modify or update
+- immutable input facts
+- inferred facts vs derived facts
+  
+** Git
+*** Revert commits
+**** What Linus says: https://opensource.apple.com/source/Git/Git-26/src/git-htmldocs/howto/revert-a-faulty-merge.txt
+** angular2
+
+startup files: https://github.com/DeborahK/Angular2-GettingStarted
+
+*** checklists
+**** Component Checklist
+
+ - Class -> Code
+ - Decorator -> Metadata
+ - Import what we need
+
+**** Component Checklist: Class
+
+ - Clear name
+	 - Use PascalCasing
+	 - Append "Component" to the name
+ - export keyword
+ - Data in properties
+	 - Appropriate data type
+	 - Appropriate default value
+	 - camelCase with first letter lowercase
+ - Logic in methods
+	 - camelCase with first letter lowercase
+	
+**** Component Checklist: Metadata
+
+ - Component decorator
+	 - Prefix with @; Suffix with ()
+ - selector: Component name in HTML
+	 - Prefix for clarity
+ - template: View's HTML
+	 - Correct HTML syntax
+	
+**** Component Checklist: Import
+
+ - Defines where to find the members that
+ - this component needs
+ -  import keyword
+ - Member name
+	 - Correct spelling/casing
+ - Module path
+	 - Enclose in quotes
+	 - Correct spelling/casing
+	
+**** Template
+
+ - Inline template
+	 - For short templates
+	 - Specify the templateproperty
+	 - Use the ES 2015 back ticks for multiple lines
+	 - Watch syntax
+ - Linked template
+	 - For longer templates
+	 - Specify the templateUrlproperty
+	 - Define the path to the HTML file
+	
+**** Component as Directive
+
+ 1. define "selector" id in component decorator
+ 2. use selector in user's template
+ 3. specify the component in the user's decorator "directives" attribute
+ 4. import the component
+
+**** Interpolation
+
+ - One way binding
+	 - From component class property to an element property.
+ - Defined with double curly braces
+	 - Contains a template expression
+	 - No quote needed
+	
+**** Structural directives
+
+ - *ngIf and *ngFor
+	 - Prefix with an asterisk
+	 - Assign to a quoted string expression
+ - *ngIf
+	 - Expression is evaluated as a true or false value
+ - * ngFor
+	 - Mark the local variable with #
+	 - Specify 'of': '#product ofproducts'
+
+**** Pipes
+
+ - Pipe character: |
+ - Pipe name
+ - Piper parameters
+	 - separated with colons
+
+ Example
+
+ ```
+ {{ product.price | currency:'USD':true:'1.2-2' }}
+ ```
+
+**** Interfaces
+
+ - Defines custom types
+ -  Creating interfaces:
+	 - interfacekeyword
+	 - export it
+ - Implementing interfaces:
+	 - implementskeyword & interface name
+	 - Write code for each property & method
+	
+**** Encapsulating Styles
+
+ - styles property
+	 - Specify an array of style strings
+ - styleUrls property
+	 - Specify an array of stylesheet paths
+	
+**** Using lifecycle hooks
+
+ - Import the lifecycle hook interface
+ - Implement the lifecycle hook interface
+ - Write code for the hook method
+
+**** Build custom pipe
+
+ - Import Pipe and
+ - PipeTransform
+ - Create a class that implements
+ - PipeTransform
+	 - exportthe class
+ - Write code for the Transform method
+ - Decorate the class with the Pipe decorator
+
+**** Using a custom pipe
+
+ - Use the Pipe in the template
+	 - Pipe character
+	 - Pipe name
+	 - Pipe arguments (separated with colons)
+ - Import the custom pipe
+ - Add the pipes property to the component's metadata
+
+**** Nested Component
+
+ - Input decorator
+	 - Attached to a property of any type
+	 - Prefix with @; Suffix with ()
+ - Output decorator
+	 - Attached to a property declared as an EventEmitter
+	 - Use the generic argument to define the event payload type
+	 - Use the new keyword to create an instance of the EventEmitter
+	 - Prefix with @; Suffix with ()
+
+**** Container Component
+
+ - Use the directive
+	 - Directive name -> nested component's selector
+ - Use property binding to pass data to the nested component
+ - Use event binding to respond to events from the nested component
+	 - Use $event to access the event payload passed from the nested component
+
+**** Checklist: Creating a Service
+
+ - Service class
+	 - Clear name
+	 - Use PascalCasing
+	 - Append "Service" to the name
+	 - exportkeyword
+ - Service decorator
+	 - Use Injectable
+	 - Prefix with @; Suffix with ()
+ - Import what we need
+
+**** Checklist: Registering a Service
+
+ - Select the appropriate level in the hierarchy
+	 - Root component if service is used throughout the application
+	 - Specific component if only that component uses the service
+	 - Otherwise, common ancestor
+ - Component metadata
+	 - Set the providers property
+	 - Pass in an array
+ - Import what we need
+
+**** Checklist: Dependency Injection
+
+ - Specify the service as a dependency
+ - Use a constructor parameter
+ - Service is injected when component is instantiated
+
+**** Http Checklist: Setup
+
+ - Include the Angular 2 Http script
+ - Register HTTP_PROVIDERS
+ - Import RxJS
+
+**** Http Checklist: Service
+
+ - Import what we need
+ - Define a dependency for the http client service
+	 - Use a constructor parameter
+ - Create a method for each http request
+ - Call the desired http method, such as get
+	 - Pass in the Url
+ - Map the Http response to a JSON object
+ - Add error handling
+
+**** Http Checklist: Subscribing
+
+ - Call the subscribe method of the returned observable
+ - Provide a function to handle an emitted item
+	 - Normally assigns a property to the returned JSON object
+ - Provide an error function to handle any returned errors
+
+**** Checklist: Displaying Components 
+
+ - Nest-able Components
+	 - Define a selector
+	 - Nest in another component
+	 - No route
+ - Routed Components
+	 - No selector
+	 - Configured route
+	 - User actions to activate the route
+
+**** Routing Checklist: Setup
+
+ - Include the Angular 2 router script
+ - Define the base element
+ - Register ROUTER_PROVIDERS
+
+**** Routing Checklist: Configuring Routes 
+
+ - path
+	 - Url path segment for route
+ - name
+	 - Route name
+	 - PascalCase
+ - component
+	 - Not string name; not enclosed in quotes
+	 - Each component must be imported
+ - useAsDefault
+
+**** Routing Checklist: Tying Routes to Actions
+ 
+ - Specify ROUTER_DIRECTIVES in the directives array
+ - Add the RouterLinkdirective as an attribute
+	 - Clickable element
+	 - Enclose in square brackets
+ - Bind to a link parameters array
+	 - First element is the route name
+	 - All other elements are route parameters
+
+**** Routing Checklist: Place the View
+
+ - RouterOutlet
+ - Identifies where to display the routed component's view
+ - Specified in the host component's template
+
+**** Routing Checklist: Passing Parameters
+
+ product-list.component.html
+ ```
+ <a[routerLink]="['ProductDetail',{id: product.productId}]">
+	 {{product.productName}}
+ </a>
+ ```
+
+ app.component.ts
+ ```
+ { path: '/product/:id', name: 'ProductDetail', component: ProductDetailComponent}
+ ```
+
+ product-detail.component.ts
+ ```
+ import { RouteParams} from 'angular2/router';
+
+ constructor(private_routeParams: RouteParams) {
+	 console.log(this._routeParams.get('id'));
+ }
+ ```
+
+**** Routing Checklist: Activate a Route with Code
+ 
+ - Use the Router service
+	 - import the service
+	 - Define it as a dependency
+ - Create a method that calls the navigate method of the Router service
+	 - Pass in the link parameters
+ - Add a user interface element
+	 - Use event binding to bind to the created method
+** AWS - Elastic File system (EFS)
+
+# What is it?
+
+
+- seamsless integration: connects using NFS4.1 protocol
+- auto resize
+- Managed services
+- shared accross EC2s
+- low cost
+- performant
+- HA
+- Secure: integrates with VPC and IAM
+
+# use cases
+
+Amazon EFS Use Cases
+- Big Data and Analytics
+	- Amazon EFS provides the scale and performance required for Big Data applications that require high throughput to compute nodes coupled with read-after-write consistency and low-latency file operations. 
+- Media Processing Workflows
+	- Media workflows like video editing, studio production, broadcast processing, sound design and rendering often depend on shared storage to manipulate large files. Strong data consistency model with high throughput and shared file access can cut the time it takes to perform these jobs and consolidate multiple local file repositories into a single location for all users.
+- Content Management and Web Serving
+	- Amazon EFS can be used as a durable, high throughput file system for content management systems that store and serve information for a range of applications like web sites, online publications, and archives.
+- Home Directories
+	- Amazon EFS can provide storage for organizations that have many users that need to access and share common data sets. An administrator can use Amazon EFS to create a file system accessible to individuals across an organization and establish permissions for users and groups at the file or directory level. 
+
+# EFS vs EBS
+
+https://aws.amazon.com/efs/details/
+
+# availability and pricing
+
+- US East, US West (Oregon): $0.30/GB-month
+- EU (Ir): $0.33/GB-month
+
+- based on average space susage throughout the month.
+
+Free-tier: 5 GB-month
+
+** AWS
+
+# module 1 # 
+
+Important notes:
+
+- cloud computing
+	- on demand
+	- IT resources
+	- Accessible online
+	- Pay as you go
+
+region: regional infrastructure hosting AZs
+
+AZ: availability zones. multiple ones in a region. HA + performance
+
+Edge ??: CDN caching static content close to users
+
+# module 2 #
+
+## compute product category ##
+
+### EC2: elastic compute cloud ###
+	- can scale up/down
+	- basic unit of computing
+	- types: general, compute, storage and io, GPU, memory optimized, small
+	
+AMI: amazon machine image
+	- OS
+	- templates or custom
+
+
+	
+pricing
+	- on demand: by the hour, no commitment
+	- reserved: upfront, lower rate 50%-75 from on demand
+	- spot: bid for unused EC2 capacity, super cheap. can be interupted
+	- dedicated: private hardware, isolated, steady-state
+
+### autoscaling ###
+
+- auto scale #EC2 instances up/down in an auto scaling group
+- ensure they runs x number of EC2. kill and replace unhealthy EC2
+- use with Elastic load balancer: load balance and send to healthy EC2
+- free to use
+
+### elastic load balancing (ELB) ###
+
+- distribute load
+- fault tolerant
+- detect health of EC2s
+- remove failing instances
+- re-route trafic to healty instances
+- spans multiple AZs
+
+- features: HTTP, SSL, TCP
+- ssl offloading
+
+## database ##
+
+RDS: relational
+DynamoDB: NoSQL
+ElastiCache: caching data
+
+### amazon relational database service (RDS) ###
+- features
+  - fully managed
+  - fast, predictable performance 1k to 30k IOPS
+  - seamless integration
+
+benefits:
+	- elastic
+	- flexible (sql, mysql, oracle, pgsql
+	- secure
+	- low cost
+
+## networking ##
+
+features:
+- logically isolated
+- private network connections
+- HA DNS
+- low latency
+
+types of services:
+- VPC: virtual private cloud
+- Route 53: scalable DNS
+
+### VPC ###
+- ip range
+- public/private subnets
+- network topologies
+- route table and network gw
+- controll access using NACLs and security groups
+- can use VPN
+- attach elastic IP address (internet accessible)
+- free to use + charges for hardware VPN in connection-hour
+
+connectivity:
+- internet
+- corporate data center
+- internet and corporate data center
+- other VPCs
+
+### route 53 ###
+- powerfull domain management
+- low latency
+- in/out of AWS
+- pay only for:
+	-- managed domains
+	- number of queries resolved
+- ELB integration
+- cloudfront zone apex
+- s3 zone apex
+- AWS management console
+	
+routing policies:
+- latency based routing
+- weighted round robin
+- dns failover
+- geolocation routing
+- basic routing
+
+## Storage ##
+
+- Elastic block store (EBS): persistent block store for use with amazon EC3
+- Simple storage service (S3): durable, scalable object store
+- Glacier: data storage for archiving and backup
+- network filesystem, CDN, and more
+
+### EBS ###
+- like a HD
+- 1GB to 16TB
+- partitions, format, boot your OS
+- multiple volumes on EC2
+- for apps: DB, FS, block-level storage
+
+durability and backup:
+- automatic replication within its AZ
+- snapshot back-up to S3
+
+io provisioning:
+- provision based on need
+- or select a burstable performance model
+- scale to tens of thousands IOPS per EC2
+
+volume types: 
+	standard
+		- bursty IO requirements (boot volumes)
+		- 100 IOPS, burst to hundreds
+		- strip multiple volumes
+	provisioned IOPS
+		- IO intensive workloads (DB)
+		- up to 30 IOPS per GB (4000 IOPS on 134 GB)
+		- stripe multiple volumes
+	General purpose
+		- moderate IO workloads (med size DB)
+		- steady state of 3 IOPS per GB. burstable to 3K/10K IOPS
+		- stripe multiple volumes
+
+### S3 ###
+- store things like a collection of files
+	- static website contents
+	- backups
+	- storage (hadoop cluster for analysis)
+- Higher latency than EBS
+- easy web file share vs EBS
+
+### Glacier ###
+- best for data not frequently accessed
+- take time to retrieve (several hours)
+- high durability: 11*9s
+- cheap 0.01 per GB/month
+
+### lifecycle ###
+- can setup movement between S3 -> glacier, and glacier -> delete
+- timeline based
+- event based
+
+## admin and security ##
+IAM: identity and access management
+cloudwatch: monitoring, alarms, and monitoring
+
+### IAM ###
+- users, user groups and permissions
+- can integrate with corporate access directory
+
+## analytics ##
+
+redshift: analyse data / big data
+
+- fully managed
+- petabyte-scale
+- use existing BI tools
+- columnar storage (ie: casandra)
+- uses data sources: jdbc, odbc, pgsql drivers
+- security: encryption, network isolation (fw), audit and compliance
+- others: machine learning, hadoop, streaming processing
+
+## deployment ##
+
+cloudformation: automate deployment
+
+- create templates of resources.
+
+
+## module 4 ##
+
+http://aws.amazon.com/architecture/
+http://calculator.s3.amazonaws.com/index.html
+http://aws.amazon.com/economics/
+http://aws.amazon.com/account/
+http://status.aws.amazon.com/
+http://aws.amazon.com/security/
+https://aws.amazon.com/premiumsupport/trustedadvisor/
+security compliance certifications: http://aws.amazon.com/compliance/
+
+
+###################
+# 
+
+# test drive partner: http://aws.amazon.com/partners/testdrive/
+# competency programs: https://aws.amazon.com/partners/competencies/
+# aws marketplace: fast provision of AWS customized apps
+# Ops Checklist: http://media.amazonwebservices.com/AWS_Operational_Checklists.pdf
+	
+
+
+** how to run askbot
+askbot installation
+
+# installation and configuration
+
+The installation of askbot is done following these steps:
+
+1. Install Python
+2. Install PostgreSQL
+3. Install Askbot
+4. Initial Askbot configuration (software + db schema)
+5. Install and configure Apache Web Server
+
+# Install python
+
+Here we are going to install python64
+
+## Download
+
+download python 2.7.x 64bit from: <https://www.python.org/ftp/python/2.7.12/python-2.7.12.amd64.msi>
+
+## Install
+
+install python 2.7 in c:\\apps\\Python27
+
+
+# Install PostgreSQL database
+
+## Download x86-64 (At this time: 9.5.4)
+
+Download from EnterpriseDB site: <http://www.enterprisedb.com/products/pgdownload.do#windows>
+
+## Install
+
+- run the installer
+- install in C:\\apps\\PostgreSQL\\9.5
+- pick a password (the current is: qg2cZY50FWyKMQ55utBj)
+- accept all defaults
+
+## Configure
+
+- launch psql shell
+- login with "postgres" with the password set during installation
+- execute: create role askbot with createdb login encrypted password 'KFuSe2Y28u';
+- execute: create database askbotdb with owner=askbot;
+- open file: c:\\apps\\postgresql\\9.5\\data\\pg_hba.conf and add the following line:
+
+~~~
+host askbotdb    askbot      127.0.0.1/32       md5
+~~~
+
+- restart postgresql (in "services")
+
+ref: <http://askbot.org/doc/create-database.html>
+
+# Install and Configure Askbot
+
+This will install askbot modules in the virtualenv python environment as configured during the python installation
+
+
+
+## configure virtual-env
+
+it is suggested to install askbot in a virtual folders to:
+
+1. enable to run multiple askbot instances
+2. simpler software maintenance
+
+- run in a admin cmd prompt
+  - virtualenv c:\\apps\\python27-askbot0.7.56
+  - modify environment variables:
+    - PYTHON_HOME=c:\\apps\\python27-askbot0.7.56
+    - PATH: replace the python path with %PYTHON_HOME% (found in 2 places)
+  - Note: you need to restart your admin cmd prompt after this step
+
+
+## install askbot in python
+
+- open a admin cmd prompt
+- run: pip install askbot
+
+ref: <http://askbot.org/doc/install.html>
+
+## Configure an Askbot site
+
+This is as described in the askbot documentation
+
+~~~
+cd c:\apps
+mkdir askbot_tekstack
+cd askbot_tekstack
+askbot-setup
+python manage.py collectstatic
+
+~~~
+
+ref: <http://askbot.org/doc/initial-configuration.html>
+
+**Note:** 
+You can repeat the operations to have multiple running instances. In this case, you must modify the site's settings.py and define different "CACHE" "KEY_PREFIX" values to avoid caching issues across site
+
+In today's case, I have two instances "askbot_tekstack" and "askbot_appsdev"
+
+# Install and Configure Apache Web Server
+
+Apache and the django (python) module requires many VC runtime libraries
+
+## Download and install VC runtime libraries
+
+If you have a 64-bit Windows, you must install both 32 and 64bit versions, even if you do not use Wampserver 64 bit.
+This is item number 20 of TROUBLESHOOTING TIPS of Wampserver: <http://forum.wampserver.com/read.php?2,1349151>
+
+1. VC9 Packages (Visual C++ 2008 SP1)
+
+    <http://www.microsoft.com/en-us/download/details.aspx?id=5582>
+    <http://www.microsoft.com/en-us/download/details.aspx?id=2092>
+
+2. VC10 Packages (Visual C++ 2010 SP1)
+
+    <http://www.microsoft.com/en-us/download/details.aspx?id=8328>
+    <http://www.microsoft.com/en-us/download/details.aspx?id=13523>
+
+3. VC11 Packages (Visual C++ 2012 Update 4)
+
+    The two files VSU4\\vcredist_x86.exe and VSU4\\vcredist_x64.exe to be download are on the same page: <http://www.microsoft.com/en-us/download/details.aspx?id=30679>
+4. VC13 Packages] (Visual C++ 2013)
+
+    The two files VSU4\\vcredist_x86.exe and VSU4\\vcredist_x64.exe to be download are on the same page: <https://www.microsoft.com/en-us/download/details.aspx?id=40784> 
+
+5. VC14 Packages (Visual C++ 2015)
+
+    The two files vcredist_x86.exe and vcredist_x64.exe to be download are on the same page:
+    <http://www.microsoft.com/fr-fr/download/details.aspx?id=48145>
+
+## Download Apache
+
+Apache distribution working with django and windows server is called ApacheHaus.
+
+The package is the 64 bit Apache 2.4.x VC9
+
+Download it from here: <http://www.apachehaus.com/cgi-bin/download.plx#APACHE24VC09>
+
+## install apachehaus
+
+- install apache haus windows binaries in: c:\\apps\\Apache24
+- configure conf/httpd.conf to point to the right installation server root path
+- install as a service: httpd -k install
+- httpd -k start
+- start apache (alternate):
+  - launch c:\\apps\\apache24\\bin\\apachemonitor
+  - in the trayicon, left click -> apache2.4 -> start
+  - open your browser at <http://localhost> and verify that you see the default apachehaus page
+  - verify the same for <https://localhost>
+
+## install django module (mod_wsgi)
+
+Download from: <http://www.lfd.uci.edu/~gohlke/pythonlibs/dp2ng7en/mod_wsgi-4.4.23+ap24vc9-cp27-cp27m-win_amd64.whl>
+
+- open a cmd prompt with administrator rights
+- run: pip install mod_wsgi-4.4.23+ap24vc9-cp27-cp27m-win_amd64.whl
+- verify that the mod_wsgi.so is installed in the virtual env folder
+- store the content of the file below in the conf/extra/httpd-vhosts.conf and modify httpd.conf to load it
+- once done, restart apache and you should be able to access:
+    - <https://qcvakbot01.allegisgroup.com/appsdev>
+    - <https://qcvakbot01.allegisgroup.com/tekstack>
+
+~~~
+
+#
+# Virtual Hosts
+#
+# If you want to maintain multiple domains/hostnames on your
+# machine you can setup VirtualHost containers for them. Most configurations
+# use only name-based virtual hosts so the server doesn't need to worry about
+# IP addresses. This is indicated by the asterisks in the directives below.
+#
+# Please see the documentation at 
+# <URL:http://httpd.apache.org/docs/trunk/vhosts/>
+# for further details before you try to setup virtual hosts.
+#
+# You may use the command line option '-S' to verify your virtual host
+# configuration.
+
+#
+# Use name-based virtual hosting.
+#
+
+#
+# VirtualHost example:
+# Almost any Apache directive may go into a VirtualHost container.
+# The first VirtualHost section is used for all requests that do not
+# match a ServerName or ServerAlias in any <VirtualHost> block.
+#
+
+# NOTE 
+# First Virtual Host MUST be a shallow duplicate of the main host 
+# in httpd.conf. It will become the default host. Any request coming
+# in that does not match any other VirtualHost's ServerName will be
+# served by this host.
+
+WSGIPythonHome c:/apps/python27-askbot0.7.56
+
+Define AB_ROOT          "C:/apps/askbot_appsdev"
+Define AB_TEKSTACK_ROOT "C:/apps/askbot_tekstack"
+
+<VirtualHost *:80>
+    DocumentRoot "${SRVROOT}/htdocs"
+    ServerName qcvakbot01.allegisgroup.com:80
+	
+    #make all admin stuff except media go through secure connection
+    <LocationMatch "(.*)">
+		RewriteEngine on
+		RewriteRule (.*)$ https://qcvakbot01.allegisgroup.com [L,R=301]
+    </LocationMatch>
+</VirtualHost>
+
+# Add any other Virtual Hosts below
+
+
+<VirtualHost *:443>
+    ServerAdmin you@example.com
+    DocumentRoot ${AB_ROOT}
+    ServerName qcvakbot01.allegisgroup.com:443
+
+    #your SSL keys
+    SSLEngine on
+    SSLCertificateFile C:/apps/Apache24/conf/ssl/server.crt
+    SSLCertificateKeyFile C:/apps/Apache24/conf/ssl/server.key
+
+    WSGIScriptAlias /appsdev ${AB_ROOT}/django.wsgi
+    WSGIScriptAlias /tekstack ${AB_TEKSTACK_ROOT}/django.wsgi
+    
+	Alias /appsdev/m/ ${AB_ROOT}/static/
+	Alias /tekstack/m/ ${AB_TEKSTACK_ROOT}/static/
+    Alias /appsdev/upfiles/ ${AB_ROOT}/askbot/upfiles/
+    Alias /tekstack/upfiles/ ${AB_TEKSTACK_ROOT}/askbot/upfiles/
+
+	<Directory ${AB_ROOT}>
+        <Files *.wsgi>
+            Require all granted
+        </Files>
+    </Directory>
+	<Directory ${AB_ROOT}/static/>
+		Require all granted
+	</Directory>
+	<Directory ${AB_ROOT}/askbot/upfiles/>
+		Require all granted
+	</Directory>
+	
+	<Directory ${AB_TEKSTACK_ROOT}>
+        <Files *.wsgi>
+            Require all granted
+        </Files>
+    </Directory>
+	<Directory ${AB_TEKSTACK_ROOT}/static/>
+		Require all granted
+	</Directory>
+	<Directory ${AB_TEKSTACK_ROOT}/askbot/upfiles/>
+		Require all granted
+	</Directory>
+</VirtualHost>
+
+
+~~~
+
+ref: <https://github.com/GrahamDumpleton/mod_wsgi/blob/master/win32/README.rst>
+
+Mod WSGI (ap24vc9-cp27): <http://www.lfd.uci.edu/~gohlke/pythonlibs/#mod_wsgi>

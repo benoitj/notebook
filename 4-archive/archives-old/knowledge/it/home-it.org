@@ -1,0 +1,654 @@
+* BACKLOG backup strategy
+
+** data types
+
+| Data Type       | Location   | Local freq         | Versionned     | Remote     | Remote Freq       |
+| --------------- | ---------- | ------------------ | -------------- | ---------- | ----------------- |
+| Documents       | NAS        | daily              | Yes            | CP         | Daily             |
+| Photos          | NAS        | daily              | Yes            | CP         | Daily             |
+| OS              | All        | twice a week       | No             | DVDs       | None              |
+| Media           | NAS        | daily              | No             | HD         | Once a week       |
+
+* DONE NAS configuration
+
+linux NAS server
+
+raid info: https://raid.wiki.kernel.org/index.php/Linux_Raid
+
+** Partition layout
+
+sda
+sda1: Linux raid autodetect
+sda2: Linux raid autodetect
+sda3: Linux raid autodetect
+
+md0: raid1 sda1[0]
+md1: raid1 sda2[0]
+md2: raid1 sda3[0]
+
+md0_crypt: md0
+md1_crypt: md1
+md2
+
+
+/dev/mapper/vg_raid-lv_raid_root: /
+/dev/mapper/vg_raid-lv_raid_data: /data
+/dev/mapper/vg_raid-lv_raid_home: /home
+/dev/mapper/md1_crypt: swap
+
+** http://jasonwryan.com/blog/2012/02/11/lvm/
+fdisk /dev/sdb
+** create one primary with linux raid autodetect
+
+** randomize
+dd if=/dev/urandom of=/dev/sdb
+
+
+*** /boot partition
+**** Select FREE SPACE on hda and create a new partition.
+**** Allocate 512 MB
+**** Make it a primary partition at the beginning of the disk.
+**** Change "Use as" from "ext3" to "physical volume for RAID".
+**** Set the bootable flag.
+
+*** /tmp partition
+**** TODO Create another RAID partition on hda for /tmp. 
+**** Allocate 4 GB. Don't make it bootable.
+**** Make it a primary partition.
+**** Change "Use as" from "ext3" to "physical volume for RAID".
+
+*** lvm partition
+**** Create another RAID partition on hda.
+**** Allocate the rest of the disk 4 GB. Don't make it bootable.
+**** Make it a primary partition
+**** Change "Use as" from "ext3" to "physical volume for RAID".
+
+*** Configure raid
+**** In the main partitioning menu select "Configure software RAID". 
+**** Write changes to the partition table when it asks you to.
+**** Select "Create MD device" then "RAID1". Use defaults for the number of active and spare devices.
+**** Choose /dev/hda1
+**** Do the same for /dev/hda2
+**** Do the same for /dev/hda3
+
+*** Configure encryption
+
+**** Select device #0, change "Use as" to "ext2". Set mount point as /boot.
+**** Select device #1, change "Use as" to "physical volume for encryption". Set "Encryption key" to "Random key"
+**** Select device #2, change "Use as" to "physical volume for encryption". Leave "Encryption key" as "Passphrase".
+**** Select "Configure encrypted volumes" and enter a passphrase. Make sure you use a strong one but remember that there is no way to recover any of your encrypted data if you lose it.
+
+*** Configure LVM
+You should see two encrypted volumes now: md1_crypt is automatically set up to be used as swap (do it manually if it's not); md2_crypt however needs more tweaking.
+
+**** Edit it and change "Use as" to "physical volume for LVM".
+**** Select "Configure the Logical Volume Manager" from the main menu.
+**** Create a volume group, call it something (e.g. "vg_raid").
+**** Select /dev/mapper/md2_crypt device for the created group.
+**** Create a logical volume for the root partition. Change its size, I used 10GB.
+**** Create another logical volume for the data partition. Use all remaining space.
+**** In the main menu, select LV root. Change "Use as" to "ext3" and "Mount point" to "/".
+**** Select LV data. I formatted it with ext3 
+**** When mounting, select "Enter manually" and enter "/data".
+TODO
+
+** setup interfaces
+
+\# /etc/network/interfaces
+<pre>
+iface eth0 inet static
+        address 192.168.1.2
+        netmask 255.255.255.0
+        gateway 192.168.1.1
+</pre>
+
+## Setup samba
+
+<pre>
+## /etc/samba/smb.conf
+[data]
+    path = /data
+    browseable = yes
+    available = yes
+    public = yes
+    writable = yes
+    force user = benoit
+    create mask = 0644
+    directory mask = 0755
+</pre>
+
+/etc/init.d/samba restart
+
+
+*** /etc/fstab
+
+root@serveur:/data/media/video/enfant/films# cat /etc/fstab
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+proc            /proc           proc    defaults        0       0
+/dev/mapper/vg_raid-lv_raid_root /               ext3    errors=remount-ro 0       1
+# /boot was on /dev/md0 during installation
+UUID=addf56c7-07ce-4630-b542-b71a81e374c7 /boot           ext2    defaults        0       2
+/dev/mapper/vg_raid-lv_raid_data /data           ext3    defaults        0       2
+/dev/mapper/vg_raid-lv_raid_home /home           ext3    defaults        0       2
+/dev/mapper/md1_crypt none            swap    sw              0       0
+/dev/sdb1       /media/usb0     auto    rw,user,noauto  0       0
+
+*** fdisk
+
+root@serveur:/data/media/video/enfant/films# fdisk -l /dev/sda
+
+Disk /dev/sda: 2000.4 GB, 2000398934016 bytes
+255 heads, 63 sectors/track, 243201 cylinders
+Units = cylinders of 16065 * 512 = 8225280 bytes
+Sector size (logical/physical): 512 bytes / 4096 bytes
+I/O size (minimum/optimal): 4096 bytes / 4096 bytes
+Disk identifier: 0x000f3b77
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sda1   *           1          63      498688   fd  Linux raid autodetect
+Partition 1 does not end on cylinder boundary.
+/dev/sda2              63         549     3906560   fd  Linux raid autodetect
+Partition 2 does not end on cylinder boundary.
+/dev/sda3             549      243202  1949108224   fd  Linux raid autodetect
+root@serveur:/data/media/video/enfant/films#
+
+
+
+** Setup 
+
+** Finalizing raid setup and Grub fixing
+
+* firewall
+** Rules setup for DMZ and local lan
+
+*** Prerequisites/Assumptions
+This assumes all local networks are privately numbered, and that interfaces have already been configured.
+
+Create an alias (Firewall > Aliases) called RFC1918 containing 192.168.0.0/16, 172.16.0.0/12, and 10.0.0.0/8
+
+
+*** LAN Configuration
+- Allow TCP/UDP from LAN subnet to LAN Address port 53 for DNS from the firewall
+- Allow TCP from LAN subnet to LAN address port 443 for accessing the GUI
+- Allow ICMP from LAN subnet to LAN address to ping the firewall from the LAN
+- Allow any traffic required from LAN to DMZ (if any)
+- Reject Any from LAN subnet to RFC1918 -- Do not allow LAN to reach DMZ or other private networks
+- Allow Any from LAN subnet to any -- Internet access rule
+
+*** DMZ Configuration
+- Allow TCP/UDP from DMZ subnet to DMZ Address port 53 for DNS from the firewall
+- Allow TCP from DMZ subnet to DMZ address port 443 for accessing the GUI (optional)
+- Allow ICMP from DMZ subnet to DMZ address to ping the firewall from the DMZ
+- Allow any traffic required from DMZ to LAN (if any)
+- Reject Any from DMZ subnet to RFC1918 -- Do not allow DMZ to reach LAN or other private networks
+- Allow Any from DMZ subnet to any -- Internet access rule
+- Additional Interfaces
+- Repeat the above pattern as needed.
+
+** DONE vpn with key authentication
+   CLOSED: [2017-11-28 Tue 22:48]
+- https://docs.opnsense.org/manual/how-tos/sslvpn_client.html
+- configure auth server with totp
+- add 10.1.1.0/24 and 10.10.1.0/24 ips to local network
+- create a user with otp, password and key
+- 
+** CANCELLED captive portal
+** TODO nginx proxy
+** TODO ids
+** TODO ssh key authentication
+** DONE dynamic dns
+   CLOSED: [2017-11-26 Sun 15:44]
+- interface: wan
+- interface: wan
+- domain: benoitj.ca
+- user id: benoitj.ca
+- password: a6d4ac0e8e4940dbaf2b61af1dfdbd90
+- update url: dynamicdns.park-your-domain.com/update?domain=benoitj.ca&password=a6d4ac0e8e4940dbaf2b61af1dfdbd90&host=
+** DONE DNS cache
+   CLOSED: [2017-11-25 Sat 17:20]
+*** configure unbound DNS
+- setup on all interfaces but WAN
+* Computer setup
+** Partitions
+*** /dev/sde1 root partition (120GB)
+*** /dev/md0 (sda1 sdb1 raid1) (4TB)
+*** /dev/md1 (sdc1 sdd1 raid1) (3TB)
+*** pv /dev/md0 (3.74 tb)
+*** pv /dev/md1 (2.73 tb)
+*** vg1 (6.37 gb)
+**** /dev/mapper/vg1-lv1_home /home (93 gb)
+**** /dev/mapper/vg1-lv2_data /data (6.28tb)
+
+** Backup
+*** Create borg-user
+**** Create authentication key
+sudo -u backup mkdir /var/backups/.ssh
+sudo chmod 700 /var/backups/.ssh
+sudo -u backup ssh-keygen -t rsa 
+sudo -u backup scp ~/.ssh/id_rsa.pub 9573@usw-s009.rsync.net:.ssh/authorized_keys
+sudo -u backup ssh 9573@usw-s009.rsync.net cat .ssh/authorized_keys
+**** TODO file permissions
+ 1. Your partition should be mounted with the "acl" option (you can do that with mount -o remount,acl /home )
+ 2. Install acl tools (setfacl and getfacl)
+ 3. setfacl -R -m u:borg-user:rx /home /data
+ 4. setfacl -R -m d:u:borg-user:rx /home /data
+
+*** Setup borg
+**** installation
+apt-get install python python-pip
+pip install --upgrade borgmatic
+**** configure crontab
+*** TODO backup strategy
+| Data Type       | Location   | Local freq         | Versionned     | Remote     | Remote Freq       |
+| --------------- | ---------- | ------------------ | -------------- | ---------- | ----------------- |
+| Documents       | NAS        | daily              | Yes            | CP         | Daily             |
+| Photos          | NAS        | daily              | Yes            | CP         | Daily             |
+| OS              | All        | twice a week       | No             | DVDs       | None              |
+| Media           | NAS        | daily              | No             | HD         | Once a week       |
+** Emulator
+*** Launchbox
+**** theme
+critical zone city hunter
+** Games
+*** nhl 2004: ditty pack 2015
+*** Console
+**** TTY Games registry: https://bronevichok.ru/ttygames/
+**** Classic Super Star Trek
+**** Dwarf Fortress
+**** Wolfpack empire: http://wolfpackempire.com/
+** email
+*** package
+package: msmtp msmtp-mta
+*** /etc/msmtprc
+account default
+auth on
+tls on
+#tls_trust_file /usr/share/ca-certificates/mozilla/DigiCert_High_Assurance_EV_Root_CA.crt
+tls_trust_file /etc/ssl/certs/ca-certificates.crt
+tls_starttls off
+syslog LOG_MAIL
+host smtp.fastmail.com
+port 465
+from           benoit@benoitj.ca
+user           benoit@benoitj.ca
+password       <password>
+
+** docker 
+*** Teamspeak
+docker run -d -v /data/appdata/docker/ts3-server:/data --restart unless-stopped -p 9987:9987/udp -p 10011:10011 -p 30033:30033 --name=ts3-server aheil/teamspeak3-server
+*** Plex
+**** Plex pass
+ docker create \
+ --name=plex \
+ --net=host \
+ --restart unless-stopped \
+ -e VERSION=latest \
+ -e PUID=1000 -e PGID=1000 \
+ -e TZ=America/Toronto \
+ -p 32400:32400 \
+ -v /data/appdata/docker/plex/config:/config \
+ -v /data/appdata/docker/plex/transcode:/transcode \
+ -v /data/archive/media/perso/photo:/media/perso/photo \
+ -v /data/archive/media/perso/video:/media/perso/video \
+ -v /data/archive/media/perso/musique:/media/perso/musique \
+ -v /data/archive/media/musique:/media/son/musique \
+ -v /data/archive/media/images/background:/media/images/background \
+ -v /data/archive/media/video/films:/media/video/films \
+ -v /data/archive/media/video/series:/media/video/series \
+ linuxserver/plex
+**** Plex DVR beta
+docker create \
+ --name=plex-dvr \
+ --net=host \
+ --restart unless-stopped \
+ -e VERSION=1.2.0.3167-aa897d8 \
+ -e PUID=1000 -e PGID=1000 \
+ -e TZ=America/Toronto \
+ -p 32400:32400 \
+ -v /data/appdata/docker/plex/config:/config \
+ -v /data/appdata/docker/plex/transcode:/transcode \
+ -v /data/archive/media/perso/photo:/media/perso/photo \
+ -v /data/archive/media/perso/video:/media/perso/video \
+ -v /data/archive/media/perso/musique:/media/perso/musique \
+ -v /data/archive/media/musique:/media/son/musique \
+ -v /data/archive/media/images/background:/media/images/background \
+ -v /data/archive/media/video/films:/media/video/films \
+ -v /data/archive/media/video/series:/media/video/series \
+ linuxserver/plex
+**** emby
+docker create \
+ --name=emby-server \
+ --net=host \
+ --restart unless-stopped \
+ -e PUID=1000 -e PGID=1000 \
+ -e TZ=America/Toronto \
+ -p 8096:8096 \
+ -v /data/appdata/docker/emby-server/config:/config \
+ -v /data/archive/media/perso/photo:/media/perso/photo \
+ -v /data/archive/media/perso/video:/media/perso/video \
+ -v /data/archive/media/perso/musique:/media/perso/musique \
+ -v /data/archive/media/musique:/media/son/musique \
+ -v /data/archive/media/images/background:/media/images/background \
+ -v /data/archive/media/video/films:/media/video/films \
+ -v /data/archive/media/video/series:/media/video/series \
+    emby/embyserver
+*** minecraft
+docker run -d \
+--name mineos \
+--restart unless-stopped \
+-v/data/appdata/docker/mineos:/var/games/minecraft \
+-p 8443:8443 -p 25565:25565 \
+yujiod/minecraft-mineos
+*** openvpn
+image inspired from: https://hub.docker.com/r/kylemanna/openvpn/
+docker run -v /data/appdata/docker/openvpn:/etc/openvpn -d -p 1194:1194/udp --cap-add=NET_ADMIN kylemanna/openvpn
+**** install server
+export OVPN_DATA=/data/appdata/docker/openvpn
+mkdir $OVPN_DATA
+docker run -v $OVPN_DATA:/etc/openvpn --rm kylemanna/openvpn ovpn_genconfig -u udp://maison.benoitj.ca
+docker run -v $OVPN_DATA:/etc/openvpn --rm -it kylemanna/openvpn ovpn_initpki
+docker run -v $OVPN_DATA:/etc/openvpn -d -p 1194:1194/udp --cap-add=NET_ADMIN --name openvpn kylemanna/openvpn
+docker run -v $OVPN_DATA:/etc/openvpn --rm -it kylemanna/openvpn easyrsa build-client-full benoit
+docker run -v $OVPN_DATA:/etc/openvpn --rm kylemanna/openvpn ovpn_getclient benoit > benoit.ovpn
+** Email
+notmuch tag new
+**** TODO afew filtering and autotagging
+>>>>>>> new changes
+** email
+*** get emails
+**** offlineimap (slower, but good documentation)
+**** isync (mbsync): configuration is strange
+*** index email
+**** notmuch tag new
+*** send email
+**** package
+ package: msmtp msmtp-mta
+**** /etc/msmtprc
+ account default
+ auth on
+ tls on
+ #tls_trust_file /usr/share/ca-certificates/mozilla/DigiCert_High_Assurance_EV_Root_CA.crt
+ tls_trust_file /etc/ssl/certs/ca-certificates.crt
+ tls_starttls off
+ syslog LOG_MAIL
+ host smtp.fastmail.com
+ port 465
+ from           benoit@benoitj.ca
+ user           benoit@benoitj.ca
+ password       <password>
+apt-get install msmtp msmtp-mta
+configure /etc/msmtprc and /etc/aliases.msmtp
+** automatic updates
+follow https://wiki.debian.org/UnattendedUpgrades
+=======
+ - Architecture and integration styles and patterns
+	 - What architecture/integration patterns have you used recently?
+	 - What software design patterns have you used recently?
+		 - can you draw me how it works?
+	 - Key differences between SOAP and REST?
+ - Communication (including effective diagramming)
+	 (look at how the candidate explain solutions, ask questions, etc...)
+
+*** Software Development
+
+ - Software development lifecycle
+	 - which portion of the lifecycle have you worked on?
+ - Software development process
+	 - Agile: what do you do when scope of a sprint change? How does it affect the current work?
+	 - Agile: what do you do when you are not done at the end of the sprint?
+ - Multiple software types
+	 - which type of applications have you worked on?
+ - Software design
+	 - What do you consider to be good general guidelines for handling exceptions ?
+	 - What happens when an exception is thrown on a background thread?
+ - Data modeling
+ - Code quality
+	 - What do you consider the attributes of high quality code?
+	 - Do you write comments? Always? Why?
+	 - Have you used any tools related to code quality?
+ - Test automation
+	 - I dont use TDD and it sounds complicated. Convince me to use it.
+	 - How to you structure your test methods?
+	 - Can you explain the different type of tests?
+	 - What is the difference between unit testing and integration testing?
+	 - We need to test everything, am I right? why?
+ - Build and deployment automation
+	 - Do you use build automation?
+	 - What do you recommend as steps in an automated build?
+ - Source control and configuration management
+	 - Can you explain 2 different branching strategies you have used?
+ - Software security
+	 - Can you explain how public key encryption works?
+ - Libraries and frameworks
+	 - Recap the main libraries / framework you have used in the past 2 years?
+ - Leadership
+
+*** Whiteboard exercises
+
+**** past experience
+
+  - What is the most interesting projects you have worked on
+  - can you explain me the design (whiteboard)?
+  - what are the parts that could be improved? Show how it would look.
+
+**** caching system
+
+  - describe what a cache is and when it should be used
+  - describe how to implement a simple cache
+  - draw it up on the whiteboard, pseudo code it
+  - what are the policies for cache updates/invalidation? why?
+  - what happens when what you want to cache gets too big for a single box? draw the solution.
+  - how would you implement a multi-server caching solution?
+
+**** shapes
+
+  Create model classes that will properly represent the following constructs:
+	  - Define a Shape object, where the object is any two dimensional figure, and has the following characteristics: a name, a perimeter, and a surface area.
+	  - Define a Circle, retaining and accurately outputting the values of the aforementioned characteristics of a Shape.
+	  - Define a Triangle. This time, the name of the triangle should take into account if it is equilateral (all 3 sides are the same length), isoceles (only 2 sides are the same length), or scalene (no 2 sides are the same).
+
+**** access control
+
+  we need to control access to a customer web site. Rules are:
+  1. each customer may have one or more people to access the site
+  2. different people from different customers may be able to view different parts of the site
+  3. the same person may work for more than one customer
+  4. customers want to manage permissions based on the person, department, team, or project
+
+**** FizzBuzz test
+  [Source](http://c2.com/cgi/wiki?FizzBuzzTest)
+
+  Write a program that prints the numbers from 1 to 100. But for multiples of three print “Fizz” instead of the number and for the multiples of five print “Buzz”. For numbers which are multiples of both three and five print “FizzBuzz”
+** linux desktop
+*** software
+**** utils
+***** redshift: lighting adjuster
+***** remote desktop?
+      
+****** enpass?a
+***** turtl
+**** terms
+***** cool retro term
+***** terminator
+***** tilda?
+**** system information
+***** screenfetch: terminal summary system. good for startup configurations
+***** heaven benchmark
+***** psensor
+**** media
+***** nuvola music player (google play, spotify, etc...)
+**** chat: wire.com
+** nas
+Linux NAS server
+
+Linux NAS server
+29 mars 2014
+09:41
+
+linux NAS server
+
+raid info: https://raid.wiki.kernel.org/index.php/Linux_Raid
+
+## Partition layout
+
+sda
+sda1: Linux raid autodetect
+sda2: Linux raid autodetect
+sda3: Linux raid autodetect
+
+md0: raid1 sda1[0]
+md1: raid1 sda2[0]
+md2: raid1 sda3[0]
+
+md0_crypt: md0
+md1_crypt: md1
+md2
+
+
+/dev/mapper/vg_raid-lv_raid_root: /
+/dev/mapper/vg_raid-lv_raid_data: /data
+/dev/mapper/vg_raid-lv_raid_home: /home
+/dev/mapper/md1_crypt: swap
+
+## http://jasonwryan.com/blog/2012/02/11/lvm/
+fdisk /dev/sdb
+# create one primary with linux raid autodetect
+
+# randomize
+dd if=/dev/urandom of=/dev/sdb
+
+
+### /boot partition
+*** Select FREE SPACE on hda and create a new partition.
+*** Allocate 512 MB
+*** Make it a primary partition at the beginning of the disk.
+*** Change "Use as" from "ext3" to "physical volume for RAID".
+*** Set the bootable flag.
+
+### /tmp partition
+*** Create another RAID partition on hda for /tmp.
+*** Allocate 4 GB. Don't make it bootable.
+*** Make it a primary partition.
+*** Change "Use as" from "ext3" to "physical volume for RAID".
+
+### lvm partition
+*** Create another RAID partition on hda.
+*** Allocate the rest of the disk 4 GB. Don't make it bootable.
+*** Make it a primary partition
+*** Change "Use as" from "ext3" to "physical volume for RAID".
+
+### Configure raid
+*** In the main partitioning menu select "Configure software RAID".
+*** Write changes to the partition table when it asks you to.
+*** Select "Create MD device" then "RAID1". Use defaults for the number of active and spare devices.
+*** Choose /dev/hda1
+*** Do the same for /dev/hda2
+*** Do the same for /dev/hda3
+
+### Configure encryption
+
+*** Select device #0, change "Use as" to "ext2". Set mount point as /boot.
+*** Select device #1, change "Use as" to "physical volume for encryption". Set "Encryption key" to "Random key"
+*** Select device #2, change "Use as" to "physical volume for encryption". Leave "Encryption key" as "Passphrase".
+*** Select "Configure encrypted volumes" and enter a passphrase. Make sure you use a strong one but remember that there is no way to recover any of your encrypted data if you lose it.
+
+### Configure LVM
+You should see two encrypted volumes now: md1_crypt is automatically set up to be used as swap (do it manually if it's not); md2_crypt however needs more tweaking.
+
+*** Edit it and change "Use as" to "physical volume for LVM".
+*** Select "Configure the Logical Volume Manager" from the main menu.
+*** Create a volume group, call it something (e.g. "vg_raid").
+*** Select /dev/mapper/md2_crypt device for the created group.
+*** Create a logical volume for the root partition. Change its size, I used 10GB.
+*** Create another logical volume for the data partition. Use all remaining space.
+*** In the main menu, select LV root. Change "Use as" to "ext3" and "Mount point" to "/".
+*** Select LV data. I formatted it with ext3
+*** When mounting, select "Enter manually" and enter "/data".
+TODO
+
+## setup interfaces
+
+\# /etc/network/interfaces
+<pre>
+iface eth0 inet static
+        address 192.168.1.2
+        netmask 255.255.255.0
+        gateway 192.168.1.1
+</pre>
+
+## Setup samba
+
+<pre>
+## /etc/samba/smb.conf
+[data]
+    path = /data
+    browseable = yes
+    available = yes
+    public = yes
+    writable = yes
+    force user = benoit
+    create mask = 0644
+    directory mask = 0755
+</pre>
+
+/etc/init.d/samba restart
+
+
+#### /etc/fstab
+
+root@serveur:/data/media/video/enfant/films# cat /etc/fstab
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+proc            /proc           proc    defaults        0       0
+/dev/mapper/vg_raid-lv_raid_root /               ext3    errors=remount-ro 0       1
+# /boot was on /dev/md0 during installation
+UUID=addf56c7-07ce-4630-b542-b71a81e374c7 /boot           ext2    defaults        0       2
+/dev/mapper/vg_raid-lv_raid_data /data           ext3    defaults        0       2
+/dev/mapper/vg_raid-lv_raid_home /home           ext3    defaults        0       2
+/dev/mapper/md1_crypt none            swap    sw              0       0
+/dev/sdb1       /media/usb0     auto    rw,user,noauto  0       0
+
+### fdisk
+
+root@serveur:/data/media/video/enfant/films# fdisk -l /dev/sda
+
+Disk /dev/sda: 2000.4 GB, 2000398934016 bytes
+255 heads, 63 sectors/track, 243201 cylinders
+Units = cylinders of 16065 * 512 = 8225280 bytes
+Sector size (logical/physical): 512 bytes / 4096 bytes
+I/O size (minimum/optimal): 4096 bytes / 4096 bytes
+Disk identifier: 0x000f3b77
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sda1   *           1          63      498688   fd  Linux raid autodetect
+Partition 1 does not end on cylinder boundary.
+/dev/sda2              63         549     3906560   fd  Linux raid autodetect
+Partition 2 does not end on cylinder boundary.
+/dev/sda3             549      243202  1949108224   fd  Linux raid autodetect
+root@serveur:/data/media/video/enfant/films#
+
+
+
+## Setup
+** xfce setup
+*** pacaur -S xfce4-whiskermenu-plugin
+*** pacaur -S xfce4-goodies
+*** pacaur -S xfce4-pulseaudio-plugin
+*** pacaur -S xfce4-places-plugin
+*** pacaur -S arc-dark-xfce4-terminal
+*** pacaur -S gtk-theme-arc-git
+*** pacaur -S menda-maia-icon-theme
+*** pacaur -S menda-themes-dark-git
+*** pacaur -S dockbarx
+*** pacaur -S xfce4-dockbarx-plugin

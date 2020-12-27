@@ -1,0 +1,21 @@
+#+TITLE: fake agile
+
+- related :: [[file:methodologies/20200224074654_productivity.org][R:productivity]]
+  
+* Movements
+
+Many movements driven by "agile" companies and management crew exists:
+
+- Safe
+- Large scale scrum (less) 
+- disciplined agile delivery
+- Nexus
+
+This is promoting a form of "agile branding"
+  
+* Articles debating of agility of these techniques
+
+** https://www.forbes.com/sites/stevedenning/2019/05/23/understanding-fake-agile/#7da7b29e4bbe
+** TODO USAF articles
+** TODO agility somity on SAFE
+** https://medium.com/@seandexter1/beware-safe-the-scaled-agile-framework-for-enterprise-an-unholy-incarnation-of-darkness-bf6819f6943f

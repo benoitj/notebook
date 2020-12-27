@@ -1,0 +1,194 @@
+#+TITLE: CloudCC container
+#+OPTIONS: reveal_title_slide:nil
+#+REVEAL_THEME: night
+#+REVEAL_TRANS: linear
+
+* Docker build concerns
+
+* microservices
+- *Simplified view of micro services*
+  - a way to break down a service into small pieces
+  - Application architecture
+  - A set of loosly coupled small services
+  - Can scale differently (save $$)
+  - Can use different technologies depending on needs
+
+* Docker
+
+Docker is a way to package your software into a re-usable deployment package.
+
+- lightweight
+- re-usable
+- secure
+
+* Layered file system
+
+Union FS makes it possible:
+- a file system service for linux, and bsd providing union mounting capabilities. 
+- Union mounting is a way to combine directories into an apparent single repository.
+- Union file systems must be supported by the host system.
+- Alternative to UnionFS: overlayFS, aufs, zfs, brtfs, devicemapper
+
+ref: https://docs.docker.com/engine/userguide/storagedriver/selectadriver/
+
+* Docker vs *VM*
+
+[[file:images/WhatIsDocker_2_VMs_0-2_2.png]]
+
+* *Docker* vs VM 
+
+[[file:images/WhatIsDocker_3_Containers_2_0.png]]
+
+* docker image layers
+
+Docker layers for a typical service application:
+
+1. OS (ex: RedHat, ubuntu, centos, alpine, busybox)
+2. framework/infrastructure (ex: tomcat, java, nginx, jboss/wildfly)
+3. application code
+4. write area
+
+note that it has to be linux or bsd based images
+
+* image size
+
+when building a system based on containers, image size is an important concern affecting deployment time and resource usage
+
+imagine running 100 instances of ubuntu based containers vs the same with alpine
+#+REVEAL: split
+this affects:
+1. longer build time
+2. side effects when running OS install or update commands
+   1. affects size of child images
+3. more maintenance to be done on the base image
+
+it is still useful and ok to use ubuntu based images, but sometimes it is better to use smaller images
+
+https://www.brianchristner.io/docker-image-base-os-size-comparison/
+
+* basic docker image build - image repository
+
+- http://hubs.docker.com
+- private repos
+  - artifactory
+  - docker software
+
+* security concerns
+
+- anyone can contribute to hub.docker.com
+- it is harder to inspect the content of a base image and sometimes software are not using known / approved base images
+  - hard to assess if patches are installed
+  - hard to assess any security backdoors, or callbacks are present
+- in the enterprise, it is a must to select only trusted images (official images or self built images)
+- maintenance / creation of the the "virtualized" OS is now a development concern
+
+* real life example of something going wrong
+
+- developers selected a public john doe image of activeMQ
+- this made it in the pipeline and ansible to be deployed on TEST environment
+- while doing an audit of the code, we found the image and started investigating why devs did not use our custom rhel base image
+- we discovered the image used was "calling home" on two different sites
+- without a firewall in place, this would have become a security breach 
+- in the end, we added checks in the pipeline to ensure new images would be only based on approved ones
+
+* what can be packaged as a docker container
+
+- stateless microservice application code ++++
+- stateless service application code ++++
+#+REVEAL:split
+- stateful infrastructure (db, message queues) +
+  - much more "problems" to solve: distribution, load balancing, scalability, recovery, no single point of failure
+  - requires permanent high io storage. this is somewhat a challenge in cloud architecture
+  - some technologies are quite suited for containers: redis, mongo, cassandra, message queues, etc...
+  - harder to do: postgresql, mysql, oracle, etc...
+  - Because it is hard, people have the tendency to group too many things together
+    - a better approach is to create many smaller databases organized by themes/responsibilities
+    - fit better the "cloud" mentality of having more flexibility to operate, upgrate, restart containers when needed.
+    - SaaS in this case make a lot of sense (like AWS RDS)
+  - example of postgresql cluster in docker kubernetes: https://medium.com/@dpaunin/postgresql-cluster-into-kubernetes-cluster-f353cde212de#.l3fbz04yk
+
+* docker container 
+
+A docker container is an instance of an image.
+
+main attributes of a container:
+- name
+- image / version
+- volume it connects to
+- connections to other containers
+
+* Demo
+
+** show the basic docker with bash
+docker ps
+docker run
+docker stop
+
+** show basic springboot hello world
+https://spring.io/guides/gs/spring-boot-docker/
+*** Show Dockerfile
+*** Build and run local
+./gradlew build && java -jar build/libs/gs-spring-boot-docker-0.1.0.jar
+http://localhost:8080
+*** Build and run docker
+./gradlew build buildDocker
+docker run -d -p 8088:8080 -t gregturn/gs-spring-boot-docker
+http://192.168.99.100:8080
+
+** Orchestration - Shipyard
+https://shipyard-project.com/walkthrough/
+*** install
+curl -sSL https://shipyard-project.com/deploy | bash -s
+
+* Architecture impacts
+
+- favor separation of state
+- deployment requirements (central logging, monitoring, etc...) has to be planned and in place early in the development
+- test automation (not just unit test) has to be complete
+- configuration as code
+- database schema versionning
+- pipeline as code
+- deployment as code
+- infrastructure as code
+- Clear boundaries and responsibilities
+
+* Build strategy
+
+for each docker microservice:
+- own git repository
+- own CI pipeline instance
+- own CD pipeline instance
+  
+* Pipeline steps
+
+1. trigger on commit
+2. compile
+3. 100% test success
+4. sonar w/ quality gates
+   1. test coverage
+   2. Code smells
+5. build docker image
+6. deploy image into a test "system"
+7. run integration tests, performance tests, contract tests, etc...
+8. store image in docker repository
+10. deploy on acceptance test server
+...
+
+Deploy to other environments on demand
+
+* CI tools helping out
+
+- jenkins
+  - 2.0 has a version of "pipeline" as code
+- gocd
+- Netflix Spinnaker
+
+* Test strategy
+
+Decentralized development / deployment means need for high level of test automation:
+#+ATTR_HTML: 
+[[file:images/2016-10-31 09_41_54-Testing Strategies in a Microservice Architecture.png]]
+
+Ref: http://www.martinfowler.com/articles/microservice-testing/
+
+*

@@ -1,0 +1,30 @@
+#+TITLE: safe
+
+- related: [[file:methodologies/20200224074654_productivity.org][R:productivity]]
+
+* What is it
+The Scaled Agile Framework (abbreviated as SAFe) is a set of organization and
+workflow patterns intended to guide enterprises
+in scaling lean and agile practices.
+
+Along with large-scale Scrum (LeSS), disciplined agile delivery (DAD), and
+Nexus,
+SAFe is one of a growing number of frameworks that seek to address the problems
+encountered when scaling beyond a single team.
+SAFe is made freely available by Scaled Agile, Inc., which retains the copyrights and registered trademarks.
+
+[[https://en.wikipedia.org/wiki/Scaled_agile_framework][Wikipedia]]
+
+* problem it tries to solve
+
+1. Coping with longer planning horizons
+2. Keeping agile at abstract levels of responsibility
+3. Dealing with delegated authority
+4. Synchronizing deliverables
+5. Allowing time for innovation and planning
+
+* Success
+
+pretty popular and pushed by "agile" cert companies. Pushed by managers.
+
+Does not promote agility and many critics from developer community. See [[file:methodologies/20200224175213_fake_agile.org][R:fake agile]]

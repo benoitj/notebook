@@ -1,0 +1,75 @@
+voting tool
+
+- tricider: http://www.tricider.com
+- Loomio: http://loomio.org
+- groupmap: http://www.groupmap.com/
+- Askbot: https://askbot.com/
+- MaMute: http://mamute.org/ (java, foss)
+- Answerhub: http://www.dzonesoftware.com/products/answerhub-question-answer-software
+
+
+## Loomio
+++
+Features:
+	- workflow:
+		- Start a group to collaborate with people on Loomio
+		- Invite people into your group+
+		- Start a discussion on any topic
+		- Make a proposal to see how everyone feels about a particular course of action
+		- Decide together - anyone can agree, abstain, disagree, or block – so you can see how 	everyone feels about the proposal.
+	- threads dashboard show all suggestions with their status
+	- you can post comments on a discussion
+	- FOSS (github), and SaaS (~20$/month per group, or 179$/month with unlimited groups)
+	- possibility for sub-groups
+
+## Tricider
+++
+		- post a question
+		- create suggestions with pros
+		- +1 ratings from users. settings (1 vote only, or more)
+		- Ordered by ratings
+			- decision box with selected ideas
+			
+		- seems free to use
+
+http://blog.lucidmeetings.com/blog/25-tools-for-online-brainstorming-and-decision-making-in-meetings
+
+
+## https://www.sli.do/home
+
+## http://www.groupmap.com/
+++
+
+## http://www.ideaboardz.com/
+++
+
+## http://www.allourideas.org/
+
+## https://stormboard.com/
+
+## http://glisser.com/
+
+## Atlassian Confluence Question
+
+## sharepoint Community site
+
+		
+## stackexchange enterprise
+
+## stack exchange clones
+
+Full list: http://meta.stackexchange.com/questions/2267/stack-exchange-clones
+
+	- Post questions
+	- receive comments
+	- receive answers
+	- apply tags to your question
+	- Vote on questions and answers
+	- flag one or more answer as a solution
+	- reputation driven community (get recognized by your contributions)
+
+Some demos:
+	- Askbot https://askbot.com/ (~15$/month: basic, 250 users, daily backups, 45$/month: ssl + sso, 750 users, self serve), example: https://ask.fedoraproject.org/en/questions/
+	- http://demo.mamute.org/ (java, foss)
+	- http://www.dzonesoftware.com/products/answerhub-question-answer-software (paid. large scale,  customer base impressive: ebay, linkedin, ge, ibm, microsoft)
+			

@@ -1,0 +1,5 @@
+#+BEGIN_SRC emacs-lisp
+
+(org-babel-do-load-languages 'org-babel-load-languages '((plantuml . t))
+
+#+END_SRC

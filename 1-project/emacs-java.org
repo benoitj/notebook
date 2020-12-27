@@ -1,0 +1,168 @@
+#+TITLE: Migration from intellij to emacs lsp-java
+
+
+
+* features used
+** same file text search and replace
+
+Intellij supports 2 things to do this:
+ 1. C-f / C-r to search within the same file (and replace if needed). supports regex
+ 2. multi cursor
+
+In emacs doom, I can accomplish this in couple of ways:
+ 1. evil '/' search, then commands. and use 'n' to go next and '.' to repeat command
+ 2. evil :%s/// supports regex
+ 3. the /replace-regex/ and /replace-string/ function
+ 4. /occur/ function searches within the buffer and display an editable buffer
+
+** all project files text search and replace
+
+In intelliJ, this is the C-S-f and C-S-r.
+
+Similar to same file, but accross files.
+
+In emacs doom, I can accomplish this in couple of ways:
+ 1. projectile + ripgrep: search in ivy all matches
+ 2. in the ivy buffer, open occur using the C-c C-e button. the resulting buffer is editable
+ 3. /vc-git-grep/ function
+
+** TODO navigation
+*** TODO go to class
+| C-n | lsp-java <scp>-m-g-a or <spc>-m-g-A |
+*** TODO go to file
+| C-S-n          | projectile-find-file <spc>-p-f      |
+*** TODO open project
+| file menu open | projectile-find-project <spc>-p-p   |
+*** TODO go to type definition at point
+| C-click        | lsp-java <spc>-m-g-d                |
+*** TODO go to var definition at point
+| C-click | lsp-java <spc>-m-g-g |
+*** TODO find usages
+| alt-f7 | lsp-java <spc>-m-g-r or <spc>-m-g-R |
+*** TODO find extensions
+
+
+** TODO information
+
+ | description                  | intellij     | emacs                               |
+ |------------------------------+--------------+-------------------------------------|
+ | go to class                  | C-n          | lsp-java <scp>-m-g-a or <spc>-m-g-A |
+ | describe at point            | mouse over   | lsp-java <spc>-m-h-h                |
+ | List project errors/warnings | bottom panel | lsp-java <spc>-m-e-l                |
+ | List project tasks           | panel        | magit-todos-list                    |
+ | download sources             |              |                                     |
+
+
+** TODO linting
+- unused references/method/member/class
+- generics unchecked used
+-
+** TODO runners
+ | description | intellij | emacs |
+ |-------------+----------+-------|
+ | junit test  |          |       |
+ | cucumber    |          |       |
+ | main        |          |       |
+ | springboot  |          |       |
+
+** TODO refactor
+ | description      | intellij | emacs |
+ |------------------+----------+-------|
+ | extract function |          |       |
+ | extract constant |          |       |
+ | pull up          |          |       |
+ | push down        |          |       |
+
+** TODO code actions
+ | description                  | intellij | emacs |
+ |------------------------------+----------+-------|
+ | organize imports             |          |       |
+ | create class, fct, attribute |          |       |
+
+** TODO generators
+ | description     | intellij | emacs |
+ |-----------------+----------+-------|
+ | builder         |          |       |
+ | getter/setter   |          |       |
+ | toString        |          |       |
+ | equals/hashcode |          |       |
+
+** TODO editing
+
+ | description       | intellij | emacs |
+ |-------------------+----------+-------|
+ | rectangle editing |          |       |
+ | multi-cursor      |          |       |
+
+** TODO debugging
+|   | Key binding   | Description                              |   |
+|---+---------------+------------------------------------------+---|
+|   | ~SPC m g g~   | Go to definition                         | * |
+|   | ~SPC m g r~   | Find references                          | * |
+|   | ~SPC m g R~   | Peek references using ~lsp-ui~           | * |
+|   | ~SPC m g d~   | Goto type definition                     | * |
+|   | ~SPC m g a~   | Search type in project                   | * |
+|   | ~SPC m g A~   | Search type in project using ~lsp-ui~    | * |
+|   | ~SPC m h h~   | Describe thing at point                  | * |
+|   | ~SPC m e l~   | List project errors/warnings             | * |
+|   | ~SPC m p u~   | Refresh user settings                    |   |
+|   | ~SPC m e a~   | Execute code action                      |   |
+|   | ~SPC m q r~   | Restart workspace                        |   |
+|   | ~SPC m r o i~ | Organize imports                         |   |
+|   | ~SPC m r r~   | Rename symbol                            |   |
+|   | ~SPC m r a i~ | Add import                               |   |
+|   | ~SPC m r a m~ | Add unimplemented methods                |   |
+|   | ~SPC m r c p~ | Create parameter                         |   |
+|   | ~SPC m r c f~ | Create field                             |   |
+|   | ~SPC m r e c~ | Extract constant                         |   |
+|   | ~SPC m r e l~ | Extract local                            |   |
+|   | ~SPC m r e m~ | Extract method                           |   |
+|   | ~SPC m r c i~ | Convert to static import                 |   |
+|   | ~SPC m r a t~ | Add throws exception                     |   |
+|   | ~SPC m r a a~ | Assign all parameters to fields          |   |
+|   | ~SPC m r a f~ | Assign parameter to field                |   |
+|   | ~SPC m r g g~ | Generate getters/setters                 |   |
+|   | ~SPC m r g e~ | Generate =equals= and =hashCode= methods |   |
+|   | ~SPC m r g t~ | Generate =toString= method               |   |
+|   | ~SPC m r g o~ | Generate method overrides                |   |
+|   | ~SPC m c c~   | Build project                            |   |
+|   | ~SPC m c p~   | Create spring boot project               |   |
+|   | ~SPC m a n~   | Actionable notifications                 |   |
+|   | ~SPC m =~     | Format code                              |   |
+* how spacemacs does it
+
+| Key binding   | Description                              |   |
+|---------------+------------------------------------------+---|
+| ~SPC m g g~   | Go to definition                         | * |
+| ~SPC m g r~   | Find references                          | * |
+| ~SPC m g R~   | Peek references using ~lsp-ui~           | * |
+| ~SPC m g d~   | Goto type definition                     | * |
+| ~SPC m g a~   | Search type in project                   | * |
+| ~SPC m g A~   | Search type in project using ~lsp-ui~    | * |
+| ~SPC m h h~   | Describe thing at point                  | * |
+| ~SPC m e l~   | List project errors/warnings             | * |
+| ~SPC m p u~   | Refresh user settings                    |   |
+| ~SPC m e a~   | Execute code action                      |   |
+| ~SPC m q r~   | Restart workspace                        |   |
+| ~SPC m r o i~ | Organize imports                         |   |
+| ~SPC m r r~   | Rename symbol                            |   |
+| ~SPC m r a i~ | Add import                               |   |
+| ~SPC m r a m~ | Add unimplemented methods                |   |
+| ~SPC m r c p~ | Create parameter                         |   |
+| ~SPC m r c f~ | Create field                             |   |
+| ~SPC m r e c~ | Extract constant                         |   |
+| ~SPC m r e l~ | Extract local                            |   |
+| ~SPC m r e m~ | Extract method                           |   |
+| ~SPC m r c i~ | Convert to static import                 |   |
+| ~SPC m r a t~ | Add throws exception                     |   |
+| ~SPC m r a a~ | Assign all parameters to fields          |   |
+| ~SPC m r a f~ | Assign parameter to field                |   |
+| ~SPC m r g g~ | Generate getters/setters                 |   |
+| ~SPC m r g e~ | Generate =equals= and =hashCode= methods |   |
+| ~SPC m r g t~ | Generate =toString= method               |   |
+| ~SPC m r g o~ | Generate method overrides                |   |
+| ~SPC m c c~   | Build project                            |   |
+| ~SPC m c p~   | Create spring boot project               |   |
+| ~SPC m a n~   | Actionable notifications                 |   |
+| ~SPC m =~     | Format code                              |   |
+

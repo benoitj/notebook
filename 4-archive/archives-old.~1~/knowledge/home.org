@@ -1,0 +1,1454 @@
+#+TITLE: Home info
+
+* distribution des taches familliales
+** taches familliales
+
+| tache                                              | frequence               | grosseur | responsable        |
+|----------------------------------------------------+-------------------------+----------+--------------------|
+| lunch                                              | chaque jour de semaine  | M        | Chacun             |
+| Ranger son linge                                   | quand c'est pret        | P        | Chacun             |
+| tondre gazon / piscine                             | chaque 2 semaines       | G        | Benoit             |
+| compost                                            | quand c'est plein       | P        | Benoit             |
+| vidanges                                           | quand c'est plein       | P        | Benoit             |
+| mettre vidanges au chemin                          | mercredi matin avant 7h | P        | Benoit             |
+| Laver / Plier le linge                             | au besoin               | G        | Isabelle           |
+| epicerie                                           | chaque semaine          | G        | Isabelle           |
+| laver les planchers (mop)                          | chaque semaine *        | M        | Isabelle           |
+| nettoyer la cuisine                                | chaque semaine *        | G        | Isabelle et Benoit |
+| souper                                             | chaque jour             | M        | Isabelle et Benoit |
+| nettoyer le chambre des parents                    | chaque semaine *        | M        | Isabelle et Benoit |
+| nettoyer la salle de bain                          | chaque semaine *        | G        | Lauriane           |
+| nettoyer le salon                                  | chaque semaine *        | M        | Lauriane           |
+| mettre la table du souper                          | chaque soir             | P        | Lauriane           |
+| vider le lave vaisselle (propre)                   | chaque jour             | P        | Lauriane           |
+| mettre recyclage au chemin                         | mercredi matin avant 7h | P        | Lauriane           |
+| mettre composte au chemin                          | vendredi matin avant 7h | P        | Lauriane           |
+| Ranger les bacs de vidanges, recyclage et composte | vendredi matin avant 7h | P        | Lauriane           |
+| nettoyer le chambre des enfants                    | chaque semaine *        | M        | Lauriane et Anais  |
+| balais                                             | mardi, jeudi, samedi *  | G        | Anais              |
+| aider au souper                                    | chaque jour au besoin   | M        | Anais              |
+| recyclage                                          | tous les jours          | P        | Anais              |
+| vider la table du souper                           | chaque soir             | P        | Anais              |
+| remplir le lave vaisselle du souper                | chaque soir             | P        | Anais              |
+| arroser les plantes                                | Samedi                  | P        | Anais              |
+  * les taches avec une * doivent etre faites samedi avant 13h, avant d'aller chez des amis
+
+1 gros chacune
+1 moyen chacune
+4 petits chacune
+
+** items a faire tous le temps
+- mettre sac dans la chambre
+- ranger l'entree
+- ranger les endroits communs (entree, salon, cuisine, sdb)
+- vider et ranger son sac a lunch
+- mettre son linge au lavage (dans le panier)
+
+* My Places
+** Montreal
+*** Restaurants
+**** Les enfants terribles
+**** Essence
+**** Moxies
+**** Keg
+**** 3 Brasseurs
+* Train
+
+** -> St-Jerome
+
+|-----+-------+-------+-------+-------|
+|  T# |   L-L |  Vend | Conco | SRose |
+|-----+-------+-------+-------+-------|
+| 181 | 15:50 | 15:55 | 16:28 | 16:39 |
+| 183 | 16:05 | 16:10 | 16:45 | 16:57 |
+| 185 | 16:35 | 16:40 | 17:15 | 17:27 |
+| 187 | 17:10 | 17:15 | 17:50 | 18:02 |
+| 189 | 17:45 | 17:50 | 18:25 | 18:37 |
+| 191 | 18:45 | 18:50 | 19:23 | 19:34 |
+|-----+-------+-------+-------+-------|
+
+* stat holidays
+
+http://www.statutoryholidays.com/quebec.php
+
+|--------------------+-------------|
+| Holiday            | 2017        |
+|--------------------+-------------|
+| New Years Day      | January 1   |
+| Easter Monday      | April 17    |
+| National Patriotes | May 22      |
+| Jean Baptiste Day  | June 24     |
+| Canada Day         | July 1      |
+| Labour Day         | September 4 |
+| Thanksgiving Day   | October 9   |
+| Christmas Day      | December 25 |
+|--------------------+-------------|
+
+* productivity
+** [[http://lifehacker.com/productivity-101-a-primer-to-the-pomodoro-technique-1598992730][pomodoro]]
+** note taking: http://www.thecramped.com/paper-based-markup-systems/
+* Home
+** care
+*** exterieur
+**** cedres
+***** Printemps
+****** Engrais a connifere 2-3
+****** Arrosser souvent
+***** Fin Juin
+****** Couper
+***** Automne
+****** Arrosser cedres
+*** souffleuse petite toro
+**** moteur
+     marque: Tecumseh
+     model: 143-756202
+**** parts
+     Muffler: Tecumseh 35056 (HM100 and HMSK100)
+
+     Muffler gasket?: Tecumseh 27896A
+
+     Carb: Tecumseh 632370A (replaces 632370)
+
+     Carb kit: Tecumseh 632347
+
+     Carb gasket: Tecumseh 33263
+
+     Fuel line: 395051R-18: 18" long 1/4 inner diameter
+
+     primer line: 730515A-14: 14" long , 1/8" inner diameter
+
+     Fuel shut-off valve: Tecumseh 35857
+
+     SAE 5W30
+*** souffleuse grosse craftsman
+**** Model: C950-52379-5
+**** # Serie: 173549 58
+**** Huile 5W30 Synthetic
+**** http://www.discountonlineparts.com/snowblower/?c=Drive%20Parts&b=Toro&id=7857
+**** http://www.discountonlineparts.com/snowblower/?c=Drive%20Parts&b=John%20Deere&id=7856
+*** tondeuse Lawnboy
+**** Marque Lawnboy
+***** Model: 10640C
+***** # Serie: 290001500
+**** moteur
+***** Briggs & stratton
+***** Model: # 124T02-0212-B1 08122257
+***** # serie: 0812225716295
+**** Manuel de l'operateur
+**** liste de pieces
+*** huile a moteur
+**** 5W-30: Hiver
+**** SAE 30: Été
+**** 10W-30: un peu des deux
+**** 5W-30 synthetique: Été/Hiver
+* Traveling
+** renting: 
+- http://www.nomadicmatt.com/travel-blogs/renting-an-apartment-while-traveling/
+- http://wayfarer.lifehacker.com/the-best-hotel-alternatives-besides-airbnb-1630874742/+andyoooo
+- when to travel: http://wayfarer.lifehacker.com/this-infographic-shows-you-the-best-time-to-book-hotels-1629431980/+andyoooo
+** 2014 Ete - voyage au quebec
+*** Example de roadtrip
+    http://www.vacancescanada.com/208352-roadtrip-au-coeur-du-nouveau-monde-de.php
+    http://www.authentikcanada.com/roadtrip/roadtrip-canada-quebec/
+*** PLAN: https://trips.furkot.com/ui 
+"From","From Address","To","To Address","Departure Date","Departure Time","Arrival Date","Arrival Time","Driving Time","Distance","Total Driving Time","Total Distance","Notes"
+"560 Rue Réaumur, Laval, QC, Canada","560 Rue Réaumur, Laval, QC H7H, Canada","forts-de-levis, levis, qc","Lévis Forts National Historic Site of Canada, Levis, QC G6V, Canada","2014-07-07","08:00","2014-07-07","10:43","2h 43m","272.6","2h 43m","272.6",""
+"forts-de-levis, levis, qc","Lévis Forts National Historic Site of Canada, Levis, QC G6V, Canada","hotel l'oiseliere - Montmagny, QC, Canada","Montmagny, QC, Canada","2014-07-07","15:43","2014-07-07","16:21","38m","56.5","3h 21m","329.2",""
+"hotel l'oiseliere - Montmagny, QC, Canada","Montmagny, QC, Canada","hotel l'oiseliere - Montmagny, QC, Canada","Montmagny, QC, Canada","2014-07-08","09:00","2014-07-08","09:00","","0.0","3h 21m","329.2","105, chemin des Poiriers
+Montmagny (Québec) G5V 3T4
+Tél. : (418) 248-1640
+Téléc. : (418) 248-4618
+Numéro sans frais: 1 800 540-1640
+Courriel :  info@oiseliere.com"
+"hotel l'oiseliere - Montmagny, QC, Canada","Montmagny, QC, Canada","hotel l'oiseliere - Montmagny, QC, Canada","Montmagny, QC, Canada","2014-07-09","09:00","2014-07-09","09:00","","0.0","3h 21m","329.2","105, chemin des Poiriers
+Montmagny (Québec) G5V 3T4
+Tél. : (418) 248-1640
+Téléc. : (418) 248-4618
+Numéro sans frais: 1 800 540-1640
+Courriel :  info@oiseliere.com"
+"hotel l'oiseliere - Montmagny, QC, Canada","Montmagny, QC, Canada","Hotel Universel - Rivière-du-Loup, QC, Canada","Rivière-du-Loup, QC, Canada","2014-07-10","10:00","2014-07-10","11:18","1h 18m","129.8","4h 40m","459.0","105, chemin des Poiriers
+Montmagny (Québec) G5V 3T4
+Tél. : (418) 248-1640
+Téléc. : (418) 248-4618
+Numéro sans frais: 1 800 540-1640
+Courriel :  info@oiseliere.com"
+"Hotel Universel - Rivière-du-Loup, QC, Canada","Rivière-du-Loup, QC, Canada","Hotel Universel - Rivière-du-Loup, QC, Canada","Rivière-du-Loup, QC, Canada","2014-07-11","09:00","2014-07-11","09:00","","0.0","4h 40m","459.0","311, boul. Hôtel-de-Ville
+Rivière-du-Loup (Québec) Canada
+G5R 5S4 
+
+Téléphone : 418 862-9520
+Sans frais : 1 800 265-0072
+Télécopieur : 418 862-2205"
+"Hotel Universel - Rivière-du-Loup, QC, Canada","Rivière-du-Loup, QC, Canada","Hotel Universel - Rivière-du-Loup, QC, Canada","Rivière-du-Loup, QC, Canada","2014-07-12","09:00","2014-07-12","09:00","","0.0","4h 40m","459.0","311, boul. Hôtel-de-Ville
+Rivière-du-Loup (Québec) Canada
+G5R 5S4 
+
+Téléphone : 418 862-9520
+Sans frais : 1 800 265-0072
+Télécopieur : 418 862-2205"
+"Hotel Universel - Rivière-du-Loup, QC, Canada","Rivière-du-Loup, QC, Canada","Chemin de Port aux Quilles, Saint-Siméon, QC G0T 1X0, Canada","Chemin de Port aux Quilles, Saint-Siméon, QC G0T 1X0, Canada","2014-07-13","10:00","2014-07-13","11:42","1h 42m","32.3","6h 22m","491.3","311, boul. Hôtel-de-Ville
+Rivière-du-Loup (Québec) Canada
+G5R 5S4 
+
+Téléphone : 418 862-9520
+Sans frais : 1 800 265-0072
+Télécopieur : 418 862-2205"
+"Chemin de Port aux Quilles, Saint-Siméon, QC G0T 1X0, Canada","Chemin de Port aux Quilles, Saint-Siméon, QC G0T 1X0, Canada","Auberge La Rosepierre","502-508 Rue du Boisé, Grandes-Bergeronnes, QC G0T 1G0, Canada","2014-07-13","11:42","2014-07-13","12:53","1h 11m","61.9","7h 33m","553.2",""
+"Auberge La Rosepierre","502-508 Rue du Boisé, Grandes-Bergeronnes, QC G0T 1G0, Canada","Auberge La Rosepierre","502-508 Rue du Boisé, Grandes-Bergeronnes, QC G0T 1G0, Canada","2014-07-14","09:00","2014-07-14","09:00","","0.0","7h 33m","553.2","Tél. : (418) 232-6543 - (888) 264-6543 - Fax : (418) 232-6215
+"
+"Auberge La Rosepierre","502-508 Rue du Boisé, Grandes-Bergeronnes, QC G0T 1G0, Canada","438-460 Route 362, Les Éboulements, QC G0A 2M0, Canada","441-459 Route du Fleuve, Les Éboulements, QC G0A 2M0, Canada","2014-07-15","09:00","2014-07-15","10:55","1h 55m","118.3","9h 28m","671.5","Tél. : (418) 232-6543 - (888) 264-6543 - Fax : (418) 232-6215
+"
+"438-460 Route 362, Les Éboulements, QC G0A 2M0, Canada","441-459 Route du Fleuve, Les Éboulements, QC G0A 2M0, Canada","Baie-Saint-Paul, QC, Canada","39 Rue de l'Usine, Baie-Saint-Paul, QC G3Z 1Y2, Canada","2014-07-15","10:55","2014-07-15","11:19","24m","26.5","9h 53m","698.1",""
+"Baie-Saint-Paul, QC, Canada","39 Rue de l'Usine, Baie-Saint-Paul, QC G3Z 1Y2, Canada","Baie-Saint-Paul, QC, Canada","39 Rue de l'Usine, Baie-Saint-Paul, QC G3Z 1Y2, Canada","2014-07-16","09:00","2014-07-16","09:00","","0.0","9h 53m","698.1",""
+"Baie-Saint-Paul, QC, Canada","39 Rue de l'Usine, Baie-Saint-Paul, QC G3Z 1Y2, Canada","560 Rue Réaumur, Laval, QC, Canada","560 Rue Réaumur, Laval, QC H7H, Canada","2014-07-17","10:00","2014-07-17","13:38","3h 38m","360.1","13h 32m","1058.2",""
+*** Logement
+         La Pourvoirie du Cap au Leste (Saguenay)- endroit exceptionnel perdu en pleine nature avec vue imprenable sur le fjord du Saguenay.
+         Lac Cascapédia (Gaspésie) - chalets au bord du lac à louer ou camping semi-sauvage accessible uniquement par l’eau- pour une aventure au milieu des ours et des orignaux.
+         Gite du Mont Albert (Gaspésie): dans le parc national de Gaspésie, location de chalet ou séjour à l’hôtel- pour une halte luxueuse en pleine nature!
+         île Verte (Fleuve Saint-Laurent): quelques jours chez l’habitant sur cette île magique où le temps est arrêté (par exemple à la ferme «  »au Chant du Coq »") »
+*** Routes et ici
+**** Route des Baleines
+**** Route des phares
+**** Route des navigateurs`
+*** Levis
+**** Fort-de-levis: Le 19 Juillet  18 h 30: Concert au crepuscule (musique millitaire)
+*** Saint-Prospert
+**** Village des defricheurs
+              ~4h
+              40$ cash
+*** Montmagny
+**** hotel l'oiseliere
+     105, chemin des Poiriers
+     Montmagny (Québec) G5V 3T4
+     Tél. : (418) 248-1640
+     Téléc. : (418) 248-4618
+     Numéro sans frais: 1 800 540-1640
+     Courriel :  info@oiseliere.com
+*** Parc des appalaches
+*** L'ile-au-grue
+              Musee, train, etc…
+*** La grosse isle
+*** L'islet, pres de montmagny
+*** Musee Maritime du QC
+*** Riviere-du-loup
+**** Hotel universel
+      311, boul. Hôtel-de-Ville
+      Rivière-du-Loup (Québec) Canada
+      G5R 5S4 
+      Téléphone : 418 862-9520
+      Sans frais : 1 800 265-0072
+      Télécopieur : 418 862-2205 
+***** Berges
+***** Parc de chutes
+***** Traversier: 8h, 11h15, 14h45, 18h
+*** Trois pistoles
+**** Fromagerie des basques
+**** Traversier: 6h30, 14h, 18h
+*** Auberge la rosepierre
+*** BIC
+**** Ile au massacre
+*** Rimouski
+**** Sousmarin
+**** Impress of ireland
+**** Jardins de metis
+*** Joly-de-lotbiniere (rive sud, entre quebec et trois-rivieres)
+**** Domaine Joly: jardins
+*** Tadoussac
+**** Les baleines
+**** La plage
+*** Gaspesie:
+**** Mer / Plages
+**** Fruits de mer
+**** Croisieres
+**** Marche sur une Ile
+*** Lac st-jean
+**** Zoo
+**** Plage
+**** Arbre en arbres, Escalade,
+**** Village valjalbert
+*** Region de quebec
+**** chutes montmorency
+*** Quebec
+**** La citadelle
+*** Montréal et Québec
+**** île Verte
+**** île de la Madeleine
+*** Parc National de Gaspésie et lac Cascapédia
+**** Zoo de Saint-Félicien
+**** Fjord du Saguenay
+**** Gaspésie (Percé)
+** 2014 Miami
+*** rendu la bas
+Dimanche: 
+
+    Prendre taxi pour le condo "Le cartier" #237: 
+
+ 
+
+201 178th Drive #237 
+
+Sunny Isles Beach, Fl 
+
+33160 
+
+ 201 178th Dr, Sunny Isles Bch, FL 
+
+ 
+
+# de téléphone du condo : (305) 466-1088 
+
+ 
+
+Pour l’internet Wi-Fi : connectez-vous sur ATT7777 
+
+Code d’accès Wi-Fi : 257J4CMNBK 
+
+ 
+
+Place de stationnement : # 103 
+
+ 
+
+Vous pouvez me contacter en tout temps aux numéros suivants; 
+
+Cellulaire : 514-743-2776 
+
+Résidence : 514-425-0513 
+
+ 
+
+Propriétaires : 
+
+ 
+
+Jean-François Hétu 
+
+Julie Lévesque 
+
+ 
+
+ 
+Senator Gwen Margolis Park St Mary Magdalen Catholic Church Peli can Community Park 1 g2nd st Copper Chimney Indian Cuisine Sunny Isles Beach City Hall 4 178th st Timo Travelodge Monaco N Miami And Sunny Isles Beach AIAth St_ Tru mp O International Beach Resort Golden Strand Ocean Villa Resort Acqualina Resort & Spa on the Beach DoubleTree by Hilton Ocean Point
+
+ 
+Itinéraire en voiture vers 201 178th Dr, sunny Beach, FL 331S0 Aéroport international de Miami 2100 NW 42nd Ave Miami, FL 33126 1. Prendre la direction sud sur Miad Cir 700 m 2. Continuer sur NW 21st St 400 m 3. Prendre la bretelle vers FL-112 E 240 m 4. Prendre la sortie 3 à gauche en direction de Florida 953 NILe Jeune Rd 400 m 5. Prendre la sortie 2 à gauche en direction de FL-112 E/1-g5/Miami Beach 1 19 km 6. Rejoindre FL-112 E 7. Prendre la sortie NW 22nd Ave 300 m 8. Prendre à gauche sur NW 22nd Ave g. Prendre à droite sur NW7gth St 10. Prendre à gauche sur U.S. IN/ Biscayne 81vd 11. Prendre à droite sur NE 163rd St 12. Prendre à gauche sur Collins Ave 13. Prendre à gauche sur 178th St 240 m 14. Prendre légèrement à gauche sur 178th or Votre destination se trouvera sur la gauche 201 178th or sunny Isles Beach, FL 33160
+
+    Rendu, composer le #142 au telephone. Parler a JF Hetu 
+
+    Code de la porte: 23723715 
+
+    Thermostat a 75F 
+
+ 
+
+ 
+
+Lundi: 
+
+    Aller chercher la voiture au centre national: 18080 Collins Avenue  
+    North Miami Beach, FL 33160-2723 
+
+"V Bay fid Atlantic Blvd Collins Aue
+
+    Stationnement #103 
+
+ 
+
+Magasins / restaurants 
+
+    Dépanneurs / station-service 7 eleven 
+
+        Coin 178th st et Collins blvd 
+
+        Carte sim prepaid 
+
+    Une excellente vraie pâtisserie Française. 
+
+    La Provence 
+
+    Artisanal French Bakery & Cafe 
+
+    3507 NE 163rd Street 
+    N. Miami Beach, FL 33160 
+
+          http://laprovencemiami.com/ 
+Resort Miami Days Hot Thunderh Beach Re SUNNY ISLES BEACH Ilarrree
+
+     La meilleure Pizza croûte mince...cuite au four à charbon! 
+     
+Anthony's Coal Fired Pizza 
+
+17901 Biscayne Boulevard 
+
+Aventura, FL 33160 
+
+http://www.acfp.com/ 
+Ojus Aventura nurnfoundljng Bay Sunny Isles Beach Maule Lakes NE 163rd sr
+
+ 
+
+     La place à Cupcakes! 
+
+Misha's Cupcakes 
+
+Loehman's Plaza 
+18797 Biscayne Blvd., Aventura 
+http://www.mishascupcakes.com/ 
+Aventur.a—e' Ojus NE 163rd st nurnfoundling Bay Sunny Isles Beach
+
+ 
+
+    Liquor stores 
+
+ 
+
+Sunny Isles Liquors  
+
+18110 Collins Ave, Sunny Isles Beach, FL ‎ 
+
+RK Village Plaza 
+
+ 
+
+Sunny Isles Fine Wine & Spirit  
+
+17100 Collins Ave, Sunny Isles Bch, FL ‎ 
+
+RK Centers 
+
+ 
+
+ 
+gdalen :hurch SUNNY BEACH 178th st Sole on the Ocean 172nd RK Center International ach Resort Acqualina Spa on thF_
+
+ 
+
+    Everglades 
+
+        Anhinga Trail 
+
+        Royal Palm Visitor Center 
+
+        Mahogany Hammock trail 
+
+        Boat tour 
+
+        www.everglades-wilderness-waterway.com” 
+
+        ranger 
+
+     
+
+Creek Harney Shark pt Graveyard Acre," PONCEDEtEON mand COASTAL MARSH XShark RiverChick ee Watson Chickee WHITE WATER Ma bop nt "ammo' Rive' AChickee Lane Bay ACbickee Pearl Bay Bay Chkkee4 •hickee Pa • hay-Okee Overlook Rock Reef Glade Lake Sweet Bay CYPRESS Nine Mile.'ond — •e Nine Mile Pond Canoe Trail Pinelaods Long Pine Key Entrance Station HOMESTEAD Ernest F. Coe Visitor Center p Headquarters 9336 MANGROVE Narthwest Cape Middle Cape Cana / Middle CapeA Joe River AChkkee South Joe River Chick eeA gale take die Fox take Pa u rotis Hells Bay Ord canRSa noe West Lake Restrooms Vail Noble Hammock U Canoe Trail . Fire Cache Hidden Lake Education rest Oration Little Royal Palm Anhinga Trail Gumbo bo Trail Joe Bay pon Creek Coot Bay ( VXest Lake Canoe Frail A _ uthbet North SW 328th FLORIDA CITY ma (kwa Gator take Bear Lake Mud Lake t Canoe Tray take Bu "Onwood Canal Flamingo Bradle•; Key Murray Key Snake eight Trail on g Like Henry p ——Mrazek Pond Snake Bight _?Christian Point Trail Flamingo Visitor Center take Ra "kin Bight o Dere«t KEast Canal Clu bhOuse Key Key Key Crocodile Terrapin Fuit0 pt Rankin Key o I Dump Keys Cormorant Key Pass Key Park Re; Deer Key Key Boggies Black water ANonh Nest Key Nest KM Key Key!•
+
+ 
+, pineS Miami Aven North Miami East Coast Buffer Doral Hialeah Miami—s Coral Way oral Gables Miami Beach p Fountaine Kendal Lake The Han" mocks Kendal utler Richmond West er Bay Pri ton ure City d Biscayne Biscayne Bay
+
+ 
+Itinéraire en voiture vers Florida City, Floride, Etats-Unis 201 178th Drive #237 Sunny Isles Beach, FI 1. Aller en direction nord-est sur 178th Dr vers 179th Dr miles 2. Prendre la 2e à droite et continuer sur Collins Ave miles 3. Tourner à droite sur NE 163rd St 135 pieds 4. Tourner à droite sur EL -826 WINE 163rd St Continuer de suivra FL-826 W miles 5. Tourner légèrement à gauche sur FL- 826 VV/NE 167th St Continuer de suivra FL-826 W 6. Prendre la sortie en direction de EL -826 w 7. Suivre EL -826 W 20,7 miles 8. Prendre la sortie pour rester sur EL -826 S en direction de Kendall miles 9. Continuer sur U.S. 1 SIU.S. Hwy 1 SIS Dixie Hwy/Pinecrest Pkwy Continuer de suivre US 1 S/IJ S. Hwy 1 Dixie Hwy 18,9 miles 10. Tourner à droite sur SW 344th St/E Palm Dr Continuer de suivra E Palm Dr miles Florida City, Floride Etats-Unis
+
+ 
+Itinéraire en voiture vers 201 178th Drive #237 Sunny Isles Beach, FI Florida City, Floride Etats-Unis 1. Aller en direction ouest sur W Palm Dr vers NW 2nd Ave 2. Faire demi-tour à NW 3rd Ave miles 3. Tourner à gauche sur U.S. 1 NIU.S. Hwy 1 NINE Ist AvelS Dixie Hwy Continuer de suivra US 1 N/IJ S Hwy 1 WS Dixie Hwy 4. Tourner légèrement à droite sur EL -826 5. Prendre la sortie en direction de EL -826 EIBeaches 6. Suivra EL -826 E miles 7. Tourner à gauche sur Collins Ave miles 8. Tourner à gauche sur 178th St 9. Tourner légèrement à gauche sur 178th La destination se trouve à gauche 312 pieds 201 178th Drive #237 Sunny Isles Beach, FI
+
+ 
+
+ 
+
+Dimanche: 
+
+    Laisser 70$ 
+
+    Thermostat a 80F 
+
+    Sortir la voiture!!! 
+
+    Aller au condo 
+
+    Laisser les cles sur le crochet 
+
+    Barrer la porte 
+
+    Retour a l'aeroport (~35 minutes) 
+
+ 
+Itinéraire en voiture vers Aéroport international de Miami 201 178th Dr sunny Isles Beach, FL 33160 1. Prendre la direction nord-est sur 178th Dr vers 179th Dr 2. Tourner à la 2e à droite et continuer sur Collins Ave 1,2 km 3. Prendre à droite sur NE 163rd St 41 m 4. Prendra à droite sur EL -826 WINE 163rd St Continuer de suivra FL-826 W 5. Prendre légèrement à gauche sur EL -826 VV/NE 167th St Continuer de suivra FL-826 W 6. Prendre la sortie 1-95 S 7. Prendre la sortie 4 pour rejoindre EL -112 W en direction de Miami International Airport 8. Prendre la sortie à gauche en direction de Miami International Airport W km 9. Rejoindre NW 21st St 10. Prendre légèrement à droite à Miad Cir Aéroport international de Miami 2100 NW 42nd Ave Miami, FL 33126
+*** sunny isles beach
+ 
+
+ 
+ 
+ 
+
+---------- Forwarded message ---------- 
+From: Isabelle B. <isabellebonami@hotmail.com> 
+Date: 2014-03-30 9:11 GMT-04:00 
+Subject: Fwd: Sunny Isles Beach - Informations pour votre arrivée. 
+To: Benoit Joly <benoit.m.joly@gmail.com> 
+ 
+ 
+ 
+
+ 
+ 
+Envoyé de mon iPhone 
+
+ 
+Début du message transféré : 
+ 
+ 
+
+Expéditeur: Jean-Francois Hetu <jf3hetu@yahoo.ca> 
+Date: 29 mars 2014 22:19:31 HAE 
+Destinataire: Isabelle Bonami <isabellebonami@hotmail.com> 
+Objet: Sunny Isles Beach - Informations pour votre arrivée. 
+Répondre à: Jean-Francois Hetu <jf3hetu@yahoo.ca> 
+ 
+ 
+
+Bonsoir Mme. Bonami, 
+
+  
+
+Voici à nouveau le document avec les informations nécessaires pour votre arrivée à notre condo #237 au Cartier à Sunny Isles Beach incluant le code d'entrée du condo. Voir également la nouvelle procédure de paiement avec carte à puce pour les laveuses et sécheuses. (voir  photos ci-jointes) Toutes  les laveuses et sécheuses sont neuves. 
+
+  
+
+Merci de me confirmer la réception de ce courriel. 
+
+  
+
+Jean-François Hétu 
+
+514-743-2776 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+
+ 
+ 
+
+Pièces jointes 
+<<BienvenuedansnotrecondoenFloride,237,Mme. Bonami, 2014.doc>>
+
+ 
+ 
+
+Machine distributrice.jpg 
+ 
+
+Carte a puce.jpg 
+ 
+
+De : benoit.m.joly@gmail.com 
+*** Jean Francois Hetu
+ 
+
+ 
+ 
+ 
+
+---------- Forwarded message ---------- 
+From: Isabelle B. <isabellebonami@hotmail.com> 
+Date: 2014-03-13 14:32 GMT-04:00 
+Subject: Fwd: Jean-Francois Hetu shared "Sunny Isles Beach, Floride" with you 
+To: Benoit Joly <benoit.m.joly@gmail.com> 
+ 
+ 
+ 
+
+ 
+ 
+Envoyé de mon iPhone 
+
+ 
+Début du message transféré : 
+ 
+ 
+
+Expéditeur: Jean-Francois Hetu <jf3hetu@yahoo.ca> 
+Date: 13 mars 2014 13:55:13 HAE 
+Destinataire: "Isabelle B." <isabellebonami@hotmail.com> 
+Objet: Rép : Jean-Francois Hetu shared "Sunny Isles Beach, Floride" with you 
+Répondre à: Jean-Francois Hetu <jf3hetu@yahoo.ca> 
+ 
+ 
+
+Bonjour, 
+
+  
+
+Voici la façon la plus simple pour effectuer votre dépôt de réservation de US$250.00. Veuillez vous présenter à une succursale de la Banque Nationale et demandez d'effectuer un transfert bancaire à mon numéro de compte suivant; 
+
+  
+
+Banque Nationale (Île-Perrot, Qué.) 
+
+  
+
+Numéro de transit : 04331 006 
+
+Numéro de compte en $US : 2048156 
+
+  
+
+   
+
+S.V.P. m'aviser par courriel lorsque vous aurez effectué le transfert. Je vous enverrai le reçu du dépôt de réservation. Vous aurez à faire le paiement final de US$500.00 de la même façon vers le 30 mars 2014. Il ne vous restera que le US$70.00 pour l'entretien ménager à laisser à la fin du séjour. 
+
+  
+
+Merci. 
+
+  
+
+Jean-François Hétu 
+
+514-743-2776 
+
+ 
+ 
+
+De : JF Hetu <jf3hetu@yahoo.ca> 
+À : Isabelle B. <isabellebonami@hotmail.com>  
+Envoyé le : mercredi 12 mars 2014 22h48 
+Objet : Re: Jean-Francois Hetu shared "Sunny Isles Beach, Floride" with you 
+  
+
+ 
+ 
+
+Merci. A+ 
+ 
+  
+
+Jean-François Hétu 
+
+Envoyé de mon iPad 
+
+ 
+Le 2014-03-12 à 22:47, Isabelle B. <isabellebonami@hotmail.com> a écrit : 
+ 
+  
+
+Merci pour les deux montages!  Ça nous donne une meilleure idée du condo et des environs et nous avons encore plus hâte d'y être! 
+ 
+À demain! 
+ 
+  
+
+From: no-reply@dropbox.com 
+To: isabellebonami@hotmail.com 
+Subject: Jean-Francois Hetu shared "Sunny Isles Beach, Floride" with you 
+Date: Thu, 13 Mar 2014 02:36:26 +0000 
+ 
+  
+
+ 
+ 
+
+ 
+ 
+	
+
+ 
+	
+
+ 
+
+ 
+ 
+	
+
+From Jean-Francois: 
+ 
+"Et voici les environs de la belle ville de Sunny Isles Beach. 
+ 
+À demain. 
+ 
+Jean-François Hétu 
+514-743-2776" 
+ 
+Click here to view Sunny Isles Beach, Floride 
+ 
+(Jean-Francois shared these files using Dropbox. Enjoy!) 
+	
+
+ 
+ 
+
+ 
+ 
+	
+
+ 
+	
+
+ 
+
+ 
+ 
+
+ 
+ 
+	
+
+© 2014 Dropbox 
+
+ 
+ 
+ 
+
+ 
+ 
+
+ 
+
+De : benoit.m.joly@gmail.com 
+*** condo sunny isles
+ 
+
+ 
+ 
+ 
+
+---------- Forwarded message ---------- 
+From: Isabelle B. <isabellebonami@hotmail.com> 
+Date: 2014-03-13 21:49 GMT-04:00 
+Subject: FW: Bienvenue dans notre condo à Sunny Isles Beach, Floride 
+To: Benoit Joly <benoit.m.joly@gmail.com> 
+ 
+ 
+  
+
+ 
+ 
+ 
+
+ 
+Date: Thu, 13 Mar 2014 18:37:15 -0700 
+From: jf3hetu@yahoo.ca 
+Subject: Bienvenue dans notre condo à Sunny Isles Beach, Floride 
+To: isabellebonami@hotmail.com 
+ 
+ 
+
+Voici le document incluant les informations nécessaires pour votre arrivée à notre condo #237 au Cartier à Sunny Isles Beach. Le code de la porte vous sera donné suite au paiement final. 
+
+  
+
+  
+
+Tel que discuté, nous avons fait de belles découvertes à quelques minutes du condo en voiture que nous vous partageons; 
+
+  
+
+1) Une excellente vraie pâtisserie Française. 
+
+  
+
+La Provence 
+
+Artisanal French Bakery & Cafe 
+
+3507 NE 163rd Street 
+N. Miami Beach, FL 33160 
+
+http://laprovencemiami.com/ 
+
+  
+
+2) La meilleure Pizza croûte mince...cuite au four à charbon! 
+
+  
+
+Anthony's Coal Fired Pizza 
+
+17901 Biscayne Boulevard 
+
+Aventura, FL 33160 
+
+http://www.acfp.com/ 
+
+  
+
+3) La place à Cupcakes! 
+
+  
+
+Misha's Cupcakes 
+
+Loehman's Plaza 
+18797 Biscayne Blvd., Aventura 
+http://www.mishascupcakes.com/ 
+
+  
+
+Une photo de la belle plage de Sunny Isles Beach où vous installerez vos chaises! 
+
+  
+
+Autres infos à venir! 
+
+  
+
+  
+
+  
+
+Jean-François Hétu 
+
+ 
+ 
+
+ 
+
+ 
+ 
+
+Pièces jointes 
+<<BienvenuedansnotrecondoenFloride,237,Mme. Bonami, 2014.doc>>
+
+ 
+ 
+
+SunnyIslesBeach_20120301.jpg 
+ 
+
+De : benoit.m.joly@gmail.com 
+*** expedia
+ 
+
+---------- Forwarded message ----------  
+De: "Expedia.ca" <Expedia@ca.expediamail.com> Date de fermeture: 11 avr. 2014 16:55 réserve de droits: Final Details For Your Trip : Miami - 13/04/2014 - (171353635829)  
+Pour: <benoit.m.joly@gmail.com>  
+Cc :  
+ 
+ 
+
+ 
+	
+
+My Itineraries | My Account | Customer Support | Feedback  
+	
+	
+
+ 
+
+ 
+	
+
+ 
+	
+
+Dear Benoit Joly,  
+
+We're pleased to provide the final summary of your forthcoming trip. You will find your itinerary information and the corresponding confirmation codes below. There is no need to contact us to reconfirm any of the details available in this email, just print it off and ensure that you take it with you on your travels.  
+
+Your itinerary is also available to you online at any time before departure simply by visiting the My Itineraries section in your Expedia.ca account.  
+	
+	
+
+Before travelling, don't forget to:  
+	
+	
+
+Online Check-in 
+(up to 24 hours in advance)  
+	
+	
+
+Airline Fee Chart 
+  
+	
+	
+
+Airline toll-free telephone numbers 
+  
+	
+	
+
+Passport and visa information 
+  
+	
+
+ 
+	
+
+ 
+	
+
+Expedia Itinerary Number(s)  
+	
+	
+
+ 
+	
+
+ 
+	
+
+171353635829  
+	
+	
+
+ 
+	
+
+ 
+	
+
+ 
+	
+
+ 
+	
+	
+	
+
+Traveller details 
+	
+	
+	
+
+Main contact: Benoit Joly  
+	
+
+Number of traveller(s): 4  
+	
+	
+	
+	
+	
+
+Email address:  
+	
+
+benoit.m.joly@gmail.com  
+
+ 
+	
+
+ 
+
+ 
+	
+
+ 
+	
+
+Is your information correct? Update contact information  
+	
+	
+	
+
+ 
+	
+
+ 
+	
+
+Make sure your cell phone is available so we can reach you for important news or updates.  
+	
+
+Traveller's name(s):  
+
+1.  
+	
+
+   
+	
+
+Benoit Joly  
+
+2.  
+	
+
+   
+	
+
+Isabelle Bonami  
+
+3.  
+	
+
+   
+	
+
+Lauriane Joly  
+
+4.  
+	
+
+   
+	
+
+Anais Joly  
+	
+
+ 
+	
+	
+	
+
+Flight Details 
+	
+	
+	
+
+Montreal to Miami  
+	
+	
+	
+
+American Airlines  
+
+   
+
+Confirmation Code: NJEFHC  
+
+Use this for online check in  
+
+   
+
+  
+   
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+Depart Montreal (YUL)  
+	
+
+ 
+	
+	
+
+ 
+	
+
+Arrive Miami (MIA)  
+	
+	
+
+ 
+	
+
+ 
+	
+	
+
+ 
+	
+
+ 
+	
+	
+
+05:35 PM  
+	
+
+ 
+	
+	
+
+ 
+	
+
+09:20 PM  
+	
+	
+
+ 
+	
+
+ 
+	
+	
+
+ 
+	
+
+ 
+	
+	
+
+Sunday, April 13, 2014  
+	
+
+ 
+	
+	
+
+ 
+	
+
+Sunday, April 13, 2014  
+	
+	
+
+ 
+	
+
+ 
+	
+	
+
+ 
+	
+
+ 
+	
+	
+	
+
+ 
+	
+	
+
+ 
+	
+	
+	
+
+ 
+	
+
+ 
+	
+	
+
+ 
+	
+
+ 
+	
+	
+
+Flight Number: 1478  
+	
+
+ 
+	
+	
+
+ 
+	
+
+Duration 3 Hr 45 Min  
+	
+	
+
+ 
+	
+	
+	
+
+ 
+	
+
+ 
+	
+
+ 
+	
+
+ 
+	
+
+ 
+	
+	
+
+ 
+	
+
+ 
+	
+
+ 
+
+... 
+
+ 
+
+De : benoit.m.joly@gmail.com 
+** disney
+*** avant de partir
+[x] Acheter permis de conduire international 
+[x] Acheter assurance annulation 
+[x] Reserver place stationnement 
+[x] trouver prix taxi entre aéroport et condo ~52$ 
+[x] Imprimer preuve d'assurance automobile 
+[x] Imprimer tout les papier 
+[] Faire liste de chose a voir 
+    1. Everglades 
+    2. Autre? 
+    3. En cas de pluie 
+[ ] Faire liste choses a emporter 
+[x] Acheter linge plage 
+[x] Tablette? 
+
+**** A emporter 
+[x] Permis international
+[x] Papiers 
+[x] Carte Ericsson 
+[x] Chargeurs téléphones 
+[x] CPAP 
+
+*** Rendu la bas
+**** Dimanche:
+***** Prendre taxi pour le condo "Le cartier" #237: 
+    201 178th Drive #237 
+    Sunny Isles Beach, Fl 
+    33160 
+    # de téléphone du condo : (305) 466-1088 
+
+    Pour l’internet Wi-Fi : connectez-vous sur ATT7777 
+    Code d’accès Wi-Fi : 257J4CMNBK 
+
+    Place de stationnement : # 103 
+
+    Vous pouvez me contacter en tout temps aux numéros suivants; 
+    Cellulaire : 514-743-2776 
+    Résidence : 514-425-0513 
+
+    Propriétaires : 
+    Jean-François Hétu 
+    Julie Lévesque 
+
+   
+    Rendu, composer le #142 au telephone. Parler a JF Hetu 
+    Code de la porte: 23723715 
+    Thermostat a 75F 
+**** Lundi: 
+
+     Aller chercher la voiture au centre national: 18080 Collins Avenue  
+     North Miami Beach, FL 33160-2723 
+
+     Stationnement #103 
+
+     Magasins / restaurants 
+     Dépanneurs / station-service 7 eleven 
+
+     Coin 178th st et Collins blvd 
+
+     Carte sim prepaid 
+
+***** Une excellente vraie pâtisserie Française: 
+      La Provence 
+      Artisanal French Bakery & Cafe 
+      3507 NE 163rd Street 
+      N. Miami Beach, FL 33160 
+
+      http://laprovencemiami.com/ 
+
+***** La meilleure Pizza croûte mince...cuite au four à charbon! 
+
+      Anthony's Coal Fired Pizza 
+
+      17901 Biscayne Boulevard 
+      Aventura, FL 33160 
+
+      http://www.acfp.com/ 
+
+***** La place à Cupcakes! 
+
+      Misha's Cupcakes 
+
+      Loehman's Plaza 
+      18797 Biscayne Blvd., Aventura 
+      http://www.mishascupcakes.com/ 
+
+   
+
+***** Liquor stores 
+
+      Sunny Isles Liquors  
+      18110 Collins Ave, Sunny Isles Beach, FL ‎ 
+      RK Village Plaza 
+
+      Sunny Isles Fine Wine & Spirit  
+      17100 Collins Ave, Sunny Isles Bch, FL ‎ 
+      RK Centers 
+
+***** Everglades 
+
+      Anhinga Trail 
+      Royal Palm Visitor Center 
+      Mahogany Hammock trail 
+      Boat tour 
+      www.everglades-wilderness-waterway.com” 
+      ranger 
+    
+***** Dimanche: 
+
+      Laisser 70$ 
+      Thermostat a 80F 
+      Sortir la voiture!!! 
+      Aller au condo 
+      Laisser les cles sur le crochet 
+      Barrer la porte 
+      Retour a l'aeroport (~35 minutes) 
+* sports et cultures
+** Musée Armand-Frappier
+
+Cet hiver, les samedis et dimanches se passent au labo!
+
+Dès le samedi 16 janvier, une série d'ateliers pour les enfants de 5 à 8 ans et leurs parents sera présentée. Par le jeu et la manipulation, découvrez avec vos tout-petits l'univers fascinant des vilains microbes! http://track.mediasend.ca/c/443/a44308edb5959007ace960838c$
+
+Les jeunes curieux de 9 à 12 ans n'ont pas été oubliés! Dès le dimanche 17 janvier, nous les invitons à une série de 9 ateliers qui leur permettra d'élargir leurs horizons face aux carrières en science... tout en s'amusant, bien entendu! http://track.mediasend.ca/c/443/a4$
+
+Camp d'ete: https://www.jeminscrismaintenant.com/museearmandfrappier/
+** radio ham
+*** stations / clubs
+- CRAV: club radio amateur de la visitation
+- VE2RVL: Station repetrice de Laval
+* achats
+** sante
+*** lunettes: http://www.swifteyewear.com/
+*** alergies
+Allergies
+
+15 septembre 2014
+
+21:13
+
+http://www.lapresse.ca/vivre/sante/201402/10/01-4737388-bracelets-medicaux-afficher-sa-sante.php
+
+ 
+
+http://csaci.ca/images/upload-files/Lanaphylaxie_a_lecole_3e_edition.pdf
+
+ 
+
+http://dejouerlesallergies.com/
+
+ 
+
+http://www.aaia.ca/fr/peanut_brochure2007_p1_fr.pdf
+
+http://www.aaia.ca/fr/peanut_brochure2007_p2_fr.pdf
+
+ 
+
+http://www.solutionsaveursante.com/fr/
+
+ 
+
+<<Guide-de-ressources-juin-2014-pdf-final.pdf>>
+
+ 
+
+ 
+
+Boutique:
+
+http://www.petitebaublesboutique.com/store/WsDefault.asp?Cat=MedicalIdBracelets&Sub=64&isThumbs=Yes&Thumbs=100
+
+http://canada.universalmedicalid.com/
+
+http://dejouerlesallergies.com/boutique/
+
+http://www.diabetesexpress.ca/kidzone-c-213.html
+
+http://www.spibelt.com/
+
+http://www.braceletmedex.ca/allergie-aux-arachides/
+
+http://www.allergyapparel.com/
+
+http://www.bluebearaware.com/
+
+http://www.moxiepouches.com/products.htm
+
+https://www.etsy.com/ca-fr/search/handmade?search_submit=&ref=auto&q=epipen+case&view_type=gallery&ship_to=US&locationQuery=6251999
+
+ 
+
+ 
+
+Bracelets
+
+http://www.universalmedicalid.com/cat_can/medical-ID-bracelets-for-kids-17
+
+http://www.universalmedicalid.com/prod_can/stainless-steel-small-silicone-flex-red-308
+
+ 
+
+Ceinture
+
+http://www.spibelt.com/
+
+http://www.kozyepi.com
+** Lave vaisselle
+   
+Bras de lavage central (WD22X10022 ~35$ US ~42 CAD):
+
+[[http://www.repairclinic.com/PartDetail/b3p9/GE-Dishwasher-Center-Wash-Arm-Assembly/WD22X10022/771067?ss=a9b3c66&amp;mr=0][http://www.repairclinic.com/PartDetail/b3p9/GE-Dishwasher-Center-Wash-Arm-Assembly/WD22X10022/771067?ss=a9b3c66&mr=0]]
+
+[[http://www.partselect.ca/PS260543-GE-WD22X10022-Middle-Spray-Arm.htm]]
+
+*** Choix:
+
+Marques: Asko, Whirlpool, Bosch, KitchenAid, GE et Kenmore
+
+[[http://www.protegez-vous.ca/oada-sandbox/liste-des-produits/lg-lds5040st.html][LG
+LDS5040ST]][[http://www.sears.ca/product/lg-24semi-integrated-dishwasher-w-flexible-easyrack8482-system-white/622-000018051-LDS5040ST][sears
+649]]bad reviews
+
+[[http://www.protegez-vous.ca/oada-sandbox/liste-des-produits/kenmore-13283.html][Kenmore
+13283]]
+
+[[http://www.protegez-vous.ca/oada-sandbox/liste-des-produits/kenmore-1304.html][Kenmore
+1304*]]
+
+[[http://www.protegez-vous.ca/oada-sandbox/liste-des-produits/bosch-ascenta-she3ar7uc.html][BOSCH
+Ascenta SHE3AR7*UC]]
+
+[[http://www.protegez-vous.ca/oada-sandbox/liste-des-produits/bosch-ascenta-shx3ar7uc.html][BOSCH
+Ascenta SHX3AR7*UC]]
+
+Kenmore 12222
+[[http://www.sears.ca/product/kenmore-md-built-in-tall-tub-dishwasher/622-12222-12222-2][sears
+(599)]]
+
+Wirlpool WDT720PADW
+[[http://www.sears.ca/product/whirlpool-24-51dba-built-in-tall-tub-dishwasher-white/622-000153197-WDT720PADW][sears
+(599)]] CR: 75% --upper rack ! adjustable
+
+Wirlpool WDT720PADH
+[[http://www.sears.ca/product/whirlpool-24-51dba-dishwasher-with-silverware-spray-white-ice/622-000153197-WDT720PADH][sears]]
+
+Bosch 300 SHE33T52UC
+[[http://www.sears.ca/product/bosch-300-series-4-cycle-dishwasher/622-000698761-SHE33T52UC][sears
+(699)]]e
+
+Bosch
+[[http://dishwashers.reviewed.com/content/bosch-shx4at75uc-dishwasher-review][shx4at75uc]]

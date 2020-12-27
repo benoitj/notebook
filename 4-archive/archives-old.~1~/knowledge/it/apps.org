@@ -1,0 +1,205 @@
+#+TITLE: Applications and games
+
+* suite
+** spreadsheet
+- SC-IM
+** word processor
+*** lightweight (markdown, asciidoc)
+- pandoc
+*** extensive
+- latex
+** outliner
+- org-mode
+** presentations
+- org-mode w/ reveal.js
+- latex -> beamer
+- pandoc: markdown -> beamer
+** dictionarry
+- stardict / sdcv
+  - http://download.huzheng.org/
+* email / contact / calendar
+- calcurse
+- neomutt
+- notmuch mail
+- offlineimap
+- msmtp
+* communication
+** video conference
+*** ring
+*** appear.in 
+*** tox
+*** skylaps
+*** hangouts
+** chat
+*** irc: weechat
+
+* security
+- gnupg
+- passwordstore
+* file manager
+- ranger
+* multimedia
+** music player
+- mopidy
+- mpd
+- ncmpcpp
+- ffmpeg
+- mps youtube / mpsyst: youtube jukebox
+* games
+** party
+- sports friends
+- push me pull you
+- tricky towers
+- gang beasts
+- tower fall assensions dark world
+- speed runners
+- pacman 256
+- leathal league
+- hidden in plain sight
+- jackbox party pack 4
+- Knight Squad
+- Monaco
+- Move or Die
+- STARWHAL
+- Magica 2
+- Ultimate Chicken Horse
+- Crawl
+- Totemori
+- geometry wars 3
+- hedgewars
+
+** terminal
+- TTY Games registry: https://bronevichok.ru/ttygames/
+- Wolfpack empire: http://wolfpackempire.com/
+- rogue or nethack
+- zork 1, 2, and 3
+- dwarf fortress
+- Classic Super Star Trek
+- the oregon trail
+- cataclysm-dda (dark days ahead)
+- Dungeon Crawl Stone Soup
+- Angband
+- ToMe (Tales of Middle Earth or Troubles of Middle Earth)
+- Adom (Ancient Domains of Mystery)
+- Moria (umoria)
+** others
+- MOONBASE ALPHA
+- spacestation13
+- openttd
+- diaspora: shattered armistice
+- alien swarm
+- freeciv
+- dota 2
+- hawken
+- path of exile
+- team fortress 2
+* tools / scripting
+- dmenu: menu handler for pass, opening files, running programs, etc..
+- bleachbit: cleanup cache and tmp files
+- dex: generate and run desktop entry files
+- percol: select things from stdout piping as an input to a command
+- greenclip: clipboard manager. works with rofi
+- Fasd: quick folder "cd" history. works well with ranger: https://www.youtube.com/watch?v=V9T2G7eGzgc&t=65s
+- task spooler (tsp): manage queued tasks
+- lcd tester: http://www.lagom.nl/lcd-test/
+- scrot: screenshot
+- fzf: fuzzy finder
+* web / downloader
+- wget / curl
+- surfraw: web api tool. goes quick google search and the like
+- internetarchive: python cmd line tool to archive.org website (search and download)
+- newsboat: RSS news reader
+- podbeuter: newsbeuter podcast downloader
+- elfeed: emacs RSS reader
+- finch: instant messenger
+- turses: twitter client
+- 
+foo
+bar
+foo
+foo
+
+* live in the terminal
+** [[http://ascii-world.wikidot.com/ascii-tools][Ascii based tools]] 
+
+** CD burning tool: cdw
+   
+** fuzzy finding: fzf
+   
+
+** web search: surfraw
+** menu system: dmenu, rofi
+
+** bittorrent: transmission / transmission-remote-cli
+
+** irc: weechat
+   
+** music: pyradio, cloudruby, mpd, mopidy
+   
+** filemanager: ranger
+
+
+** file tagging / renaming: stag, 
+   
+** networking: nethogs
+** browser: w3m
+
+** twitter: turses
+
+** monitoring: htop, glances, 
+
+** podcast: podbeuter
+
+** rss: newsbeuter, newsboat
+   
+** IM: finch
+   
+** url lookup: urlview, urlscan
+
+** utils: ttyclock, ncdu, task spooler, tarman
+   
+** security: keepassC
+
+** spreadsheet: sc spreadsheet
+* Media authoring
+*** DONE OpenBroadcastingSoftware: https://obsproject.com
+*** TODO [[https://asciinema.org][AsciiNema Session rec]]: record terminal sessions
+*** TODO screencastify
+*** DONE screenshot: greenshot: http://getgreenshot.org/
+* PC Utility tool
+*** DONE freecompose
+*** DONE Flux brightness adjuster: https://justgetflux.com/
+*** DONE Double Commander
+*** DONE keepass2 
+*** DONE 7zip
+*** DONE Double Commander
+    CLOSED: [2016-12-05 Mon 11:42]
+*** DONE truecrypt. replaced by veracrypt: https://veracrypt.codeplex.com/
+https://www.grc.com/misc/truecrypt/truecrypt.htm
+*** filezilla
+*** kdiff3
+
+   CLOSED: [2016-12-05 Mon 11:42]
+*** DONE launchy
+*** DONE filezilla
+*** DONE kdiff3
+*** Ninite: windows multi app custom installer
+*** PhraseExpress
+*** Breevy
+*** SumatraPDF
+*** PDF-XChange
+*** pidgin
+*** potplayer
+*** xnviewer
+*** google photos desktop uploader or [[http://lifehacker.com/lifehacker-pack-for-windows-our-list-of-the-essential-787533613][Dropbox]]
+*** musicbee
+*** F.lux: brightness changer
+*** CCleaner
+*** 7-zip
+*** Avira
+*** Revo Uninstaller
+*** Handbrake
+*** Bins
+*** Fences
+*** MediaMonkey
+*** Autohotkey

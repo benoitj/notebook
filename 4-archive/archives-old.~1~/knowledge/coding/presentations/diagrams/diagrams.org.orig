@@ -1,0 +1,502 @@
+#+TITLE: Long live command line tools (or Diagrams with text based tools)
+#+REVEAL_HLEVEL: 2
+#+REVEAL_TRANS: linear
+#+PROPERTY: header-args  :results both :exports both
+#+REVEAL_MIN_SCALE: 0.5
+#+REVEAL_MAX_SCALE: 1.5
+#+REVEAL_PLUGINS: (highlight)
+#+REVEAL_HIGHLIGHT_CSS: %r/plugin/highlight/styles/monokai-sublime.css
+
+* Problem I sometimes face with GUI diagram tools
+
+- hard to team work on them at the same time
+- hard to version control. many are compressed files
+- almost impossible to resolve conflicts. ever tried to resolve a conflict with visio?
+- refactoring a diagram is hard
+- visual alignment is a pain over time
+
+* What I like from Text based tools
+[[./terminal.gif]]
+#+BEGIN_NOTES
+- data driven: you write data and relations, add formatting rules, and rendering does the rest
+- can integrate with your pipeline and development flow
+- you can understand them with just a plain text editor
+- version well and can sit along with your code
+- can resolve conflicts easily like you do with source code
+- refactor is quite easy and can be scripped for complex diagrams
+- integrates with almost anything, markdown, wikis, IDE, text editor, office suite, build systems
+#+END_NOTES
+
+* Some examples
+* Sequence diagram
+
+#+BEGIN_SRC plantuml :file diagrams-seq.png
+
+ui -> backend: search x
+backend -> db: select in table
+backend <-- db: result set
+ui <-- backend: x in json
+
+
+#+END_SRC
+
+#+RESULTS:
+[[file:diagrams-seq.png]]
+
+* components diagram
+#+BEGIN_SRC plantuml :file component.png
+
+interface "Data Access" as DA
+
+DA - [First Component] 
+[First Component] ..> HTTP : use
+
+note left of HTTP : Web Service only
+
+note right of [First Component]
+  A note can also
+  be on several lines
+end note
+
+#+END_SRC
+
+#+RESULTS:
+[[file:component.png]]
+
+* activity diagram
+
+#+BEGIN_SRC plantuml :file activity.png
+
+
+start
+
+if (Graphviz installed?) then (yes)
+  :process all\ndiagrams;
+else (no)
+  :process only
+  __sequence__ and __activity__ diagrams;
+endif
+
+stop
+
+#+END_SRC
+
+#+RESULTS:
+[[file:activity.png]]
+
+
+* deployment diagram
+
+* class diagram
+#+BEGIN_SRC plantuml :file class.png
+class Car {
+ +move()
+}
+
+Driver - Car : drives >
+Car *- Wheel : have 4 >
+Car -- Person : < owns
+
+#+END_SRC
+
+#+RESULTS:
+[[file:class.png]]
+
+* TODO Network diagram
+#+BEGIN_SRC shell :shebang :file nwdiag.png
+echo 'nwdiag {
+  network Sample_front {
+    address = "192.168.10.0/24";
+
+    // define group
+    group web {
+      web01 [address = ".1"];
+      web02 [address = ".2"];
+    }
+  }
+  network Sample_back {
+    address = "192.168.20.0/24";
+    web01 [address = ".1"];
+    web02 [address = ".2"];
+    db01 [address = ".101"];
+    db02 [address = ".102"];
+
+    // define network using defined nodes
+    group db {
+      db01;
+      db02;
+    }
+  }
+}' | nwdiag -Tpng --no-transparency -o nwdiag.png - && cat nwdiag.png
+#+END_SRC
+
+#+RESULTS:
+[[file:nwdiag.png]]
+
+* block diagram
+
+* TODO branching strategy
+
+#+BEGIN_SRC dot :file branching1.png
+digraph g{
+    rankdir="LR";
+    pad=0.5;
+    nodesep=0.6;
+    ranksep=0.5;
+    forcelabels=true;
+
+    node [width=0.12, height=0.12, fixedsize=true,
+        shape=circle, style=filled, color="#909090",
+        fontcolor="deepskyblue", font="Arial bold", fontsize="14pt" ];
+    edge [arrowhead=none, color="#909090", penwidth=3];
+
+    node  [group="release3"];
+    s3    [label="release 3\n\n", width=0.03, height=0.03, shape=box];
+    r30   [label="    R3.0\n\n\n"];
+    e3    [label="", width=0.03, height=0.03, shape=box];
+    e3f   [label="", width=0.03, height=0.03, shape=circle, color="#b0b0b0"];
+    s3 -> r30 -> e3;
+    e3 -> e3f [color="#b0b0b0", style=dashed];
+
+    node  [group="release2"];
+    s2    [label="release 2\n\n", width=0.03, height=0.03, shape=box];
+    b2    [label="", width=0.03, height=0.03, shape=box];
+    r20   [label="    R2.0\n\n\n"];
+    e2    [label="", width=0.03, height=0.03, shape=box];
+    e2f   [label="", width=0.03, height=0.03, shape=circle, color="#b0b0b0"];
+    s2 -> b2 -> r20 -> e2;
+    e2 -> e2f [color="#b0b0b0", style=dashed];
+
+    node  [group="release1"];
+    s1    [label="release 1\n\n", width=0.03, height=0.03, shape=box];
+    ttest [label="    test\n\n\n"];
+    b1    [label="", width=0.03, height=0.03, shape=box];
+    r10   [label="    R1.0\n\n\n"];
+    r11   [label="    R1.1\n\n\n"];
+    e1    [label="", width=0.03, height=0.03, shape=box];
+    e1f   [label="", width=0.03, height=0.03, shape=circle, color="#b0b0b0"];
+    s1 -> ttest -> b1 -> r10 -> r11 -> e1;
+    e1 -> e1f [color="#b0b0b0", style=dashed];
+
+    b1 -> s2;
+    b2 -> s3;
+
+}
+
+#+END_SRC
+#+REVEAL: split
+#+RESULTS:
+[[file:branching1.png]]
+
+#+REVEAL: split
+
+#+BEGIN_SRC dot :file branching2.png
+strict digraph g{
+rankdir="TB";
+nodesep=0.5;
+ranksep=0.25;
+splines=line;
+forcelabels=false;
+
+// general
+node [style=filled, color="black", 
+    fontcolor="black", font="Consolas", fontsize="8pt" ];
+edge [arrowhead=vee, color="black", penwidth=2];
+
+// branch names
+node [fixedsize=false, penwidth=0, fillcolor=none, shape=none, width=0, height=0, margin="0.05"];
+subgraph {
+    rank=sink;
+    me [label="master", group="master"];
+}
+subgraph {
+    rank=sink;
+    de [label="develop", group="develop"];
+}
+
+// tags
+node [shape=cds, fixedsize=false, fillcolor="#C6C6C6", penwidth=1, margin="0.11,0.055"]
+t1 [label="0.1"]
+t2 [label="0.2"]
+t3 [label="1.0"]
+
+// graph
+node [width=0.2, height=0.2, fixedsize=true, label="", margin="0.11,0.055", shape=circle, penwidth=2, fillcolor="#FF0000"]
+
+// branches
+node  [group="master", fillcolor="#27E4F9"];
+m1;
+m2;
+m3;
+m4;
+subgraph {
+    rank=source;
+    ms [label="", width=0, height=0, penwidth=0];
+}
+m1 -> m2 -> m3 -> m4;
+ms -> m1 [color="#b0b0b0", style=dashed, arrowhead=none ];
+m4 -> me [color="#b0b0b0", style=dashed, arrowhead=none ];
+
+node  [group="hotfixes", fillcolor="#FD5965"];
+h1;
+
+node  [group="release", fillcolor="#52C322"];
+r1;
+r2;
+r3;
+r4;
+r5;
+r1 -> r2 -> r3 -> r4;
+
+node  [group="develop", fillcolor="#FFE333"];
+d1;
+d2;
+d3;
+d4;
+d5;
+d6;
+d7;
+d8;
+d9;
+d10;
+d1 -> d2 -> d3 -> d4 -> d5 -> d6 -> d7 -> d8 -> d9 -> d10;
+d10 -> de [color="#b0b0b0", style=dashed, arrowhead=none ];
+
+node  [group="feature 1", fillcolor="#FB3DB5"];
+fa1;
+fa2;
+fa3;
+fa4;
+fa5;
+fa6;
+subgraph fas1 {
+    fa1 -> fa2 -> fa3;
+}
+subgraph fas2 {
+    fa4 -> fa5 -> fa6;
+}
+
+node  [group="feature 2", fillcolor="#FB3DB5"];
+fb1;
+fb2;
+fb3;
+fb4;
+subgraph{ rank=same; fa6; fb4; } // hack
+subgraph{ rank=same; fa1; fb1; } // hack
+fb1 -> fb2 -> fb3 -> fb4;
+
+// nodes
+m1 -> d1;
+m1 -> h1;
+h1 -> m2;
+h1 -> d5;
+d3 -> fa1;
+fa3 -> d6;
+d6 -> r1;
+r2 -> d7;
+r4 -> d8;
+r4 -> m3;
+d9 -> r5;
+r5 -> m4;
+r5 -> d10;
+
+d7 -> fa4;
+fa6 -> d9;
+
+d3 -> fb1;
+fb4 -> d9;
+
+// tags connections
+edge [color="#b0b0b0", style=dotted, len=0.3, arrowhead=none, penwidth=1];
+subgraph  {
+    rank="same";
+    m1 -> t1;
+}
+subgraph  {
+    rank="same";
+    m2 -> t2 ;
+}
+subgraph  {
+    rank="same";
+    m3 -> t3;
+}
+}
+
+#+END_SRC
+#+REVEAL: split
+
+#+RESULTS:
+[[file:branching2.png]]
+
+* TODO C4 diagrams
+** system context
+
+#+BEGIN_SRC emacs-lisp
+
+(+ 1 2)
+
+#+END_SRC
+
+ #+BEGIN_SRC plantuml :file c4-context.png
+
+!define BASE_ENTITY(e_type,e_color,e_bgcolor,e_name,e_description,e_alias,e_stereo) e_type "<color:e_color><size:14><b>e_name</b></size></color>\r<color:e_color><size:10>[e_stereo]</size></color>\r\r e_description" as e_alias <<e_stereo>> #e_bgcolor
+
+!define system(name) system(name, name)
+!define c4actor(e_name, e_alias, e_description) BASE_ENTITY(rectangle, Black, White, e_name, e_description, e_alias, "Actor") 
+!define c4system(e_name, e_alias, e_description) BASE_ENTITY(rectangle, Black, White, e_name, e_description, e_alias, "Software System") 
+!define c4MySystem(e_name, e_alias, e_description) BASE_ENTITY(rectangle, Black, LightGrey, e_name, e_description, e_alias, "Software System") 
+
+skinparam rectangleFontSize 10
+skinparam componentArrowColor Black
+hide stereotype
+
+
+
+
+title Past Service Loading - System Context
+
+ c4system("ESP Scheduler", esp, "Scheduler that triggers\rthe PS loading job")
+ 'c4actor("PS support", support, "Manage loading,\rTroubleshoot loading issues")
+ c4MySystem("Past Service Loader", PS, "Process all PS files, validate\r and load claims into the PS table")
+
+ c4system("Consumer API", consumer, "Source of subscriber/patient\rinformation\rto be confirmed")
+ c4system("Splunk Log Analytic", Splunk, "Stores log entries\rand offer reports and dashboards")
+ c4system("code query service", codeService, "Generates unique ID\rfor PS claims")
+ c4system("Network Storage", nfs, "Shared file system where\rinput and output files are stored")
+ c4system("Past Service DB", db, "Storaging claims data") 
+
+ esp -down-> PS : Triggers
+ 'support -down-> PS : Troubleshoot loading
+ PS -down-> consumer : gets subscriber info
+ PS -down-> Splunk : logs
+ PS -down-> codeService : get new ID
+ PS -down-> nfs : reads PS files
+ PS -down-> db : writes PS claims
+' support -down-> nfs : stores PS files
+
+
+ #+END_SRC
+
+ #+RESULTS:
+ [[file:c4-context.png]]
+
+#+REVEAL: split
+
+ #+RESULTS:
+ [[file:c4-context.png]]
+
+** container
+
+ #+BEGIN_SRC plantuml :file c4-container.png
+!define BASE_ENTITY(e_type,e_color,e_bgcolor,e_name,e_description,e_alias,e_stereo) e_type "<color:e_color><size:14><b>e_name</b></size></color>\r<color:e_color><size:10>[e_stereo]</size></color>\r\r e_description" as e_alias <<e_stereo>> #e_bgcolor
+
+!define system(name) system(name, name)
+!define c4actor(e_name, e_alias, e_description) BASE_ENTITY(rectangle, Black, White, e_name, e_description, e_alias, "Actor") 
+!define c4system(e_name, e_alias, e_description) BASE_ENTITY(rectangle, Black, White, e_name, e_description, e_alias, "Software System") 
+!define c4MySystem(e_name, e_alias, e_description) BASE_ENTITY(rectangle, Black, LightGrey, e_name, e_description, e_alias, "Software System") 
+
+!define container(e_name, e_alias, e_description, e_techno) BASE_ENTITY(rectangle, Black, White, e_name, e_description, e_alias, "Container: e_techno")
+!define container(name) container(name, name)
+
+skinparam rectangleFontSize 10
+skinparam componentArrowColor Black
+ hide stereotype
+
+ title Past Service Loading - Container diagram
+
+ c4system("ESP Scheduler", esp, "Scheduler that triggers\rthe PS loading job")
+' c4actor("PS support", support, "Manage loading,\rTroubleshoot loading issues")
+ c4MySystem("Past Service Loader", PS, "") {
+  container("Past Service Batch Job", batch, "Spring Batch application\rrunning the PS loading job", "Spring Batch") 
+ }
+ c4system("Consumer API", Consumer, "Source of subscriber/patient\rinformation\rto be confirmed")
+ c4system("Splunk Log Analytic", Splunk, "Stores log entries\rand offer reports and dashboards")
+ c4system("Code query service", codeService, "Generates unique ID\rfor PS claims")
+ c4system("Network Storage", nfs, "Shared file system where\rinput and output files are stored")
+ c4system("Past Service DB", db, "Storaging claims data") 
+
+ esp -down-> batch : Triggers\r<size:10>[ssh/system call]</size>
+' support -down-> PS : Troubleshoot loading\r<size:10>[http,nfs]</size>
+ batch -down-> Consumer : gets subscriber info\r<size:10>[http/REST/json]</size> 
+ batch -down-> db : gets/stores claims\r<size:10>[JDBC]</size>
+ batch -down-> Splunk : logs\r<size:10>[syslog]</size>
+ batch -down-> codeService : get new ID\r<size:10>[http]</size>
+ batch -down-> nfs : reads PS files\r<size:10>[nfs]</size>
+
+ #+END_SRC
+#+REVEAL: split
+
+ #+RESULTS:
+ [[file:c4-container.png]]
+
+
+
+* component diagram
+
+ #+BEGIN_SRC plantuml :file c4-component.png
+
+ !define system(name, description) rectangle "description" <<Software System>> as name 
+ !define system(name) system(name, name)
+
+ !define component(name, description, component = "") rectangle "description" <<"Component: component">> as name 
+ !define component(name) component(name, name)
+
+skinparam rectangleFontSize 10
+skinparam componentArrowColor Black
+skinparam monochrome true
+
+ title Past Service Loading - Component diagram - Past service loading job
+
+ actor "ESP Scheduler" as esp
+ system(PS, "Past Service") { 
+  component(batchRunner, "Spring batch runner", "spring batch runner") 
+  component(job, "Past Service Batch job\n\nprocess files, threads,\nand error handling", "spring batch") 
+  component(reader, "Spring batch flat file reader", "Batch Item Reader") 
+  component(processors, "processors", "Batch Item processor") {
+    component(validatingProcessor, "validating processor\njsr303 hibernate validator", "Validating processor")
+    component(membershipProcessor, "Validate and fetch member information", "membership processor")
+    component(PSClaimProcessor, "other processors neeeded\nto satisfy business needs", "other processor")
+  }
+  component(writer, "Spring batch jdbc item writer", "Batch Item Writer") 
+ }
+ system(Splunk)
+ system(nfs, "Network Storage")
+ system(Consumer, "Consumer API")
+ system(db, "DB2") 
+
+ esp -down-> batchRunner : Triggers
+ batchRunner -down-> job
+ job -down-> reader
+ job -down-> processors
+ job -down-> writer
+
+ PS -down-> Splunk : logs
+ reader -down-> nfs : reads PS files
+ membershipProcessor -down-> Consumer
+ writer -down-> db : write to DB
+
+ #+END_SRC
+#+REVEAL: split
+
+ #+RESULTS:
+ [[file:c4-component.png]]
+
+* freeform
+
+#+BEGIN_SRC ditaa :cmdline -E :file hello-world.png
+
+
+
++--------------+--------+
+| Hello World! | Test   |
++--------------+--------+
+|                       |
+| Hello World!   foo    |
+|                       |
++-----------------------+
+
+#+END_SRC
+
+#+RESULTS:
+[[file:hello-world.png]]
+

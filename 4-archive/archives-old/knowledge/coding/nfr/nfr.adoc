@@ -1,0 +1,31 @@
+= NFR
+
+== NFR / Quality requirements
+Product Quality standard: ISO 25010
+
+== Thinking of Non-Functional Requirements as Taxes on the team
+Hi Martin,
+
+Here in the U.S., we're in the midst of tax season. Our annual income taxes must be paid no later than April 18 this year. While thinking about--or gulp! actually paying taxes is not very fun, it does provide a useful example of how to think about nonfunctional requirements on agile software development projects.
+
+A nonfunctional requirement is a requirement about how the system exists in the world, rather than about something users can do with that system.
+
+Nonfunctional requirements are often about performance, capacity, maintainability, localizability, interoperability, usability, portability and so on. Because so many of these end with -ility, they are often called the -ilities of a system.
+
+As an example, a system might have a requirement to work in English, French, German and Spanish.
+
+If the development team speaks English, that version will be the one developed first. And the team will have a nonfunctional requirement to make the system work in French, German and Spanish.
+
+Whether this is thought of as one requirement for three additional languages or three requirements for one additional language each will not matter for my point in this tip.
+
+The effort to produce these translated versions of the product can be thought of as a tax on the development team’s performance. Consider whatever speed the team was going at before. They will now go a little slower due to the need to produce those translations.
+
+It doesn’t matter whether the translations happen in the sprint, a sprint behind or whenever. In the grand scheme, the team is going slower by the amount of effort it takes to produce the translations. That is, they are slower by the amount they are taxed.
+
+The amount of these taxes can become quite significant over time: Work on the three last releases of three browsers. That’s a tax. Work on the three latest Windows releases. That’s a tax. Perform at this level. That’s a tax. Future scalability to that number of users. That’s a tax.
+
+I hope that through this metaphor about the costs of nonfunctional requirements, you can use it to think through the value of including each on your project.
+
+And that will help you succeed with agile,
+
+Mike

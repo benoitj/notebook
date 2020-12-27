@@ -1,0 +1,124 @@
+#+TITLE: Electronics
+
+* IOT
+** boards
+*** ESP32 and ESP8266
+- wemos board are easy to play (D1 mini, D1) we use mostly the D1 mini for now
+- $: around 2-3$ for esp8266, 7-10$ for esp32
+*** AVR cpu
+- arduino boards and clones: nano, uno, mega. We do most of the initial work on nano
+- $: similar price range than ESPs
+*** pic based boards
+- AVR and PIC are owned by the same company. they offer different characteristics. we have not tried the PIC yet.
+*** stm32
+- much more powerful than the other ones listed. 32 bit cpu (compare to 8 or 16 for the others)
+- not yet tried these
+- similar price range
+*** pc104
+- many embedded controls are pc104. 
+- not so much for IoT. they are expensive
+** platform (in order)
+*** arduino
+- good abstraction layer to most cpu listed above (except pc104 based boards)
+- binary larger than native sdks
+- large community: ++ documentation ++ youtube videos ++ FOSS libraries
+- fast to do POC
+- c, c++
+- I would stick to this platform to start with
+*** native sdk
+- I myself started on esp8266 native sdk.
+  - Take some time to compile and install the tool chain
+  - make sense to optimize but longer to develop with than arduino
+- a better fit to reduce production cost by reducing resource usage
+- usually c, c++
+*** lua nodeMCU
+- interpreter
+- lua language (similar to nodejs)
+- faster development cycle
+- user base?
+*** uPython
+- pretty new
+- does not seems to have a large user base
+- some CPUs may not run this properly for larger applications (memory management issues)
+** tools
+*** IDE
+**** arduino IDE
+- easy to start. 
+- quite limited for "professional" work. 
+- could serve the first few sessions, but expect to leave it not long after
+- large hobbyist community
+**** platformio
+- based on atom IDE
+- professional grade
+- paid version supports unit test and debugging
+- supports many boards/cpu, platform
+- large user base
+- this is the IDE we use now since 2-3 weeks
+**** sloeber
+- eclipse based
+- FOSS
+- some ways to unit test, mock your hardware and also supports debugging
+- pretty new and small user base
+- I started playing with it and it is promizing. Could be a cheaper alternative to platformio for unit test and debugging.
+- we plan to try it once we are stable on platformio
+**** VS Code
+- we plan to try it once we are stable on sloeber
+**** CLion
+- we plan to try it once we are stable on VS Code
+*** ci
+any should work well with platformio
+if you want to run automated tests, you may need to run your own server with devices connected to it
+**** travis
+**** jenkins
+*** testing
+**** platformio
+**** sloeber
+not sure for others
+*** debugging (board dependant)
+**** platformio
+**** sloeber
+**** atmel studio
+** communication
+*** wifi
+ESP8266, ESP32 (also has bluetooth)
+*** RF
+- NRF24L01 (really cheap ~1$, and low power)
+- there are more boards, but I'm not familiar with them
+*** LoRa (Low power, Long range)
+- frequency is dependant of your location (3 ranges, asia, europe, america)
+- really long range. could be up to 30-40km and maybe even more
+- some paid network and some community/free networks (see https://www.thethingsnetwork.org/)
+- Andrea Spiess has many good information about lora: https://www.youtube.com/channel/UCu7_D0o48KbfhpEohoP7YSQ
+- 2x expensive than regular RF ~3$ (for the SX1278), and much more if you need to build a gateway (15$ for the emmiter + a raspberry pi)
+- I have'nt tried yet, but is on the list. I would have to build a gateway if I use at my place. There is one free gateway in downtown montreal though
+** sensors 
+- you can buy any kit pretty cheap
+- things like: https://www.ebay.ca/itm/37-Sensors-Assortment-Kit-37-in-1-Sensor-Module-Starter-Kit-for-Arduino-MCU/132103269930?hash=item1ec1f7ee2a:g:-WIAAOSw4CFYrD1Y
+- GPS modules are a bit more expensive  https://www.ebay.ca/itm/Ublox-NEO-6M-GPS-Module-Aircraft-Flight-Controller-For-Arduino-MWC-IMU-APM2/253247982818?hash=item3af6c18ce2:g:fZcAAOSwstxVH4WP
+** standards
+https://iot.eclipse.org/standards/
+- so far we used: REST and MQTT
+** resources
+- http://iot.eclipse.org
+- board, sensors, communication, and more:
+  - Andrea Spiess: https://www.youtube.com/channel/UCu7_D0o48KbfhpEohoP7YSQ
+  - https://www.youtube.com/user/adafruit
+* Keyboard
+** stores
+*** GonsKeyboards
+*** Keebio
+https://keeb.io
+*** ZealPC
+Tealio switches (one of the bests)
+https://zealpc.net/
+** keyboard references
+*** https://deskthority.net
+*** https://deskthority.net/wiki/Category:Keyboards_by_bran
+*** https://www.reddit.com/r/MechanicalKeyboards/
+*** http://geekhack.org/
+*** http://keyb.io
+*** laserboots.com: custom plates
+*** generic plates: kbdfans.cn
+*** arrow.com
+*** zealpc.net
+*** sentraq.com

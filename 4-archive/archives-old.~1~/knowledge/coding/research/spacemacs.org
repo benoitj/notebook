@@ -1,0 +1,30 @@
+* install emacs
+- set HOME + USERPROFILE to C:\Users\<userid>
+- install msys2 64 bit
+- run msys2 shell
+- update packages: pacman -Suy
+- install emacs: pacman -S mingw 64 emacs
+- /mingw64/bin/emacs ~/.profile
+PATH="$PATH:/mingw64/bin"
+export PATH
+
+* initialize emacs
+- make sure you do not have a ~/.emacs and ~/.emacs.d
+- clone spacemacs according to instructions on http://spacemacs.org
+- run command: emacs
+-- select editing style vim / emacs
+-- select completion / search: helm
+-- standard installation
+
+* configure spacemacs
+you configure spacemacs with: <space> f e d
+
+** layers
+- git: git layer based on magit. entrypoint: <space> g s
+- org: org mode document
+- pandoc: pandoc document
+- markdown:
+- plantuml: text uml diagrams
+
+
+

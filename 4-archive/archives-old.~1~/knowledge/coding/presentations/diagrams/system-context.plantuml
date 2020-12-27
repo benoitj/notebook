@@ -1,0 +1,34 @@
+!define BASE_ENTITY(e_type,e_color,e_bgcolor,e_name,e_description,e_alias,e_stereo) e_type "<color:e_color><size:14><b>e_name</b></size></color>\r<color:e_color><size:10>[e_stereo]</size></color>\r\r e_description" as e_alias <<e_stereo>> #e_bgcolor
+
+!define system(name) system(name, name)
+!define c4actor(e_name, e_alias, e_description) BASE_ENTITY(rectangle, Black, White, e_name, e_description, e_alias, "Actor") 
+!define c4system(e_name, e_alias, e_description) BASE_ENTITY(rectangle, Black, White, e_name, e_description, e_alias, "Software System") 
+!define c4MySystem(e_name, e_alias, e_description) BASE_ENTITY(rectangle, Black, LightGrey, e_name, e_description, e_alias, "Software System") 
+
+!define container(e_name, e_alias, e_description, e_techno) BASE_ENTITY(rectangle, Black, White, e_name, e_description, e_alias, "Container: e_techno")
+!define container(name) container(name, name)
+
+skinparam rectangleFontSize 10
+skinparam componentArrowColor Black
+ hide stereotype
+
+ title Past Service Loading - Container diagram
+
+ c4system("ESP Scheduler", esp, "Scheduler that triggers\rthe PS loading job")
+' c4actor("PS support", support, "Manage loading,\rTroubleshoot loading issues")
+ c4MySystem("Past Service Loader", PS, "") {
+  container("Past Service Batch Job", batch, "Spring Batch application\rrunning the PS loading job", "Spring Batch") 
+ }
+ c4system("Consumer API", Consumer, "Source of subscriber/patient\rinformation\rto be confirmed")
+ c4system("Splunk Log Analytic", Splunk, "Stores log entries\rand offer reports and dashboards")
+ c4system("Code query service", codeService, "Generates unique ID\rfor PS claims")
+ c4system("Network Storage", nfs, "Shared file system where\rinput and output files are stored")
+ c4system("Past Service DB", db, "Storaging claims data") 
+
+ esp -down-> batch : Triggers\r<size:10>[ssh/system call]</size>
+' support -down-> PS : Troubleshoot loading\r<size:10>[http,nfs]</size>
+ batch -down-> Consumer : gets subscriber info\r<size:10>[http/REST/json]</size> 
+ batch -down-> db : gets/stores claims\r<size:10>[JDBC]</size>
+ batch -down-> Splunk : logs\r<size:10>[syslog]</size>
+ batch -down-> codeService : get new ID\r<size:10>[http]</size>
+ batch -down-> nfs : reads PS files\r<size:10>[nfs]</size>

@@ -1,0 +1,182 @@
+#+TAGS: practice recruitment interview sales swag
+#+SEQ_TODO: SOMEDAY(s) BACKLOG(b) READY(r) TODO(t) WAITING(w) | DONE(d)
+* Interview questions
+** Detailed interview
+*** Architecture
+**** Technical requirement gathering
+   - I want you to build me a guitar. What is your approach?
+**** Software system analysis and design
+   - Can you explain what are the SOLID principles?
+   - Can you give examples of meeting/breaking open/close principle?
+   - Can you explain the difference between Inversion of Control and dependency injection?
+   - Would you recommend Dependency Injection or Service Locator for a new, greenfield project?
+   - Difference between abstract class and interface?  Is still true in Java 8?
+**** Architecture and integration styles and patterns
+   - What architecture/integration patterns have you used recently?
+   - What software design patterns have you used recently?
+     - can you draw me how it works?
+   - Key differences between SOAP and REST?
+**** Communication (including effective diagramming)
+ 	(look at how the candidate explain solutions, ask questions, etc...)
+**** TODO situational leadership
+     SCHEDULED: <2017-03-16 Thu>
+*** Software Development
+
+ - Software development lifecycle
+	 - which portion of the lifecycle have you worked on?
+ - Software development process
+	 - Agile: what do you do when scope of a sprint change? How does it affect the current work?
+	 - Agile: what do you do when you are not done at the end of the sprint?
+ - Multiple software types
+	 - which type of applications have you worked on?
+ - Software design
+	 - What do you consider to be good general guidelines for handling exceptions ?
+	 - What happens when an exception is thrown on a background thread?
+ - Data modeling
+ - Code quality
+	 - What do you consider the attributes of high quality code?
+	 - Do you write comments? Always? Why?
+	 - Have you used any tools related to code quality?
+ - Test automation
+	 - I dont use TDD and it sounds complicated. Convince me to use it.
+	 - How to you structure your test methods?
+	 - Can you explain the different type of tests?
+	 - What is the difference between unit testing and integration testing?
+	 - We need to test everything, am I right? why?
+ - Build and deployment automation
+	 - Do you use build automation?
+	 - What do you recommend as steps in an automated build?
+ - Source control and configuration management
+	 - Can you explain 2 different branching strategies you have used?
+ - Software security
+	 - Can you explain how public key encryption works?
+ - Libraries and frameworks
+	 - Recap the main libraries / framework you have used in the past 2 years?
+ - Leadership
+
+*** Whiteboard exercises
+**** past experience
+
+ - What is the most interesting projects you have worked on
+ - can you explain me the design (whiteboard)?
+ - what are the parts that could be improved? Show how it would look.
+
+**** caching system
+
+ - describe what a cache is and when it should be used
+ - describe how to implement a simple cache
+ - draw it up on the whiteboard, pseudo code it
+ - what are the policies for cache updates/invalidation? why?
+ - what happens when what you want to cache gets too big for a single box? draw the solution.
+ - how would you implement a multi-server caching solution?
+
+**** shapes
+
+Create model classes that will properly represent the following constructs:
+ - Define a Shape object, where the object is any two dimensional figure, and has the following characteristics: a name, a perimeter, and a surface area.
+ - Define a Circle, retaining and accurately outputting the values of the aforementioned characteristics of a Shape.
+ - Define a Triangle. This time, the name of the triangle should take into account if it is equilateral (all 3 sides are the same length), isoceles (only 2 sides are the same length), or scalene (no 2 sides are the same).
+
+**** access control
+
+  we need to control access to a customer web site. Rules are:
+  1. each customer may have one or more people to access the site
+  2. different people from different customers may be able to view different parts of the site
+  3. the same person may work for more than one customer
+  4. customers want to manage permissions based on the person, department, team, or project
+
+**** FizzBuzz test
+  [Source](http://c2.com/cgi/wiki?FizzBuzzTest)
+
+  Write a program that prints the numbers from 1 to 100. But for multiples of three print “Fizz” instead of the number and for the multiples of five print “Buzz”. For numbers which are multiples of both three and five print “FizzBuzz”
+* articles
+** difficult questions: http://lifehacker.com/this-video-shows-you-how-to-answer-one-of-the-trickiest-1744552305
+** how to get the job you want: https://www.linkedin.com/pulse/4-foolproof-tips-getting-job-you-want-patrick-simoneau-chrp?forceNoSplash=true
+** where to post resume: http://lifehacker.com/the-best-places-to-post-your-resume-depending-on-your-1700927606
+
+* Pre-screening questions
+** Are you familiar with the term [[https://en.wikipedia.org/wiki/Robert_Cecil_Martin][clean code]]?  Who is the Author and what does it mean?
+*** Answers 
+**** General answer:
+***** *easy to read*
+***** *easy to maintain*
+***** efficient
+***** effective
+**** Author: 
+***** Robert C Martin, Uncle Bob, Clean code: a handbook of agile software craftsmanship, programming principle
+
+** What does the acronym [[https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)][SOLID]] stand for?
+ if the candidate cannot tell, go through each principle and ask for a description
+*** Answers
+**** Single responsibility (SRP)       
+ a class should have only a single responsibility (i.e. only one potential change in the software's specification should be able to affect the specification of the class)
+**** Open/closed (OCP)
+ software entities … should be open for extension, but closed for modification.
+**** Liskov substitution (LSP)
+ objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program
+**** Interface segregation (ISP)
+ many client-specific interfaces are better than one general-purpose interface
+**** Dependency inversion (DIP)
+ one should “depend upon abstractions, [not] concretions
+
+** Name your top 5 OOP / design principles (other than Inheritance & polymorphism) that you try to apply on all of your projects to make you code easy to maintain
+*** Single responsibility; Every class, function has one role / responsibility
+*** Open/closed; Create reusable components
+*** Liskov substitution
+*** Interface segregation; use of interfaces
+*** Dependency inversion  
+*** Breakup complex methods into testable units    
+*** Details domain model, Modeling
+*** Data Encapsulation
+*** Keep the code clean, readable
+*** Keep it simple
+*** Refactoring constantly
+*** Automated tests
+
+** What kind/type of automated tests that can you write?
+ Here couple is enough.
+*** Unit test
+*** integration test
+*** functional test
+*** contract test
+*** UI test
+*** Component test
+*** Performance test
+*** Load test
+*** Characteristic test
+                
+** What does the acronym AAA stand for (testing pattern)? What is the structure of a typical automated test?
+  
+*** Arrange (Setup, Configure)
+ describes whatever setup is needed
+
+*** Act (Run, Execute)
+ describes the subject's behavior that's under test (and typically only describes a single line needed to invoke that behavior)
+
+*** Assert (validate)
+ describes the verification that the subject's behavior had the desired effect by evaluating its return value or measuring a side-effect (with a spy or mock)
+
+** What are mock object? Why and when to use them?
+ Mocks allow you to isolate a specific component by mimicking the other components it interacts with. This allows you to test specific scenarios by controlling the interactions with the other components. You can afterwards verify that the correct methods were called, with the expected parameters, in the correct order.
+
+** What is your preferred CI tool chain\framework?
+*** unit test framework; junit, testNG
+*** mocking framework; mockito, jMock
+*** Bdd test framework; jbehave, Cucumber
+*** build automation; Jenkins
+*** Static analysis; sonarqube (PMD Findbugs Checkstyle)
+*** source control: git
+*** package installer: maven, gradle
+*** code coverage: cobertura, eclemma, sonarqube
+
+** Key characteristic of code that is “complete” (no order necessarily)
+*** Code is committed / pushed to the source control repository (git, tfs, svn, clearcase)
+*** Tests runs
+*** Test coverage above x % (normally above 75%)
+*** Static code analysis validation. Enabled with quality gates to enforce good practices
+*** No new issues introduced
+*** Code is well formatted
+*** Peer code review completed
+*** Functional tests pass
+*** Performance tests pass (when needed)
+*** Documentation is update (when needed)

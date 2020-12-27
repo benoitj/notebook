@@ -1,0 +1,85 @@
+#    -*- mode: org -*-
+
+
+Archived entries from file /home/benoit/src/tasks/todo.org
+
+
+* DONE presentation setup
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2020-07-31 Fri 13:14
+  :ARCHIVE_FILE: ~/src/tasks/todo.org
+  :ARCHIVE_OLPATH: Projects
+  :ARCHIVE_CATEGORY: todo
+  :ARCHIVE_TODO: DONE
+  :END:
+
+* DONE cables chez martine
+:PROPERTIES:
+:ARCHIVE_TIME: 2020-11-26 Thu 21:37
+:ARCHIVE_FILE: ~/src/tasks/todo.org
+:ARCHIVE_OLPATH: Projects
+:ARCHIVE_CATEGORY: todo
+:ARCHIVE_TODO: DONE
+:END:
+** prix internet et autre
+** dimensions
+| pieces          | distance fils   | distance | coax | internet | total | prix coax | prix internet | total |
+|-----------------+-----------------+----------+------+----------+-------+-----------+---------------+-------|
+| chambre charlot | 25 + 20 + 12    |       57 |   57 |       57 |   114 |      11.4 |          6.84 | 18.24 |
+| chambre martine | 10 + 10 + 2     |       22 |   22 |       22 |    44 |       4.4 |          2.64 |  7.04 |
+| salon rc        | 25 + 19 + 8 + 2 |       54 |   54 |       54 |   108 |      10.8 |          6.48 | 17.28 |
+| salon SS        | 25 + 19 + 8 + 8 |       60 |   60 |       60 |   120 |       12. |           7.2 |  19.2 |
+|-----------------+-----------------+----------+------+----------+-------+-----------+---------------+-------|
+|                 | Total           |      193 |  193 |      193 |   386 |      38.6 |         23.16 | 61.76 |
+
+#+TBLFM: $4=$3::$5=$3::$6=$3+$3::$7=$4*0.20::$8=$5*0.12::$9=$7+$8
+
+
+
+* DONE update my rss for youtube
+:PROPERTIES:
+:ARCHIVE_TIME: 2020-11-26 Thu 21:37
+:ARCHIVE_FILE: ~/src/tasks/todo.org
+:ARCHIVE_OLPATH: Projects
+:ARCHIVE_CATEGORY: todo
+:ARCHIVE_TODO: DONE
+:END:
+
+* DONE Backyard reno [12/12]
+   :PROPERTIES:
+   :STARTDATE: [2019-08-19 Mon]
+   :OUTCOME:  a backyard we enjoy spending time on
+   :AREA:     Home
+   :ARCHIVE_TIME: 2020-11-26 Thu 21:37
+   :ARCHIVE_FILE: ~/src/tasks/todo.org
+   :ARCHIVE_OLPATH: Projects
+   :ARCHIVE_CATEGORY: todo
+   :ARCHIVE_TODO: DONE
+   :END:
+** DONE complete walkpath base
+    SCHEDULED: <2019-09-01 Sun>
+** DONE install walkpath pavers
+    SCHEDULED: <2019-09-08 Sun>
+** DONE tondre gazon
+     SCHEDULED: <2019-07-28 Sun>
+** DONE enlever dalle de beton
+     SCHEDULED: <2019-07-31 Wed>
+** DONE enlever pile de bois
+     SCHEDULED: <2019-07-31 Wed>
+** DONE enlever voiture [3/3]
+**** DONE payer plaques
+      SCHEDULED: <2019-07-29 Mon>
+**** DONE changer battery
+      SCHEDULED: <2019-07-30 Tue>
+**** DONE deplacer voiture
+      SCHEDULED: <2019-07-30 Tue>
+** DONE reserver tracteur
+     SCHEDULED: <2019-07-29 Mon>
+** DONE acheter blocs
+     SCHEDULED: <2019-07-29 Mon>
+** DONE mettre cordes
+     SCHEDULED: <2019-07-30 Tue>
+** DONE enlever boite dechet
+** DONE defaire la cloture
+** DONE level land and prepare for grass on 3 sides of the patio
+    SCHEDULED: <2019-10-12 Sat>

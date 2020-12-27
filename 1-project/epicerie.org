@@ -1,0 +1,53 @@
+#+TITLE: epicerie
+
+| fruits legumes         | viandes                      |
+|------------------------+------------------------------|
+| [ ] tomates            | [ ] boeuf hache moyen        |
+| [ ] tomates cerise     |                              |
+| [ ] comcombre          | [ ] boeuf hache 4lb familial |
+| [ ] ail                | [ ] poitrines de poulet      |
+| [ ] patates            |                              |
+| [ ] 2x celeri          | [ ] viande a fondue          |
+| [ ] carottes           | [ ] boconchini               |
+| [ ] melon miel         | [ ] peperonni tranche roma   |
+| [ ] orange             | [ ] 2 peperonni              |
+| [ ] noix               |                              |
+| [ ] brocoli            |                              |
+| [ ] coriandes          |                              |
+| [ ] 2x limes           |                              |
+| [ ] echalottes         |                              |
+| [ ] toffu regulier     |                              |
+| [ ] sauce cesar        |                              |
+| [ ] 2 piments vert     |                              |
+|------------------------+------------------------------|
+| produits lait          | pain                         |
+|------------------------+------------------------------|
+| [ ] fromage a la creme | [ ] pain hamburger           |
+| [ ] lait               | [ ] bagels                   |
+| [ ] fromage            | [ ] pain grand pere          |
+| [ ] creme sure 5%      |                              |
+| [ ] cheddar marbre     |                              |
+| [ ] mozarella pizza    |                              |
+
+* sec
+
+[ ] lait d'amandes silk original 1l
+[ ] beurre de tournesol
+[ ] coupe de fruits au jello
+[ ] plats glad
+[ ] 2x tortillas
+[ ] sauce arriabiata
+[ ] sauce rose mikes
+[ ] sauce piquante
+[ ] 4 sauces tomates
+[ ] 2 tomates en de
+[ ] 2 pate tomates
+[ ] 2 mais en grain
+[ ] 2 legumineuse click feve melange
+[ ] cumin
+[ ] bouillon poulet
+[ ] mayo
+[ ] tostitos reduit en sel
+[ ] salsa
+[ ] chips
+[ ] pepsi

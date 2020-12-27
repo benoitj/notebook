@@ -1,0 +1,865 @@
+
+* Web
+
+* Tasks
+** setup my app server
+*** NEXT select provisioning (Terraform vs ???)
+    
+** NAS and file storage
+*** turn off my nextcloud
+**** File storage
+***** NEXT move my personal files in personal syncthing
+***** TODO store everything large in "large share"
+***** TODO print everything financial and store in "secret share"
+***** TODO setup personal syncthing for me
+***** TODO store and cleanup pictures in "family share"
+***** TODO store everything family in "family share"
+***** TODO store everything family in "family share"
+***** TODO move Isabelle's files in home w/ syncthing
+**** calendar & contacts
+***** TODO setup calendars for me and isabelle
+***** TODO test sharing
+***** TODO move my calendar in radicale
+***** TODO move isabelle's calendar in radicale
+
+
+* Long term objectives 
+** Professional development
+*** learn at least one language every year
+*** read a technical book each quarter
+*** read non-technical book too
+*** take classes
+*** participate in local user groups
+*** experiment with different environments
+*** stay current
+*** get wired (blogs, reddit, etc...)
+
+** live 10 years longer
+in reference to TED talk
+* financial control
+** transfer standard life [0/3]
+*** TODO transfer ou non 
+*** TODO institution
+- raison sociale: Manuvie, Services aux participants, Regimes d'epargne et de retraite collectifs
+- adresse: CP 11464 SUCC Centre Ville, Montreal, QC, H3C 5M3
+- tel: 1-800-242-1704 photocopieur: 1-866-499-4480
+- contact: Shawn Tel: 1-800-242-1704 x308840
+*** TODO numero de comptes
+- Numero de client: RS103010
+- What is contract number?
+- Benoit
+  - participant: 2774846
+- Isabelle
+  - participant: 2779032
+
+*** exercise 3 times a week
+*** loose weight
+**** details comptes
+|          | Type        |    valeur | numero du fonds | quoi faire |
+|----------+-------------+-----------+-----------------+------------|
+| Benoit   | RRA (LIRA?) | 165737.83 |                 |            |
+| Benoit   | REER        | 124201.89 |                 |            |
+| Isabelle | REER        |           |                 |            |
+
+
+*** reer 60 jours
+**** RAA
+par default: reste avec Ericsson
+**** transfert hors manuvie
+- 25$ 
+- 2% fond commun de placements
+**** transfert
+- manuvie
+ - regime collectifs: 
+frais 1 - 1.1%
+** TODO Compte pour etudes
+   SCHEDULED: <2019-01-02 Wed>
+** TODO CELI pour isabelle
+   SCHEDULED: <2019-01-02 Wed>
+** TODO Achat reer
+
+[[file:inbox.org]]
+
+** get a great family
+** love my job
+** finance control
+*** Better expense planning
+*** Better investments (couch potato)
+*** Investing plan
+* financial control
+** TODO impots 2017
+*** collect data
+**** T4/RL1
+***** DONE TEK                                                            :B:
+      CLOSED: [2018-04-08 Sun 14:29]
+***** TODO Hema-QC                                                        :I:
+**** revenus
+***** DONE ING                                                          :I:B:
+      CLOSED: [2018-04-08 Sun 14:54]
+**** deductions
+***** DONE amt                                                            :B:
+      CLOSED: [2018-04-08 Sun 16:28]
+***** TODO PUGE et autres
+***** TODO sports
+***** service de garde / camps de jour
+****** TODO alfred-pellan                                                 :A:
+****** DONE loisirs3000 montmorrency                                    :L:A:
+       CLOSED: [2018-04-08 Sun 16:24]
+****** DONE loisirs3000 horizon                                         :L:A:
+       CLOSED: [2018-04-08 Sun 16:24]
+***** dons
+****** DONE leucan                                                        :B:
+       CLOSED: [2018-04-08 Sun 14:36]
+***** REE
+****** DONE questrade                                                   :B:I:
+       CLOSED: [2018-04-08 Sun 14:43]
+****** DONE sunlife 60 jours
+       CLOSED: [2018-04-08 Sun 14:45]
+****** DONE sunlife mars-dec                                              :B:
+       CLOSED: [2018-04-08 Sun 14:45]
+***** frais
+****** TODO medicaux
+****** DONE oiiq
+       CLOSED: [2018-04-08 Sun 14:36]
+** TODO convert my encrypted files from tc to vc
+   SCHEDULED: <2018-01-03 Wed>
+** TODO backup impot 2016
+   SCHEDULED: <2018-01-03 Wed>
+** BACKLOG shared account with isabelle http://lifehacker.com/start-the-money-conversation-with-your-partner-with-the-1697513444
+** BACKLOG investment plan for 2018
+** BACKLOG move to tangerine
+** ONGOING convert my encrypted files from tc to vc
+   SCHEDULED: <2017-08-01 mar>
+** TODO backup impot 2016
+** Budget
+*** BACKLOG Setup ledger in org mode
+    http://plaintextaccounting.org/
+    [[https://www.youtube.com/watch?v=cjoCNRpLanY][org-mode ledger]]
+** REER
+*** BACKLOG move my assets to Questrade
+*** BACKLOG Buy REER isa/benoit
+    SCHEDULED: <2017-09-12 mar .+2m>
+    :PROPERTIES:
+    :LAST_REPEAT: [2017-07-12 mer 20:21]
+    :END:
+    - State "DONE"       from "TODO"       [2017-07-12 mer 20:21]
+    - State "DONE"       from "TODO"       [2017-02-22 Wed 07:59]
+*** BACKLOG rebalance accounts
+    SCHEDULED: <2017-07-29 sam +6m>
+** Placement etudes
+*** TODO Remplir les papiers pour Lauriane et Anais
+    SCHEDULED: <2018-01-03 Wed>
+*** BACKLOG poster les demandes 
+*** BACKLOG Deposer et faire le premier placement 
+*** BACKLOG Configurer taches recurente
+
+* professional development    
+** learn at least one language every year
+*** canditate list: nodejs, angular, python, clojure, c++/arduino
+*** current list: 
+**** ONGOING nodejs, 
+**** ONGOING c++/arduino
+*** TODO contribute to volumio (bug fixes)
+** read a technical book each quarter
+*** ONGOING BDD
+*** lisp book: The reasoned Schemer (then little schemer and the season schemer) 
+*** essentials of programming languages book 
+ - https://www.bookbyte.com/textbooks/essentials-of-programming-languages-by-friedman/9780262062794-0262062798?gclid=EAIaIQobChMI1bfei7yl2AIVS7nACh0rLAoTEAAYASAAEgIvwPD_BwE
+** read non-technical book too
+*** ONGOING read millionaire teacher
+*** DONE read how to make bread
+    CLOSED: [2017-07-11 mar 22:39]
+**** BACKLOG plan my first bread
+** take classes
+*** BACKLOG plan java certification
+* live 10 years longer
+** bicycle training
+*** power training 3x semaines
+**** TODO Tuesday 15 minutes training [[https://www.youtube.com/watch?v=YPrm_5u-9HM&index=2&list=PLbSWzg5R_6-KeOT1_yGGA-K9TE8oAr_Vj][Video]]
+     SCHEDULED: <2017-07-18 mar +1w>
+**** TODO Thursday 15 minutes training [[https://www.youtube.com/watch?v=YPrm_5u-9HM&index=2&list=PLbSWzg5R_6-KeOT1_yGGA-K9TE8oAr_Vj][Video]]
+     SCHEDULED: <2017-07-13 jeu +1w>
+**** TODO Saturday 30 minutes training [[https://www.youtube.com/watch?v=VzRs6IWzRso&index=1&list=PLbSWzg5R_6-KeOT1_yGGA-K9TE8oAr_Vj][Video]]
+     SCHEDULED: <2017-07-22 sam +1w>
+** TODO weight 210 lb by end of 2017
+   SCHEDULED: <2017-07-13 jeu ++1w>
+| week |    lb | d(w) |
+|------+-------+------|
+| w12  | 239.6 | -1.4 |
+| w11  |   241 |    0 |
+| w9   |   241 | -1.8 |
+| w8   | 242.8 | -4.2 |
+| w7   |   248 |   -4 |
+| w6   |   252 |   NA |
+* great family
+** agile family
+*** https://scrumfamily.wordpress.com/
+*** http://www.mountaingoatsoftware.com/blog/the-agile-household-how-scrum-made-us-a-better-family
+*** http://www.themodestmomblog.com/wp-content/uploads/2015/03/child_chore_list.pdf
+*** agile manifesto
+- Adaptez vous tout le temps
+- Responsabilisez vos enfants
+- Tell your story
+  - Family mission statement
+  - Family values
+*** taches enfants
+http://tatertotsandjello.com/2013/07/diy-secret-how-to-use-post-it-notes-in-your-printer-free-printable.html
+
+2-3 Years Old
+
+- Wipe down front of oven, fridge, or doors with a wet washcloth
+- Throw away diapers in trash can
+- Pick up toys
+- Fold washcloths
+- Help set table
+- Wipe down front of trash can
+
+4-5 Years Old
+
+- All previous chores
+- Put away toys
+- Straighten books on bookshelf
+- Put away clean silverware
+- Help clean bedroom
+- Sweep kitchen floor with small broom
+- Clean off table
+- Wipe down dirty walls
+- Fold towels
+
+6-7 Years Old
+
+- All previous chores
+- Lighter cleaning of bathroom (wipe down sink, toilet, mirror and sweep floor)
+- Fold laundry
+- Sweep floors
+- Unload dishwasher (put items they can’t reach on counter for Mom to put away)
+- Wash light loads of dishes
+- Take clothes out of dryer
+- Put wet clothes from washer into dryer
+
+8-9 Years Old
+
+- All previous chores
+- Dust
+- Wash dishes
+- Help with meal prep
+- Vacuum
+- Bring trash to curb on trash day
+- Take care of pets
+- Empty trash in house
+- Weed flowers / garden
+- Organize toy cabinets
+
+10-12 Years Old
+
+- All previous chores
+- Mow the yard
+- Wash basic laundry
+- Make easy meals
+- Mop floors
+- Clean the kitchen
+- Helping watch younger siblings
+- Tidy the basement / garage
+- Clean out car
+- Do a light clean of inside fridge
+
+13 + Years Old
+
+- All previous chores
+- Clean tub / shower
+- Make dinner meals alone
+- Iron clothes
+- Dust ceiling fans
+
+  - 
+* my life and everything
+
+** secret
+*** gpg
+    - http://www.tricksofthetrades.net/2015/07/04/notes-pass-unix-password-manager/
+    - https://sungo.wtf/2016/11/23/gpg-strong-keys-rotation-and-keybase.html
+    - https://spin.atomicobject.com/2013/11/24/secure-gpg-keys-guide/
+    - https://spin.atomicobject.com/2013/11/24/secure-gpg-keys-guide/
+** home care
+** films a voir
+*** linux documentary: https://www.youtube.com/watch?v=XMm0HsmOTFI
+*** 100 000 mille dollars au soleil
+*** Les 12 travaux d'Astérix
+*** 13 tzameti
+*** 15 février 1839
+*** 3:10 to Yuma
+*** Les 3 p'tits cochons
+*** 30 days of night
+*** 3 hommes et un couffin
+*** The 36th chamber of Shaolin
+*** The 39 steps
+*** Les contes classiques d'Iniminimagimo: Les 40 dragons
+*** Les quatre cents coups
+*** 8 1/2: Otto e mezzo
+*** 99 francs
+*** city of god (brazilian)
+** angoisse
+*** http://www.gozen.com/9-things-every-parent-with-an-anxious-child-should-try/
+** pc setup
+*** live in console
+**** i3 gaps
+**** qutebrowser
+**** http://www.slant.co/topics/67/~programming-fonts
+** electro project
+*** TODO pi nes: https://www.raspberrypi.org/forums/viewtopic.php?f=65&t=77822&p=55626
+** home network
+*** retro projection
+**** http://www.avsforum.com/forum/139-display-calibration/948496-avs-hd-709-blu-ray-mp4-calibration.html
+**** http://www.hometheatershack.com/forums/diy-repair-maintenance/5600-crt-based-rptv-convergence-repairs.html
+**** http://www.riddledtv.com/journal/CRTCoolant/page2.html
+**** http://www.riddledtv.com/journal/DischargeCRT/index.html
+*** secure my network
+**** ONGOING setup a vpn
+**** BACKLOG VPN for christian et michel
+**** BACKLOG parental control http://kevinboone.net/linux_gateway.html
+*** secure my data
+**** TODO cleanup disk data
+**** BACKLOG offsite usb disk backups
+*** secure 
+**** create keys
+***** buy USB keys to store stuff 
+****** #1
+******* live image
+******* main CA keys
+******* main gpg keys
+******* passwordstore
+****** #2
+******* intermediate CA keys
+******* intermediate gpg keys
+******* server ssl keys
+******* public key CA
+******* public key gpg
+******* specialized ssl client keys
+****** #3 copy of #1
+**** my network
+***** ONGOING setup a vpn
+***** BACKLOG VPN for christian et michel
+***** BACKLOG parental control http://kevinboone.net/linux_gateway.html
+****  my data
+***** TODO cleanup disk data
+***** ONGOING offsite usb disk backups
+***** TODO migrate from lastpass to passwordstore
+***** TODO migrate from fastmail to another one
+*** run services
+**** BACKLOG buy a new server (used)
+**** TODO nextcloud setup
+***** TODO share my nextcloud setup with family
+** TODO data privacy https://www.eff.org/wp/digital-privacy-us-border-2017
+*** implement recommendations by eff https://ssd.eff.org
+*** TODO migrate from lastpass to keepass
+**** DONE extract info
+     CLOSED: [2017-07-05 mer 23:18]
+**** TODO split db in multiple
+***** shared with all
+****** low (all)
+******* gaming
+******* streaming
+***** personal
+****** low
+******* news site
+******* forums
+****** medium (2fa)
+******* social media
+******* email
+***** shared with Isa
+****** medium (2fa)
+******* school
+******* camps / sports
+******* stores
+****** hig==> dkms install rtl8812au/r70.8de9cbf -k 4.9.37-1-lts
+h (2fa)
+******* banks
+******* insurance
+***** others?
+**** TODO install android apps
+**** BACKLOG share with Isa and Kids
+*** get more privacy
+**** TODO password manager: https://www.passwordstore.org/
+**** BACKLOG review cord cutter sites
+  Cable cutters
+
+  Telephone
+
+  service
+
+      - voip.ms *
+      - freephone canada *
+
+  Appareil
+
+      - OBI100 *
+          - OBI100 freephone setup
+          - OBI100 Backup/Restore
+
+      - Linksys ATA
+
+  Cable internet
+
+  - electronicbox (Longueuil) *
+  - tecsavvy (Ontario)
+
+  media client:
+  - xbmc *
+  - plex home theater *
+  - chromecast
+  - roku
+
+  Media service / source
+
+  - HD Homerun (dual ATSC tuner) *
+  - plex.tv *
+
+  PVR
+
+  - mythtv *
+  - A voir
+
+  DNS Redirector / VPN (débloque les canaux restreins a des regions, débloque les "black out" zone)
+
+  - unovpn: ~4.99 / month *
+
+  Streaming sites
+  Free
+  - abc.com
+  - cbc.com
+  - nbc.com
+  - tou.tv
+  - fox.com
+  Paid
+  - amazon vod
+  - netflix: 7.99$ / month *
+  - hulu paid
+  - itunes
+  - mls soccer:  60$ pour une saison *
+  - nhl gamecenter live (100$ hors Amérique avec unovpn) *
+        Other info
+  - great site: http://lifehacker.com/5475091/how-can-i-ditch-cable-and-watch-my-tv-shows-and-movies-online
+
+  music stores / streaming
+
+  - Tunein *
+  - Spotify *
+  - hdtracks.com
+  - itrax.com
+  - eclassical.com
+  - beatport.com
+  - livedownloads.com
+**** get rid of evernote
+***** TODO convert evernote to org
+***** improve org note taking: http://www.xiangji.me/2015/07/13/a-few-of-my-org-mode-customizations/
+**** new domain
+**** new email accounts for family
+
+**** vpn? pia vpn!!!
+***** blue ocean + openvpn
+**** opendns?
+**** replace gmail/hotmail
+**** replace fastmail
+**** install linux on htpc
+***** setup duckduckgo
+***** setup chromium or other secure browsers
+***** setup all things that should work on it
+** TODO setup Electronics lab
+*** BACKLOG scope
+**** Rigol DSO1052E
+**** Analog: HP, Tektronics, or any major brands
+*** BACKLOG wave form generator (150$)
+**** instek SFG-1003
+*** BACKLOG power supplies
+**** build diy lm317
+**** kit from silicon chip
+**** see howtos on eevforums
+**** features
+***** dual tracking
+***** load switch
+***** mains isolated (has a separate green out)
+***** multi turn pot
+***** adjusted curent limit
+***** +-15V ~1AMP
+*** TODO files
+*** TODO exacto knife
+*** TODO engineering rule
+*** TODO digital caliper
+*** components
+**** TODO part cabinets
+*** BACKLOG anti static
+** TODO http://www.ptitchef.com/recettes/autre/bouchees-au-chocolat-fid-28168
+** some projects ideas
+*** dig well http://m.instructables.com/id/How-to-hand-dig-a-water-well/
+*** shed: 
+**** http://www.instructables.com/id/Building-a-DIY-Complete-Workshop/
+**** http://woodgears.ca/shed/index.html
+**** http://zacsgarden.com/how-to-build-a-shed/how-to-wire-a-shed/
+**** http://www.familyhandyman.com/electrical/wiring/electrical-wiring-how-to-run-power-anywhere/view-all
+*** clean the house
+    http://lifehacker.com/productivity-101-a-primer-to-the-pomodoro-technique-1598992730
+*** garden
+**** great
+***** bean: blue lake bush bean++
+***** green: rainbow light swiss chard, raibow mix swiss chard, spinash
+***** tomates: cherry tomato++ 
+***** cucomber
+***** pepper
+**** herbs
+**** garlic
+**** oignon
+**** cucomber
+*** pizza oven
+*** G25 mod: http://www.racingfr.com/forum/index.php?showtopic=32229
+*** outdoor tv antenna: http://www.jedsoft.org/fun/antennas/dtv/gh.html
+*** http://hackaday.com/2015/12/15/calculus-is-not-as-hard-as-you-think/
+*** http://hackaday.com/2015/12/11/alfred-p-morgan-a-generations-radio-hacker/
+*** http://hackaday.com/2015/12/07/how-to-be-the-hardware-engineer-at-a-startup/
+*** http://jlvrh.de/G27.htm
+*** http://www.digitalhome.ca/forum/186-antenna-research-development/81982-introduction-gray-hoverman-tv-antenna.html
+*** http://www.instructables.com/id/Gray-Hoverman-TV-Antenna-Final-Assembly/
+*** GH10 + Hat ùVHF HI 
+*** http://www.diytvantennas.com/sbgh.php
+*** projector
+*** http://www.ricmotech.com//ProductDetails.asp?ProductCode=RMT%2DRS1%2DDIY
+*** http://www.xsimulator.net/2dof-motion-simulator-truck-wiper-motor-playseat/
+*** acheter livre xkcd "thing explainer"
+*** http://www.homebrewtalk.com/the-illustrated-brewer-trappist-brewing.html
+*** weather word clock: http://hackaday.com/2015/11/08/weather-word-clock-warns-you-of-impending-winter/
+*** homebrew cheap: http://www.homebrewtalk.com/all-grain-brewing-cheaper-than-dirt.htmlhttp://www.homebrewtalk.com/all-grain-brewing-cheaper-than-dirt.htmlhttp://www.homebrewtalk.com/all-grain-brewing-cheaper-than-dirt.htmlhttp://www.homebrewtalk.com/all-grain-brewing-cheaper-than-dirt.html
+*** homebrew cider: http://www.instructables.com/id/Dead-Rat-Hard-Apple-Cider-Recipe/
+*** woodworking plans: http://workshop.lifehacker.com/how-to-find-the-best-woodworking-plans-online-for-any-p-1740479252
+*** pi in a nes: http://workshop.lifehacker.com/how-to-find-the-best-woodworking-plans-online-for-any-p-1740479252
+*** buyapi.ca
+*** TODO entree: http://ana-white.com/2015/02/free_plans/wall-cubby-crate-shelves
+**** http://ana-white.com/2015/02/free_plans/extra-wide-shoe-bench
+*** Tabaq: https://www.google.ca/url?sa=t&source=web&rct=j&ei=g-kyVbXZN4jZsATOsIDgCg&url=http://coolcat.dk/bjoern/TABAQ_TL_for_TB.pdf&ved=0CDUQFjAG&usg=AFQjCNHM2qImDoBxmKX0kjFhxA1vjIjbOw&sig2=XyWLZpbcoqilbxtmVXVBtA
+*** sdr: http://hackaday.com/2012/12/21/open-source-software-defined-radio-transceiver/
+*** family command center: 
+**** https://www.google.ca/search?q=command+center+kitchen&client=ms-android-sonymobile&espv=1&source=lnms&tbm=isch&sboxchip=Images&sa=X&ei=DBAjVfmeOoSFyQTr6YCIAw&ved=0CAYQ_AUoAQ&biw=360&bih=511#imgrc=rPi5Jix9t6uPCM%253A%3BE-tIvObis-QPUM%3Bhttp%253A%252F%252Fwww.sasinteriors.net%252Fwp-content%252Fuploads%252F2011%252F08%252FCentral-Command-Center-Inspiration_8.jpg%3Bhttps%253A%252F%252Fwww.pinterest.com%252Fekburnett%252Fcommand-center%252F%3B400%3B300
+**** http://www.goodhousekeeping.com/home/organizing/tips/g1605/command-center-ideas/
+**** http://www.remodelaholic.com/2013/07/family-command-centers/
+*** sdr hydro: http://www.dslreports.com/forum/r29704453-Off-Topic-Compteur-Hydro-et-clef-USB-RTL2832U
+**** http://www.rtl-sdr.com/rtlamr-rtl-sdr-receiver-900mhz-ism-smart-meters/
+**** http://anarc.at/blog/2014-03-21-vie-privee-et-compteurs-intelligents-dangers-nies-par-hydro/
+*** domotique
+    Système de sécurité
+
+- Lumières extérieures détecteur de mouvement
+    - 1x avant (déjà acheté)
+    - 2x arrière
+- Sécurité des portes
+    - Patio
+        - serrure de sécurité
+        - Vis anti déraillement
+    - Avant
+        - Changer la porte
+        - Vis dans le cadrage
+        - Plaque anti brisure
+        - Nouvelle serrure zwave?
+    - Arrière (atelier)
+        - Vis dans le cadrage
+        - 2x4 avec étrier
+- Changer les fenêtres arrières
+- Système de sécurité zwave / wifi
+    - Smart things
+    - détecteurs de contact (ordre de priorité)
+        - Fenêtre salon SS #1 *
+        - Porte arrière SS *
+        - Porte patio *
+        - Fenêtre atelier *
+        - Porte avant *
+        - Fenêtre ch filles *
+        - Fenêtre salon SS #2 *
+        - 2x fenêtre cuisine
+    - Signal sonore / visuel
+    - détecteurs de mouvement
+        - Atelier *
+        - Salon *
+        - Salon SS
+    - détecteurs de fumée
+        - RDC *
+        - SS *
+    - Camera IP
+        - Int: RDC / Entree?
+        - Ext arriere
+        - Ext avant
+    - détecteur de fuite d'eau (non)
+        - réservoir eau chaude
+
+examples: http://blog.smartthings.com/stories/a-robbery-and-a-plan-to-get-even/
+http://blog.smartthings.com/stories/home-automation-dashboard/
+
+DSC + envisalink?
+
+cameras wifi int
+     2x: rdc + ss
+cameras wifi ext
+     2x:
+Détecteur de contact
+     2x: portes
+Détecteur de mouvements
+     2x: Corridor
+     2x: Salons
+     1x: Cuisine
+     1x: entree
+
+Serrure de porte
+     2x:
+Signal lumineux/sonore
+     1x: corridor rdc
+Détecteur de fumée
+     2x: rdc + ss
+Détecteur d'inondation
+     1x: prêt du réservoir d'eau chaude
+
+Environnemental
+
+Temperature / barometre / humidite
+
+Sprinkler
+
+Eclairage
+
+Pas paintenant
+
+Produits
+
+magazin amazon
+http://www.zwaveproducts.com/
+http://thesmartesthouse.com/
+
+product top 50
+
+cameras wifi
+     Dropcam Pro
+ Hikvision DS-2CD2032-I
+     Foscam camera
+HUACAM HCV712 H.264 Megapixel Indoor/Outdoor PoE IP Camera,IR-Cut Filter,2.8mm Wide View Angle. About this item
+Foscam IP Camera Integration with SmartThings
+D-Link IP Camera device type (DCS-930L tested)
+Generic Camera Device using local connection
+
+Détecteur de contact
+     Schlage RS100 Door & Window sensors
+     Aeon Labs Z-Wave Plus Magnetic Door - Window Recessed Sensor Gen 5 ZW089-A
+     *** B00HPIYJWU/DWZWAVE2-ECO? Ecolink Z-WAVE Wireless Sensor, White & Brown Cases
+     *** Monoprice door sensor
+
+Détecteur de mouvements-
+     ***Ecolink Z-Wave PIR Motion Detector, Pet Immune (PIRZWAVE2-ECO)
+     *** Monoprice motion sensor
+      Aeon Labs Multi-Sensor/
+
+Serrure de porte
+     Kwikset locks
+Signal lumineux/sonore
+     FortrezZ Siren Strobe Alarm Module, Red Lens
+
+Détecteur de fumée
+
+-      Nest Protect
+-      First alert zcombo
+
+Détecteur d'inondation
+*** http://m.instructables.com/id/Fake-TV-Burglar-Deterrent/
+*** http://www.familyhandyman.com/home-security/diy-security-system/view-all
+*** http://www.familyhandyman.com/home-security/safe-home-security-tips/view-all
+*** homebrew
+**** http://www.vthomebrewguru.com/to-clone-a-sin/
+**** http://www.homebrewtalk.com/the-rapid-growth-of-quebec-brewing-industry.html
+*** woodworking
+**** http://m.instructables.com/id/How-To-Convert-Rough-Timber-To-Planed-Smooth-Stock/?ALLSTEPS
+**** http://www.youtube.com/watch?v=jt8987DfuOk
+**** http://www.startwoodworking.com/getting-started/season-one
+**** http://drunkenwoodworker.com/getting-started-woodworking-part-1
+**** http://www.popularmechanics.com/home/how-to-plans/woodworking/how-to-start-woodworking-in-a-basement-or-apartment#slide-1
+**** http://woodandshop.com/learn-traditional-woodworking-with-hand-tools/
+**** http://www.stevemaxwellhowto.com/knowledge-center/woodworking/
+**** http://www.stevemaxwellhowto.com/knowledge-center/new-construction/fine-furniture-from-framing-lumber
+**** http://www.finewoodworking.com/item/18985/still-dont-have-a-workbench-this-one-is-easy
+**** http://www.thewoodwhisperer.com/articles/measuring-sticks/
+*** create streaming homepage
+*** aprs tracker
+    http://hackaday.com/2011/04/20/trackuino-%E2%80%93-an-open-source-arduino-aprs-tracker/
+    http://hackaday.com/2013/11/14/long-distance-high-frequency-aprs-tracking-using-the-freetrak63/
+    http://gizmodo.com/5691724/how-to-track-your-vehicle-on-the-cheap
+    https://www.sparkfun.com/products/11058?
+    http://www.aprs.org/
+*** jello chips
+    Vert: 135, 144
+    Noir: 78,79,92,96
+    Dore: 177,180,189
+    Blanc: 152,156,165,172
+    Rouge: 72,75
+    Jaune: 112
+    Mauve: 5,7,21
+*** rack
+    http://www.engadget.com/2006/04/11/how-to-rackmount-your-gear-for-cheap/
+    http://www.hauntedyards.com/images/books/rackbuildinghowto.pdf
+    http://www.ehow.com/how_10049988_build-rack-mount-cabinet.html
+    http://tombuildsstuff.blogspot.ca/2014/02/diy-rack-server-plans.html
+    http://thehomeserverblog.com/home-servers/diy-19-server-rack-for-home-servers-and-or-esxi-vmware-lab/
+*** freetrack 
+    http://fragtrack.weebly.com/
+    Building IR Led Circuit for FreeTrack : http://youtu.be/FYNHrjzHTG4
+    How to build a freetrack 3 led hat : http://youtu.be/XM8lI1Lc5EQ
+    FreeTrack tutorial by viper3two : http://youtu.be/5QqAqb_SZV0
+    http://forum.free-track.net/index.php?showtopic=3624
+*** club radio amateur
+Club radio amateur
+
+September-11-14
+
+9:12 AM
+
+http://www2.raqi.ca/crav/crav/Bienvenue.html
+
+http://ve2crl.qc.ca/index.php
+
+http://clubve2rvl.simplesite.com/
+*** avions papier
+Avion papier
+
+7 septembre 2014
+
+22:20
+
+http://www.instructables.com/id/Stingray-Paper-Airplane/
+
+Avion papier
+
+7 septembre 2014
+
+22:20
+
+http://www.instructables.com/id/Stingray-Paper-Airplane/
+
+Avion papier
+
+7 septembre 2014
+
+22:20
+
+http://www.instructables.com/id/Stingray-Paper-Airplane/
+
+Avion papier
+
+7 septembre 2014
+
+22:20
+
+http://www.instructables.com/id/Stingray-Paper-Airplane/
+*** TODO youtube-dl in emacs: https://github.com/skeeto/.emacs.d/blob/master/etc/feed-setup.el
+*** upgrade laptop screen: https://forum.thinkpads.com/viewtopic.php?f=43&t=122640&sid=16e740192fccc34768d413922803349a
+** to see
+*** suits - netflix portugal
+*** vikings - netflix australia
+*** jessica jones - netflix us
+*** agen carter - netflix norway
+*** daredevil - us
+*** fargo - belgium
+*** manathan - netherlands
+*** interstellar - canada
+*** maze runner
+*** whiplash
+** mettre en place menage routine
+| Tache                                                                                                                            |   |
+|----------------------------------------------------------------------------------------------------------------------------------+---|
+| Nettoyage en surface du salon et de la cuisine (traînerie, époussetage, ballait, aspirateur)                                     |   |
+| Nettoyage de la salle de bain (Toilette, bain, plancher, mur, miroirs)                                                           |   |
+| Nettoyage en surface des chambres (traînerie, vêtements, époussetage, aspirateur)                                                |   |
+| Nettoyage des autres pièces (sous-sol, bureau, salle de jeu)                                                                     |   |
+| Nettoyage en surface du salon et de la cuisine                                                                                   |   |
+| Nettoyage en surface des salles de bain                                                                                          |   |
+| Nettoyage de toute les fenêtres intérieures (vinaigre + journal)                                                                 |   |
+| Ballait et aspirateur dans toute les pièces et escaliers                                                                         |   |
+| Nettoyage en surface des chambres                                                                                                |   |
+| Nettoyage en profondeur du salon (miroir, plainte, époussetage des extras)                                                       |   |
+| Nettoyage de la salle de bain                                                                                                    |   |
+| Ranger les gardes-robes                                                                                                          |   |
+| Nettoyage des autres pièces (sous-sol, bureau, salle de jeu)                                                                     |   |
+| Nettoyage en profondeur des chambres (ranger commodes; ranger et nettoyer sous les lits; épousseter décoration, luminaires; mop) |   |
+| Nettoyage en surface du salon et de la cuisine                                                                                   |   |
+| Nettoyage en profondeur de la salle de bain (intérieur des tiroirs, poubelle, dessus de miroir, tuiles, mop)                     |   |
+| Nettoyer toutes les poignées de porte, téléphone, cinéma maison (télécommandes), plaques d’interrupteur, rampe d'escalier        |   |
+| Nettoyer le réfrigérateur et la dépense                                                                                          |   |
+| Nettoyer l’entrée, balayer le porche d’entrée, les voitures                                                                      |   |
+| Nettoyage en surface du salon et de la cuisine                                                                                   |   |
+| Nettoyage en surface des salles de bain                                                                                          |   |
+| Nettoyage en surface des chambres                                                                                                |   |
+| Ballait et aspirateur dans toute les pièces et escaliers                                                                         |   |
+| Ranger et nettoyer de la lingerie                                                                                                |   |
+| Nettoyage en surface du salon et de la cuisine                                                                                   |   |
+| Nettoyage en profondeur de la cuisine (Electro, poubelle, plintes, cabinet et portes)                                            |   |
+| Nettoyage en surface des salles de bain                                                                                          |   |
+| Nettoyage en surface des chambres                                                                                                |   |
+| Nettoyer un item a faire (four, luminaires, une autre pièces)                                                                    |   |
+| Ballait et aspirateur dans toute les pièces et escaliers                                                                         |   |
+** games
+- MOONBASE ALPHA
+- spacestation13
+- openttd
+- diaspora: shattered armistice
+- alien swarm
+- freeciv
+- dota 2
+- hawken
+- path of exile
+- team fortress 2
+* 
+** emacs useful links 
+*** http://irreal.org/blog
+*** http://sachachua.com/blog/
+** TODO emacs packages to try
+
+*** redo my configuration
+- many breaks after updates or for unknown reasons
+- see the videos about emacs details config
+- see: https://github.com/ZachMassia/.emacs.d/blob/master/emacs.org
+- use org mode as a base
+
+*** beacon-mode
+*** global-hungry-delete-mode
+*** expand-region
+    space V
+*** narrowing
+    space n r
+*** iedit
+    space s e
+    
+
+                                
+
+                          Made with   by the community
+*** elfeed + hydra + macros
+*** dump-jump
+*** emmet mode for HTML development
+** 99 ways to say '(i love you)
+   http://matt.might.net/articles/i-love-you-in-racket/
+** ONGOING cleanup books
+*** transfer books from stores 
+**** ONGOING https://humblebundle.com
+   DEADLINE: <2018-03-23 Fri> SCHEDULED: <2018-03-19 Mon>
+**** TODO oreilly
+**** TODO packt
+**** TODO amazon kindle
+**** TODO gumroad
+**** DONE leanpub
+     CLOSED: [2018-03-19 Mon 23:38]
+**** DONE nostarsh
+     CLOSED: [2018-03-19 Mon 23:38]
+**** DONE pragprog
+     CLOSED: [2018-03-19 Mon 23:35]
+**** TODO find others
+** TODO configure weechat     
+https://alexjj.com/blog/2016/9/setting-up-weechat/
+inswee 
+** TODO look at different streaming sites
+sonarr, sabnzbd, Radarr
+   [2018-04-04 Wed]
+** software to give
+*** TODO mini metro
+*** TODO superhot
+**** 700TE-CRKB2-KCBYW
+** TODO cleanup photos

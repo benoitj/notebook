@@ -1,0 +1,53 @@
+#+TITLE: Network configuration
+#+TODO: TODO(t) | DONE(d) CANCELLED(c)
+
+* firewall
+** Rules setup for DMZ and local lan
+
+*** Prerequisites/Assumptions
+This assumes all local networks are privately numbered, and that interfaces have already been configured.
+
+Create an alias (Firewall > Aliases) called RFC1918 containing 192.168.0.0/16, 172.16.0.0/12, and 10.0.0.0/8
+
+
+*** LAN Configuration
+- Allow TCP/UDP from LAN subnet to LAN Address port 53 for DNS from the firewall
+- Allow TCP from LAN subnet to LAN address port 443 for accessing the GUI
+- Allow ICMP from LAN subnet to LAN address to ping the firewall from the LAN
+- Allow any traffic required from LAN to DMZ (if any)
+- Reject Any from LAN subnet to RFC1918 -- Do not allow LAN to reach DMZ or other private networks
+- Allow Any from LAN subnet to any -- Internet access rule
+
+*** DMZ Configuration
+- Allow TCP/UDP from DMZ subnet to DMZ Address port 53 for DNS from the firewall
+- Allow TCP from DMZ subnet to DMZ address port 443 for accessing the GUI (optional)
+- Allow ICMP from DMZ subnet to DMZ address to ping the firewall from the DMZ
+- Allow any traffic required from DMZ to LAN (if any)
+- Reject Any from DMZ subnet to RFC1918 -- Do not allow DMZ to reach LAN or other private networks
+- Allow Any from DMZ subnet to any -- Internet access rule
+- Additional Interfaces
+- Repeat the above pattern as needed.
+
+** DONE vpn with key authentication
+   CLOSED: [2017-11-28 Tue 22:48]
+- https://docs.opnsense.org/manual/how-tos/sslvpn_client.html
+- configure auth server with totp
+- add 10.1.1.0/24 and 10.10.1.0/24 ips to local network
+- create a user with otp, password and key
+- 
+** CANCELLED captive portal
+** TODO nginx proxy
+** TODO ids
+** TODO ssh key authentication
+** DONE dynamic dns
+   CLOSED: [2017-11-26 Sun 15:44]
+- interface: wan
+- interface: wan
+- domain: benoitj.ca
+- user id: benoitj.ca
+- password: a6d4ac0e8e4940dbaf2b61af1dfdbd90
+- update url: dynamicdns.park-your-domain.com/update?domain=benoitj.ca&password=a6d4ac0e8e4940dbaf2b61af1dfdbd90&host=
+** DONE DNS cache
+   CLOSED: [2017-11-25 Sat 17:20]
+*** configure unbound DNS
+- setup on all interfaces but WAN
