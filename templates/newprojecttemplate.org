@@ -9,35 +9,30 @@ DEADLINE: %^t
 - [ ] Add project tags for context (e.g. work, personal)
 - [ ] List specific tasks
 - [ ] Schedule next actions from generated tasks
-- [ ] Create a org-mode area notebook matching project name
+- [ ] Create an Evernote notebook matching project name
 
   #+name: headline
   #+BEGIN_SRC emacs-lisp
   (nth 4 (org-heading-components))
   #+END_SRC
 
-  #+name: simple-name
-  #+BEGIN_SRC emacs-lisp :var project=headline
-  (replace-regexp-in-string " " "-" project)
+  #+BEGIN_SRC shell :var project=headline
+  osascript -e "tell application \"Evernote\" to create notebook \"$project\""
   #+END_SRC
 
-  #+name: org-notebook
-  #+BEGIN_SRC emacs-lisp :var project=simple-name
-  (concat org-directory "/1-projects/" project ".org")
+- [ ] Move notebook into 1 Projects, and move any relevant notes to the new notebook, or link to them in a TOC
+  #+BEGIN_SRC emacs-lisp
+    (open-evernote-osx)
+  #+END_SRC
+- [ ] Create Dropbox folder if needed for storage; move files there
+  #+BEGIN_SRC emacs-lisp
+    (mkdir (concat "~/Dropbox/1 Projects/" (nth 4 (org-heading-components))))
+  #+END_SRC
+- [ ] Create [[https://drive.google.com/drive/u/0/folders/1UGyopdsoExR3VaxlxvS6niUqpjxByDVh][Google Drive]] folder if needed for collaboration; move documents there
+  #+BEGIN_SRC emacs-lisp
+    (mkdir (concat "~/Google Drive/1 Projects/" (nth 4 (org-heading-components))))
   #+END_SRC
 
-  #+name: org-references-path
-  #+BEGIN_SRC emacs-lisp :var project=simple-name
-  (concat "~/src/references/1-projects/" project)
-  #+END_SRC
-
-  #+BEGIN_SRC emacs-lisp :var org-notebook=org-notebook :var org-references-path=org-references-path
-  (find-file org-notebook)
-  (insert (concat "\n*org-notebook* :: [[" org-notebook "]]"))
-  (insert (concat "\n*references*   :: [[" org-references-path "]]\n\n"))
-  #+END_SRC
-
-- [ ] Create Documents and Videos folder if needed for storage; move files there
-  #+BEGIN_SRC emacs-lisp :var project=simple-name
-    (mkdir (concat "~/src/references/1-projects/" project))
+  #+BEGIN_SRC emacs-lisp
+    (mkdir (concat "~/Google Drive Work/1 Projects/" (nth 4 (org-heading-components))))
   #+END_SRC

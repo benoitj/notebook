@@ -1,6 +1,9 @@
-#+TITLE: My todos
+#+title: My todos
 
 * Projects
+** TODO my 2nd office
+*** TODO network cable
+*** TODO chair
 ** whammy headphone amp :personal:
 DEADLINE: <2021-03-21 Sun>
 :PROPERTIES:
@@ -124,6 +127,7 @@ https://lobste.rs/
 
 ** TODO demander une toile de piet
 http://www.retas.de/thomas/computer/programs/useless/piet/Piet/index.html
+
 * Inbox
 ** TODO uptimebot vs other infra monitoring
 ** TODO intrusion detection
@@ -142,6 +146,3 @@ Jay McGavren
 #+BEGIN_SRC emacs-lisp
 (bj/org-capture-templates-find-newproject)
 #+END_SRC
-
-#+RESULTS:
-: ~/src/notebook/templates/newprojecttemplate.org

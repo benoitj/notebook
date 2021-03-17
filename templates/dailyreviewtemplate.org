@@ -26,8 +26,4 @@
       (org-agenda nil "a")
       (org-agenda-day-view))
   #+END_SRC
-
-  #+RESULTS:
-  : Switched to day view
-
 - [ ] Clock out.
