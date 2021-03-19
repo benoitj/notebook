@@ -1,3 +1,0 @@
-#+TITLE: java
-
-[[file:20200228101727_programming.org][R:programming]]

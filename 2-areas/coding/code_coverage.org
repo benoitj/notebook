@@ -1,9 +1,0 @@
-#+title: code coverage
-
-[[file:20200228101727_programming.org][R:@programming]]
-
-* what is code coverage
-
-% of lines, branches, statements called by an automated test suite.
-
-*

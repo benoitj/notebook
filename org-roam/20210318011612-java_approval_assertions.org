@@ -1,0 +1,111 @@
+#+title: java approval assertions
+
+com.approvaltests.approvaltests library can be used to implement [[file:20210318011029-approval_assertions.org][approval assertions]].
+
+Approvals.verify(content, extension) method can be used to assert text of a certain type.
+
+* tips and tricks
+
+** verify objects as json
+
+create a jackson configuration like:
+#+BEGIN_SRC java
+
+ObjectMapper mapper = new ObjectMapper()
+    .enable(SerializationFeature.INDENT_OUTPUT)
+    .enable(SerializationFeature.ORDER_MAP_ENTRIES_BY_KEYS)
+
+#+END_SRC
+
+*limitation:* if data changes between tests, it will fail the test.
+Solution: write a wrapper to exclude json fields from the output
+
+#+BEGIN_SRC java
+
+class MyApproval extends Approvals {
+    verifyJson(Object myObject) {
+        verify(mapper.writeValueAsString(myObject), "json");
+    }
+}
+
+#+END_SRC
+
+** console diff reporter
+
+approvals does not support plain diff / console with capturing the output.
+
+The idea is to extend the GenericDiffReporter and override /launch/ method:
+
+#+BEGIN_SRC java
+
+public class ConsoleDiffReporter extends GenericDiffReporter {
+
+    public ConsoleDiffReporter(final DiffInfo info) {super(info);}
+
+    @Override
+    public void report(final String received, final String approved) {
+        if (!isWorkingInThisEnvironment(received)) {
+            throw new RuntimeException(diffProgramNotFoundMessage);
+        }
+
+        FileUtils.createIfNeeded(approved);
+        launch(received, approved);
+    }
+
+    private void launch(final String received, final String approved) {
+        try {
+            final ProcessBuilder processBuilder =
+                new ProcessBuilder(getCommandLine(received, approved)).redirectErrorStream(true);
+
+            final String output = IOUtils.toString(processBuilder.start().getInputStream(), "UTF-8");
+
+            if (output.leght() > 0) {
+
+                throw new Error(String.format("Failed Approval%n\tReceived: %s%n\tApproved: %s%n\tDiff: %s%n", received, approved, output));
+            }
+        } catch (Exception e) {
+            throw ObjectUtils.throwAsError(e);
+        }
+    }
+}
+
+#+END_SRC
+
+Then create a /diff/ reporter
+
+#+BEGIN_SRC java
+
+public class DiffReporter extends ConsoleDiffReporter {
+
+    public static final DiffReporter INSTANCE = new DiffReporter();
+
+    public DiffReporter() {
+        super(new DiffInfo("/usr/bin/diff", "%s %s", GenericDiffReporter.TEXT_FILE_EXTENSIONS));
+    }
+}
+
+#+END_SRC
+
+** diff tool missing
+
+Some tools are either missing or not properly configured.
+
+Just override the Windows/Linux diffreporter and create a new set.
+
+** support for cucumber
+
+approved files are named based on the unit test name.
+
+In the case of cucumber, we dont have that, so we need to override the naming scheme.
+
+The strategy comes in 2 folds:
+1. @Before cucumber hook to set a threadlocal scenario name
+2. a CucumberApprovalNamer to take that threadlocal scenario info and generate a name out of it
+
+** a Monadic fluent approvals
+
+#+BEGIN_SRC java
+
+FluentApprovals.verifyThat(myObject).excluding("key1", "key2").transforming("someKey2", value -> "is null").isValid();
+
+#+END_SRC

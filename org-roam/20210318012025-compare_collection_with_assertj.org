@@ -1,0 +1,124 @@
+#+title: compare Collection with AssertJ
+
+The following are tricks to make AssertJ compare list as equivalent if they have the same values for a collection, but without requiring the same implementation.
+
+* what is it
+
+create a fluent assertion using AssertJ, but that is resilient to differences in collection / map types.
+
+it is recursive by nature, if the 2 types compared are objects, we navigate to find other collections / map.
+
+
+** comparing collections
+
+* how?
+
+#+BEGIN_SRC java :file AssertableAssertions :noeval
+
+public class AssertableAssertions extends Assertions {
+    @CheckReturnValue
+    public static <T extends ObjecT> ObjectAssert<T> assertThat(final T actual) {
+        final AssertableComparator comparator = new AssertableComparator();
+        return Assertions.assertThat(actual).usingComparator(comparator);
+    }
+}
+
+#+END_SRC
+
+** Assertable Comparator
+
+is a Comparator
+
+Compares collections and maps differently. navigate down objects to get proper collections / maps comparators
+
+#+BEGIN_SRC java :file AssertableComparator.java :noeval
+public class AssertableComparator implements Comparator<Object>, Serializable {
+    @Override
+    public int compare(final Object left, final Object right) {
+        // create optional for both sides
+        // if both present, compare values
+        // if both empty = 0
+        // if left present = -1
+        // else -1
+    }
+
+    private int compareValues(left, right) {
+        // optional both
+        // if both collections -> compare collectinos wrapped by assertable
+        // if both maps -> compare maps wrapped by assertable
+        // else compare objects that are assertables
+    }
+
+    private Collection<Assertable> toCollectionOfAssertable(object) {
+        // optional
+        // unrap if assertable
+        // is a Collection?
+        // cast
+        // getValue
+        // stream
+        // ensure assertable (return a assertable)
+        // collect as a collection of assertable key and values
+    }
+
+    private Map<Assertable, Assertable> toMapOfAssertable(object) {
+        // optional
+        // unrap if assertable
+        // is a Map?
+        // cast
+        // getValue
+        // entrySet
+        // stream
+        // ensure assertable (return a pair of assertable)
+        // collect as a map of assertable key and values
+    }
+
+    private int compareObject(Assertable left, Assertable right) {
+        left.equals(right) ? 0 : -1;
+    }
+
+    private int compareCollections(Collection<Assertable> l, Collection<Assertable> r) {
+        return same size and elements of right in elements of left and element of left in elements of right = 0 otherwise -1
+    }
+    private int compareMaps(Map<Assertable, A> l, Map<Assertable, A> r) {
+        // extract entrysets of both
+        return // compare as collections
+    }
+
+}
+#+END_SRC
+
+#+BEGIN_SRC java :file Assertable.java :noeval
+
+public class Assertable {
+
+    public Assertable(Object o) {
+        // create an assertable wrapper regargless of types
+    }
+
+    private getAssertableList(instance) {
+        // stream elements, map them with Assertable
+    }
+
+    private getAssertableList(instance) {
+        // stream entrySet, map key/value and wrap them with Assertable
+    }
+
+    public Object getInstance() {
+        // urwrap
+    }
+
+    public final boolean equals(other) {
+        // convert other to Assertable
+        // compare both nulls || both same || both same class && both equals
+        //
+    }
+
+    int hashCode() {
+        // from the wrapped object
+    }
+
+    String toString {
+        // call to string of the wrapped object
+    }
+ }
+#+END_SRC

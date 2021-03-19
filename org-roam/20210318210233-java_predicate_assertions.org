@@ -1,0 +1,41 @@
+#+title: java predicate assertions
+
+
+* assertj
+Fluent assertion library
+
+assertion uses equals / hashcode methods to assert, but uses toString to render assertion errors.
+
+This offers nice diff in IDEs
+
+** TODO enhancements
+
+*** better string representations
+
+its possible to override the string representation of objects.
+
+* hamcrest - alternative to assertj
+
+really popular alternative is hamcrest (larger userbase)
+
+quite similar to assertj with extensive list of assertions, at the same time different as it follows junit assertions instead of being fluent.
+
+#+BEGIN_SRC java
+assertThat(something, isEquals(anotherThing));
+#+END_SRC
+
+does not provide fluent assertions
+
+* JSONAssert
+Assert required information within a JSON payload.
+
+http://jsonassert.skyscreamer.org/
+
+Here is an example:
+#+BEGIN_SRC java
+JSONObject data = getRESTData("/friends/367.json");
+String expected = "{friends:[{id:123,name:\"Corby Page\"},{id:456,name:\"Carter Page\"}]}";
+JSONAssert.assertEquals(expected, data, false);
+#+END_SRC
+
+* TODO JSONSchema validation

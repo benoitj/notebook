@@ -1,0 +1,13 @@
+#+title: java static code analysis - architecture
+
+* test architecture
+:PROPERTIES:
+:ID:       f6109c15-c60d-4d1f-967b-06f886b7305e
+:END:
+
+https://archunit.org
+
+cool tool to test various architecture elements like:
+1. dependencies
+2. model
+3. use of lumbok

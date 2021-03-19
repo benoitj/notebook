@@ -1,3 +1,0 @@
-#+TITLE: #programming
-
-[[file:areas.org][R:Areas]]

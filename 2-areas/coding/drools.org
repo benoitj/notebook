@@ -1,7 +1,0 @@
-#+title: drools
-
-[[file:20200511092514-java.org][R:java]] [[file:20200902164137-ai.org][R:ai]]
-
-* Guides
-
-- Onboarding guide: https://github.com/nheron/droolsonboarding

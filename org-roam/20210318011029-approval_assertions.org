@@ -1,0 +1,23 @@
+#+title: approval assertions
+
+Approval assertions is a [[file:20210318010731-coding.org][coding]] concept
+
+* Concept
+
+Verify a state with an approved master
+
+this is a form of integration test.
+
+This could be done on a variety of state:
+- UI
+- objects
+- api/database interactions
+
+* Anti patterns
+
+dont use approval when unit test is appropriate.
+
+overuse is definitively a problem causing these issues:
+- poor problem identification
+- fragile tests
+

@@ -1,0 +1,10 @@
+#+title: servers
+
+lots of nice servers to use for home labs:
+- Dell rack servers. many are xeon 4cores
+- HP
+
+
+Consider bigger servers (ie: not 1U), they are more silent.
+
+

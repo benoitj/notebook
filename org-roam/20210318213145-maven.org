@@ -1,0 +1,284 @@
+#+title: maven
+* How to
+** basic setup
+here we put config files, structure, properties
+*** setup parent pom
+setup a parent pom to share configuration.
+
+In a multimodule project, also define a repo parent in the parent submodule.
+
+** split my work in classifiers
+*** prepare pom for publishing
+the default pom has both too many things, at the same time, is not the effective pom.
+**** start by generating effective pom
+The plugin maven-help-plugin to generate the effective pom.
+
+Example config:
+#+BEGIN_SRC xml
+<?xml version="1.0" encoding="utf-8"?>
+
+<project>
+<build>
+  <plugins>
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-help-plugin</artifactId>
+      <version>3.2.0</version>
+      <configuration>
+        <minimal>true</minimal>
+      </configuration>
+      <executions>
+        <execution>
+          <id>generate-effective-pom</id>
+          <goals>
+            <goal>effective-pom</goal>
+          </goals>
+          <phase>generate-resources</phase>
+          <configuration>
+            <output>${project.build.directory}/effective-pom/${project.artifactId}-${project.version}</output>
+          </configuration>
+        </execution>
+      </executions>
+    </plugin>
+  </plugins>
+</build>
+</project>
+#+END_SRC
+
+**** filter junk out of the effective pom
+
+all you need then is to use xslt to remove unwanted stuff from the pom.
+
+codehaus has the xml-maven-plugin to apply xsl transformation.
+
+#+BEGIN_SRC xml
+<?xml version="1.0" encoding="utf-8"?>
+
+<project>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>xml-maven-plugin</artifactId>
+        <version>1.0.2</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>transform</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <transformationSets>
+            <transformationSet>
+              <dir>${project.build.directory}/effective-pom</dir>
+              <stylesheet>${project.basedir}/clean-pom.xml</stylesheet>
+              <outputDir>${project.build.directory}/pom</outputDir>
+            </transformationSet>
+          </transformationSets>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+#+END_SRC
+
+the transformation file:
+
+#+BEGIN_SRC xml :file clean-pom.xml
+<?xml version="1.0" encoding="utf-8"?>
+
+<xsl:transform
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:xsi="http://www.w3.org/20001/XMLSchema-instance"
+    version="1.0">
+
+  <xsl:output omit-xml-declaration="no" indent="yes"/>
+  <xsl:strip-space elements="*"/>
+  <xsl:param name="renameElementsNamed"
+          select="'|project/parent|project/build|project/licenses|project/properties|project/dependencyManagement|project/url|project/distributionManagement|project/repositories|project/pluginRepositories|project/reporting|'"/>
+
+  <xsl:template match="node()|@*" name="identity">
+    <xsl:copy>
+      <xsl:apply-templates select="node()|@*"/>
+    </xsl:copy>
+  </xsl:template>
+
+  <xsl:template match="*">
+    <xsl:if test="not(contains($removeElementsNamed, concat('|', name(parent::*), '/', name(), '|')))">
+      <xsl:call-template name="identity"/>
+    </xsl:if>
+  </xsl:template>
+</xsl:transform>
+#+END_SRC
+*** javadoc handling
+just use maven-javadoc-plugin
+
+Generate a javadoc classifier.
+
+*** source handling
+The plugin maven-source-plugin can generate source jars
+
+#+BEGIN_SRC xml
+<?xml version="1.0" encoding="utf-8"?>
+
+<project>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>3.2.0</version>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+#+END_SRC
+** generate custom jars with classifiers
+
+Can be useful to generate pom jars, javadoc jars, documentation jars
+
+You need to configure the maven-jar-plugin for new classifiers
+
+#+BEGIN_SRC xml
+<?xml version="1.0" encoding="utf-8"?>
+
+<project>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.1.0</version>
+        <executions>
+          <execution>
+            <id>pom</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+            <phase>package</phase>
+            <configuration>
+              <classifier>pom</classifier>
+              <classesDirectory>${project.build.directory}/pom</classesDirectory>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+
+#+END_SRC
+
+** releasing/publishing artifacts
+Using the release [[file:20200729223631-maven_plugins.org][R:maven plugins]]
+*** setup
+
+in your pom.xml. setup the plugin
+#+BEGIN_SRC xml
+<?xml version="1.0" encoding="utf-8"?>
+
+<project>
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-release-plugin</artifactId>
+          <version>2.5.3</version>
+          <configuration>
+            <tagNameFormat>@{project.version}</tagNameFormat>
+            <autoVersionSubmodules>true</autoVersionSubmodules>
+            <dryRun>false</dryRun>
+            <pushChanges>false</pushChanges>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
+  <scm>
+    <connection>scm:git:git@something/some/path/to/repo</connection>
+    <developerConnection>scm:git:git@something/some/path/to/repo</developerConnection>
+    <url>site-url</url>
+    <tag>HEAD</tag>
+  </scm>
+</project>
+#+END_SRC
+
+*** when done on master
+
+A typical release on master involve these steps:
+
+ 1. update master with the next development version to MINOR+1
+ 2. create a release branch with MAJOR.MINOR in its name
+ 3. push changes on master to remote
+ 4. checkout the release branch
+ 5. change pom version to release version
+ 6. tag with the release version
+ 7. change pom to next release version (FIX+1)
+ 8. push changes made to the release branch
+ 9. push the tag
+
+**** Current version in pom
+#+BEGIN_SRC bash
+VERSION=$(mvn -q -f pom.xml help:evaluate -Dexpression=project.version -DforceStdout)
+#+END_SRC
+
+**** release version by removing -SNAPSHOT to the version
+#+BEGIN_SRC bash
+RELEASE_VERSION=${VERSION%"-SNAPSHOT"}
+#+END_SRC
+
+**** get major minor version (many ways to get this)
+#+BEGIN_SRC bash
+IFS='.' read -ra PART <<< "$VERSION"
+MAJOR_MINOR_VERSION="${PART[0]}.${PART[1]}"
+#+END_SRC
+
+**** find current branch
+#+BEGIN_SRC bash
+CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+#+END_SRC
+
+**** Steps 1-4 can be achieved with the maven command:
+build-settings.xml has the /release/ maven profile
+
+#+BEGIN_SRC bash
+mvn -Prelease release:branch -DbranchName="$RELEASE_BRANCH" -DdevelopmentVersion="$NEXT_DEVELOPMENT_VERSION" --settings $(pwd)/build-settings.xml && \
+    git pull -r && git push origin master:master && git checkout "$RELEASE_BRANCH"
+#+END_SRC
+
+**** Steps 5-7 can be achieved with the maven command:
+#+BEGIN_SRC bash
+mvn -Prelease release:prepare --settings $(pwd)/build-settings.xml
+#+END_SRC
+
+*** when done on release branch
+
+Same as the last steps of releasing on master:
+
+ 1. change pom version to release version
+ 2. tag with the release version
+ 3. change pom to next release version (FIX+1)
+ 4. push changes made to the release branch
+ 5. push the tag
+
+** use profiles to turn on/off parts of the build during CI
+one strategy is to set "skipX" properties and enable/disable them based on the profile
+** aggregate jacoco reports
+Make sure you have a coverage jar for each modules. then on the "coverage" project, fetch/unzip in target and run coverage report. Also requires sources.
+** generate model code from schema
+use jolt library to transform a json-schema and prep it for jsonschema to pojo plugin. Jolt does not have a maven plugin though.
+** aggregated javadoc
+1. get all modules/sub-modules to generate source jar
+2. in a project, download all source jars, unpack in a folder, than trigger the javadoc plugin to generate.
+

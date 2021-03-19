@@ -1,0 +1,4 @@
+#+title: coding
+
+Include anything related to developing software. From creating code, to design, to test.
+

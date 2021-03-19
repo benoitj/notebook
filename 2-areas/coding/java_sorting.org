@@ -1,9 +1,0 @@
-#+title: java sorting
-
-[[file:20200511092514-java.org][R:java]]
-
-* comparing with null lasts
-
-#+BEGIN_SRC java
-stream().sorted(Comparators.comparingWith(o::getSomething, Coparators.nullLasts(naturalOrder()))
-#+END_SRC

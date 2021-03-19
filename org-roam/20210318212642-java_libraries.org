@@ -1,0 +1,10 @@
+#+title: java libraries
+
+|--------------+----------------------+-------------------------------------------------------|
+| name         | type                 | description                                           |
+|--------------+----------------------+-------------------------------------------------------|
+| resilience4j | integration patterns | things like cirtuit breaker. Alternatives to hystrix. |
+|              |                      | integrated with spring cloud library                  |
+|--------------+----------------------+-------------------------------------------------------|
+|              |                      |                                                       |
+

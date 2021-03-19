@@ -1,5 +1,0 @@
-#+TITLE: dev practices
-
-[[file:20200228101727_programming.org][R:programming]]
-
-Various development practices

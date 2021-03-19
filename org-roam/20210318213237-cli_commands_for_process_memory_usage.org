@@ -1,0 +1,17 @@
+#+title: cli commands for process memory usage
+* process memory usage
+
+* with PS or TOP
+
+#+BEGIN_SRC sh :noeval
+cat /proc/15439/smaps | grep -i pss |  awk '{Total+=$2} END {print Total/1024" MB"}'
+#+END_SRC
+
+RSS represent close to reality, but
+
+** better measure with /proc
+
+#+BEGIN_SRC sh :noeval
+PID=10 cat /proc/$PID/smaps | grep -i pss |  awk '{Total+=$2} END {print Total/1024" MB"}'
+#+END_SRC
+

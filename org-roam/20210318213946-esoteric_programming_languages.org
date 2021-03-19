@@ -1,0 +1,12 @@
+#+title: esoteric programming languages
+
+https://esolangs.org/wiki/Esoteric_programming_language
+
+* Piet
+  programming language where you code like paint
+  https://www.dangermouse.net/esoteric/piet.html
+
+* rockstar
+  programs are mocks of 80s rock song
+  https://codewithrockstar.com/
+

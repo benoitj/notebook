@@ -1,0 +1,5 @@
+#+title: emacs modes
+* Interesting plugins not yet used
+** subed: major mode to edit subtitles
+** mpv.el: control mpv for easy note taking
+Allows to pause, kill, seek forward/back, slow/speed up, seek at specific position

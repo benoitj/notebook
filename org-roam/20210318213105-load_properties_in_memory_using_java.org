@@ -1,0 +1,9 @@
+#+title: load properties in memory using java
+* with spring
+
+#+BEGIN_SRC java
+ClassPathResource propsFile = new ClassPathResource("some.properties");
+Properties props = new Properties();
+props.load(propsFile.getInputStream());
+#+END_SRC
+
