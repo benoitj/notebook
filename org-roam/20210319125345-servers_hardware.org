@@ -1,0 +1,13 @@
+#+title: servers hardware
+* Why to buy refurbished parts and servers?
+
+https://www.servermonkey.com
+
+available is also cheap sas refurbished drives.
+
+* racks stuff
+
+** rack cases, rack open frames
+
+sysracks.com
+

@@ -1,0 +1,31 @@
+#+title: music dynamic range
+
+tags :: [[file:20201223205029-audiophile.org][R:audiophile]]
+
+* what is it
+
+the range between low and high level of a song. Todays music has compress dynamic range (DR) to overcome noise from cars, kitchen, bars. This affects details and sound quality.
+
+* Database
+
+there is a registry of dynamic range medias: http://dr.loudness-war.info/
+
+* Scale
+
+10 :: meh
+11 :: ok
+12 :: good
+13 :: better
+14+ :: best
+
+* How to measure
+Using DR14 tool.
+
+Can be done on most file formats
+
+#+BEGIN_SRC bash :noeval
+dr14_tmeter -d -b
+#+END_SRC
+
+You can submit the resulting DR14.txt file to http://dr.loudness-war.info/
+

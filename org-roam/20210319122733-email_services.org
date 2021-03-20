@@ -1,0 +1,15 @@
+#+title: email services
+
+[[file:20200418155222_homeit.org][R:#homeit]]
+
+* midagu
+https://www.migadu.com/
+
+* mailbox.org
+
+* self hosting
+
+* references
+
+https://drewdevault.com/2020/06/19/Mail-service-provider-recommendations.html
+

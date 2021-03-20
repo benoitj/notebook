@@ -1,0 +1,8 @@
+#+title: cli tools
+* File Metadata
+** TODO mediainfo
+
+* Music
+** beets
+** id3v2
+

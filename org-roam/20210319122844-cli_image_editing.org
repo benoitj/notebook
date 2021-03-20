@@ -1,0 +1,54 @@
+#+title: cli image editing
+* Imageagick
+
+** tumbnails
+
+#+BEGIN_SRC bash
+convert -define jpeg:size=200x200 original.jpg -thumbnail 150x150^ -gravity center -extent 150x150 thumb.jpg
+#+END_SRC
+
+** resize
+
+maintain aspect ratio by specifying only width
+
+#+BEGIN_SRC bash
+convert original.jpg -resize 1200 final.jpg
+#+END_SRC
+
+** add border
+
+#+BEGIN_SRC bash
+convert original.jpg -bordercolor [white|black|#rgb] -border 30x30 final.jpg
+#+END_SRC
+
+See https://imagemagick.org/script/color.php for more colors
+
+
+** resize all images in a folder
+
+#+BEGIN_SRC bash
+mogrify -resize 1920x1280 -quality 85 -format png *png
+#+END_SRC
+
+or resize only larger images
+
+#+BEGIN_SRC bash
+mogrify -resize 1920x1280> -quality 85 -format png *png
+#+END_SRC
+
+
+** crop
+
+#+BEGIN_SRC bash
+convert original.jpg -crop 200x200+500+500 +repage crop-img.jpg
+#+END_SRC
+
+size is 200x200 and +500+500 is x/y starting position
+
+
+** optimize
+
+#+BEGIN_SRC bash
+convert -strip -quality 75 original.jpg final.jpg
+#+END_SRC
+

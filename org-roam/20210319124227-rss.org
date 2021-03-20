@@ -1,0 +1,27 @@
+#+title: RSS
+
+[[file:20200418155222_homeit.org][R:@information technology]]
+
+* RSS Bridges
+
+** reddit
+
+Reddit support RSS by default. Just add /.rss/ to any redit urls.
+
+Standard ones:
+ - Frontpage: https://reddit.com/.rss
+ - New: https://reddit.com/new/.rss
+ - Hot: https://reddit.com/hot/.rss
+ - Top: https://reddit.com/top/.rss
+ - Rising: https://reddit.com/rising/.rss
+ - Controversial: https://reddit.com/controversial/.rss
+
+You can also add dates, ex: https://reddit.com/top/?sort=top&t=month/.rss
+Where t can be hour, day, week, month, year, all
+
+Subredit:
+ - https://reddit.com/r/gentoo/.rss
+
+Users:
+ - https://reddit.com/user/reddit_user/.rss
+

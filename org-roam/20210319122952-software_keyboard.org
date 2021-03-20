@@ -1,0 +1,5 @@
+#+title: software keyboard
+* Software keyboards or related input devices
+
+- software keyboard based on blow and dictionary: [[http://www.inference.org.uk/dasher/][Inference Group: Dasher Project: Home]]
+

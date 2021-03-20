@@ -1,0 +1,11 @@
+#+title: obs open broadcasting software
+* using obs to share desktop and others as a virtual video device
+
+you can use this in any program and make them believe obs is a webcam
+
+1. Build or install a recent OBS
+2. Build the [[https://github.com/umlaeute/v4l2loopback][v4l2loopback]] or [[https://github.com/CatxFish/obs-virtual-cam][obs-virtual-cam]] plugins, following instructions in the README files
+3. Open OBS, go to Tools > v4l2 Video Output and select “Start” if the device selected is correct
+4. Go to the audio/video settings of the vidconf software and select the new video device
+5. Start your call and invite your crowd
+

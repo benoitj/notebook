@@ -1,0 +1,8 @@
+#+title: webmention
+* Description
+
+webmention is a mechanism to find comments on related posts/urls and display on your website. For example, you can display mentions on your blog that originated on mastodon.
+
+* how to get it setup
+- [[https://zerokspot.com/weblog/2020/06/14/setting-up-webmentiond/][Setting up webmentiond - zerokspot.com]]
+

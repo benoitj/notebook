@@ -1,0 +1,5 @@
+#+title: static site generator - hugo
+* using hugo
+** useful links
+- [[https://zwbetz.com/make-a-hugo-blog-from-scratch/][Make a Hugo blog from scratch | zwbetz]]
+
