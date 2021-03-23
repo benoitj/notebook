@@ -1,9 +1,0 @@
-#+TITLE: blogging
-
-[[file:20200418155222_homeit.org][R:information technology]] [[file:20200521230917-learning.org][R:learning]]
-
-* blogging sites
-- [[https://100daystooffload.com/][100 Days To Offload]] : idea to blog 100 times a year (twice a week).
-* using hugo
-** useful links
-- [[https://zwbetz.com/make-a-hugo-blog-from-scratch/][Make a Hugo blog from scratch | zwbetz]]

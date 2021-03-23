@@ -1,5 +1,0 @@
-#+TITLE: #homelab
-
-[[file:areas.org][R:Areas]]
-
-This area is about maintaining sane home services infrastructure: network, services

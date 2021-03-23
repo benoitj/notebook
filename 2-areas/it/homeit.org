@@ -1,3 +1,0 @@
-#+TITLE: #homeit
-
-[[file:areas.org][R:Areas]]

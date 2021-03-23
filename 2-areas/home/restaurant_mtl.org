@@ -1,9 +1,0 @@
-#+TITLE: Restaurant MTL
-
-- related :: [[file:20200224073451_family.org][R:Family]]
-
-* Les enfants terribles
-* Essence
-* Moxies
-* Keg
-* 3 Brasseurs

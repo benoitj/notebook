@@ -1,6 +1,0 @@
-#+title: fediverse
-
-[[file:20200723011405-social.org][R:@social]]
-
-* Developer community
-** dev.to

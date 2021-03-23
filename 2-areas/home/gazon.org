@@ -1,5 +1,0 @@
-#+TITLE: gazon
-
-[[file:20200525190508-home.org][R:home]]
-
-* TODO recette d'engrais 4 etapes

@@ -1,5 +1,0 @@
-#+TITLE: #family
-
-- related :: [[file:areas.org][R:areas]]
-
-In there we do not list family notes, but the other way around

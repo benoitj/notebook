@@ -1,4 +1,0 @@
-#+TITLE: blogging
-
-* Blog promotion site
-- [[https://100daystooffload.com/][100 Days To Offload]] : idea to blog 100 times a year (twice a week).

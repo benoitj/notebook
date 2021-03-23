@@ -1,4 +1,5 @@
 #+title: wiregard vpn
+#+ROAM_TAGS: it
 * What is it?
 
 A fast and simpler VPN alternatives to OpenVPN.

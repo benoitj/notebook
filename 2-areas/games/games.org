@@ -1,3 +1,0 @@
-#+TITLE: games
-
-[[file:20200603204237-references.org][R:references]]
