@@ -1,0 +1,42 @@
+#+title: text manipulation tricks
+
+* remove/squeeze empty lines into only one
+** before
+   #+begin_src sh
+
+   (echo "test"; echo ""; echo ""; echo ""; echo "squeeze")
+
+   #+end_src
+
+   #+RESULTS:
+   | test    |
+   |         |
+   |         |
+   |         |
+   | squeeze |
+
+** after
+   #+begin_src sh
+
+   (echo "test"; echo ""; echo ""; echo ""; echo "squeeze") | cat -s
+
+   #+end_src
+
+   #+RESULTS:
+   | test    |
+   |         |
+   | squeeze |
+
+   
+* extract records from Key: Value files
+
+  #+begin_src sh :results output
+
+  (echo "Name: foo"; echo "OtherField: value"; echo "Name: bar"; echo "OtherField: value") | recsel -p "Name"
+
+  #+end_src
+
+  #+RESULTS:
+  : Name: foo
+  : Name: bar
+
