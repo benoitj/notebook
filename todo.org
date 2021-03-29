@@ -1,9 +1,40 @@
 #+title: My todos
 
 * Projects
+  
+** Weekend reno prep
+*** prepare for sanding
+**** DONE verify sanding paper for belt sander
+     SCHEDULED: <2021-03-27 Sat 11:00>
+**** TODO verify sanding paper for osc sander
+     SCHEDULED: <2021-03-27 Sat 11:00>
+**** DONE verify pole sander
+     SCHEDULED: <2021-03-27 Sat 11:00>
+**** DONE remove trims
+     SCHEDULED: <2021-03-28 Sun>
+**** TODO remove nails
+     SCHEDULED: <2021-03-28 Sun>
+*** prepare for trims
+**** DONE verify wall trims
+     SCHEDULED: <2021-03-27 Sat 12:00>
+**** DONE verify main door trims
+     SCHEDULED: <2021-03-27 Sat 12:00>
+**** DONE verify door trims
+     SCHEDULED: <2021-03-27 Sat 12:00>
+**** TODO paint trims
+**** TODO install new door
+*** finish paint
+**** TODO outlets
+**** TODO touch up
+     SCHEDULED: <2021-03-28 Sun>
+*** gazebo
+**** TODO remove tarps
+**** TODO find color
+*** prepare for decks
+**** TODO create plans
 ** TODO my 2nd office
 *** TODO network cable
-*** TODO chair
+*** CANCELLED chair
 ** whammy headphone amp :personal:
 DEADLINE: <2021-03-21 Sun>
 :PROPERTIES:
