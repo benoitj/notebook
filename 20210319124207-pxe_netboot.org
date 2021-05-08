@@ -1,0 +1,63 @@
+#+title: pxe netboot
+
+[[file:20200507124745-homelab.org][R:#homelab]]
+
+
+* What is it?
+
+a way to boot ISOs using network.
+
+It's based out of TFTP server and DHCP for discovery
+
+* netboot.xyz
+
+Here comes netboot.xyz, a pxe boot iso that present you a menu with a variety of:
+ 1. install images
+ 2. live cd images
+ 3. rescue images
+
+* TFTP setup
+
+My setup is done on FreeNAS, but it could have been on my OpnSense firewal.
+
+the setup is fairly simple:
+ 1. open a shell and create a directory to store images
+ 2. download netboot.xyz.efi and netboot.xyz.kpxe and store it under the directory created
+ 3. make sure permissions are allowing readable for all.
+ 4. enable TFTP in services -> TFTP
+    1. enable at startup
+    2. start service
+    3. set the TFTP directory to be the directory created at step 1
+ 5. you can install atftp client and validate
+    1. tftp <ip of the tftp server>
+    2. get netboot.xyz.efi
+    3. you should have success downloading the file
+
+* DHCP PXE setup
+
+This can be done on a variety of wrt routers, or PfSense/OpnSense.
+
+I'm currently running OpnSense, but the steps are mostly the same on PfSense:
+ 1. in services -> DHCPv4 -> [LAN]
+ 2. TFTP Server
+    1. set the TFTP server IP
+ 3. Enable network booting
+    1. enable network booting checked
+    2. next server ip: the TFTP server IP
+    3. default bios file: netboot.xyz.kpxe
+    4. 32bit efi bios file: netboot.xyz.efi
+    5. 64bit efi bios file: netboot.xyz.efi
+ 4. save the changes and reload DHCP
+
+* Test the setup
+
+Create a Virtualbox and boot using PXE:
+ 1. create a VM with enough ram
+ 2. set network to be bridged so that you get a IP address from your configured DHPC server
+ 3. setup network as the first boot option, or press F12 to select network boot
+ 4. you should now be prompty with a netboot menu with tons of images to choose from
+
+* It does not work?
+
+**  Are you sure you are getting IP from your DHCP server?
+

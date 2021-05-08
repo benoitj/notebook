@@ -1,0 +1,4 @@
+#+title: note taking
+* examples of using org-mode to take notes
+** [[http://doc.norang.ca/org-mode.html#CaptureTemplates][Organize life with org-mode]]
+** https://blog.jethro.dev/posts/how_to_take_smart_notes_org/

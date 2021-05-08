@@ -1,0 +1,9 @@
+#+title: wii controller repair
+[[file:20201213125107-console.org][R:console]]
+
+* nunchuck
+
+** repair cable
+http://www.dadgeekgamer.com/2011/07/dad-we-broke-wii-nunchuck.html
+https://raspberrypi.stackexchange.com/questions/10542/why-does-my-raspberry-failt-to-boot-with-a-wii-nunchuck-connected
+

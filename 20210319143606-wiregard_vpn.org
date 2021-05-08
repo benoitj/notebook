@@ -1,0 +1,12 @@
+#+title: wiregard vpn
+#+ROAM_TAGS: it
+* What is it?
+
+A fast and simpler VPN alternatives to OpenVPN.
+
+* Wireguard on opnsense
+
+In a nutshell, install the os-WireGuard package, configure and run.
+
+See this page for more details: https://wiki.opnsense.org/manual/how-tos/wireguard-client.html
+

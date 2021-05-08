@@ -1,0 +1,8 @@
+#+title: code coverage
+
+* what is code coverage
+
+% of lines, branches, statements called by an automated test suite.
+
+represent how much code is called by an automation suite, does not fully represent the quality of the tests as it does not evaluate assertions quality
+

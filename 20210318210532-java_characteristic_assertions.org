@@ -1,0 +1,6 @@
+#+title: java characteristic assertions
+
+
+* Equals and Hashcode assertions
+Assert any equals method meet requirements using:
+https://jqno.nl/equalsverifier/

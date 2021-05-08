@@ -1,0 +1,43 @@
+#+title: java in-memory filesystem
+* Why
+
+especially during testing, you may need a filesystem:
+ - something read/write from the disk
+ - some plugin you write to transform files
+
+* Tools
+Using the Java In-Memory FileSystem (JimFS), you can implement a in-memory fs.
+
+* Caviat
+
+You must use java.nio libraries. You must not use java.util.File to implement file operations.
+
+* how
+
+#+BEGIN_SRC java
+
+class SomeTest {
+
+    private static FileSystem fileSystem;
+
+    @RegisterExtension Extension tempDirectory = TempDirectory.createInCustomDirectory(() -> Files.createDirectories(fileSystem.getPath("tmp")));
+
+    @BeforeAll
+    static void createFileSystem() {
+        fileSystem = Jimfs.newFileSystem(Configuration.forCurrentPlatform());
+    }
+
+    @AfterAll
+    static void closeFileSystem() {
+        fileSystem.close();
+    }
+
+    @Test void someTestMethod(@TempDirectory.TempDir final Path tempDir) {
+        final Path dir = Files.createDirectories(tempDir.resolve("someOtherDir"));
+        final Path file = Files.createFile(dir.resolve("someFile.txt"));
+
+        // some tests
+    }
+}
+#+END_SRC
+

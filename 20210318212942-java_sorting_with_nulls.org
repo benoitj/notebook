@@ -1,0 +1,7 @@
+#+title: java sorting with nulls
+* comparing with null lasts
+
+#+BEGIN_SRC java
+stream().sorted(Comparators.comparingWith(o::getSomething, Comparators.nullLasts(naturalOrder()))
+#+END_SRC
+

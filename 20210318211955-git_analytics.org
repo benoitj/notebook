@@ -1,0 +1,4 @@
+#+title: git analytics
+
+* [[https://github.com/adamtornhill/code-maat][code-maat]]: perform analytics measurements using git
+* [[https://github.com/ag91/code-compass][code-compass]]: emacs plugin to view code-maat output

@@ -1,0 +1,48 @@
+#+title: mutation testing
+* Test automation
+
+Automated tests are used to prove certain scenarios are working as expected.
+
+We cannot necessarily prove it is not broken though.
+
+* Coverage
+
+One measure we use to get information about our tests is code coverage.
+
+Test Code coverage is a measure of how much lines (branches, classes, packages) are getting called when running (Unit) tests.
+
+* Good coverage != good tests
+
+Good coverage does not garantee tests quality is good. Even with 100% coverage, functional bugs can still exists.
+
+How can it be possible with 100% code coverage??
+
+* goes back to AAA
+
+#+BEGIN_SRC
+A = Arrange
+A = Act      <---- coverage validate your first A creates execution conditions for the 2nd A
+A = Assert   <---- coverage never validates your assertions are effective
+#+END_SRC
+
+* How do you know it's effective
+
+You create bugs and see if at least one test fail.
+
+* Mutation testing
+
+Creating bugs manually can be tedius for some developers
+
+Mutation testing tools automaticly create bugs on the code covered and detect if tests are failing
+
+* What kind of bugs?
+
+some possible mutations:
+
+- Negate a condition
+- Modify returns (Null, empty, false)
+- increment values
+- Test type boundaries
+- remove conditions
+- remove a method call
+

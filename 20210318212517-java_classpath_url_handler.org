@@ -1,0 +1,8 @@
+#+title: java classpath url handler
+
+this is about loading files from the classpath. something like classpath:myfile.conf
+
+* URLStreamHandler
+
+you can overide the URLStreamHandler to implement custom url handler.
+

@@ -1,0 +1,23 @@
+#+title: azure devops cli
+
+* how to connect to the API
+
+You can use any http client with basic auth.
+
+** Basic auth
+
+the authentication information is: <user>:<ADS application token>
+
+You generate the application token from ADS account page.
+
+** get a list of repositories:
+
+call the URL: [[https://dev.azure.com/<ORG>/<project>/_apis/git/repositories?api-version=5.1]]
+
+this gives you a json response with all repos with details.
+
+an example of call:
+#+BEGIN_SRC bash
+curl -s -u "<user email>:<token>" https://dev.azure.com/<ORG>/<project>/_apis/git/repositories?api-version=5.1 | jq -r '.value[] | select(.name|startswith("something")) | (.name + " " + .remoteUrl)'
+#+END_SRC
+

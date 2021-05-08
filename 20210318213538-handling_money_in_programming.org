@@ -1,0 +1,29 @@
+#+title: handling money in programming
+
+* Money as an object
+
+money is not just a BigDecimal, it associate a value, with currency.
+
+It brings these properties:
+- default rounding usually based on the lowest currency unit
+- math on money of different currency requires conversion
+- gets properties of currency, like ISO code, symbol, and separator.
+
+See Martin Fowler's [[https://www.martinfowler.com/eaaCatalog/money.html][P of EAA: Money]]
+
+* Currency
+
+related to money is currency.
+
+Currency represent a unit/kind of money. it affect rounding, string representation, conversion.
+
+See Martin Fowler's [[https://martinfowler.com/bliki/CurrencyAsValue.html][CurrencyAsValue]]
+
+* Double vs Bigdecimal
+
+Double / float in java is base 2 so it has rounding error.
+
+for example 0.7 + 0.1 would give 0.79999999 instead of 0.8
+
+For this reason, we use BigDecimal as an underlying value for money
+

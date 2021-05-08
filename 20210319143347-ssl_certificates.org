@@ -1,0 +1,13 @@
+#+title: ssl certificates
+
+[[file:20201016152952-protocol.org][R:protocol]]
+
+
+* verify certs
+
+A nice http site to reproduce common issues with certs
+
+https://badssl.com
+
+can be self deployed
+

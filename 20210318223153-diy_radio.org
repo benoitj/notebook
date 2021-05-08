@@ -1,0 +1,8 @@
+#+title: diy radio
+[[file:20200610195512-electronics.org][R:electronics]]
+
+* Kits
+
+- bitx
+- [[http://crkits.com/]]
+

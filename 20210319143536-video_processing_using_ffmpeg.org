@@ -1,0 +1,14 @@
+#+title: video processing using ffmpeg
+* merge files together
+** create list of files to merge
+#+BEGIN_SRC txt :file list.txt
+file 'file 1.mkv'
+file 'file 2.mkv'
+#+END_SRC
+
+** merge files with ffmpeg
+#+BEGIN_SRC bash
+ffmpeg -f concat -safe 0 -i list.txt -c copy Kaamelott\ S06E07.mkv
+#+END_SRC
+
+

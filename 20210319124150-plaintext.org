@@ -1,0 +1,12 @@
+#+title: plaintext
+* Productivity
+
+** https://lukespear.co.uk/plaintext-productivity/
+
+
+* Accounting
+
+hledger
+
+https://plaintextaccounting.org/
+

@@ -1,0 +1,8 @@
+#+title: assertions
+
+automated test library used to verify outcomes.
+
+There are many types of assertions:
+- predicate based assertions
+- approval assertions
+- characteristic assertions

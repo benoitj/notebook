@@ -1,0 +1,4 @@
+#+title: Drools
+
+- Onboarding guide: https://github.com/nheron/droolsonboarding
+
