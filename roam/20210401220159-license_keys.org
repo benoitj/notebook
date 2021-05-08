@@ -1,0 +1,7 @@
+#+title: license keys
+#+roam_tags: it
+
+* site with keys
+
+- https://www.bobkeys.com/?currency=CAD
+

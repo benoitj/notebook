@@ -1,0 +1,8 @@
+#+title: emacs creating modes
+
+Extending Emacs
+
+* some sites / videos about extending emacs:
+
+** http://emacsrocks.com/ has a series on extending emacs for running tests with Buster.js
+  

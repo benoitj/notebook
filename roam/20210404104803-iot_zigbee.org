@@ -1,0 +1,12 @@
+#+title: iot zigbee
+
+* build your own hub
+  best way is to buy zigbee devices, a raspberry pi and a zigbee usb dungle.
+
+  Running NodeRed, and mqtt, and a dongle running zigbee2mqtt firmwares, you get your own home automation.
+
+  references:
+  - [[https://www.zigbee2mqtt.io/][zigbee2mqtt]]
+  - [[https://www.home-assistant.io/][home assistant]]
+  - [[https://www.domoticz.com/][domoticz]]
+  - [[https://www.youtube.com/watch?v=zo0B6tXAFoM][Cameron Gray's video on exactly that]]

@@ -1,0 +1,39 @@
+#+title: windows tools
+#+roam_tags: it
+
+* [[https://github.com/microsoft/PowerToys][windows power toys]]
+** screen zones
+** dark theme
+** run prompt
+
+* music player
+** foobar
+* installer
+** [[ninite.com][ninite]]
+   create an installer for multiple tools
+* search tool
+** everything
+* sound panel
+** ear trumpet
+   easy way to a
+** SoundSwitch
+   switch sources and output with key bindings
+* video
+** MKVToolNix
+   edit mkv in both linux and windows
+* file management
+** Unlocker
+   list processes using files
+* terminal
+** putty
+* windows settings
+** telemetry and other auto settings
+*** O&O ShutUp 10
+* antivirus
+** malwarebytes
+* disk utils
+** CrystalDiskInfo
+* password manager
+** keepass
+* cleanup
+** Revo Uninstaller

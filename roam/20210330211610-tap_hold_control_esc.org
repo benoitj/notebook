@@ -1,0 +1,16 @@
+#+title: tap hold control/esc
+
+* with qmk
+
+  using MT() you can implement tap hold function
+
+  
+* in software
+
+  using a piece of software called xcape. you can implement control/esc tap/hold
+
+  #+begin_src sh :noeval
+setxkbmap -option ctrl:nocaps
+
+xcape -e 'Control_L=Escape' -t 175
+  #+end_src 
