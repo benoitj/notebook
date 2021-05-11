@@ -1,0 +1,32 @@
+#+title: twitch irc
+
+* authenticate with oauth
+https://twitchapps.com/tmi/
+
+* setup server
+
+#+begin_src json
+{
+  address = "irc.twitch.tv";
+  chatnet = "Twitch";
+  port = "6667";
+  password = "<YOUR OAUTH TOKEN>";
+  use_ssl = "no";
+  ssl_verify = "no";
+  autoconnect = "yes";
+}
+#+end_src
+
+* IRCv3
+
+to enable notifications, you need to enable membership using CAP REQ below:
+
+Twitch = {
+  type = "IRC";
+  nick = "your_twitch_username";
+  autosendcmd = "/quote CAP REQ :twitch.tv/membership";
+};
+
+* join a channel
+
+join using  `/join #<lowercase streamer name>`

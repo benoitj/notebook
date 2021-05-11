@@ -1,11 +1,12 @@
 #+title: windows tools
 #+roam_tags: it
 
+this is an inventory of useful windows [[file:20210319133352-software.org][software]]
+
 * [[https://github.com/microsoft/PowerToys][windows power toys]]
 ** screen zones
 ** dark theme
 ** run prompt
-
 * music player
 ** foobar
 * installer
