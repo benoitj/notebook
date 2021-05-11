@@ -7,13 +7,13 @@ https://twitchapps.com/tmi/
 
 #+begin_src json
 {
-  address = "irc.twitch.tv";
-  chatnet = "Twitch";
-  port = "6667";
-  password = "<YOUR OAUTH TOKEN>";
-  use_ssl = "no";
-  ssl_verify = "no";
-  autoconnect = "yes";
+    address = "irc.chat.twitch.tv";
+    chatnet = "Twitch";
+    port = "6697";
+    password = "<YOUR OAUTH TOKEN>";
+    use_tls = "yes";
+    tls_verify = "no";
+    autoconnect = "no";
 }
 #+end_src
 
