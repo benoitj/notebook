@@ -1,79 +1,91 @@
 #+title: org mode rest client
 
+* within org mode
+
+** using json test
 #+begin_src restclient
 GET http://ip.jsontest.com
 #+end_src
 
-#+RESULTS:
-#+BEGIN_SRC html
-<html><head>
-<meta http-equiv="content-type" content="text/html;charset=utf-8">
-<title>503 Over Quota</title>
-<style><!--
-body {font-family: arial,sans-serif}
-div.nav {margin-top: 1ex}
-div.nav A {font-size: 10pt; font-family: arial,sans-serif}
-span.nav {font-size: 10pt; font-family: arial,sans-serif; font-weight: bold}
-div.nav A,span.big {font-size: 12pt; color: #0000cc}
-div.nav A {font-size: 10pt; color: black}
-A.l:link {color: #6f6f6f}
-A.u:link {color: green}
-//--></style>
-
-</head>
-<body text=#000000 bgcolor=#ffffff>
-<table border=0 cellpadding=2 cellspacing=0 width=100%>
-<tr><td bgcolor=#3366cc><font face=arial,sans-serif color=#ffffff><b>Error</b></td></tr>
-<tr><td>&nbsp;</td></tr></table>
-<blockquote>
-<H1>Over Quota</H1>
-This application is temporarily over its serving quota.  Please try again later.
-
-<p>
-</blockquote>
-<table width=100% cellpadding=0 cellspacing=0><tr><td bgcolor=#3366cc><img alt="" width=1 height=4></td></tr></table>
-</body></html>
-
-<!-- GET http://ip.jsontest.com -->
-<!-- HTTP/1.1 503 Service Unavailable -->
-<!-- X-Cloud-Trace-Context: 9f0b92584b57c6e08577fd6ad7a0b48a -->
-<!-- Date: Wed, 05 May 2021 03:29:30 GMT -->
-<!-- Content-Type: text/html -->
-<!-- Server: Google Frontend -->
-<!-- Content-Length: 970 -->
-<!-- Request duration: 0.054268s -->
-#+END_SRC
+** fetch auth
 
 #+begin_src restclient
-GET https://httpbin.org/response-headers?Authorization=foo
--> jq-set-var :auth .Authorization    
-
-# now lets use that auth
-GET https://httpbin.org/response-headers?Authorization=:auth
-    
-# now lets use that auth
-GET https://httpbin.org/response-headers?Authorization2=:auth
-    
+GET https://httpbin.org/response-headers?Authorization=bar
+-> run-hook (restclient-set-var ":auth" (cdr (assq 'Authorization (json-read))))
 #+end_src
 
 #+RESULTS:
 #+BEGIN_SRC js
 {
-  "Authorization": "foo",
+  "Authorization": "bar",
   "Content-Length": "95",
   "Content-Type": "application/json"
 }
 
-// GET https://httpbin.org/response-headers?Authorization=foo
+// GET https://httpbin.org/response-headers?Authorization=bar
 // HTTP/1.1 200 OK
-// Date: Fri, 07 May 2021 14:46:44 GMT
+// Date: Sat, 08 May 2021 06:10:00 GMT
 // Content-Type: application/json
 // Content-Length: 95
 // Connection: keep-alive
 // Server: gunicorn/19.9.0
-// Authorization: foo
+// Authorization: bar
 // Access-Control-Allow-Origin: *
 // Access-Control-Allow-Credentials: true
-// Request duration: 0.208380s
+// Request duration: 0.023969s
 #+END_SRC
+
+** run with auth var
+
+#+begin_src restclient
+# now two
+GET https://httpbin.org/response-headers?Authorization2=:auth
+#+end_src
+
+#+RESULTS:
+#+BEGIN_SRC js
+{
+  "Authorization2": "bar",
+  "Content-Length": "96",
+  "Content-Type": "application/json"
+}
+
+// GET https://httpbin.org/response-headers?Authorization2=bar
+// HTTP/1.1 200 OK
+// Date: Sat, 08 May 2021 06:10:03 GMT
+// Content-Type: application/json
+// Content-Length: 96
+// Connection: keep-alive
+// Server: gunicorn/19.9.0
+// Authorization2: bar
+// Access-Control-Allow-Origin: *
+// Access-Control-Allow-Credentials: true
+// Request duration: 0.023143s
+#+END_SRC
+* using <file>.http files
+
+#+begin_src restclient :file test.http
+# -*- restclient -*-
+
+# getting auth
+GET https://httpbin.org/response-headers?Authorization=foo
+-> run-hook (restclient-set-var ":auth" (cdr (assq 'Authorization (json-read))))
+
+# now lets use that auth
+GET https://httpbin.org/response-headers?Authorization=:auth
+
+# now two
+GET https://httpbin.org/response-headers?Authorization2=:auth
+
+# test
+GET http://httpbin.org/response-headers?origin=1.2.3.4
+-> run-hook (restclient-set-var ":my-ip" (cdr (assq 'origin (json-read))))
+
+# ok
+#:my-ip = 4.3.2.1
+GET http://httpbin.org/response-headers?ip=:my-ip
+
+#+end_src
+
+** TODO how do I get -> jq-set-var to work?
 

@@ -1,0 +1,16 @@
+#+title: org mode sql
+
+* lets try it
+#+name: my-query
+#+header: :engine mysql
+#+header: :dbhost host
+#+header: :dbuser user
+#+header: :dbpassword pwd
+#+header: :database dbname
+#+begin_src sql
+  SELECT * FROM mytable
+  WHERE id > 500
+#+end_src
+
+#+RESULTS: my-query
+|---|

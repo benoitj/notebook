@@ -1,6 +1,7 @@
-#+title: software
+#+title: linux tools
+#+roam_tags: it
 
-[[file:20200418155222_homeit.org][R:information technology]]
+This is an inventory of [[file:20210508104912-linux.org][linux]] [[file:20210508104947-software.org][software]]
 
 * switching software
 
