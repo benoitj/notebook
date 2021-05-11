@@ -1,0 +1,36 @@
+#+title: health probes and status probes for spring boot
+#+roam_tags: java
+
+* problem
+
+we often need to know if our app is working:
+1. if we can connect to the database
+2. if everything is ready to serve requests
+3. some metrics of the app like:
+   1. build information
+   2. configuration information
+
+* Spring actuators
+
+spring actuators implement health probes with just few lines of code
+
+** maven setup
+
+add this dependency:
+#+begin_src xml
+<dependency>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-starter-actuator</artifactId>
+</dependency>
+#+end_src
+
+** setup a port
+
+set a port and limit access to localhost
+
+within the application.properties:
+
+#+begin_src config
+management.server.port=9001
+management.server.address=127.0.0.1
+#+end_src

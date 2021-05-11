@@ -1,0 +1,53 @@
+#+title: track build information in jars
+#+roam_tags: java
+
+* problem
+
+when deploying apps, we need to know the version of a java build artifact related to the actual build id within the CI infra.
+
+This is especially critical on DEV environments as the version is usually a SNAPSHOT version.
+
+
+* how to implement this
+
+Inject the information in the jar's MANIFEST.MF file.
+
+** define a property
+
+define a named property with a default values like "local":
+
+#+begin_src xml
+<properties>
+  <build-id>local</build-id>
+</properties>
+#+end_src
+
+when calling maven in CI, just pass in a build time value like:
+
+#+begin_src sh
+mvn -Dbuild-id=$some-var <some goal>
+#+end_src
+
+
+** setup a maven-jar-plugin section
+
+now, use that property to setup your MANIFEST file.
+
+#+begin_src xml
+<plugin>
+  <groupId>org.apache.maven.plugins</groupId>
+  <artifactId>maven-jar-plugin</artifactId>
+  <version>3.2.0</version>
+  <configuration>
+    <archive>
+      <manifestEntries>
+        <Build-Id>${build-id}</Build-Id>
+      </manifestEntries>
+    </archive>
+  </configuration>
+</plugin>
+#+end_src
+
+** lifecycle
+
+in a split task CI, make sure the package lifecycle runs before integration tests, and verify
