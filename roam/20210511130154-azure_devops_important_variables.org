@@ -1,0 +1,7 @@
+#+title: azure devops important variables
+#+roam_tags: coding
+
+* some useful variables:
+
+$(Build.BuildId)
+$(Build.BuildNumber)

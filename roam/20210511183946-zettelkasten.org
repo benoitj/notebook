@@ -1,0 +1,8 @@
+#+title: zettelkasten
+
+Created by Niklas Luhmann
+
+Organization system where capturing ideas are at the front
+
+Described here:
+https://luhmann.surge.sh/communicating-with-slip-boxes
