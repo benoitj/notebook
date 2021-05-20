@@ -1,0 +1,6 @@
+#+title: terminal multiplexer
+
+a window manager for terminals:
+
+- TMux
+- Screen

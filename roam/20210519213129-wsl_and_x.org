@@ -1,0 +1,7 @@
+#+title: wsl and X
+
+you can run X on windows using wsl2 and an Xserver
+
+There are two Xserver easily available:
+- [[https://x410.dev/][x410]]
+- [[https://sourceforge.net/projects/vcxsrv/][VcXsrv]]
