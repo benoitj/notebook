@@ -1,0 +1,5 @@
+#+title: approval test
+
+technique where you assert against an approved version
+
+[[https://approvaltests.com]] has a library to implement it

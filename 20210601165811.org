@@ -1,0 +1,11 @@
+#+title: licensing
+
+* Certificate of origin
+
+My "signing-off"
+
+https://developercertificate.org/
+
+* license selection helper
+
+https://choosealicense.com/licenses/

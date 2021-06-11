@@ -1,0 +1,16 @@
+#+title: ebooks and audiobooks libraries
+
+* ebooks
+
+Lots of resources to find books online:
+ 1. [[https://manybooks.net/][ManyBooks]]
+ 2. [[https://archive.org/details/texts][internet archive]]
+ 3. [[https://freecomputerbooks.com][free computer books]]
+ 4. [[https://www.gutenberg.org/][Project gutenberg]]
+ 5. [[https://b-ok.cc/][z-library]]
+ 6. [[https://www.free-ebooks.net/][free ebooks]]
+
+
+* Audio books
+
+1. [[https://librivox.org/][librivox]]

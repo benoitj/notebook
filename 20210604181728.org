@@ -1,0 +1,25 @@
+#+title: wsl2 remote X access to host X server using xauth Xauthority
+
+
+great reference here: https://sourceforge.net/p/vcxsrv/wiki/VcXsrv%20%26%20Win10/
+
+from wsl2
+#+begin_src sh :noeval
+# get the IP ADDRESS NN.NN.NN.NN for your host machine. You may have to try a number
+# of different ways. Some are listed in this page. Others can be found on Microsoft's
+# support pages.
+export DISPLAY=NN.NN.NN.NN:0
+# IF you have docker installed on your windows host, you can just set the display to
+# export DISPLAY=host.docker.internal:0
+sudo apt install -y xauth coreutils gawk gnome-terminal
+xauth list # this should be an empty list
+magiccookie=$(echo '{some-pass-phrase}'|tr -d '\n\r'|md5sum|gawk '{print $1}')
+xauth add "$DISPLAY" . "$magiccookie"
+# Now check to see if it was added by doing
+xauth list # you should see the newly added entry for host.docker.internal
+# The line below assumes that you've installed your windows into the default location
+# C:\Windows folder. We use the cmd.exe to grab the location of the Windows' UserProfile
+# folder
+userprofile=$(wslpath $(/mnt/c/Windows/System32/cmd.exe /C "echo %USERPROFILE%" | tr -d '\r\n'))
+cp ~/.Xauthority "$userprofile"
+#+end_src

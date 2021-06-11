@@ -1,0 +1,41 @@
+#+title: hdhomerun apis
+
+* info site with API documents
+https://info.hdhomerun.com/info/http_api
+
+* discover device
+
+install hdhomerun_config and run:
+#+begin_src sh
+hdhomerun_config discover
+#+end_src
+
+* discover meta info about device
+
+Gives info about:
+- model
+- device id
+- device auth for silicondust api
+- firmware
+- linup url
+- number of tuners
+
+#+begin_src sh
+
+    curl <your device address>/discover.json
+
+#+end_src
+
+* line up
+
+#+begin_src sh
+curl <your device address>/lineup.json
+#+end_src
+
+* xmltv data
+
+you can obtain the guide from the api in xmltv format
+
+#+begin_src sh
+curl --compressed http://api.hdhomerun.com/api/xmltv?DeviceAuth=%DEVICEID%
+#+end_src

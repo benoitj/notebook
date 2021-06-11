@@ -1,0 +1,11 @@
+#+title: spring and correlation id
+
+you can create a x-b3-traceid or propagate it using _spring sleuth_ solution
+
+sleuth add trace and spran ids to the slf4j MDC
+
+it propagates or generates X-B3-TraceId
+
+it adds X-B3-TraceId and X-B3-SpanId to the MDC which can be retrieved in logback config format like:
+
+`....%X{X-B3-TraceId:-}`

@@ -1,0 +1,28 @@
+#+title: PhoenixServer pattern -- aka chaos architecture
+
+* Problem statement
+
+Ever got servers and services in prod that are not resilient to failures, no matter what tests you do in lower environments?
+
+The source could be configuration drift, software drift, or just missing redundancy
+
+* What is it?
+
+Build a Phoenix server: A server should be like a phoenix, regularly rising from the ashes.
+
+The idea is to create outages during the regular hours in prod to force teams to build resilient services. The time is important, as you want all teams ready to act during their work day.
+
+* If not phoenix, you have [[https://martinfowler.com/bliki/SnowflakeServer.html][SnowflakeServers]]
+
+* how to implement
+
+You can use tools like Puppet, Chef, Ansible to re-apply configuration, or kill docker containers
+
+* examples
+
+Netflix has the Simian Army
+
+
+
+* References
+https://martinfowler.com/bliki/PhoenixServer.html

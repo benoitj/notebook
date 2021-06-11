@@ -1,0 +1,14 @@
+#+title: dockerfile CMD and ENTRYPOINT
+
+* CMD
+controls what is executed
+
+* ENTRYPOINT
+controls the wrapper of the CMD
+
+there is always a default ENTRYPOINT
+
+
+* using both
+
+when using both, make sure you use the *exec* form of CMD/ENTRYPOINT by using an array of values like `ENTRYPOINT ["/init"]` and `CMD ["script"]`
