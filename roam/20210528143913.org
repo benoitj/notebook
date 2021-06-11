@@ -1,0 +1,15 @@
+#+title: convert capslock to control
+
+* Linux
+
+#+begin_src sh :noeval
+setxkbmap -option "ctrl:nocaps" <some layout>
+#+end_src
+
+* TODO Windows
+
+#+begin_src config :noeval :file ctrl.reg
+
+
+
+#+end_src

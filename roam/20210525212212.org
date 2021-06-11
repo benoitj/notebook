@@ -1,0 +1,18 @@
+#+title: object to json serialization
+
+Jackson is a featureful library to serialize from/to json and yaml
+
+* serialization
+#+begin_src java :noeval
+
+JavaTimeModule javaTimeModule = new JavaTimeModule();
+javaTimeModule.addDeserializer(LocalDateTime.class, new LocalDateTimeDeserializer(DateTimeFormatter.ISO_DATE_TIME));
+
+ObjectMapper objectMapper = new ObjectMapper();
+objectMapper.registerModule(javaTimeModule);
+
+objectMapper
+    .configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false)
+    .configure(DeserializationFeature.USE_BIG_DECIMAL_FOR_FLOATS, true);
+
+#+end_src

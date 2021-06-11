@@ -1,0 +1,14 @@
+#+title: POSIX shell variable expansion
+
+* keep anything after a glob pattern
+
+- # :: first match
+- ## :: last match
+
+#+begin_src sh :noeval
+
+myval="/home/foo/bar/file.txt"
+filename="${myval##*/}
+
+
+#+end_src

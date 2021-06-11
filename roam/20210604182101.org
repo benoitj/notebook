@@ -1,0 +1,11 @@
+#+title: vcxsrv remote X client using xauth Xauthority
+
+great reference here: https://sourceforge.net/p/vcxsrv/wiki/VcXsrv%20%26%20Win10/
+
+ensure you have your clients setup with a magic key shared
+
+Create a shortcut to load the XServer with the same Xauthority key
+
+#+begin_src powershell :noeval
+%ProgramFiles%\VcXsrv\vcxsrv.exe -multiwindow -clipboard -wgl -auth "%USERPROFILE%\.Xauthority" -logfile "%USERPROFILE%\VcXSrv.log" -logverbose 5
+#+end_src

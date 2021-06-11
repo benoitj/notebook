@@ -1,0 +1,16 @@
+#+title: irssi visual channel list
+
+use the adv_windowlist to view channel list like tabs at the bottom of the screen
+
+run the following commands:
+
+#+begin_src
+
+/run scriptassist
+/script install adv_windowlist
+/run adv_windowlist
+/script autorun adv_windowlist
+/toggle awl_viewer
+/save
+
+#+end_src

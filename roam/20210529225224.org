@@ -1,0 +1,3 @@
+#+title: remove duplicated files
+
+using the tool czkawka, you can detect and cleanup dup files

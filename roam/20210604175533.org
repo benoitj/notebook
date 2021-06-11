@@ -1,0 +1,27 @@
+#+title: xauth remote X session
+
+the .Xauthority is created by the server, and the information has to be added to the client's .Xauthority to work
+
+this is done using the .Xauthority on the "server" side:
+
+
+* basic commands
+** list existing auth
+#+begin_src sh :noeval
+xauth list
+#+end_src
+
+** add new auth for remote machine
+#+begin_src sh :noeval
+xauth add "<display>" . <hexkey>
+#+end_src
+
+* example of docker
+
+#+begin_src sh :noeval
+
+docker run -it --rm -v ~/.Xauthority:~/.Xauthority /bin/sh
+export DISPLAY="<machine or ip>:0.0"
+xauth_unixsocket="$(xauth list | grep unix)"
+xauth add "$DISPLAY" . "${xauth_unixsocket##* }"
+#+end_src

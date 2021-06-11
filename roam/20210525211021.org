@@ -1,0 +1,19 @@
+#+title: object mapping java mapstruct
+
+mapstruct is a great tool to create object - object mapper.
+
+It generates java code before compilation based on annotations.
+
+a typical mapper:
+
+#+begin_src java :noeval
+
+@Mapper
+public interface MyMapper {
+
+    @Mapping(target = "targetField", source = "sourceField")
+    Dest map(source);
+
+}
+
+#+end_src

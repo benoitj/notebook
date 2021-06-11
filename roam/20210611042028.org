@@ -1,0 +1,23 @@
+#+title: system cloning to another disk
+
+* the need
+
+move my arch installation from one drive to another, on exactly the same hardware
+
+* copy the information
+
+using rsync, you can copy all files.
+
+first mount the target drive, then copy files using this command:
+#+begin_src sh :noeval
+rsync -aHAXS --exclude /mnt / /mnt
+#+end_src
+
+* post copy
+
+1. boot on the arch stick
+2. mount all the drives including efi and boot
+3. modify the /etc/default/grub with the crypt drive command
+4. modify the fstab
+5. grub-install....
+6. grub-mkconfig -o /boot/grub/grub.cfg

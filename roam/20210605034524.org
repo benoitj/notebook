@@ -1,0 +1,10 @@
+#+title: text banner
+
+you can create text banner with the following tools:
+
+1. banner :: banner tool
+2. toilet :: another banner tool
+3. figlet :: another one
+4. cowsay :: generates a character banner
+5. lolcat :: animates and colorize text
+6. fortune :: generate quotes
