@@ -1,0 +1,17 @@
+#+title: definition of done -- DoD
+
+* story level
+** kicked off by the PO, QA, and developers
+** test scenarios defined
+** build green
+** CI
+** peer reviewed (imply quality verified)
+** desk checked
+** QA testing passed
+* iteration level
+** Interation Demo
+** Accepted by the PO and team as done
+* release level
+** regression tested
+** included in release notes
+** pass UAT testing

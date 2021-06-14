@@ -1,0 +1,12 @@
+#+title: INVEST mnemonic
+
+Means:
+- independent
+- negotiable
+- valuable
+- estimable
+- small
+- testable
+
+* see
+https://en.wikipedia.org/wiki/INVEST_(mnemonic)

@@ -1,0 +1,21 @@
+#+title: search /etc/group and /etc/passwd or other admin databases
+
+instead of using grep, you can use getent <group|user> <the user or group to find>
+
+it supports the following databases:
+ - ahosts
+ - ahostsv4
+ - ahostsv6
+ - aliases
+ - ethers
+ - group
+ - gshadow
+ - hosts
+ - initgroups
+ - netgroup
+ - networks
+ - passwd
+ - protocols
+ - rpc
+ - services
+ - shadow
