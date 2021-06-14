@@ -1,0 +1,11 @@
+#+title: MoSCow prioritization method
+
+Prioritization method which has 4 categories:
+ 1. M -- must have
+ 2. S -- should have
+ 3. C -- could have
+ 4. W -- won't have
+
+* See
+
+https://en.wikipedia.org/wiki/MoSCoW_method

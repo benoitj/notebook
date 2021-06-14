@@ -1,0 +1,8 @@
+#+title: definition of ready -- DoR
+
+* prioritized using [[file:20210614150450.org][MoSCow prioritization method]]
+* Adhere to [[file:20210614150814.org][SMART Criteria]]
+* Adhere to [[file:20210614151058.org][INVEST mnemonic]]
+* has clearly defined acceptance criteria
+* has estimated value
+* team (PO included) has reviewed and accepts it
