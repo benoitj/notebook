@@ -1,0 +1,3 @@
+#+title: verify your dependencies - security - vulnerabilities
+
+Veracode has a free FOSS open source ratings db

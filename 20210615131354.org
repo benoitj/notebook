@@ -1,0 +1,28 @@
+#+title: learn about a brownfield code base quickly
+
+
+
+Static code analysis is key:
+- sonar
+- pmd
+- checkstyle
+- CPD
+- code coverage
+- sloc
+- git stats
+- javadoc
+- jdepend
+- code-compass: Emacs code analysis tool that implements code as a crime scene
+- [[https://github.com/textarcana/code-risk][code-risk]]
+- CodeScene
+- [[https://github.com/aspiers/git-deps][git-deps]]
+- [[https://github.com/smontanari/code-forensics][code-forensics]] and [[https://github.com/adamtornhill/code-maat][code-maat]]
+- Gource
+- [[http://plantuml-depend.sourceforge.net][plantuml-depend]]
+
+* decompiling
+- visual paradigm
+- IntelliJ
+
+* books
+your code as a crime scene

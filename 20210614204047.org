@@ -1,0 +1,40 @@
+#+title: kafka
+
+* what it is?
+
+event streaming framework
+
+* qualities
+
+- pub/sub
+- fast
+- high accuracy
+- in order
+- fault tolerant
+
+* good uses
+
+- decouple dependencies (services)
+- messaging
+- location tracking
+- data gathering
+
+* APIs
+
+** Producer API
+produce directly to consumers for simple cases
+
+** Consumer API
+subscribe to one or more topics
+
+** Streams API
+
+transform data from producer
+
+middle man between producer and consumer
+
+consume data from producers, perform transformation and produce new data to existing or new topics
+
+** Connector API
+
+integrate to reusable data sources
