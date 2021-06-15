@@ -1,0 +1,21 @@
+#+title: malicious dependencies
+
+* Name squatting
+Leverage typos that could occur.
+
+prevent by:
+- pre-download and audit
+- use your own repo
+- monitor dependencies
+
+* Bit squatting
+Leverage bit errors
+
+prevent by:
+- download twice and compare
+- use your own repo
+
+
+* Other tricks
+
+https://www.veracode.com/services/assess-third-party-applications
