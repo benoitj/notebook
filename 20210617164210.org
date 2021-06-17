@@ -1,0 +1,7 @@
+#+title: lawnboy lawn mower
+
+* parts
+| item       | brand           | part#   |
+|------------+-----------------+---------|
+| air filter | Briggs Stratton | 491588S |
+|            |                 |         |
