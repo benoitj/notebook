@@ -1,0 +1,24 @@
+#+title: libera.chat matrix bridge
+
+* @appservice:libera.chat
+on matrix, create a discussion with @appservice:libera.chat
+
+then you can run commands to control your integration with irc.libera.chat.
+
+Here are useful commands:
+ - !help
+ - !join
+ - !nick
+ - !username
+ - !storepass
+ - !reconnect
+
+
+* @Nickserv:libera.chat
+create a dicussion, and run commands to nickserv
+
+- help
+- info
+- status
+- register...
+- verify...
