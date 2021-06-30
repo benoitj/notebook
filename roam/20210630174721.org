@@ -1,0 +1,9 @@
+#+title: git merge trivial
+
+* problem
+
+when non-trivial conflicts on a file, some merge tools dont look at the MERGED file created to remove any trivial merges from the conflict file.
+
+* git 2.31 mergtool.hideResolved
+
+set to true to remove trivial items from LOCAL and REMOTE

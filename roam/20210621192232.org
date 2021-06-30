@@ -1,0 +1,5 @@
+#+title: insurance / health modeling schemas
+
+Two standards to model medical/financial data:
+ 1. FHIR
+ 2. HL7
