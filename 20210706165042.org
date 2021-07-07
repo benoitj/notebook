@@ -1,0 +1,4 @@
+#+title: ledger gnuplot
+
+integration between ledger and gnuplot:
+https://emacs.stackexchange.com/questions/48674/org-babel-gnuplot-cannot-find-or-open-file-with-ledger-cli-report
