@@ -10,3 +10,9 @@
 https://lukespear.co.uk/mutt-multiple-accounts-mbsync-notmuch-gpg-and-sub-minute-updates/
 https://copyninja.info/blog/email_setup.html
 
+* cli
+** mblaze
+* indexer
+** notmuch
+** recall?
+** mu4e
