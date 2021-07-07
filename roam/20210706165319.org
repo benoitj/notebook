@@ -1,0 +1,7 @@
+#+title: email provider
+
+* migadu
+
+* mailbox.org
+
+* https://mxroute.com/
