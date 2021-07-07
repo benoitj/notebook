@@ -160,6 +160,10 @@ https://lobste.rs/
 http://www.retas.de/thomas/computer/programs/useless/piet/Piet/index.html
 
 * Inbox
+** [ ] read c book: Algorithms in C or the oreilly book
+** [ ] exercism.io
+** [ ] https://github.com/webframp/sicp-info
+** TODO setup git annex for computer videos
 ** TODO uptimebot vs other infra monitoring
 ** TODO intrusion detection
 fail2ban?
