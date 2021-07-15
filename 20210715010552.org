@@ -1,0 +1,47 @@
+#+title: languages I know
+
+* Currently using
+** experienced
+*** Java
+*** Drools (similar to prolog)
+*** Shell scripting (bash, POSIX)
+*** docker
+*** JSON
+*** SQL
+** on and off
+*** HTML
+*** javascript/ECMAScript
+*** XML /  XSLT
+*** Arduino (C++)
+*** Emacs LISP
+*** sed/awk
+*** python
+** learning
+*** golang
+*** lisp (clojure, guile-scheme)
+*** haskell
+** potential learning
+*** rust
+* used but not recently
+** Perl
+** C/C++
+** Delphi
+** Turbo Pascal
+** basic/vb
+** Beanshell
+** Groovy
+** python
+
+* havent touched in a long time
+** php
+** quakec
+** Plex (Telecom switch language used in older Ericsson switches)
+** 8086 Assembly
+** 68K Assembly
+** C#
+** Crystal
+** dBase
+** foxpro
+** M4
+** Matlab
+** ColdFusion
