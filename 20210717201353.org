@@ -1,0 +1,5 @@
+#+title: gpg key backup
+
+* using paperkey
+
+you can export print, and ocr back keys
