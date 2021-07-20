@@ -1,0 +1,5 @@
+#+title: paranoid nixos setup
+
+great article about locking down a nixos installation with bunch of readonly, root on ram, etc.
+
+https://christine.website/blog/paranoid-nixos-2021-07-18
