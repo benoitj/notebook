@@ -1,0 +1,7 @@
+#+title: youtube-dl playlist download
+
+* when downloading playlist, it can start slowing down. here is the possible fix
+
+#+begin_src bash :noeval
+youtube-dl --http-chunk-size 10M
+#+end_src
