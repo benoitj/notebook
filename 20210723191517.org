@@ -1,0 +1,4 @@
+#+title: selfhosting infrastructure
+
+* proxmox
+* https://k3s.io/
