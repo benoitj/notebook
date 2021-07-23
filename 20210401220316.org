@@ -7,11 +7,18 @@ this is an inventory of useful windows [[file:20210319133352-software.org][softw
 ** screen zones
 ** dark theme
 ** run prompt
-* music player
+* media player
 ** foobar
 * installer
 ** [[ninite.com][ninite]]
    create an installer for multiple tools
+** bulk crap uninstaller
+** chocolatey
+** [[https://scoop.sh/][scoop]]
+** Revo Uninstaller
+* file manager
+** teracopy
+** clover: add tabs to windows explorer
 * search tool
 ** everything
 * sound panel
@@ -22,11 +29,12 @@ this is an inventory of useful windows [[file:20210319133352-software.org][softw
 * video
 ** MKVToolNix
    edit mkv in both linux and windows
-* file management
-** Unlocker
-   list processes using files
+* process manager
+** process lasso: kind of like htop
+** Unlocker: list processes using files
 * terminal
 ** putty
+** mobaxterm
 * windows settings
 ** telemetry and other auto settings
 *** O&O ShutUp 10
@@ -36,5 +44,5 @@ this is an inventory of useful windows [[file:20210319133352-software.org][softw
 ** CrystalDiskInfo
 * password manager
 ** keepass
-* cleanup
-** Revo Uninstaller
+* nigth light
+** flux
