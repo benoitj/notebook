@@ -1,1 +1,4 @@
+:PROPERTIES:
+:ID:       7db0c191-fd6a-4f16-bb43-e6c1fd274032
+:END:
 #+title: plain text accounting

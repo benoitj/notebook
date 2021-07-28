@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       d06168d9-9c2e-48ae-a1b1-2eebf537d225
+:END:
 #+title: shopping for computer parts
 * shopping for parts:
 

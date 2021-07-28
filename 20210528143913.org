@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       931e2504-3cee-4beb-a1a8-3f94fc328a68
+:END:
 #+title: convert capslock to control
 
 * Linux

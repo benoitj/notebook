@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       f885be29-1f04-47eb-8ec6-5369b763e0b6
+:END:
 #+title: image upload site
 
 also has api:

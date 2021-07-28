@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       698b1203-0115-4196-b579-a461ecf5fd5c
+:END:
 #+title: extract url from buffer
 * find urls in a view
 ** urlview

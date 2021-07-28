@@ -1,5 +1,8 @@
+:PROPERTIES:
+:ID:       5ee77cac-1a35-46e5-bce5-40c958531f9c
+:END:
 #+title: linux tools
-#+roam_tags: it
+#+filetags: :it:
 
 This is an inventory of [[file:20210508104912-linux.org][linux]] [[file:20210508104947-software.org][software]]
 

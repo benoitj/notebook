@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       de3a3d7f-bcd9-42b0-aad4-6e8b22b0c231
+:END:
 #+title: java approval assertions
 
 com.approvaltests.approvaltests library can be used to implement [[file:20210318011029-approval_assertions.org][approval assertions]].

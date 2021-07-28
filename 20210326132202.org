@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       33adb51a-5f9e-40a3-b1ab-d66052bd2b48
+:END:
 #+title: text manipulation tricks
 
 * remove/squeeze empty lines into only one

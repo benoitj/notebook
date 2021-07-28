@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       006c3a86-0bf0-4b5b-a2df-5ea0337620a2
+:END:
 #+title: patio / deck rails
 * rails
 https://www.centuryrailings.com

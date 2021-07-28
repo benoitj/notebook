@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       5aa1e010-3066-414f-90d1-6d7832d75a01
+:END:
 #+title: mutation testing
 * Test automation
 

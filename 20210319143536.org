@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       4837ecaa-b540-49e3-920c-ddb950dbfa16
+:END:
 #+title: video processing using ffmpeg
 * merge files together
 ** create list of files to merge

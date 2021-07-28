@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       3ca19792-c58a-49ac-82e0-cbddd5f9d9bb
+:END:
 #+title: pxe netboot
 
 [[file:20200507124745-homelab.org][R:#homelab]]

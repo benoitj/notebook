@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       7800b86f-b59f-4783-9001-6a938a3add86
+:END:
 #+title: rust framework
 
 https://seed-rs.org/

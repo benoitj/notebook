@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       37d5971a-a9ce-4cf4-91ef-da8daf075d37
+:END:
 #+title: maven
 * How to
 ** basic setup

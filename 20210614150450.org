@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       46087c02-84ef-40b5-9e7e-76a84c4fba4b
+:END:
 #+title: MoSCow prioritization method
 
 Prioritization method which has 4 categories:

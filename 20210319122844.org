@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       6c7a562f-9a53-4f5b-b407-3ee73dcac83c
+:END:
 #+title: cli image editing
 * Imageagick
 

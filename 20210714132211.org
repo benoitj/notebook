@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       99ece873-3231-4f04-8519-d89115d3acf4
+:END:
 #+title: git tutorial
 
 * videos

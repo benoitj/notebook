@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       5e7e7124-78a0-400f-9cc8-03ded8b3c2d0
+:END:
 #+title: migrate emails using mbsync
 
 to migrate inbox, perform these steps:

@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       91082c1a-d087-4bf2-976e-b865279f561e
+:END:
 #+title: dotfiles
 
 [[file:20200418155222_homeit.org][R:@information technology]]

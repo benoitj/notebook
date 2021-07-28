@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       dc903f89-d756-46f9-9b70-8dda852984d3
+:END:
 #+title: java loggable annotations
 
 * what is it?

@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       745df6fb-c2f7-4eeb-99e5-ab22e1cb1d4b
+:END:
 #+title: selfhosting infrastructure
 
 * proxmox

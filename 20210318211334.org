@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       19603007-dc81-4673-998e-432a33e915c7
+:END:
 #+title: Drools
 
 - Onboarding guide: https://github.com/nheron/droolsonboarding

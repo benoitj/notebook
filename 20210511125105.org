@@ -1,5 +1,8 @@
+:PROPERTIES:
+:ID:       e280b67a-16d9-4bdc-a7cb-058195f2f9c0
+:END:
 #+title: track build information in jars
-#+roam_tags: java
+#+filetags: :java:
 
 * problem
 

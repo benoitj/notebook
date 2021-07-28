@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       31dc862b-133d-4a2b-98ae-2617458c0354
+:END:
 #+title: coding
 
 Include anything related to developing software. From creating code, to design, to test.

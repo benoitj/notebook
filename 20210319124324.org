@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       f83a50e3-1bce-421a-8f5d-feeb3c7357e0
+:END:
 #+title: selfhosting
 #+title: selfhosting software
 

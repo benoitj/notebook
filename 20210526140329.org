@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       4da9d7fa-5b4c-4f49-b8a6-c81962e1c7a3
+:END:
 #+title: spring and correlation id
 
 you can create a x-b3-traceid or propagate it using _spring sleuth_ solution

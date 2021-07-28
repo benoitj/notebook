@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       e7807815-db2d-4a88-8f5e-554f639e9bea
+:END:
 #+title: object mapping java mapstruct
 
 mapstruct is a great tool to create object - object mapper.

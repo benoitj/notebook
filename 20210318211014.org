@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       75c736b7-b09d-4ac6-b59a-9e0dc04915fb
+:END:
 #+title: code coverage
 
 * what is code coverage

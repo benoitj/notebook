@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       58b5d543-b8e7-487c-84ab-d1db18f62dad
+:END:
 #+title: java service locator
 * What is it?
 

@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       6f19483a-7015-42c4-97e6-633bd49548c5
+:END:
 #+title: music dynamic range
 
 tags :: [[file:20201223205029-audiophile.org][R:audiophile]]

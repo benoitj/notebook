@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       49a1af30-fa26-4919-b304-0a9a139a3883
+:END:
 #+title: kafka
 
 * what it is?

@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       2112b28f-f16e-4d8c-bdc2-92738eef4497
+:END:
 #+title: system cloning to another disk
 
 * the need

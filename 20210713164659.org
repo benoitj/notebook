@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       5b6f68d2-81e3-40b4-996e-0a8dd7534fda
+:END:
 #+title: org table spreadsheet
 
 * cheatsheet

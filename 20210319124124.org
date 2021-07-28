@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       7b7cee6a-61c4-4124-b1d6-9c3c354476dd
+:END:
 #+title: pihole block lists
 
 * some block lists

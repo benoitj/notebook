@@ -1,6 +1,9 @@
+:PROPERTIES:
+:ID:       51d39b9a-6a72-4165-88e1-298f7abfb043
+:END:
 #+title: maven plugins
 
-list of many useful plugins for [[file:20210318213145.org][maven]]
+list of many useful plugins for [[id:37d5971a-a9ce-4cf4-91ef-da8daf075d37][maven]]
 
 * list of useful plugins
 |--------------------------------+---------------------------------+-------------------------------------------------------------------------------------------|

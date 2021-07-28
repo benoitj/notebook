@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       1aca93da-cb99-4459-b961-42ac91242819
+:END:
 #+title: blog ideas
 * ideas
 ** blogging?

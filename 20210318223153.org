@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       42dff9ce-8dd4-46d5-b6ef-067ade850e0f
+:END:
 #+title: diy radio
 [[file:20200610195512-electronics.org][R:electronics]]
 

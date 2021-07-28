@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       414ffe19-c221-4891-957c-747e71fdd5f1
+:END:
 #+title: email provider
 
 * migadu

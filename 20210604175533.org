@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       cce59293-bfaf-4c20-9608-f8391d307e3d
+:END:
 #+title: xauth remote X session
 
 the .Xauthority is created by the server, and the information has to be added to the client's .Xauthority to work

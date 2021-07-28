@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       145b9874-fbe8-4d0f-8118-dac2e836956e
+:END:
 #+title: verify your dependencies - security - vulnerabilities
 
 Veracode has a free FOSS open source ratings db

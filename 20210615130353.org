@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       71b51a62-c476-4120-a22f-2d8048d41429
+:END:
 #+title: malicious dependencies
 
 * Name squatting

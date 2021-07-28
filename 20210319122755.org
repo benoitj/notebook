@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       b22d2f99-080f-4bfc-b4d2-36e559307923
+:END:
 #+title: fediverse
 * Developer community
 ** dev.to

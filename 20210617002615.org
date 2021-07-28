@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       fcd914b5-9466-4970-9198-ce4492d9b53a
+:END:
 #+title: libera.chat matrix bridge
 
 * @appservice:libera.chat

@@ -1,8 +1,11 @@
+:PROPERTIES:
+:ID:       c55cadbb-6e82-40d0-9014-31d85fa5ab02
+:END:
 #+title: definition of ready -- DoR
 
-* prioritized using [[file:20210614150450.org][MoSCow prioritization method]]
-* Adhere to [[file:20210614150814.org][SMART Criteria]]
-* Adhere to [[file:20210614151058.org][INVEST mnemonic]]
+* prioritized using [[id:46087c02-84ef-40b5-9e7e-76a84c4fba4b][MoSCow prioritization method]]
+* Adhere to [[id:d2f4ad67-f7cf-4235-89e1-88e19bdbc6ef][SMART Criteria]]
+* Adhere to [[id:52a83183-9853-4f78-b52c-c496ff8afe84][INVEST mnemonic]]
 * has clearly defined acceptance criteria
 * has estimated value
 * team (PO included) has reviewed and accepts it

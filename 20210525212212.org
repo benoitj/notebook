@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       ad62197f-2ad6-4f70-b690-664b425e92e5
+:END:
 #+title: object to json serialization
 
 Jackson is a featureful library to serialize from/to json and yaml

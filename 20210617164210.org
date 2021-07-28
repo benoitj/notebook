@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       1a9eb1a2-07ff-4b70-9791-c9b05d784a12
+:END:
 #+title: lawnboy lawn mower
 
 * parts

@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       1fdba974-ffd8-4777-85f1-046128c6688e
+:END:
 #+title: RSS reddit
 
 Reddit support RSS by default. Just add /.rss/ to any redit urls.

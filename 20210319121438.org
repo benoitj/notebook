@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       9a246a30-fea0-4bc9-9735-a1cd68efe30f
+:END:
 #+title: star citizen
 * bought
 ** crusader

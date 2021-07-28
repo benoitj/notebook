@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       28cedbd2-c24c-49e0-a2a3-47dd8cbdc993
+:END:
 #+title: ebooks and audiobooks libraries
 
 * ebooks

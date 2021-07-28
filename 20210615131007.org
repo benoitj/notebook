@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       1d28810b-ce92-457d-8711-872bba415272
+:END:
 #+title: security scanners
 
 - veracode

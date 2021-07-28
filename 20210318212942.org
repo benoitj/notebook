@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       e85b1534-a231-497d-ac54-52e42c0e29f0
+:END:
 #+title: java sorting with nulls
 * comparing with null lasts
 

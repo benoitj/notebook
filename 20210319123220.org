@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       e1bab25e-c1c8-46d2-b265-8bb510d99f6e
+:END:
 #+title: partitions and filesystems
 
 [[file:20200418155222_homeit.org][R:@information technology]]

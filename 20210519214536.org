@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       971e8016-856e-4b02-af43-f07e34dd74db
+:END:
 #+title: terminal multiplexer
 
 a window manager for terminals:

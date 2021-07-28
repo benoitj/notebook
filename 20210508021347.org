@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       fd8cb015-04bc-4bcd-8c0f-4889e97c593e
+:END:
 #+title: org mode sql
 
 * lets try it

@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       cca4ba80-de78-4728-8ed6-d3df16d21957
+:END:
 #+title: simple css
 
 - https://mcss.mosra.cz

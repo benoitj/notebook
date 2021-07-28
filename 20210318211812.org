@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       463d50b4-2841-4f32-84da-d08f096be9ff
+:END:
 #+title: git config
 
 * IntelliJ, cli, and Azure DevOps

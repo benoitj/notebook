@@ -1,5 +1,8 @@
+:PROPERTIES:
+:ID:       b5933c00-9b55-41df-b931-677ddb0b522e
+:END:
 #+title: wiregard vpn
-#+ROAM_TAGS: it
+#+filetags: :it:
 * What is it?
 
 A fast and simpler VPN alternatives to OpenVPN.

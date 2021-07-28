@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       b8c2ca10-f621-4eb3-b4f3-c47be27e4b06
+:END:
 #+title: ssl certificates
 
 [[file:20201016152952-protocol.org][R:protocol]]

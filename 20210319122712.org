@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       ba7b60d1-2d58-41b0-82a9-a19fa2c0f03b
+:END:
 #+title: email client
 * indexer
 ** Notmuch

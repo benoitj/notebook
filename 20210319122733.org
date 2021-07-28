@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       26d7827c-525b-4e2c-bbcf-d30e67d88255
+:END:
 #+title: email services
 
 [[file:20200418155222_homeit.org][R:#homeit]]

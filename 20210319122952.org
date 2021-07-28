@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       8d4afd51-ec87-4fa9-a45a-0dcc8c255dd6
+:END:
 #+title: software keyboard
 * Software keyboards or related input devices
 

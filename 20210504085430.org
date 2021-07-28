@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       fab625ca-0394-49ff-a3e5-7c9983eae1ea
+:END:
 #+title: org mode rest client
 
 * within org mode

@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       6c3d8301-ac4e-496e-9a23-3d674558f6e8
+:END:
 #+title: gentoo
 * useful commands
 

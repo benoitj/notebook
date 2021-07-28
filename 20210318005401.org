@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       f2e899cc-10eb-472f-9114-c93c4507f532
+:END:
 #+title: servers
 
 lots of nice servers to use for home labs:

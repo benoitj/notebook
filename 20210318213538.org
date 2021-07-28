@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       3b915efb-5bc2-4cac-8f38-d3e0650ec4af
+:END:
 #+title: handling money in programming
 
 * Money as an object

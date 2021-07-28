@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       c496a17d-79bf-409e-95e8-91575e8d14b0
+:END:
 #+title: java reflection equals/hashcode/tostring
 * Equals and Hashcode
 

@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       1e504e7d-2d73-4621-9e28-5a0ded06ee66
+:END:
 #+title: languages I know
 
 * Currently using

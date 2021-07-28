@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       ba02afbe-4ba0-476f-a914-21dba07fb382
+:END:
 #+title: hibernate
 * Logging long running queries
 

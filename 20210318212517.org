@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       5bbb641b-d8d6-4024-9433-37ec2509da5b
+:END:
 #+title: java classpath url handler
 
 this is about loading files from the classpath. something like classpath:myfile.conf

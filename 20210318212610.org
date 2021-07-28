@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       5ee6b4a7-d684-442b-8176-370d4c4e942d
+:END:
 #+title: java in-memory filesystem
 * Why
 

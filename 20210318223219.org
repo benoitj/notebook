@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       87e0e062-9e07-4e73-bedf-484f8a9f2fa2
+:END:
 #+title: wii controller repair
 [[file:20201213125107-console.org][R:console]]
 

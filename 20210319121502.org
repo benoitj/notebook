@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       60042828-3f00-4aef-b4a4-3b53bcdce0ea
+:END:
 #+title: virtual games
 * keep talking so nobody explodes
 ** TODO print another book for Christian

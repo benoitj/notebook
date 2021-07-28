@@ -1,1 +1,4 @@
+:PROPERTIES:
+:ID:       733b58c6-9978-4161-b2d2-25f028c6555c
+:END:
 #+title: software

@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       ee097504-4714-4130-99db-85af22aa59de
+:END:
 #+title: online chess
 
 * TODO Play chess online

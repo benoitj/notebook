@@ -1,5 +1,8 @@
+:PROPERTIES:
+:ID:       31f59216-b921-478a-8d61-d69bce39d384
+:END:
 #+title: license keys
-#+roam_tags: it
+#+filetags: :it:
 
 * site with keys
 

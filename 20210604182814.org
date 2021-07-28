@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       826b8b66-f8d8-49bf-a331-dc43ad8ddf77
+:END:
 #+title: POSIX shell variable expansion
 
 * keep anything after a glob pattern

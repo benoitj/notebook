@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       1807adc1-0478-4493-b186-90a36675c110
+:END:
 #+title: safe / scaled agile framework
 * What is it
 The Scaled Agile Framework (abbreviated as SAFe) is a set of organization and

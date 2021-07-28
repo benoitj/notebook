@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       90040d88-678e-405c-90da-b505eb5493f8
+:END:
 #+title: emacs modes
 * Interesting plugins not yet used
 ** subed: major mode to edit subtitles

@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       2007d3d7-a678-4251-9bed-aefd3e9999d7
+:END:
 #+title: write a custom maven plugin
 
 * Why

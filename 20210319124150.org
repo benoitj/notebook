@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       ffaf02f6-a928-4e69-8147-abf85f2fd178
+:END:
 #+title: plaintext
 * Productivity
 

@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       e5e99ee8-997a-4e7a-a32f-0b935d87b735
+:END:
 #+title: vcxsrv remote X client using xauth Xauthority
 
 great reference here: https://sourceforge.net/p/vcxsrv/wiki/VcXsrv%20%26%20Win10/

@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       73967773-f7b8-49f7-8003-ae30b5d950c5
+:END:
 #+title: insurance / health modeling schemas
 
 Two standards to model medical/financial data:

@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       498addc8-33ec-4a59-9065-4f1c40aef6d5
+:END:
 #+title: approval test
 
 technique where you assert against an approved version

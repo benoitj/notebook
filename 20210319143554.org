@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       b11f5a13-ba29-4086-966d-07c7fd5bfc86
+:END:
 #+title: webmention
 * Description
 

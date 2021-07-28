@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       7b7b1a26-8ebb-4f66-a53c-94a35be4bba6
+:END:
 #+title: design patterns
 
 Various kind of design patterns:

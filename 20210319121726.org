@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       6ef8afb2-fee7-4c0a-9d53-5d0cad722e75
+:END:
 #+title: statutory holidays in quebec
 http://www.statutoryholidays.com/quebec.php
 

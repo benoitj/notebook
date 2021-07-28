@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       d4ba7285-9269-4736-8f87-a6dd66ff4a86
+:END:
 #+title: agile software manifesto
 
 An efficient [[file:20210318010731-coding.org][coding]] practice

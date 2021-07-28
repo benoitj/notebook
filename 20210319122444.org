@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       7e45f8bb-54ac-4a41-b7ea-f5e600715865
+:END:
 #+title: cli tools
 * File Metadata
 ** TODO mediainfo

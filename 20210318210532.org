@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       8e6e623b-3317-4896-a940-0617d5a427bb
+:END:
 #+title: java characteristic assertions
 
 

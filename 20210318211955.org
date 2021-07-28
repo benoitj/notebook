@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       c3c1f306-49e5-4058-bf05-9ce7c96e169c
+:END:
 #+title: git analytics
 
 * [[https://github.com/adamtornhill/code-maat][code-maat]]: perform analytics measurements using git

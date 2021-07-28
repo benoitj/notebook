@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       b20adea4-ab21-4309-ba01-0f0d8c1b6f3e
+:END:
 #+title: java static code analysis - architecture
 
 * test architecture

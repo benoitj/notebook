@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       822ac942-cea4-45cc-b6e4-9c1253b10340
+:END:
 #+title: cli commands for process memory usage
 * process memory usage
 

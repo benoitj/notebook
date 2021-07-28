@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       acac5ac5-bbe2-486e-8014-d02bcbbe8a90
+:END:
 #+title: obs open broadcasting software
 * using obs to share desktop and others as a virtual video device
 

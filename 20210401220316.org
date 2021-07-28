@@ -1,5 +1,8 @@
+:PROPERTIES:
+:ID:       840d59f3-4a53-4be5-b192-18edb4f8a616
+:END:
 #+title: windows tools
-#+roam_tags: it
+#+filetags: :it:
 
 this is an inventory of useful windows [[file:20210319133352-software.org][software]]
 

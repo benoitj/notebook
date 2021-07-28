@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       7497902c-82cf-48f1-9c69-17af1f2e8e71
+:END:
 #+title: servers hardware
 * Why to buy refurbished parts and servers?
 

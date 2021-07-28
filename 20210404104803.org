@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       f4436d40-f271-46df-bd7e-d56e42c12313
+:END:
 #+title: iot zigbee
 
 * build your own hub

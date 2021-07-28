@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       1a776278-3d84-40fe-b1ae-c8ba8b681741
+:END:
 #+title: remove duplicated files
 
 using the tool czkawka, you can detect and cleanup dup files

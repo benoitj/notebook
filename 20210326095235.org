@@ -1,5 +1,8 @@
+:PROPERTIES:
+:ID:       69d65635-a1f6-48b8-8c08-834de22f8555
+:END:
 #+title: spring cloud
-#+ROAM_TAGS: spring java coding it
+#+filetags: :spring:java:coding:it:
 
 
 * spring cloud gateway

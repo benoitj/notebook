@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       3018a55b-4601-42da-8cfc-219f20709524
+:END:
 #+title: implement zettelkasten ids with org roam
 
 each note in [[file:20210511183946-zettelkasten.org][zettelkasten]] has a unique id that does not imply any organization. a good method is to use a ISOSEC timestamp that is unique up to the second.

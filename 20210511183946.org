@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       13f27ab0-3277-463d-8626-70a970efffb6
+:END:
 #+title: zettelkasten
 
 Created by Niklas Luhmann

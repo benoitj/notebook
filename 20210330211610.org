@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       8290544b-f6b6-4b14-a514-fb0d8898f2da
+:END:
 #+title: tap hold control/esc
 
 * with qmk

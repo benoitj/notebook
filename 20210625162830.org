@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       71925b96-91a4-4ecc-8f68-e8bcdd48fe2b
+:END:
 #+title: games in emacs
 
 * dunnet

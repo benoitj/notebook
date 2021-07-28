@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       b8ec65d4-f76f-49aa-95c0-5299f131783a
+:END:
 #+title: emacs creating modes
 
 Extending Emacs

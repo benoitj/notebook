@@ -1,1 +1,4 @@
+:PROPERTIES:
+:ID:       f768ef9c-d17e-49d3-a889-3f72d36df94d
+:END:
 #+title: linux

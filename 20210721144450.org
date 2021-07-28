@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       e73a5e7b-a896-478f-8a3b-f4e8ae007506
+:END:
 #+title: youtube-dl playlist download
 
 * when downloading playlist, it can start slowing down. here is the possible fix

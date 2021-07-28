@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       6d1a5299-163d-4a76-ad35-c438b9fd719e
+:END:
 #+title: compare Collection with AssertJ
 
 The following are tricks to make AssertJ compare list as equivalent if they have the same values for a collection, but without requiring the same implementation.

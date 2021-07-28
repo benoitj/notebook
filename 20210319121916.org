@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       4a7c7a26-0c5b-4860-979b-ed7a11b97df4
+:END:
 #+title: learning antipatterns
 * Too busy to learn
 said by a coder from a client

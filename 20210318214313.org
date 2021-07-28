@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       1edbd51a-0482-402e-a811-aa39f6b551aa
+:END:
 #+title: convert unicode to ascii in java
 
 This is done in 2 step:

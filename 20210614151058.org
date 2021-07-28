@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       52a83183-9853-4f78-b52c-c496ff8afe84
+:END:
 #+title: INVEST mnemonic
 
 Means:

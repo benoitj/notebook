@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       50681768-cd3f-455d-af4d-d6202869b38b
+:END:
 #+title: azure devops cli
 
 * how to connect to the API

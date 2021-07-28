@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       dce844dd-9d1b-4f58-99df-56a6e88c6d9c
+:END:
 #+title: hdhomerun apis
 
 * info site with API documents

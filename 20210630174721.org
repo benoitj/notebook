@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       aecc740c-6b64-40e3-8841-e7555f380f51
+:END:
 #+title: git merge trivial
 
 * problem

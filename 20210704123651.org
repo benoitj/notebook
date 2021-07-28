@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       892c08a0-7db2-4bc6-be9d-1b210be08e60
+:END:
 #+title: scuttlebut - decentralized social media
 
 secure scuttlebut is a decentralized disconnected social media.

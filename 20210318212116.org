@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       a6a86bfd-7236-4f66-a5c6-47b024fcb4ad
+:END:
 #+title: emacs lsp
 * golang
 https://arenzana.org/2019/12/emacs-go-mode-revisited/

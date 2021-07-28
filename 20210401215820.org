@@ -1,5 +1,8 @@
+:PROPERTIES:
+:ID:       d577dc85-eb41-456c-ab58-494d0f729d7b
+:END:
 #+title: windows activation
-#+roam_tags: it
+#+filetags: :it:
 
 
 * where to buy

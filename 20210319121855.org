@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       99248d80-14c2-4057-b46b-0bbb16974dcf
+:END:
 #+title: learning sites
 * learning sites
 ** https://learnawesome.org/

@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       ca7136fb-b1df-41f8-89d4-387e66ee7fdd
+:END:
 #+title: gpg key backup
 
 * using paperkey

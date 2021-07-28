@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       5bb6faac-2f48-4a1a-9900-6adc6ec483b0
+:END:
 #+title: approval assertions
 
 Approval assertions is a [[file:20210318010731-coding.org][coding]] concept

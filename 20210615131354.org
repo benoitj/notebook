@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       e6344f1d-39a9-4252-9007-a9199177c5f6
+:END:
 #+title: learn about a brownfield code base quickly
 
 

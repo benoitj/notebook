@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       f9d77662-833b-4df4-8f61-59b60411a1e4
+:END:
 #+title: java predicate assertions
 
 

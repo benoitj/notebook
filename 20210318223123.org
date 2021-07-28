@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       3714d6de-a8a0-4275-9938-c0fc8f03ffa9
+:END:
 #+title: bus pirate
 #+title: bus pirate
 

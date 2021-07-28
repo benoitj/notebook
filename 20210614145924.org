@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       cf8e5a22-6ecd-40c3-9408-477063888948
+:END:
 #+title: definition of done -- DoD
 
 * story level

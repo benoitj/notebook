@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       f8174c82-46b0-45e8-a903-7a871ddacc74
+:END:
 #+title: wsl and X
 
 you can run X on windows using wsl2 and an Xserver

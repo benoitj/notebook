@@ -1,5 +1,8 @@
+:PROPERTIES:
+:ID:       72b61718-d217-4729-b245-f58ddc808055
+:END:
 #+title: azure devops important variables
-#+roam_tags: coding
+#+filetags: :coding:
 
 * some useful variables:
 

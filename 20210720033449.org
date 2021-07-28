@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       828f65bc-7e98-4e49-b3ae-677e5b5b3222
+:END:
 #+title: paranoid nixos setup
 
 great article about locking down a nixos installation with bunch of readonly, root on ram, etc.

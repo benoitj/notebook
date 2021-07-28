@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       0b6a6ca3-55cd-48c8-b32c-92bdb1d375ac
+:END:
 #+title: ledger gnuplot
 
 integration between ledger and gnuplot:

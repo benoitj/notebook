@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       079e4022-0fd4-4836-bd5b-72851214c201
+:END:
 #+title: emacs configuration
 * configuration examples / blogs
 ** https://pizza.eli.li/wiki/emacs-config/

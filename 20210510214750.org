@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       dde0d4c6-5957-45b2-b9ae-31eda39d06bb
+:END:
 #+title: twitch irc
 
 * authenticate with oauth

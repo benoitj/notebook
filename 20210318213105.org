@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       8dcf1f66-f8d7-4f8b-80ab-3cc3ce5b853a
+:END:
 #+title: load properties in memory using java
 * with spring
 

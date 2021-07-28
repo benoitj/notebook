@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       79fd7185-fc8a-4f45-b304-901bd419c2a1
+:END:
 #+title: esoteric programming languages
 
 https://esolangs.org/wiki/Esoteric_programming_language
