@@ -1,0 +1,27 @@
+:PROPERTIES:
+:ID:       28fbbd09-7720-4094-aa66-cf18782bc999
+:END:
+#+title: list signed/unsigned git commits
+
+* cli
+** detailed log view
+
+add the ~--show-signature~
+
+** summary log view
+
+adding ~%G?~ to the log format gives you a summary view of
+
+#+begin_src sh :noeval
+git log --pretty="format:%h %G? %aN  %s"
+#+end_src
+
+* magit
+
+in magit, trigger magit-log (~space g g~ and then ~l~)
+
+In the magit log:
+- enable show signature (~=S~)
+- enable color (~-c~)
+
+commits in grey are not signed
