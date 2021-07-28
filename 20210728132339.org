@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       67011a88-e9ee-4e58-af44-c677962178e5
+:END:
+#+title: sign unsigned git commits
+
+* principle
+
+to sign unsigned commits you need:
+ 1. [[id:28fbbd09-7720-4094-aa66-cf18782bc999][list signed/unsigned git commits]]
+ 2. rebase interactive these commits
+ 3. set the unsigned commits to ~edit~
+ 4. ~git commit --amend --no-edit~
+ 5. ~git rebase --continue~ until done
