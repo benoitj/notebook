@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       64f5df04-049b-4834-90dd-f8e94edb86f0
+:END:
+#+title: bbs
+
+* bbs related resources
+
+- http://textfiles.com/
+- http://mysticbbs.com/
+- bbs games: https://bbsgametime.com/
+- bbs registry: http://bbs.guide/
+- bbs like website: http://bbs.nz/
