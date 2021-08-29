@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       1b5d0d88-04f4-4cb9-aa50-79a7a8833e6a
+:END:
+#+title: shell script compilation
+
+It's possible to compile a script into an executable.
+
+See https://github.com/neurobin/shc
