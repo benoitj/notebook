@@ -1,7 +1,7 @@
 :PROPERTIES:
 :ID:       0b928bb6-0261-48b2-a5dd-114647ba7e14
 :END:
-#+title: text banner
+#+title: text banners in the terminal
 
 you can create text banner with the following tools:
 
