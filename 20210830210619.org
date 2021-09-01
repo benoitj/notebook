@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       53955350-18da-466a-b488-aa31d4d31181
+:END:
+#+title: bash/shell tools and libraries
+
+* Best tool for linting: shellcheck
+* xUnit test tool for bash: https://github.com/kward/shunit2
+* logging: https://github.com/kward/log4sh
+* option parsing: https://github.com/kward/shflags
+* script runner/test: https://github.com/simonmichael/shelltestrunner
