@@ -1,0 +1,32 @@
+:PROPERTIES:
+:ID:       a25ff99e-a34b-4e9b-b213-7b5a9a0e9d6b
+:END:
+#+title: backups with borg backup and borgmatic
+
+* what is it?
+
+*Borg* is a block level, remote backup systems that uses ssh, and encryption.
+
+*Borgmatic* is a borg backup script to manage retention of daily, weekly, and monthly
+
+* interesting commands
+
+** run all backups
+simply by running `borgmatic`
+** list existing backups
+
+#+begin_src bash :noeval
+borgmatic list
+#+end_src
+** mount a backup
+
+#+begin_src bash :noeval
+borgmatic mount --mount-point backup/ --archive milhouse-2021-07-07T22:32:38.031856
+
+#+end_src
+
+** unmount a backup
+
+#+begin_src bash :noeval
+borgmatic umount --mount-point backup/
+#+end_src
