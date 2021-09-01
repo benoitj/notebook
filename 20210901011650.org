@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       a049f461-92e9-486f-93fd-54cdcc013290
+:END:
+#+title: resources for emacs packages
+
+* linting
+https://github.com/purcell/package-lint
