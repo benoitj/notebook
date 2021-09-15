@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       77d014bc-9a26-40c7-8826-7d09cf20bfd8
+:END:
+#+title: sql-mode emacs
+
+is an alternative to org-mode's sql babel.
+
+* sql-mode
+
+in an buffer, you can enable sql-mode
+* getting help
+
+run the command sql-help
+* database repl
+
+start a repl with one of the sql-<database> commands
