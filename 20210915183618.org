@@ -1,0 +1,37 @@
+:PROPERTIES:
+:ID:       584dd177-e1da-484a-941e-cc5cb60ae2ed
+:END:
+#+title: cord cutter
+* articles
+** http://lifehacker.com/5475091/how-can-i-ditch-cable-and-watch-my-tv-shows-and-movies-online
+** http://www.milliondollarjourney.com/how-to-get-free-hdtv-in-canada.htm
+
+* Video
+** Free
+*** [abc.com](http://abc.com)
+*** [cbc.com](http://cbc.com)
+*** [nbc.com](http://nbc.com)
+*** [tou.tv](http://tou.tv)
+*** [fox.com](http://fox.com)
+** Paid
+*** [amazon vod](http://vod.amazon.com)
+*** [netflix](http://netflix.com): 7.99$ / month
+*** [hulu paid](http://hulu.com)
+*** [itunes](http://itunes.com)
+*** [mls soccer](http://live.mlssoccer.com):  60$ for the season
+
+
+ great site: http://lifehacker.com/5475091/how-can-i-ditch-cable-and-watch-my-tv-shows-and-movies-online
+
+*** satellite tv: http://www.satellitedirect.com (3500 ch, 500 can, 49$ one time)
+
+* Music
+** hdtracks.com
+** itrax.com
+** eclassical.com
+** beatport.com
+** livedownloads.com
+
+* DNS Redirector / VPN
+- [unovpn](http://www.unotelly.com): ~4.99 / month
+- [unblockus](http://www.unblock.us)
