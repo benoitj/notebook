@@ -13,6 +13,11 @@ Lots of resources to find books online:
  5. [[https://b-ok.cc/][z-library]]
  6. [[https://www.free-ebooks.net/][free ebooks]]
 
+* books store I bought from
+** Amazon
+** Humble bundle
+** Packtl
+** no starsh
 
 * Audio books
 
