@@ -1,0 +1,51 @@
+:PROPERTIES:
+:ID:       d662278d-7923-46ec-8fa4-80e94fd36bec
+:END:
+#+title: sound proofing a room
+
+* STC
+
+stc is a measure of sound absobtion
+
+40: minimum. regular speach mumble, but loud speech audible
+50: load speach reduced
+60>: loud noise reduced to minimum
+
+* ceiling
+
+this is >60 STC and also blocks vibration
+- r12 fiberglass (or sound insulation like rockwool)
+- resilient channels
+- 5/8 drywall (not the light)
+- green glue compound
+- 5/8 drywall (not the light)
+
+
+* wall
+
+regular stud wall: stc 35
+with insulation: stc 40
+double sheet both sides 1/2: 46
+double sheets both sides 5/8: ~50
+double wall with double outer sheets and no inner sheets: ~60
+
+stud at 24" on center adds
+
+w/ green glue accoustic
+References:
+https://www.youtube.com/watch?v=GLjhrXFo0Kw
+
+* door
+
+ref:
+https://www.youtube.com/watch?v=zY_2kBYg3rY
+
+* electric fixture
+
+use putty pads around them
+
+* sound deadening insulations
+
+** fiberglass
+** rockwool mineral insulation
+has 24" on center for 2x4
