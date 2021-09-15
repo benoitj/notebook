@@ -87,6 +87,8 @@ sed 's/#.*//' /etc/fstab | column --table --table-columns SOURCE,TARGET,TYPE,OPT
 **** feh: simple image viewer
 *** system
 **** unclutter-xfixes: hide mouse when not used
+*** cad
+**** sweet home 3d: interior design cad
 
 ** web apps
 
