@@ -23,6 +23,7 @@
 *** golang
 *** lisp (clojure, guile-scheme)
 *** haskell
+*** RockStar
 ** potential learning
 *** rust
 * used but not recently
