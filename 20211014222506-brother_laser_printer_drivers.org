@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       3a04a26a-93ad-4515-ac6c-06eee71577e8
+:END:
+#+title: brother laser printer drivers
+
+Brother drivers are i386 drivers and cant be installed on raspberry pi
+
+There is an open source driver for cups named brlaser here: https://github.com/pdewacht/brlaser
