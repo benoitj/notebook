@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       f1e3df6b-85e5-47af-af7d-b5e0e3b81911
+:END:
+#+title: gardening code and code maintenance
+
+Gardening code is closer to the reality than building or construction
