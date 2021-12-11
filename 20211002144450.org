@@ -1,0 +1,57 @@
+:PROPERTIES:
+:ID:       e9304387-f9da-41bb-afb3-a9511d9e6ed6
+:END:
+#+title: norris' number - code complexity vs retention
+
+
+* the text
+In 2011 John D. Cook wrote the following [[http://www.johndcook.com/blog/2011/11/22/norris-number/][blog post]]:
+
+#+begin_quote
+My friend Clift Norris has identified a fundamental constant that I call Norris’ number, the average amount of code an untrained programmer can write before he or she hits a wall. Clift estimates this as 1,500 lines. Beyond that the code becomes so tangled that the author cannot debug or modify it without herculean effort.
+#+end_quote
+
+I don’t know enough novice programmers to confirm this effect, but I had independently noticed the next wall in the programmer’s journey, which happens at 20,000 lines. I’ll change Norris’s number to 2,000 to get a nice power of ten jump.
+
+I ran into the 20,000-line wall repeatedly in my first job out of college, as did my co-workers (who were all as young as I). At DreamWorks we had 950 programs for animators to use, and a line count showed that the larger ones all hovered around 20,000 to 25,000 lines. Beyond that it was just too much effort to add features.
+
+In mid-1996 I was tasked with writing the [[https://www.teamten.com/lawrence/oscar/][DreamWorks lighting tool]] (with two other programmers) and knew that this would be far larger than 20,000 lines of code. I changed my approach to programming and the tool was successfully delivered a year later at around 200,000 lines. (It’s scheduled to be retired in 2013, having been used daily over 16 years to make 32 movies.) I’ve since written several more programs in the 100,000 to 200,000 line range. I’m sure I’m hitting the next wall; I can feel it.
+
+What’s particularly hard is having technical discussions with someone who hasn’t broken through as many walls as you have. Breaking through these walls means making different trade-offs, and specifically it means making a decision that seems to make less sense in the short term but will help later. This is a hard argument to make—the short term advantages are immediately demonstrable, but I can’t convince anyone that a year from now someone may make an innocent change that breaks this code.
+
+Edsger Dijkstra [[http://www.cs.utexas.edu/users/EWD/ewd02xx/EWD249.PDF][wrote in 1969]]:
+
+#+begin_quote
+A one-year old child will crawl on all fours with a speed of, say, one mile per hour. But a speed of a thousand miles per hour is that of a supersonic jet. Considered as objects with moving ability the child and the jet are incomparable, for whatever one can do the other cannot and vice versa.
+#+end_quote
+
+A novice programmer, the kind Clift Norris is referring to, learns to crawl, then toddle, then walk, then jog, then run, then sprint, and he thinks, “At this rate of acceleration I can reach the speed of a supersonic jet!” But he runs into the 2,000 line limit because his skills don’t scale up. He must move differently, using a car, to go faster. Then he learns to drive, first slowly, then faster, but runs into the 20,000 line limit. Driving skills don’t transfer to flying a jet plane.
+
+My friend [[http://www.plunk.org/~grantham/][Brad Grantham]] explains this by saying that the novice programmer “brute-forces” the problem. I think this is right: When the code is under 2,000 lines you can write any tangled garbage and rely on your memory to save you. Thoughtful class and package decomposition will let you scale up to 20,000 lines.
+
+What’s the key to breaking past that? For me, it was keeping things simple. Absolutely refuse to add any feature or line of code unless you need it right now, and need it badly. I already touched on this in [[https://www.teamten.com/lawrence/writings/every_line_is_a_potential_bug.html][Every Line Is a Potential Bug]] (and sophomorically before that in [[https://www.teamten.com/lawrence/writings/plan03.html][Simple is Good]]). The chief architect of effects at DreamWorks phrased it this way:
+
+#+begin_quote
+To me, the genius of [the lighting tool] was in selecting a small set of features which were tractable to write and maintain and strong enough to make a great lighting tool.
+#+end_quote
+
+As a tech lead I see my primary contribution as saying “no” to features that co-workers think are important but can’t justify. The real trick is knowing when a new feature adds linear complexity (its own weight only) or geometric complexity (interacts with other features). Both should be avoided, but the latter requires extra-convincing justification.
+
+For example, as of 2012, the Linux kernel had [[http://www.h-online.com/open/news/item/Linux-kernel-exceeds-15-million-lines-of-code-1409952.html][15 million lines of code]]. Of that, 75% had linear complexity (drivers, filesystems, and architecture-specific code); you might have dozens of video drivers and they don’t interact (much) with each other. The rest is more geometric.
+
+Dijkstra’s point is that it’s difficult to teach these advanced techniques, because they only make sense on 20,000-line or 200,000-line programs. Any class or textbook must limit its examples to a few hundred lines, and the brute-force method works just fine there. You really need the textbook to show you the 30,000-line program and then show you the new feature that was added easily because the program wasn’t too complex to start with. But that’s effectively impossible.
+
+#+begin_quote
+Experience has shown that someone’s proven ability to do an excellent job of a given scale is by no means a guarantee that, when faced with a much larger job, he will not make a mess of it. —[[http://www.cs.utexas.edu/users/EWD/ewd02xx/EWD249.PDF][Edsger Dijkstra]]
+#+end_quote
+
+I don’t know what I’ll have to change to get past the 200,000 line wall. I’ve been switching to a more purely functional style recently and shedding mutable state, and perhaps these might help me break through.
+
+And I’m really curious to see what the 2-million line barrier is all about.
+
+#+begin_quote
+It seems like there’s a wall at around 3-4M LOC, and really, after 3M LOC, the growth rate seems to slow down significantly no matter how many people (hundreds) or years are involved (decades). —Dan Wexler
+#+end_quote
+
+* ref:
+https://www.teamten.com/lawrence/writings/norris-numbers.html
