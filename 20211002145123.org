@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       e6cdeaf8-56fd-4708-8c26-e0d7c4e27a2c
+:END:
+#+title: design and coding principles
+
+* DRY: dont repeat yourself
+* SOLID
+* [[id:e9304387-f9da-41bb-afb3-a9511d9e6ed6][norris' number]]
+* [[id:f1e3df6b-85e5-47af-af7d-b5e0e3b81911][gardening code]]
+* Program are writte n for people to read as much as they are written for machine to execute: Abelson & Sussman
+** performance vs readability
+* If a system is to be robust, it must have more generality than is needed for the particular application: Abelson and Sussman
+* Law of Demeter
+** Each unit should have only limeted knowledge about other units: only units closely related to the current unit
+** each unit should only talk to its friends: don't talk to stranger
+** only talk to your immediate friends
