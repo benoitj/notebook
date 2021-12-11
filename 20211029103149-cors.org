@@ -1,0 +1,94 @@
+:PROPERTIES:
+:ID:       a6105489-f293-42f4-953b-f5f666c264f4
+:END:
+#+title: CORS
+
+* CORS
+
+when APIs and web are not on the same server, the API can tell the browsers from where we allow requests to go to the API
+
+web1 -> API
+     <- allow web1
+
+web2 -> API
+     <- 401 rejected
+
+more details here: https://enable-cors.org
+
+The browser may ask for CORS parameters using "preflight" / OPTIONS method
+
+
+** TODO The Allowed origins 
+can the allowed origins be set to the referer?
+
+
+* Why?
+
+this is useful to prevent cross site request forgery, where some malicious code intercept data, and play a "middle man" attack
+to obtain information or perform operations.
+
+* java
+
+Been having issues with preflight OPTIONS request.
+
+Below is an example filter that can manage CORS properly.
+
+** example1
+
+#+begin_src java :noeval
+
+@Component
+public class SimpleCORSFilter implements Filter {
+
+  public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
+    HttpServletResponse response = (HttpServletResponse) res;
+    response.setHeader("Access-Control-Allow-Origin", "*"); // TODO: implement something that is not *, but a specific web server
+    response.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
+    response.setHeader("Access-Control-Max-Age", "3600");
+    response.setHeader("Access-Control-Allow-Headers", "Authorization");
+    chain.doFilter(req, res);
+  }
+
+  public void init(FilterConfig filterConfig) {}
+
+  public void destroy() {}
+#+end_src
+ref: https://gist.github.com/loind89/64720dfb057cc2a11397
+
+** example2
+
+#+begin_src java :noeval
+  @Configuration
+  public class MyConfiguration {
+
+	  @Bean
+	  public FilterRegistrationBean corsFilter() {
+		  UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+		  CorsConfiguration config = new CorsConfiguration();
+		  config.setAllowCredentials(true);
+		  config.addAllowedOrigin("http://domain1.com");
+		  config.addAllowedHeader("*");
+		  config.addAllowedMethod("*");
+		  source.registerCorsConfiguration("/**", config);
+		  FilterRegistrationBean bean = new FilterRegistrationBean(new CorsFilter(source));
+		  bean.setOrder(0);
+		  return bean;
+	  }
+  }
+
+#+end_src
+ref: https://spring.io/blog/2015/06/08/cors-support-in-spring-framework
+
+** turn off authentication for OPTIONS request
+
+you can do this by detecting OPTIONS request, and not chaining to the next filter
+
+#+begin_src java :noeval
+
+  if ("OPTIONS".equalsIgnoreCase(request.getMethod())) {
+      response.setStatus(HttpServletresponse.SC_OK);
+  } else {
+      chain.doFilter(req, res);
+  }
+#+end_src
+
