@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       d14d4bbc-3fa8-49c9-b642-cdd12f82e511
+:END:
+#+title: markdown documentation generator
+
+* mkdocs
+https://www.mkdocs.org/
