@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       744656e7-83c5-4dfa-a97d-fee5b2b4d404
+:END:
+#+title: greetings
+
+* UGT: universal greeting time
+
+makes greetings not sensitive to timezones
+
+entering a chat: good morning
+leaving a chat: good evening
+
+* TZAG: TimeZone Appropriate Greeting
+
+generic way to greet people without caring for TZ
