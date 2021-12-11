@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       63408036-97a7-427a-841b-0f952199b7a1
+:END:
+#+title: render map as image in cider
+ sent on #clojure chat
+11:01  selfsymmetric-mu | Hey, if anyone wants to debug their Advent of Code solutions today by rendering their octopus map as an image, I've cooked up some rendering code for that: https://pastie.io/raw/bchmqo
+11:01  selfsymmetric-mu | In Emacs, if you `(setq cider-repl-use-pretty-printing nil)` and `(setq cider-repl-use-content-types t)`, then calling `(render example)` will show the map as an image in your REPL.
