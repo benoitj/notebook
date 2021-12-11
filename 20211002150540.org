@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       c66cc758-df17-43c8-aa52-3d9e3a928773
+:END:
+#+title: learning / skills aquisition
+
+* principles
+** [[https://en.wikipedia.org/wiki/Dreyfus_model_of_skill_acquisition][Dreyfus model of skill acquisition]]
+** [[https://en.wikipedia.org/wiki/Four_stages_of_competence][four stages of competence]]
