@@ -1,0 +1,182 @@
+:PROPERTIES:
+:ID:       0411381d-cb29-4774-af6c-0dec028db60e
+:END:
+#+title: Emacs for Java
+
+* Migration from intellij to emacs lsp-java
+** navigation
+
+Navigating is quite important when coding. This section include navigation to projects, files, types, symbols, and references.
+
+|------------------------------+---------------------------------------------+-------------------------------------------+-------------+-------------------------------------------------------------|
+| feature                      | IntelliJ                                    | emacs function                            | mode        |                                                             |
+|------------------------------+---------------------------------------------+-------------------------------------------+-------------+-------------------------------------------------------------|
+| find project                 | file menu open                              | project-switch-project                    | project     |                                                             |
+| find file                    | C-S-n                                       | project-find-file or projectile-find-file | project     |                                                             |
+| find type                    | C-n                                         | consult-lsp-symbol                        | consult-lsp |                                                             |
+| type def at point            | C-click                                     | lsp-find-type-definition                  | lsp         |                                                             |
+| var def at point             | C-click                                     | lsp-find-definition                       | lsp         |                                                             |
+| find usages                  | M-F7                                        | lsp-find-references                       | lsp         |                                                             |
+| highlight a symbol in buffer | highlight a symbol highlights it everywhere | lsp-find-declaration                      | lsp         |                                                             |
+|                              |                                             | lsp-document-highlight                    | lsp         | automatically highlight related references at point         |
+| find related test / type     | C-S-t                                       | *TODO*                                    |             | from type to test: search references within "src/test/java" |
+|                              |                                             |                                           |             | from test to type: type that is s/Test$//                   |
+|------------------------------+---------------------------------------------+-------------------------------------------+-------------+-------------------------------------------------------------|
+
+*** TODO review what xref can do
+
+** Search and Replace
+
+Search and Replace capabilities include any text search and replace operations in:
+1. the current buffer
+2. all files within the project
+
+|--------------------------+----------+------------------------------------------------------------+------------------------|
+| feature                  | IntelliJ | Emacs                                                      | mode                   |
+|--------------------------+----------+------------------------------------------------------------+------------------------|
+| current buffer - search  | C-f      | / and n                                                    | evil                   |
+|                          |          | isearch-forward                                            | isearch                |
+|                          |          | occur                                                      | occur                  |
+|                          |          | consult-line                                               | consult                |
+|--------------------------+----------+------------------------------------------------------------+------------------------|
+| current buffer - replace | C-r      | / and vim commands                                         | evil                   |
+|                          |          | :%s///                                                     | evil                   |
+|                          |          | replace-regex                                              | core                   |
+|                          |          | replace-string                                             | core                   |
+|--------------------------+----------+------------------------------------------------------------+------------------------|
+| project files - search   | C-S-f    | consult-ripgrep                                            | consult                |
+|                          |          | consult-grep                                               | consult                |
+|                          |          | consult-git-grep                                           | consult                |
+|                          |          | multi-occur                                                | multi-occur            |
+|--------------------------+----------+------------------------------------------------------------+------------------------|
+| project files - replace  | C-S-r    | consult-*grep                                              | consult                |
+|                          |          | multi-occur                                                | multi-occur            |
+|                          |          | <any above> -> embark-export -> wgrep-change-to-wgrep-mode | embark, consult, wgrep |
+|--------------------------+----------+------------------------------------------------------------+------------------------|
+
+** information / documentation
+
+|------------------------------+----------------------------+-----------------------------+--------------+--------------------------------|
+| description                  | intellij                   | emacs                       | mode         | comment                        |
+|------------------------------+----------------------------+-----------------------------+--------------+--------------------------------|
+| describe at point            | mouse over                 | lsp-describe-thing-at-point | lsp          | show in new frame              |
+|                              |                            | lsp-ui-doc-show             | lsp          | show popup                     |
+|                              |                            | lsp-ui-doc-glance           | lsp          | show/hide between still/typing |
+| from depends sources         | C-click + download sources | lsp-find-type-definition    | lsp          |                                |
+| List project tasks           | panel                      | magit-todos-list            | magit-todos  |                                |
+|------------------------------+----------------------------+-----------------------------+--------------+--------------------------------|
+
+** linting
+|------------------------------+-------------------+--------------------------+---------------+---------|
+| description                  | intellij          | emacs                    | mode          | comment |
+|------------------------------+-------------------+--------------------------+---------------+---------|
+| Linting errors in place      | fringe + fontface | flycheck                 | flycheck-mode |         |
+| List project errors/warnings | tool windows      | lsp-treemacs-errors-list | lsp-treemacs  |         |
+|------------------------------+-------------------+--------------------------+---------------+---------|
+
+*** TODO inventory of linting errors
+**** TODO unused references/method/member/class
+**** TODO generics unchecked used
+
+** TODO code formatting  
+
+The Java style I've been using for some time is the [[https://google.github.io/styleguide/javaguide.html][Google Java style]].
+
+there are two ways to do this:
+1. using a formatter within Emacs
+2. using lsp-mode java formatter
+
+#+begin_src emacs-lisp :noeval
+  (setq lsp-java-format-settings-url "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml")
+  (setq lsp-java-format-enabled t)
+  (setq lsp-java-format-on-type-enabled t)
+#+end_src
+
+** TODO runners
+| description | intellij | emacs |
+|-------------+----------+-------|
+| junit test  |          |       |
+| cucumber    |          |       |
+| main        |          |       |
+| springboot  |          |       |
+| maven       |          |       |
+
+** TODO refactor
+| description      | intellij | emacs |
+|------------------+----------+-------|
+| extract function |          |       |
+| extract constant |          |       |
+| pull up          |          |       |
+| push down        |          |       |
+
+** TODO code actions
+| description                                   | intellij | emacs |
+|-----------------------------------------------+----------+-------|
+| organize imports                              |          |       |
+| create class, fct, attribute                  |          |       |
+| introduce local variable (final, or var type) |        |       |
+
+** TODO generators
+| description     | intellij | emacs |
+|-----------------+----------+-------|
+| builder         |          |       |
+| getter/setter   |          |       |
+| toString        |          |       |
+| equals/hashcode |          |       |
+
+** TODO editing
+
+|--------------------------+--------------+------------------------+------------------|
+| feature                  | IntelliJ     | Emacs                  | mode             |
+|--------------------------+--------------+------------------------+------------------|
+| rectangular editing      | M-mouse drag | C-v                    | evil             |
+| edit using multi-cursors | M-j M-J      | mc/mark-next-like-this | multiple-cursors |
+|                          |              | mc/mark-prev-like-this | multiple-cursors |
+|                          |              | mc/mark-all-like-this  | multiple-cursors |
+|--------------------------+--------------+------------------------+------------------|
+
+** TODO debugging
+|   | Key binding   | Description                              |   |
+|---+---------------+------------------------------------------+---|
+|   | ~SPC m g g~   | Go to definition                         | * |
+|   | ~SPC m g r~   | Find references                          | * |
+|   | ~SPC m g R~   | Peek references using ~lsp-ui~           | * |
+|   | ~SPC m g d~   | Goto type definition                     | * |
+|   | ~SPC m g a~   | Search type in project                   | * |
+|   | ~SPC m g A~   | Search type in project using ~lsp-ui~    | * |
+|   | ~SPC m h h~   | Describe thing at point                  | * |
+|   | ~SPC m e l~   | List project errors/warnings             | * |
+|   | ~SPC m p u~   | Refresh user settings                    |   |
+|   | ~SPC m e a~   | Execute code action                      |   |
+|   | ~SPC m q r~   | Restart workspace                        |   |
+|   | ~SPC m r o i~ | Organize imports                         |   |
+|   | ~SPC m r r~   | Rename symbol                            |   |
+|   | ~SPC m r a i~ | Add import                               |   |
+|   | ~SPC m r a m~ | Add unimplemented methods                |   |
+|   | ~SPC m r c p~ | Create parameter                         |   |
+|   | ~SPC m r c f~ | Create field                             |   |
+|   | ~SPC m r e c~ | Extract constant                         |   |
+|   | ~SPC m r e l~ | Extract local                            |   |
+|   | ~SPC m r e m~ | Extract method                           |   |
+|   | ~SPC m r c i~ | Convert to static import                 |   |
+|   | ~SPC m r a t~ | Add throws exception                     |   |
+|   | ~SPC m r a a~ | Assign all parameters to fields          |   |
+|   | ~SPC m r a f~ | Assign parameter to field                |   |
+|   | ~SPC m r g g~ | Generate getters/setters                 |   |
+|   | ~SPC m r g e~ | Generate =equals= and =hashCode= methods |   |
+|   | ~SPC m r g t~ | Generate =toString= method               |   |
+|   | ~SPC m r g o~ | Generate method overrides                |   |
+|   | ~SPC m c c~   | Build project                            |   |
+|   | ~SPC m c p~   | Create spring boot project               |   |
+|   | ~SPC m a n~   | Actionable notifications                 |   |
+|   | ~SPC m =~     | Format code                              |   |
+
+** TODO Tools [0/2]
+*** TODO Restclient
+*** TODO SQL client
+found a possible options:
+**** lsp sql called https://emacs-lsp.github.io/lsp-mode/page/lsp-sqls/
+**** https://truongtx.me/2014/08/23/setup-emacs-as-an-sql-database-client
+**** https://github.com/Trevoke/sqlup-mode.el
+**** https://github.com/Fuco1/sql-workbench
+**** https://github.com/kostafey/ejc-sql
