@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       b09f6317-cfa7-4c99-ab00-ebb6a68db548
+:END:
+#+title: coding exercises
+
+
+* https://exercism.org
+* https://projecteuler.net/ 
+
+* clojure
+** https://exercism.org/tracks/clojure
+** https://www.clojuriststogether.org/
+** https://4clojure.oxal.org/
+** https://www.clojuriststogether.org/
