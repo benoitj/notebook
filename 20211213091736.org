@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       3d9ca263-f96e-44c8-93a4-c019ef5520f3
+:END:
+#+title: clojure dev environment
+
+https://emacs-lsp.github.io/lsp-mode/tutorials/clojure-guide/
