@@ -8,20 +8,20 @@
 
 Navigating is quite important when coding. This section include navigation to projects, files, types, symbols, and references.
 
-|------------------------------+---------------------------------------------+-------------------------------------------+-------------+-------------------------------------------------------------|
-| feature                      | IntelliJ                                    | emacs function                            | mode        |                                                             |
-|------------------------------+---------------------------------------------+-------------------------------------------+-------------+-------------------------------------------------------------|
-| find project                 | file menu open                              | project-switch-project                    | project     |                                                             |
-| find file                    | C-S-n                                       | project-find-file or projectile-find-file | project     |                                                             |
-| find type                    | C-n                                         | consult-lsp-symbol                        | consult-lsp |                                                             |
-| type def at point            | C-click                                     | lsp-find-type-definition                  | lsp         |                                                             |
-| var def at point             | C-click                                     | lsp-find-definition                       | lsp         |                                                             |
-| find usages                  | M-F7                                        | lsp-find-references                       | lsp         |                                                             |
-| highlight a symbol in buffer | highlight a symbol highlights it everywhere | lsp-find-declaration                      | lsp         |                                                             |
-|                              |                                             | lsp-document-highlight                    | lsp         | automatically highlight related references at point         |
-| find related test / type     | C-S-t                                       | *TODO*                                    |             | from type to test: search references within "src/test/java" |
-|                              |                                             |                                           |             | from test to type: type that is s/Test$//                   |
-|------------------------------+---------------------------------------------+-------------------------------------------+-------------+-------------------------------------------------------------|
+|------------------------------+---------------------------------------------+---------------------------------------------------+-------------+-----------------------------------------------------|
+| feature                      | IntelliJ                                    | emacs function                                    | mode        |                                                     |
+|------------------------------+---------------------------------------------+---------------------------------------------------+-------------+-----------------------------------------------------|
+| find project                 | file menu open                              | project-switch-project                            | project     |                                                     |
+| find file                    | C-S-n                                       | project-find-file or projectile-find-file         | project     |                                                     |
+| find type                    | C-n                                         | consult-lsp-symbol                                | consult-lsp |                                                     |
+| type def at point            | C-click                                     | lsp-find-type-definition                          | lsp         |                                                     |
+| var def at point             | C-click                                     | lsp-find-definition                               | lsp         |                                                     |
+| find usages                  | M-F7                                        | lsp-find-references                               | lsp         |                                                     |
+| highlight a symbol in buffer | highlight a symbol highlights it everywhere | lsp-find-declaration                              | lsp         |                                                     |
+|                              |                                             | lsp-document-highlight                            | lsp         | automatically highlight related references at point |
+| find related test / type     | C-S-t                                       | tgt-toggle                                        | toggle-test |                                                     |
+|                              |                                             | projectile-toggle-between-implementation-and-test | projectile  |                                                     |
+|------------------------------+---------------------------------------------+---------------------------------------------------+-------------+-----------------------------------------------------|
 
 *** TODO review what xref can do
 
@@ -56,15 +56,15 @@ Search and Replace capabilities include any text search and replace operations i
 
 ** information / documentation
 
-|------------------------------+----------------------------+-----------------------------+--------------+--------------------------------|
-| description                  | intellij                   | emacs                       | mode         | comment                        |
-|------------------------------+----------------------------+-----------------------------+--------------+--------------------------------|
-| describe at point            | mouse over                 | lsp-describe-thing-at-point | lsp          | show in new frame              |
-|                              |                            | lsp-ui-doc-show             | lsp          | show popup                     |
-|                              |                            | lsp-ui-doc-glance           | lsp          | show/hide between still/typing |
-| from depends sources         | C-click + download sources | lsp-find-type-definition    | lsp          |                                |
-| List project tasks           | panel                      | magit-todos-list            | magit-todos  |                                |
-|------------------------------+----------------------------+-----------------------------+--------------+--------------------------------|
+|----------------------+----------------------------+-----------------------------+-------------+-------------------------------------|
+| description          | intellij                   | emacs                       | mode        | comment                             |
+|----------------------+----------------------------+-----------------------------+-------------+-------------------------------------|
+| describe at point    | mouse over                 | lsp-describe-thing-at-point | lsp         | show in new frame                   |
+|                      |                            | lsp-ui-doc-show             | lsp         | show popup                          |
+|                      |                            | lsp-ui-doc-glance           | lsp         | show/hide between still/typing      |
+| from depends sources | C-click + download sources | lsp-find-type-definition    | lsp         | set lsp-java-maven-download-sources |
+| List project tasks   | panel                      | magit-todos-list            | magit-todos |                                     |
+|----------------------+----------------------------+-----------------------------+-------------+-------------------------------------|
 
 ** linting
 |------------------------------+-------------------+--------------------------+---------------+---------|
@@ -93,13 +93,14 @@ there are two ways to do this:
 #+end_src
 
 ** TODO runners
-| description | intellij | emacs |
-|-------------+----------+-------|
-| junit test  |          |       |
-| cucumber    |          |       |
-| main        |          |       |
-| springboot  |          |       |
-| maven       |          |       |
+| description | intellij | emacs                             | mode                     |
+|-------------+----------+-----------------------------------+--------------------------|
+| junit test  |          | dap-java-run*                     | dap-java-mode            |
+|             |          | dap-java-debug*                   | dap-java-mode            |
+| cucumber    |          |                                   |                          |
+| main        |          | dap-hydra                         | dap-mode                 |
+| springboot  |          |                                   | install STS4 integration |
+| maven       |          | vterm or lsp-java-compile-project |                          |
 
 ** TODO refactor
 | description      | intellij | emacs |
