@@ -4,7 +4,7 @@
 #+title: Emacs for Java
 
 * Migration from intellij to emacs lsp-java
-** navigation
+** DONE navigation
 
 Navigating is quite important when coding. This section include navigation to projects, files, types, symbols, and references.
 
@@ -23,7 +23,6 @@ Navigating is quite important when coding. This section include navigation to pr
 |                              |                                             | projectile-toggle-between-implementation-and-test | projectile  |                                                     |
 |------------------------------+---------------------------------------------+---------------------------------------------------+-------------+-----------------------------------------------------|
 
-*** TODO review what xref can do
 
 ** Search and Replace
 
@@ -54,8 +53,17 @@ Search and Replace capabilities include any text search and replace operations i
 |                          |          | <any above> -> embark-export -> wgrep-change-to-wgrep-mode | embark, consult, wgrep |
 |--------------------------+----------+------------------------------------------------------------+------------------------|
 
-** information / documentation
+** DONE editing
+|--------------------------+--------------+------------------------+------------------|
+| feature                  | IntelliJ     | Emacs                  | mode             |
+|--------------------------+--------------+------------------------+------------------|
+| rectangular editing      | M-mouse drag | C-v                    | evil             |
+| edit using multi-cursors | M-j M-J      | mc/mark-next-like-this | multiple-cursors |
+|                          |              | mc/mark-prev-like-this | multiple-cursors |
+|                          |              | mc/mark-all-like-this  | multiple-cursors |
+|--------------------------+--------------+------------------------+------------------|
 
+** DONE information / documentation
 |----------------------+----------------------------+-----------------------------+-------------+-------------------------------------|
 | description          | intellij                   | emacs                       | mode        | comment                             |
 |----------------------+----------------------------+-----------------------------+-------------+-------------------------------------|
@@ -66,7 +74,7 @@ Search and Replace capabilities include any text search and replace operations i
 | List project tasks   | panel                      | magit-todos-list            | magit-todos |                                     |
 |----------------------+----------------------------+-----------------------------+-------------+-------------------------------------|
 
-** linting
+** linting / errors
 |------------------------------+-------------------+--------------------------+---------------+---------|
 | description                  | intellij          | emacs                    | mode          | comment |
 |------------------------------+-------------------+--------------------------+---------------+---------|
@@ -78,13 +86,21 @@ Search and Replace capabilities include any text search and replace operations i
 **** TODO unused references/method/member/class
 **** TODO generics unchecked used
 
-** TODO code formatting  
+** TODO code formatting [0/2]
 
 The Java style I've been using for some time is the [[https://google.github.io/styleguide/javaguide.html][Google Java style]].
 
 there are two ways to do this:
 1. using a formatter within Emacs
 2. using lsp-mode java formatter
+
+*** TODO formatter within emacs
+*** TODO lsp-mode java formatter
+
+| description        | intellij | emacs             | mode          |
+|--------------------+----------+-------------------+---------------|
+| dwim refactor code | M-S-l    | lsp-format-buffer | lsp-java-mode |
+|                    |          | lsp-format-region |               |
 
 #+begin_src emacs-lisp :noeval
   (setq lsp-java-format-settings-url "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml")
@@ -103,81 +119,70 @@ there are two ways to do this:
 | maven       |          | vterm or lsp-java-compile-project |                          |
 
 ** TODO refactor
-| description      | intellij | emacs |
-|------------------+----------+-------|
-| extract function |          |       |
-| extract constant |          |       |
-| pull up          |          |       |
-| push down        |          |       |
+| description      | intellij | emacs |   |
+|------------------+----------+-------+---|
+| Extract constant |          |       |   |
+| Extract local    |          |       |   |
+| Extract method   |          |       |   |
+| pull up          |          |       |   |
+| push down        |          |       |   |
+| Rename symbol                   |
 
 ** TODO code actions
-| description                                   | intellij | emacs |
-|-----------------------------------------------+----------+-------|
-| organize imports                              |          |       |
-| create class, fct, attribute                  |          |       |
-| introduce local variable (final, or var type) |        |       |
+| description                                   | intellij  | emacs |
+|-----------------------------------------------+-----------+-------|
+| Execute code action                           | M-<Enter> |       |
+| organize imports                              | M-C-o     |       |
+| create class, fct, attribute                  |           |       |
+| introduce local variable (final, or var type) |           |       |
+| Add throws exception                          |           |       |
+| Add import                                    |           |       |
+| Add unimplemented methods                     |           |       |
 
 ** TODO generators
-| description     | intellij | emacs |
-|-----------------+----------+-------|
-| builder         |          |       |
-| getter/setter   |          |       |
-| toString        |          |       |
-| equals/hashcode |          |       |
-
-** TODO editing
-
-|--------------------------+--------------+------------------------+------------------|
-| feature                  | IntelliJ     | Emacs                  | mode             |
-|--------------------------+--------------+------------------------+------------------|
-| rectangular editing      | M-mouse drag | C-v                    | evil             |
-| edit using multi-cursors | M-j M-J      | mc/mark-next-like-this | multiple-cursors |
-|                          |              | mc/mark-prev-like-this | multiple-cursors |
-|                          |              | mc/mark-all-like-this  | multiple-cursors |
-|--------------------------+--------------+------------------------+------------------|
+| description      | intellij | emacs |
+|------------------+----------+-------|
+| builder          |          |       |
+| getter/setter    |          |       |
+| toString         |          |       |
+| equals/hashcode  |          |       |
+| method overrides |          |       |
 
 ** TODO debugging
-|   | Key binding   | Description                              |   |
-|---+---------------+------------------------------------------+---|
-|   | ~SPC m g g~   | Go to definition                         | * |
-|   | ~SPC m g r~   | Find references                          | * |
-|   | ~SPC m g R~   | Peek references using ~lsp-ui~           | * |
-|   | ~SPC m g d~   | Goto type definition                     | * |
-|   | ~SPC m g a~   | Search type in project                   | * |
-|   | ~SPC m g A~   | Search type in project using ~lsp-ui~    | * |
-|   | ~SPC m h h~   | Describe thing at point                  | * |
-|   | ~SPC m e l~   | List project errors/warnings             | * |
-|   | ~SPC m p u~   | Refresh user settings                    |   |
-|   | ~SPC m e a~   | Execute code action                      |   |
-|   | ~SPC m q r~   | Restart workspace                        |   |
-|   | ~SPC m r o i~ | Organize imports                         |   |
-|   | ~SPC m r r~   | Rename symbol                            |   |
-|   | ~SPC m r a i~ | Add import                               |   |
-|   | ~SPC m r a m~ | Add unimplemented methods                |   |
-|   | ~SPC m r c p~ | Create parameter                         |   |
-|   | ~SPC m r c f~ | Create field                             |   |
-|   | ~SPC m r e c~ | Extract constant                         |   |
-|   | ~SPC m r e l~ | Extract local                            |   |
-|   | ~SPC m r e m~ | Extract method                           |   |
-|   | ~SPC m r c i~ | Convert to static import                 |   |
-|   | ~SPC m r a t~ | Add throws exception                     |   |
-|   | ~SPC m r a a~ | Assign all parameters to fields          |   |
-|   | ~SPC m r a f~ | Assign parameter to field                |   |
-|   | ~SPC m r g g~ | Generate getters/setters                 |   |
-|   | ~SPC m r g e~ | Generate =equals= and =hashCode= methods |   |
-|   | ~SPC m r g t~ | Generate =toString= method               |   |
-|   | ~SPC m r g o~ | Generate method overrides                |   |
-|   | ~SPC m c c~   | Build project                            |   |
-|   | ~SPC m c p~   | Create spring boot project               |   |
-|   | ~SPC m a n~   | Actionable notifications                 |   |
-|   | ~SPC m =~     | Format code                              |   |
+| Key binding   | Description                     |
+|---------------+---------------------------------|
+| ~SPC m p u~   | Refresh user settings           |
+| ~SPC m q r~   | Restart workspace               |
+| ~SPC m r c p~ | Create parameter                |
+| ~SPC m r c f~ | Create field                    |
+| ~SPC m r c i~ | Convert to static import        |
+| ~SPC m r a a~ | Assign all parameters to fields |
+| ~SPC m r a f~ | Assign parameter to field       |
+| ~SPC m c c~   | Build project                   |
+| ~SPC m c p~   | Create spring boot project      |
+| ~SPC m a n~   | Actionable notifications        |
+| ~SPC m =~     | Format code                     |
 
 ** TODO Tools [0/2]
-*** TODO Restclient
-*** TODO SQL client
+*** TODO Restclient [0/3]
+
+Basic use cases:
+- call http API
+- override headers
+- pass payloads
+- extract values from a response and use them in url or body
+- use different "environments" API variables
+
+evaluate possible options:
+**** TODO [[https://github.com/zweifisch/ob-http][ob-http]]
+**** TODO verb
+**** TODO restclient-mode
+*** TODO SQL client [0/5]
 found a possible options:
-**** lsp sql called https://emacs-lsp.github.io/lsp-mode/page/lsp-sqls/
-**** https://truongtx.me/2014/08/23/setup-emacs-as-an-sql-database-client
-**** https://github.com/Trevoke/sqlup-mode.el
-**** https://github.com/Fuco1/sql-workbench
-**** https://github.com/kostafey/ejc-sql
+**** TODO lsp sql called https://emacs-lsp.github.io/lsp-mode/page/lsp-sqls/
+**** TODO https://truongtx.me/2014/08/23/setup-emacs-as-an-sql-database-client
+**** TODO https://github.com/Trevoke/sqlup-mode.el
+**** TODO https://github.com/Fuco1/sql-workbench
+**** TODO https://github.com/kostafey/ejc-sql
+* other things [0/1]
+** TODO review what xref can do
