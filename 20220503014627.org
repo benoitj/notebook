@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       f173ea8b-4954-417f-8328-cb8ab62323aa
+:END:
+#+title: guix packaging
+
+* tutorials
+** https://guix.gnu.org/manual/en/html_node/Defining-Packages.html
+** https://guix.gnu.org/blog/2018/a-packaging-tutorial-for-guix/
+** https://guix.gnu.org/en/videos/2020/packaging-part-one/

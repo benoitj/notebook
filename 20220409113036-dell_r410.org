@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       3a01ae19-667f-4dd9-a8fe-29887608d32d
+:END:
+#+title: dell r410
+
+
+* bios/firmware updates
+11g r410
+https://poweredgec.dell.com/

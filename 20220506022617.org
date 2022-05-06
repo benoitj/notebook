@@ -1,0 +1,20 @@
+:PROPERTIES:
+:ID:       90779a42-6b92-465d-a5aa-47ab8e461ee6
+:END:
+#+title: clojure tech stack
+
+* API tech stack
+
+| library            | current | description                                |
+| ring/ring-core     | x       | core ring web pattern implementation       |
+| ring/jetty-adapter | x       | jetty web server adapter for ring          |
+| ring/ring-defaults | x       | default middlewares for sites or api       |
+| compojure          | x       | ring handler. create routes                |
+| reitit             |         | ring handler. create routes                |
+| hiccup             |         | create html from edn use 2.0.0+            |
+| honeysql           |         | sql generator                              |
+| next.jdbc          |         | db abstraction                             |
+| component          |         | integration lifecycle                      |
+| integrant          |         | integration lifecycle                      |
+| metosin/muuntaja   | x       | API encoding/decoding json, edn, or others |
+|                    |         |                                            |

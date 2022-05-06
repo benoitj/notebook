@@ -3,6 +3,7 @@
 :END:
 #+title: CORS
 
+
 * CORS
 
 when APIs and web are not on the same server, the API can tell the browsers from where we allow requests to go to the API

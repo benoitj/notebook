@@ -3,4 +3,5 @@
 :END:
 #+title: clojure dev environment
 
+https://guide.clojure.style
 https://emacs-lsp.github.io/lsp-mode/tutorials/clojure-guide/

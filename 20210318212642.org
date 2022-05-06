@@ -11,4 +11,9 @@
 |------------------------------+----------------------+-------------------------------------------------------|
 | io.github.matwein scalc-core | math                 | math expression parser                               |
 |                              |                      |                                                       |
-
+* shedlock
+* archunit
+* micrometer
+* autofixturegenerator
+* asciidoc / junit restdocs-mvc
+* spring auto rest docs

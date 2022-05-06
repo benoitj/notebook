@@ -1,0 +1,106 @@
+:PROPERTIES:
+:ID:       feae2eb1-03f2-463a-922c-eb72449d17b8
+:END:
+#+title: cisco switch configuration
+
+* prompts
+
+|----------------------+-----------------------------------------+--------------------|
+| prompts              | description                             | transition         |
+|----------------------+-----------------------------------------+--------------------|
+| Switch>              | User exec mode (access password)        |                    |
+| Switch#              | Priviledge mode (password to configure) | enable             |
+| Switch(config)#      | Global configuration mode               | configure terminal |
+| Switch(config-line)# | Line configuration mode                 | line console 0     |
+| Switch(config-if)#   | Interface configuration mode            | interface vlan 1   |
+|----------------------+-----------------------------------------+--------------------|
+
+* setup password and console ip
+
+#+begin_src
+Switch> enable
+Switch# configure terminal
+Switch(config)# hostname switch-1
+switch-1(config)# line console 0
+switch-1(config-line)# password <user access password>
+switch-1(config-line)# login
+switch-1(config-line)# exit
+switch-1(config)# enable secret <priviledge password>
+switch-1(config)# line vty 0 15
+switch-1(config-line)# password <user access password>
+switch-1(config-line)# login local
+switch-1(config-line)# transport input telnet
+switch-1(config-line)# transport input ssh
+switch-1(config-line)# transport input all
+switch-1(config-line)# exit
+switch-1(config)# username <ssh user> password <password>
+switch-1(config)# ipdomain-name switch-1.benlab.ca
+switch-1(config)# crypto key generate rsa
+switch-1(config)# service password-encryption
+switch-1(config)# banner motd 'foobar'
+switch-1(config)# interface vlan 1
+switch-1(config-if)# ip address 10.1.1.2 255.255.255.0
+switch-1(config-if)# no shutdown
+switch-1(config-if)# exit
+switch-1(config)# ip default-gateway 10.1.1.1
+switch-1(config)# exit
+switch-1# show running-config
+switch-1# copy running-config startup-config
+#+end_src
+* setup time
+#+begin_src
+# show clock
+# configure terminal
+(config)# clock timezone EST -5
+(config)# clock summer-time EDT recurring
+(config)# exit
+# clock set 00:00:00 1 jan 2022
+# show clock
+# config t
+(config)# ntp server 10.1.1.1
+(config)# exit
+# show ntp associations
+# show clock
+#+end_src
+
+* priviledge mode
+
+#+begin_src
+# ?
+# show ?
+# show running-config
+# show startup-config
+# show vlan
+# copy running-config startup-config
+# ping 10.1.1.1
+# traceroute 10.1.1.1
+# ssh 10.1.1.1
+# telnet 10.1.1.1
+# debug ?
+# reload
+#+end_src
+* config mode
+
+#+begin_src
+Switch(config)# hostname switch-1
+switch-1(config)# banner motd 'foobar'
+switch-1(config)# enable password <unencrypted priviledge password>
+switch-1(config)# enable secret <priviledge password>
+switch-1(config)# service password-encryption
+switch-1(config)# line console 0
+switch-1(config)# line vty 0 15
+switch-1(config)# interface vlan 1
+switch-1(config)# interface GigabitEthernet 1/0/1
+switch-1(config)# ip default-gateway 10.1.1.1
+switch-1(config)# no ip domain-lookup // help with lookup on typos
+switch-1(config)# line console 0
+switch-1(config-line)# logging synchronous // prevent noise due to logging
+
+#+end_src
+
+
+
+
+
+
+**

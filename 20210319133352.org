@@ -63,7 +63,7 @@ sed 's/#.*//' /etc/fstab | column --table --table-columns SOURCE,TARGET,TYPE,OPT
     -z: 0 based delimiter
 **** tail: returns tails of a file
     -n <number>: returns n number of lines
-
+**** nl: format file with line number
 ** GUI
 
 *** audio

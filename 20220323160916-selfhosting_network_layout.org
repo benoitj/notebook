@@ -1,0 +1,54 @@
+:PROPERTIES:
+:ID:       48b69065-0912-4b39-af38-53c2cfa46152
+:END:
+#+title: selfhosting network layout
+
+
+* equipment organization
+
+
+
+** sip box
+** printer
+** scanner
+** atsc tuner
+** phones
+** work laptop
+** laptop ben
+** desktop ben
+** desktop kids
+** laptop anais
+** laptop isa
+** htpc
+** plex
+** miniflux
+** nas
+** cameras
+** git
+** jenkins
+** guests devices
+** monitoring and alerting
+** IPMI / management ports / management consoles
+** acme step-ca
+** tv
+* network layout
+
+
+| name          | purpose                       | ip/subnet |
+|---------------+-------------------------------+-----------|
+| lan           | servers, management, switches |           |
+| hidden        | usenet and torrent            |           |
+| office        | desktop, and other stuff      |           |
+| dmz           | public facing services        |           |
+| lan-out       | sip                           |           |
+| guests        |                               |           |
+| phone         |                               |           |
+| cameras + iot |                               |           |
+
+#+begin_src plantuml :file network-layout.png
+
+#+end_src
+
+* refs
+
+** basic layout design https://www.youtube.com/watch?v=ouARr-4chJ8

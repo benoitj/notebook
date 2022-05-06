@@ -55,6 +55,9 @@ Search and Replace capabilities include any text search and replace operations i
 |--------------------------+----------+------------------------------------------------------------+------------------------|
 
 ** DONE editing
+
+I'm a user of vim modal editing styles pretty much everywhere. I use evil in emacs.
+
 |--------------------------+--------------+------------------------+--------------------|
 | feature                  | IntelliJ     | Emacs                  | mode               |
 |--------------------------+--------------+------------------------+--------------------|

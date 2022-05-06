@@ -1,7 +1,7 @@
 :PROPERTIES:
 :ID:       7d4dab60-6980-44bd-9da3-7e9075c04b99
 :END:
-#+title: control fan speed on dell
+#+title: control fan speed on dell with IPMI
 
 by default, the lowest speed at idle is 60% on dell rack [[file:20210318005401-servers.org][servers]].
 
